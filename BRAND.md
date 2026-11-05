@@ -190,7 +190,7 @@ Rules:
 
 ### smaltts
 
-smaltts is a thin, typed TypeScript API over smaltdb's plan and schema operations, with structured flows, for applications and layers that want neither SQL nor dataframes. It is a way into the engine beside smaltql and smaltdf. Its name says what it is: plain, typed TypeScript. Say it smalt-T-S.
+smaltts is a thin, typed TypeScript API over smaltdb's plan and schema operations, with structured flows, for applications and layers that want neither SQL nor dataframes. It sits at the language layer, beside smaltql and smaltdf. Its name says what it is: plain, typed TypeScript. Say it smalt-T-S.
 
 ### smaltdb and smaltql
 

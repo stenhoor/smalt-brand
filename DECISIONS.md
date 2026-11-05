@@ -225,7 +225,7 @@ Applied after the picks:
 
 ## smaltts
 
-smaltts (`stenhoor/smaltts`) is a thin, typed TypeScript API over smaltdb's plan and schema operations, adding structured flows for applications and layers that want neither SQL nor dataframes. Under smaltdb ADR 0015 the engine has no language built in, so without smaltts such an application works with the raw plan API. Two readings were shown: a way into the engine beside smaltql and smaltdf, or a layer the languages build on. The picked positioning line describes the first.
+smaltts (`stenhoor/smaltts`) is a thin, typed TypeScript API over smaltdb's plan and schema operations, adding structured flows for applications and layers that want neither SQL nor dataframes. Under smaltdb ADR 0015 the engine has no language built in, so without smaltts such an application works with the raw plan API. Two readings were shown: a way into the engine beside smaltql and smaltdf, or a layer the languages build on. The owner placed it at the language layer, beside smaltql and smaltdf.
 
 The options were shown on the family canvas:
 

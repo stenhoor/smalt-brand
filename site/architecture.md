@@ -32,7 +32,7 @@ Tables come in two layouts, and one database can mix them:
   blocks of rows a filter can't match. Aggregates and scans over many rows run several times faster. Materialized
   views can be columnar too. [smaltdb →](/products/smaltdb)
 
-## Ways in: smaltql, smaltdf and smaltts
+## The language layer: smaltql, smaltdf and smaltts
 
 Three ways to tell the engine what you want, over the same tables.
 
