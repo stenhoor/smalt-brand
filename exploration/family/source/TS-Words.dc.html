@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>smaltts words</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400&amp;family=Martian+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#003399}a:hover{color:#151922}
+</style>
+</helmet>
+<div style="width: 1440px; height: 880px; box-sizing: border-box; padding: 56px 64px; background: #F5F6F8; color: #151922; font-family: 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px">
+<div>
+<p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 13px; color: #5C6375">smaltts · round 1 · words</p>
+<h1 style="margin: 8px 0 0; font-size: 36px; font-weight: 700; letter-spacing: -0.03em">smaltts: smaltdb, straight from TypeScript</h1>
+</div>
+<p style="margin: 0; max-width: 560px; font-size: 15px; line-height: 1.55; color: #3F4656">Under ADR 0015, smaltdb has no language built in: an app that wants neither SQL nor dataframes works with the engine's raw plan API and schema operations. smaltts is a thin, typed TypeScript API over them, with structured flows for apps and for layers built on the engine. It joins the family on the same system: the wordmark, a smalt body with one chip, a “Small. Alternative. ___.” tagline and a short line.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; flex-grow: 1">
+<div style="background: #FFFFFF; border: 1px solid #D6DBE4; border-radius: 14px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 36px; font-weight: 600; letter-spacing: -0.06em">sm<span style="color: #003399">alt</span>ts</p>
+<p style="margin: 4px 0 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C6375">TAGLINE: SMALL. ALTERNATIVE. ___. <span style="letter-spacing: 0; text-transform: none; font-family: 'Geist', sans-serif; font-size: 13px">Taken: Fast, Query, Insight, Frames, Notebooks, Familiar.</span></p>
+<sc-for list="{{taglines}}" as="t" hint-placeholder-count="4">
+<p style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.02em"><span style="font-family: 'Martian Mono', monospace; font-size: 13px; font-weight: 400; color: #003399; margin-right: 12px">{{t.id}}</span>{{t.text}}</p>
+</sc-for>
+<p style="margin: 10px 0 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C6375">POSITIONING LINE</p>
+<sc-for list="{{lines}}" as="t" hint-placeholder-count="3">
+<div>
+<p style="margin: 0; font-size: 16px"><span style="font-family: 'Martian Mono', monospace; font-size: 13px; color: #003399; margin-right: 12px">{{t.id}}</span>{{t.text}}</p>
+<p style="margin: 2px 0 0 40px; font-size: 13px; color: #5C6375">{{t.note}}</p>
+</div>
+</sc-for>
+<p style="margin: 10px 0 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C6375">SAYING IT</p>
+<sc-for list="{{say}}" as="t" hint-placeholder-count="2">
+<div>
+<p style="margin: 0; font-size: 16px"><span style="font-family: 'Martian Mono', monospace; font-size: 13px; color: #003399; margin-right: 12px">{{t.id}}</span>{{t.text}}</p>
+<p style="margin: 2px 0 0 40px; font-size: 13px; color: #5C6375">{{t.note}}</p>
+</div>
+</sc-for>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #D6DBE4; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+<div style="padding: 24px 28px 12px; display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C6375">WHAT THE WORDS HAVE TO COVER</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3F4656">Where smaltts sits is the open question, and the words depend on it. A and B are the two readings; the other rows are what the words promise either way.</p>
+</div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 10px; padding: 0 28px 24px">
+<sc-for list="{{cells}}" as="c" hint-placeholder-count="5">
+<div style="display: grid; grid-template-columns: 132px minmax(0, 1fr); align-items: center; gap: 14px; border: 1px solid #D6DBE4; border-radius: 10px; overflow: hidden">
+<p style="margin: 0; padding: 12px 14px; height: 100%; box-sizing: border-box; background: #F5F6F8; font-family: 'Martian Mono', monospace; font-size: 12px; color: #3F4656; display: flex; align-items: center">{{c.kind}}</p>
+<div style="padding: 10px 14px 10px 0">
+<p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 14px; color: #151922">{{c.code}}</p>
+<p style="margin: 3px 0 0; font-size: 13px; color: #5C6375">{{c.note}}</p>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":880}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+taglines: [
+  { id: 'T1', text: 'Small. Alternative. Typed. · picked' },
+  { id: 'T2', text: 'Small. Alternative. Direct.' },
+  { id: 'T3', text: 'Small. Alternative. Structured.' },
+  { id: 'T4', text: 'Small. Alternative. Code.' },
+],
+lines: [
+  { id: 'P1', text: 'A typed TypeScript API for smaltdb.', note: 'Says plainly what it is. The safest line.' },
+  { id: 'P2', text: 'smaltdb, straight from TypeScript. · picked', note: 'The direct way in: no query language between your code and the engine.' },
+  { id: 'P3', text: 'Typed flows for smaltdb. Small and direct.', note: 'Names the structured flows, and pairs with the smaltdf line.' },
+],
+say: [
+  { id: 'S1', text: 'smalt-T-S', note: 'Letter by letter, like smalt-D-B. In the wordmark, the colour splits the double t: sm·alt·ts.' },
+  { id: 'S2', text: '“ts” means TypeScript', note: 'The whole family is TypeScript, so the name claims the plain, typed API rather than a language.' },
+],
+cells: [
+  { kind: 'A · a way in', code: 'smaltql · smaltdf · smaltts → plan → smaltdb', note: 'A peer of the languages, for apps that want neither SQL nor dataframes.' },
+  { kind: 'B · a layer', code: 'smaltdf → smaltts → plan → smaltdb', note: 'The typed layer other layers build on, smaltdf among them.' },
+  { kind: 'Typed', code: 'orders.where(o => o.total.gt(100))', note: 'Illustrative only: tables and columns typed from the schema.' },
+  { kind: 'Thin', code: 'one call, one plan', note: 'Every call maps to the engine’s plan and schema operations. No engine of its own.' },
+  { kind: 'No language', code: 'no SQL text, no frames', note: 'Plain TypeScript for apps and agents that prefer code to a query language.' },
+],
+};
+}
+}
+</script>
+</body>
+</html>

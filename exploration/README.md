@@ -101,6 +101,14 @@ The later positioning lines (P4–P11 and the final "Dataframes for smaltdb. Sma
 | [QL-Stars](family/png/QL-Stars.png) | Round 2: stars with joined arms, S1–S4. None picked. |
 | [QL-Stars2](family/png/QL-Stars2.png) | Round 3: separate arms around a centre chip, T1–T4. Picked: T2. |
 
+## smaltts
+
+| Board | Contents |
+| --- | --- |
+| [TS-Words](family/png/TS-Words.png) | Taglines T1–T4, positioning lines P1–P3, saying it, and the two readings of where smaltts sits. Picked: T1 "Typed" and P2 "smaltdb, straight from TypeScript." |
+| [TS-Marks](family/png/TS-Marks.png) | Marks R1–R5 (Generic, Object, Flow, Direct, T). Picked: R1 Generic. |
+| [TS-Colours](family/png/TS-Colours.png) | Jade, smalt only and graphite (picked), with the whole family and the status colours. |
+
 ## The family voice
 
 | Board | Contents |
