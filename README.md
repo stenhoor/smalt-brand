@@ -43,7 +43,7 @@ Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](
 ## At a glance
 
 - **Palette (Kiln):** smalt `#003399` on neutral graphite, with kiln orange for commits and focus. Every text pairing meets WCAG AA or better in both themes; ratios are in `tokens.json`.
-- **Product colours:** smaltui is deep cerulean (`#0E7FAE`), smaltbi is blue-leaning violet (`#6E4BC2`), smaltdf is aureolin ochre (`#8C6D00`), smaltnb is cobalt magenta (`#B0249F`), smaltql is leaf green (`#527A10`), all sibling cobalt pigments of smalt; smaltts is graphite (`#4A5163`), a neutral.
+- **Colour by layer:** each layer of the stack has one colour. The engine (smaltdb) is smalt; the languages (smaltql, smaltdf, smaltts) cobalt magenta (`#B0249F`); the kits (smaltml) jade (`#0A7C76`); the user tools (smaltui, smaltbi, smaltnb, smaltfl) deep cerulean (`#0E7FAE`); smaltai, alongside them, blue-leaning violet (`#6E4BC2`). smaltworks keeps kiln orange.
 - **Type:** Geist (headings, body), Martian Mono (wordmark, labels), Geist Mono (code). All Google Fonts, OFL.
 - **Voice:** describe what a product is, never what it isn't; no comparisons with other databases.
 - **smaltworks:** the Together mark, smalt and kiln orange, "Small. Alternative. Together."

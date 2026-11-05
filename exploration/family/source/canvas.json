@@ -1,376 +1,483 @@
 {
- "v": 3,
- "createdOnFiles": {
-  "v": 1,
-  "at": "2026-11-02T23:06:00Z"
- },
- "title": "smalt family Brand",
- "launch": {
-  "view": "canvas"
- },
- "pages": [],
- "boards": {
-  "R2-Words.dc.html": {
-   "x": 0,
-   "y": 15560,
-   "w": 1440,
-   "h": 760,
-   "title": "R2 \u00b7 Words: tagline and positioning"
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "AI-Marks.dc.html": {
+      "h": 820,
+      "title": "smaltai R1 · Marks (A1–A4), not chosen",
+      "w": 1440,
+      "x": 1520,
+      "y": 3540
+    },
+    "AI-Outline.dc.html": {
+      "h": 900,
+      "title": "smaltai R1 · Outline treatment, not chosen",
+      "w": 1440,
+      "x": 3040,
+      "y": 3540
+    },
+    "AI-Words.dc.html": {
+      "h": 880,
+      "title": "smaltai R1 · Words: your agents, the smalt tools",
+      "w": 1440,
+      "x": -40,
+      "y": 3480
+    },
+    "Badges.dc.html": {
+      "h": 1160,
+      "title": "4 · Powered by / Built on badges (S1–S3)",
+      "w": 1440,
+      "x": 1520,
+      "y": 25940
+    },
+    "Colours.dc.html": {
+      "h": 1080,
+      "title": "3 · Product colour (A1–A3)",
+      "w": 1440,
+      "x": 0,
+      "y": 25940
+    },
+    "DF-Colours.dc.html": {
+      "h": 1080,
+      "title": "smaltdf · Product colour: K3 picked",
+      "w": 1440,
+      "x": 3040,
+      "y": 16640
+    },
+    "DF-Marks.dc.html": {
+      "h": 820,
+      "title": "smaltdf R1 · Marks (F1–F4), not chosen",
+      "w": 1440,
+      "x": 4560,
+      "y": 16640
+    },
+    "DF-Marks2.dc.html": {
+      "h": 820,
+      "title": "smaltdf R2 · Marks (G1–G4), frames",
+      "w": 1440,
+      "x": 1520,
+      "y": 16640
+    },
+    "DF-Words.dc.html": {
+      "h": 720,
+      "title": "smaltdf R1 · Words and name check",
+      "w": 1440,
+      "x": 0,
+      "y": 16640
+    },
+    "FAM-PluginBadges.dc.html": {
+      "h": 1440,
+      "title": "Family · Plugin badges and smaltkit (round 1)",
+      "w": 1440,
+      "x": 1520,
+      "y": 13240
+    },
+    "FAM-Smalty.dc.html": {
+      "h": 1180,
+      "title": "Family idea · Smalty (picks marked)",
+      "w": 1440,
+      "x": 0,
+      "y": 13240
+    },
+    "ML-Marks.dc.html": {
+      "h": 820,
+      "title": "smaltml R1 · Marks (M1–M4)",
+      "w": 1440,
+      "x": 1520,
+      "y": 1560
+    },
+    "ML-Words.dc.html": {
+      "h": 880,
+      "title": "smaltml R1 · Words and where it sits",
+      "w": 1440,
+      "x": 0,
+      "y": 1560
+    },
+    "Main.dc.html": {
+      "h": 860,
+      "title": "1 · Positioning and taglines",
+      "w": 1440,
+      "x": 0,
+      "y": 24740
+    },
+    "Marks.dc.html": {
+      "h": 1080,
+      "title": "2 · Marks (3 each)",
+      "w": 1440,
+      "x": 1520,
+      "y": 24740
+    },
+    "NB-Colours.dc.html": {
+      "h": 1100,
+      "title": "smaltnb · Product colour: N1 magenta picked",
+      "w": 1440,
+      "x": 3040,
+      "y": 15140
+    },
+    "NB-Marks.dc.html": {
+      "h": 820,
+      "title": "smaltnb R1 · Marks (H1–H4), not chosen",
+      "w": 1440,
+      "x": 4560,
+      "y": 15140
+    },
+    "NB-Marks2.dc.html": {
+      "h": 820,
+      "title": "smaltnb R2 · Marks (J1–J6), J2 Spiral closest",
+      "w": 1440,
+      "x": 6080,
+      "y": 15140
+    },
+    "NB-Marks3.dc.html": {
+      "h": 820,
+      "title": "smaltnb R3 · Marks: pencil to paper (P1–P5)",
+      "w": 1440,
+      "x": 1520,
+      "y": 15140
+    },
+    "NB-Words.dc.html": {
+      "h": 720,
+      "title": "smaltnb · Words: T1 and P2 picked",
+      "w": 1440,
+      "x": 0,
+      "y": 15140
+    },
+    "QL-Colours.dc.html": {
+      "h": 1220,
+      "title": "smaltql · Product colour: V1 leaf green picked",
+      "w": 1440,
+      "x": 3040,
+      "y": 6560
+    },
+    "QL-Marks.dc.html": {
+      "h": 820,
+      "title": "smaltql R1 · Marks (Q1–Q6), Q4 Star taken forward",
+      "w": 1440,
+      "x": 1520,
+      "y": 6560
+    },
+    "QL-Stars.dc.html": {
+      "h": 820,
+      "title": "smaltql R2 · The star (S1–S4), not chosen",
+      "w": 1440,
+      "x": 4560,
+      "y": 6560
+    },
+    "QL-Stars2.dc.html": {
+      "h": 820,
+      "title": "smaltql R3 · The star: T2 picked",
+      "w": 1440,
+      "x": 6080,
+      "y": 6560
+    },
+    "QL-Words.dc.html": {
+      "h": 800,
+      "title": "smaltql R1 · Words: T2 and P2 picked",
+      "w": 1440,
+      "x": 0,
+      "y": 6560
+    },
+    "R2-BIMarks.dc.html": {
+      "h": 900,
+      "title": "R2 · smaltbi marks: trend (B5–B8)",
+      "w": 1440,
+      "x": 0,
+      "y": 21060
+    },
+    "R2-Badges.dc.html": {
+      "h": 1500,
+      "title": "R2 · Powered by: pill and inline variants",
+      "w": 1440,
+      "x": 0,
+      "y": 22160
+    },
+    "R2-Colours.dc.html": {
+      "h": 980,
+      "title": "R2 · Cobalt blues, refined (C1, C2, C4)",
+      "w": 1440,
+      "x": 1520,
+      "y": 21060
+    },
+    "R2-UIMarks.dc.html": {
+      "h": 900,
+      "title": "R2 · smaltui marks: terminal (U5–U8)",
+      "w": 1440,
+      "x": 1520,
+      "y": 20040
+    },
+    "R2-Words.dc.html": {
+      "h": 760,
+      "title": "R2 · Words: tagline and positioning",
+      "w": 1440,
+      "x": 0,
+      "y": 20040
+    },
+    "R3-Badge.dc.html": {
+      "h": 900,
+      "title": "R3 · P1 pill with the real marks",
+      "w": 1440,
+      "x": 1520,
+      "y": 18240
+    },
+    "R3-Family.dc.html": {
+      "h": 820,
+      "title": "R3 · Picks applied: marks, colour, words",
+      "w": 1440,
+      "x": 0,
+      "y": 18240
+    },
+    "SITE-Architecture.dc.html": {
+      "h": 1340,
+      "title": "smaltworks site · Architecture graphic (A–D)",
+      "w": 1440,
+      "x": 0,
+      "y": 8200
+    },
+    "TS-Colours.dc.html": {
+      "h": 1340,
+      "title": "smaltts · Colour: C3 graphite picked",
+      "w": 1440,
+      "x": 3040,
+      "y": 4780
+    },
+    "TS-Marks.dc.html": {
+      "h": 820,
+      "title": "smaltts R1 · Marks: R1 Generic picked",
+      "w": 1440,
+      "x": 1520,
+      "y": 4780
+    },
+    "TS-Words.dc.html": {
+      "h": 880,
+      "title": "smaltts R1 · Words: T1 and P2 picked",
+      "w": 1440,
+      "x": 0,
+      "y": 4780
+    },
+    "WORKS-Brand.dc.html": {
+      "h": 1150,
+      "title": "smaltworks · Round 1: mark, colour, words (marks not chosen)",
+      "w": 1440,
+      "x": 0,
+      "y": 11540
+    },
+    "WORKS-Ideas.dc.html": {
+      "h": 1260,
+      "title": "smaltworks · Round 3: eight ideas (A7 picked)",
+      "w": 1440,
+      "x": 0,
+      "y": 9840
+    },
+    "WORKS-Marks2.dc.html": {
+      "h": 820,
+      "title": "smaltworks · Round 2 marks (not chosen)",
+      "w": 1440,
+      "x": 1520,
+      "y": 11540
+    },
+    "WORKS-Together.dc.html": {
+      "h": 860,
+      "title": "smaltworks · Round 4: Together, colour and words",
+      "w": 1440,
+      "x": 1520,
+      "y": 9840
+    },
+    "AI-Marks2.dc.html": {
+      "x": 4560,
+      "y": 3540,
+      "w": 1440,
+      "h": 820,
+      "title": "smaltai R2 · Marks: plugging in (P1–P4)"
+    },
+    "FAM-Layers.dc.html": {
+      "x": 0,
+      "y": 300,
+      "w": 1440,
+      "h": 960,
+      "title": "Family · One colour per layer: picked"
+    }
   },
-  "R2-UIMarks.dc.html": {
-   "x": 1520,
-   "y": 15560,
-   "w": 1440,
-   "h": 900,
-   "title": "R2 \u00b7 smaltui marks: terminal (U5\u2013U8)"
+  "createdOnFiles": {
+    "at": "2026-11-02T23:06:00Z",
+    "v": 1
   },
-  "R2-BIMarks.dc.html": {
-   "x": 0,
-   "y": 16580,
-   "w": 1440,
-   "h": 900,
-   "title": "R2 \u00b7 smaltbi marks: trend (B5\u2013B8)"
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
   },
-  "R2-Colours.dc.html": {
-   "x": 1520,
-   "y": 16580,
-   "w": 1440,
-   "h": 980,
-   "title": "R2 \u00b7 Cobalt blues, refined (C1, C2, C4)"
+  "noteOrder": [
+    "round2",
+    "round1",
+    "round3",
+    "smaltdf1",
+    "smaltnb1",
+    "smalty",
+    "works1",
+    "works3",
+    "site1",
+    "smaltql1",
+    "smaltts1",
+    "smaltai1",
+    "smaltml1",
+    "layers1"
+  ],
+  "notes": {
+    "round1": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Round 1",
+      "w": 240,
+      "x": 0,
+      "y": 24440
+    },
+    "round2": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Round 2",
+      "w": 240,
+      "x": 0,
+      "y": 19740
+    },
+    "round3": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Round 3 · your picks",
+      "w": 240,
+      "x": 0,
+      "y": 17940
+    },
+    "site1": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "smaltworks site",
+      "w": 240,
+      "x": 0,
+      "y": 7900
+    },
+    "smaltai1": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "smaltai · round 1–2 (proposed) · violet, by layer",
+      "w": 240,
+      "x": 0,
+      "y": 3240
+    },
+    "smaltdf1": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "smaltdf · decided: Frames · Axes · ochre (now magenta, by layer)",
+      "w": 240,
+      "x": 0,
+      "y": 16340
+    },
+    "smaltml1": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "smaltml · round 1 (proposed) · jade, by layer",
+      "w": 240,
+      "x": 0,
+      "y": 1260
+    },
+    "smaltnb1": {
+      "kind": "title1",
+      "maxW": 7600,
+      "text": "smaltnb · decided: Notebooks · Pencil · magenta (now cerulean, by layer)",
+      "w": 240,
+      "x": 0,
+      "y": 14840
+    },
+    "smaltql1": {
+      "kind": "title1",
+      "maxW": 7600,
+      "text": "smaltql · decided: Familiar · The SQL you know · Star T2 · leaf green (now magenta, by layer)",
+      "w": 240,
+      "x": 0,
+      "y": 6260
+    },
+    "smaltts1": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "smaltts · decided: Typed · straight from TypeScript · Generic · graphite (now magenta, by layer)",
+      "w": 240,
+      "x": 0,
+      "y": 4480
+    },
+    "smalty": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Family · voice and plugin badges",
+      "w": 240,
+      "x": 0,
+      "y": 12940
+    },
+    "works1": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "smaltworks · rounds 1–2 (not chosen)",
+      "w": 240,
+      "x": 0,
+      "y": 11240
+    },
+    "works3": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "smaltworks · rounds 3–4",
+      "w": 240,
+      "x": 0,
+      "y": 9540
+    },
+    "layers1": {
+      "x": 0,
+      "y": 0,
+      "text": "Family · decided: one colour per layer",
+      "kind": "title1",
+      "maxW": 2960
+    }
   },
-  "R2-Badges.dc.html": {
-   "x": 0,
-   "y": 17680,
-   "w": 1440,
-   "h": 1500,
-   "title": "R2 \u00b7 Powered by: pill and inline variants"
-  },
-  "Main.dc.html": {
-   "x": 0,
-   "y": 20260,
-   "w": 1440,
-   "h": 860,
-   "title": "1 \u00b7 Positioning and taglines"
-  },
-  "Marks.dc.html": {
-   "x": 1520,
-   "y": 20260,
-   "w": 1440,
-   "h": 1080,
-   "title": "2 \u00b7 Marks (3 each)"
-  },
-  "Colours.dc.html": {
-   "x": 0,
-   "y": 21460,
-   "w": 1440,
-   "h": 1080,
-   "title": "3 \u00b7 Product colour (A1\u2013A3)"
-  },
-  "Badges.dc.html": {
-   "x": 1520,
-   "y": 21460,
-   "w": 1440,
-   "h": 1160,
-   "title": "4 \u00b7 Powered by / Built on badges (S1\u2013S3)"
-  },
-  "R3-Family.dc.html": {
-   "x": 0,
-   "y": 13760,
-   "w": 1440,
-   "h": 820,
-   "title": "R3 \u00b7 Picks applied: marks, colour, words"
-  },
-  "R3-Badge.dc.html": {
-   "x": 1520,
-   "y": 13760,
-   "w": 1440,
-   "h": 900,
-   "title": "R3 \u00b7 P1 pill with the real marks"
-  },
-  "DF-Words.dc.html": {
-   "x": 0,
-   "y": 12160,
-   "w": 1440,
-   "h": 720,
-   "title": "smaltdf R1 \u00b7 Words and name check"
-  },
-  "DF-Marks.dc.html": {
-   "x": 4560,
-   "y": 12160,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltdf R1 \u00b7 Marks (F1\u2013F4), not chosen"
-  },
-  "DF-Colours.dc.html": {
-   "x": 3040,
-   "y": 12160,
-   "w": 1440,
-   "h": 1080,
-   "title": "smaltdf \u00b7 Product colour: K3 picked"
-  },
-  "DF-Marks2.dc.html": {
-   "x": 1520,
-   "y": 12160,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltdf R2 \u00b7 Marks (G1\u2013G4), frames"
-  },
-  "NB-Words.dc.html": {
-   "x": 0,
-   "y": 10660,
-   "w": 1440,
-   "h": 720,
-   "title": "smaltnb \u00b7 Words: T1 and P2 picked"
-  },
-  "NB-Marks.dc.html": {
-   "x": 4560,
-   "y": 10660,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltnb R1 \u00b7 Marks (H1\u2013H4), not chosen"
-  },
-  "NB-Colours.dc.html": {
-   "x": 3040,
-   "y": 10660,
-   "w": 1440,
-   "h": 1100,
-   "title": "smaltnb \u00b7 Product colour: N1 magenta picked"
-  },
-  "NB-Marks2.dc.html": {
-   "x": 6080,
-   "y": 10660,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltnb R2 \u00b7 Marks (J1\u2013J6), J2 Spiral closest"
-  },
-  "NB-Marks3.dc.html": {
-   "x": 1520,
-   "y": 10660,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltnb R3 \u00b7 Marks: pencil to paper (P1\u2013P5)"
-  },
-  "FAM-Smalty.dc.html": {
-   "x": 0,
-   "y": 8760,
-   "w": 1440,
-   "h": 1180,
-   "title": "Family idea \u00b7 Smalty (picks marked)"
-  },
-  "FAM-PluginBadges.dc.html": {
-   "x": 1520,
-   "y": 8760,
-   "w": 1440,
-   "h": 1440,
-   "title": "Family \u00b7 Plugin badges and smaltkit (round 1)"
-  },
-  "WORKS-Brand.dc.html": {
-   "x": 0,
-   "y": 7060,
-   "w": 1440,
-   "h": 1150,
-   "title": "smaltworks \u00b7 Round 1: mark, colour, words (marks not chosen)"
-  },
-  "WORKS-Marks2.dc.html": {
-   "x": 1520,
-   "y": 7060,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltworks \u00b7 Round 2 marks (not chosen)"
-  },
-  "WORKS-Ideas.dc.html": {
-   "x": 0,
-   "y": 5360,
-   "w": 1440,
-   "h": 1260,
-   "title": "smaltworks \u00b7 Round 3: eight ideas (A7 picked)"
-  },
-  "WORKS-Together.dc.html": {
-   "x": 1520,
-   "y": 5360,
-   "w": 1440,
-   "h": 860,
-   "title": "smaltworks \u00b7 Round 4: Together, colour and words"
-  },
-  "SITE-Architecture.dc.html": {
-   "x": 0,
-   "y": 3720,
-   "w": 1440,
-   "h": 1340,
-   "title": "smaltworks site \u00b7 Architecture graphic (A\u2013D)"
-  },
-  "QL-Words.dc.html": {
-   "x": 0,
-   "y": 2080,
-   "w": 1440,
-   "h": 800,
-   "title": "smaltql R1 \u00b7 Words: T2 and P2 picked"
-  },
-  "QL-Marks.dc.html": {
-   "x": 1520,
-   "y": 2080,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltql R1 \u00b7 Marks (Q1\u2013Q6), Q4 Star taken forward"
-  },
-  "QL-Colours.dc.html": {
-   "x": 3040,
-   "y": 2080,
-   "w": 1440,
-   "h": 1220,
-   "title": "smaltql \u00b7 Product colour: V1 leaf green picked"
-  },
-  "QL-Stars.dc.html": {
-   "x": 4560,
-   "y": 2080,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltql R2 \u00b7 The star (S1\u2013S4), not chosen"
-  },
-  "QL-Stars2.dc.html": {
-   "x": 6080,
-   "y": 2080,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltql R3 \u00b7 The star: T2 picked"
-  },
-  "TS-Words.dc.html": {
-   "x": 0,
-   "y": 300,
-   "w": 1440,
-   "h": 880,
-   "title": "smaltts R1 \u00b7 Words: T1 and P2 picked"
-  },
-  "TS-Marks.dc.html": {
-   "x": 1520,
-   "y": 300,
-   "w": 1440,
-   "h": 820,
-   "title": "smaltts R1 \u00b7 Marks: R1 Generic picked"
-  },
-  "TS-Colours.dc.html": {
-   "x": 3040,
-   "y": 300,
-   "w": 1440,
-   "h": 1340,
-   "title": "smaltts \u00b7 Colour: C3 graphite picked"
-  }
- },
- "order": [
-  "Main.dc.html",
-  "Marks.dc.html",
-  "Colours.dc.html",
-  "Badges.dc.html",
-  "R2-Words.dc.html",
-  "R2-UIMarks.dc.html",
-  "R2-BIMarks.dc.html",
-  "R2-Colours.dc.html",
-  "R2-Badges.dc.html",
-  "R3-Family.dc.html",
-  "R3-Badge.dc.html",
-  "DF-Words.dc.html",
-  "DF-Marks.dc.html",
-  "DF-Colours.dc.html",
-  "DF-Marks2.dc.html",
-  "NB-Words.dc.html",
-  "NB-Marks.dc.html",
-  "NB-Colours.dc.html",
-  "NB-Marks2.dc.html",
-  "NB-Marks3.dc.html",
-  "FAM-Smalty.dc.html",
-  "FAM-PluginBadges.dc.html",
-  "WORKS-Brand.dc.html",
-  "WORKS-Marks2.dc.html",
-  "WORKS-Ideas.dc.html",
-  "WORKS-Together.dc.html",
-  "SITE-Architecture.dc.html",
-  "QL-Words.dc.html",
-  "QL-Marks.dc.html",
-  "QL-Colours.dc.html",
-  "QL-Stars.dc.html",
-  "QL-Stars2.dc.html",
-  "TS-Words.dc.html",
-  "TS-Marks.dc.html",
-  "TS-Colours.dc.html"
- ],
- "notes": {
-  "round2": {
-   "x": 0,
-   "y": 15260,
-   "text": "Round 2",
-   "kind": "title1",
-   "maxW": 2960
-  },
-  "round1": {
-   "x": 0,
-   "y": 19960,
-   "text": "Round 1",
-   "kind": "title1",
-   "maxW": 2960
-  },
-  "round3": {
-   "x": 0,
-   "y": 13460,
-   "text": "Round 3 \u00b7 your picks",
-   "kind": "title1",
-   "maxW": 2960
-  },
-  "smaltdf1": {
-   "x": 0,
-   "y": 11860,
-   "text": "smaltdf \u00b7 decided: Frames \u00b7 Axes \u00b7 ochre",
-   "kind": "title1",
-   "maxW": 6000
-  },
-  "smaltnb1": {
-   "x": 0,
-   "y": 10360,
-   "text": "smaltnb \u00b7 decided: Notebooks \u00b7 Pencil \u00b7 magenta",
-   "kind": "title1",
-   "maxW": 7600
-  },
-  "smalty": {
-   "x": 0,
-   "y": 8460,
-   "text": "Family \u00b7 voice and plugin badges",
-   "kind": "title1",
-   "maxW": 2960
-  },
-  "works1": {
-   "x": 0,
-   "y": 6760,
-   "text": "smaltworks \u00b7 rounds 1\u20132 (not chosen)",
-   "kind": "title1",
-   "maxW": 2960
-  },
-  "works3": {
-   "x": 0,
-   "y": 5060,
-   "text": "smaltworks \u00b7 rounds 3\u20134",
-   "kind": "title1",
-   "maxW": 2960
-  },
-  "site1": {
-   "x": 0,
-   "y": 3420,
-   "text": "smaltworks site",
-   "kind": "title1",
-   "maxW": 2960
-  },
-  "smaltql1": {
-   "x": 0,
-   "y": 1780,
-   "text": "smaltql \u00b7 decided: Familiar \u00b7 The SQL you know \u00b7 Star T2 \u00b7 leaf green",
-   "kind": "title1",
-   "maxW": 7600
-  },
-  "smaltts1": {
-   "x": 0,
-   "y": 0,
-   "text": "smaltts \u00b7 decided: Typed \u00b7 straight from TypeScript \u00b7 Generic \u00b7 graphite",
-   "kind": "title1",
-   "maxW": 4480
-  }
- },
- "designSystems": []
+  "order": [
+    "Main.dc.html",
+    "Marks.dc.html",
+    "Colours.dc.html",
+    "Badges.dc.html",
+    "R2-Words.dc.html",
+    "R2-UIMarks.dc.html",
+    "R2-BIMarks.dc.html",
+    "R2-Colours.dc.html",
+    "R2-Badges.dc.html",
+    "R3-Family.dc.html",
+    "R3-Badge.dc.html",
+    "DF-Words.dc.html",
+    "DF-Marks.dc.html",
+    "DF-Colours.dc.html",
+    "DF-Marks2.dc.html",
+    "NB-Words.dc.html",
+    "NB-Marks.dc.html",
+    "NB-Colours.dc.html",
+    "NB-Marks2.dc.html",
+    "NB-Marks3.dc.html",
+    "FAM-Smalty.dc.html",
+    "FAM-PluginBadges.dc.html",
+    "WORKS-Brand.dc.html",
+    "WORKS-Marks2.dc.html",
+    "WORKS-Ideas.dc.html",
+    "WORKS-Together.dc.html",
+    "SITE-Architecture.dc.html",
+    "QL-Words.dc.html",
+    "QL-Marks.dc.html",
+    "QL-Colours.dc.html",
+    "QL-Stars.dc.html",
+    "QL-Stars2.dc.html",
+    "TS-Words.dc.html",
+    "TS-Marks.dc.html",
+    "TS-Colours.dc.html",
+    "AI-Outline.dc.html",
+    "AI-Words.dc.html",
+    "AI-Marks.dc.html",
+    "ML-Words.dc.html",
+    "ML-Marks.dc.html",
+    "AI-Marks2.dc.html",
+    "FAM-Layers.dc.html"
+  ],
+  "pages": [],
+  "title": "smalt family Brand"
 }

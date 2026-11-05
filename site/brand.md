@@ -6,16 +6,19 @@ the full [brand book](https://github.com/stenhoor/smalt-brand/blob/main/BRAND.md
 
 ## The family
 
-| | Mark | Colour |
+| | Mark | Colour, by layer |
 | --- | --- | --- |
 | smaltworks | <Mark product="works" :size="28" /> Together | smalt and kiln orange |
-| smaltdb | <Mark product="db" :size="28" /> Grain | smalt `#003399` |
-| smaltql | <Mark product="ql" :size="28" /> Star | leaf green `#527A10` |
-| smaltdf | <Mark product="df" :size="28" /> Axes | aureolin ochre `#8C6D00` |
-| smaltts | <Mark product="ts" :size="28" /> Generic | graphite `#4A5163` |
-| smaltui | <Mark product="ui" :size="28" /> Chevron | deep cerulean `#0E7FAE` |
-| smaltbi | <Mark product="bi" :size="28" /> Scatter | blue-leaning violet `#6E4BC2` |
-| smaltnb | <Mark product="nb" :size="28" /> Pencil | cobalt magenta `#B0249F` |
+| smaltdb | <Mark product="db" :size="28" /> Grain | engine: smalt `#003399` |
+| smaltql | <Mark product="ql" :size="28" /> Star | languages: cobalt magenta `#B0249F` |
+| smaltdf | <Mark product="df" :size="28" /> Axes | languages: cobalt magenta `#B0249F` |
+| smaltts | <Mark product="ts" :size="28" /> Generic | languages: cobalt magenta `#B0249F` |
+| smaltui | <Mark product="ui" :size="28" /> Chevron | user tools: deep cerulean `#0E7FAE` |
+| smaltbi | <Mark product="bi" :size="28" /> Scatter | user tools: deep cerulean `#0E7FAE` |
+| smaltnb | <Mark product="nb" :size="28" /> Pencil | user tools: deep cerulean `#0E7FAE` |
+
+Each layer of the stack has one colour: the engine is smalt, the languages cobalt magenta, the kits jade, the user tools
+deep cerulean, and smaltai, which runs alongside them, blue-leaning violet. The mark tells products in a layer apart.
 
 Logo files, light and dark, are in [`logos/`](https://github.com/stenhoor/smalt-brand/tree/main/logos).
 

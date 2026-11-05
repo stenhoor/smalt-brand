@@ -1,11 +1,11 @@
 # smaltbi logos
 
-The Scatter mark: grains of different sizes along a rising line, with the latest point as a chip in blue-leaning violet (`#6E4BC2`).
+The Scatter mark: grains of different sizes along a rising line, with the latest point as a chip in deep cerulean (`#0E7FAE`), the user-tool layer's colour.
 
 | File | Use |
 | --- | --- |
 | `lockup.svg`, `lockup-on-dark.svg` | Mark + wordmark, outlined. README headers, docs, slides. |
-| `wordmark.svg`, `wordmark-on-dark.svg` | Wordmark alone: `alt` in smalt, `bi` in `#6141AE` (light) or `#B8A1F2` (dark). |
+| `wordmark.svg`, `wordmark-on-dark.svg` | Wordmark alone: `alt` in smalt, `bi` in `#0B6A91` (light) or `#5CBDE8` (dark). |
 | `scatter-mark.svg`, `scatter-mark-on-dark.svg` | The mark alone. |
 | `app-icon.svg` | Smalt tile with the mark knocked out. App and PWA icons, avatars. |
 | `favicon-32.svg` | Browser tabs at 32 px: the full scatter. |

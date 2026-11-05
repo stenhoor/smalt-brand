@@ -1,6 +1,6 @@
 # smaltui logos
 
-The Chevron mark: a prompt, `>` and `_`, drawn as a grain (`#003399`) and a chip in deep cerulean (`#0E7FAE`).
+The Chevron mark: a prompt, `>` and `_`, drawn as a grain (`#003399`) and a chip in deep cerulean (`#0E7FAE`), the user-tool layer's colour.
 
 | File | Use |
 | --- | --- |

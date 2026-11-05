@@ -1,11 +1,11 @@
 /* smaltworks site additions on top of the family theme. Colours are the tokens in tokens/tokens.json. */
 :root {
-  --sw-ui: #0B6A91; --sw-bi: #6141AE; --sw-df: #7A5F00; --sw-nb: #981C89; --sw-ql: #456810; --sw-ts: #3F4656; --sw-ink: #151922;
+  --sw-ui: #0B6A91; --sw-bi: #0B6A91; --sw-df: #981C89; --sw-nb: #0B6A91; --sw-ql: #981C89; --sw-ts: #981C89; --sw-ink: #151922;
   --sw-kiln: #E5622F;
   --sw-border: #D6DBE4; --sw-surface: #FFFFFF; --sw-muted: #5C6375; --sw-tint: #F5F6F8;
 }
 .dark {
-  --sw-ui: #5CBDE8; --sw-bi: #B8A1F2; --sw-df: #E6C24A; --sw-nb: #F57FE6; --sw-ql: #9ACD4A; --sw-ts: #B9BEC9; --sw-ink: #E9EBF0;
+  --sw-ui: #5CBDE8; --sw-bi: #5CBDE8; --sw-df: #F57FE6; --sw-nb: #5CBDE8; --sw-ql: #F57FE6; --sw-ts: #F57FE6; --sw-ink: #E9EBF0;
   --sw-kiln: #FF8A5C;
   --sw-border: #2C3240; --sw-surface: #1B1F29; --sw-muted: #9096A3; --sw-tint: #14171F;
 }

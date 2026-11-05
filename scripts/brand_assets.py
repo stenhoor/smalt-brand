@@ -63,15 +63,33 @@ MARK_16 = {"bi": [(rr(6, 40, 16, 16, 4), "chip"), (rr(22, 22, 20, 20, 5), "body"
 ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "ql": (6.37, 57.63), "ts": (4, 60), "works": (8, 56)}
 MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "ql": "star", "ts": "generic", "works": "together"}
 
+# Colour by layer: each layer of the stack has one colour, and a product takes its layer's colour.
+# (fill, text, dark) per layer. The engine layer (smaltdb) uses smalt itself: the pale chip and an ink suffix.
+LAYER_COLOURS = {
+    "language": ("#B0249F", "#981C89", "#F57FE6"),   # magenta: smaltql, smaltdf, smaltts
+    "kit": ("#0A7C76", "#086A65", "#10C2B9"),        # jade: smaltml
+    "tool": ("#0E7FAE", "#0B6A91", "#5CBDE8"),       # cerulean: smaltui, smaltbi, smaltnb, smaltfl
+    "ai": ("#6E4BC2", "#6141AE", "#B8A1F2"),         # violet: smaltai, alongside the layers
+}
+LAYER = {"ql": "language", "df": "language", "ts": "language", "ui": "tool", "bi": "tool", "nb": "tool"}
+# smaltworks is not a layer: it keeps kiln orange.
+WORKS = ("#E5622F", "#151922", "#FF8A5C")
+
+
+def _layer(product, i):
+    return (WORKS if product == "works" else LAYER_COLOURS[LAYER[product]])[i]
+
+
+COLOURED = [*LAYER, "works"]
 COLOURS = {
     "light": {"ink": "#151922", "alt": "#003399", "body": "#003399", "chip": "#7B97D4",
-              "accent": {"ui": "#0E7FAE", "bi": "#6E4BC2", "df": "#8C6D00", "nb": "#B0249F", "ql": "#527A10", "ts": "#4A5163", "works": "#E5622F"},
-              "suffix": {"db": "#151922", "ui": "#0B6A91", "bi": "#6141AE", "df": "#7A5F00", "nb": "#981C89", "ql": "#456810", "ts": "#3F4656", "works": "#151922"}},
+              "accent": {p: _layer(p, 0) for p in COLOURED},
+              "suffix": {"db": "#151922", **{p: _layer(p, 1) for p in LAYER}, "works": "#151922"}},
     "dark": {"ink": "#E9EBF0", "alt": "#9DB4F5", "body": "#9DB4F5", "chip": "#D6E0F3",
-             "accent": {"ui": "#5CBDE8", "bi": "#B8A1F2", "df": "#E6C24A", "nb": "#F57FE6", "ql": "#9ACD4A", "ts": "#B9BEC9", "works": "#FF8A5C"},
-             "suffix": {"db": "#E9EBF0", "ui": "#5CBDE8", "bi": "#B8A1F2", "df": "#E6C24A", "nb": "#F57FE6", "ql": "#9ACD4A", "ts": "#B9BEC9", "works": "#E9EBF0"}},
+             "accent": {p: _layer(p, 2) for p in COLOURED},
+             "suffix": {"db": "#E9EBF0", **{p: _layer(p, 2) for p in LAYER}, "works": "#E9EBF0"}},
     # App icon: the mark knocked out of a smalt tile.
-    "tile": {"body": "#F5F6F8", "chip": "#9DB4F5", "accent": {"ui": "#5CBDE8", "bi": "#B8A1F2", "df": "#E6C24A", "nb": "#F57FE6", "ql": "#9ACD4A", "ts": "#B9BEC9", "works": "#FF8A5C"}},
+    "tile": {"body": "#F5F6F8", "chip": "#9DB4F5", "accent": {p: _layer(p, 2) for p in COLOURED}},
 }
 
 
