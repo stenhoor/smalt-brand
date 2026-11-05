@@ -244,6 +244,7 @@ The options were shown on the family canvas:
 Applied after the picks:
 
 - Graphite is the family's first neutral product colour. It never means disabled or secondary.
+- Jade, the hue not picked here, is reserved for smaltfl (owner's decision).
 - The graphite chip has less contrast against the smalt body than the other chips, most visibly on the app icon and at 16 px; the mark carries smaltts by its shape.
 - The Generic mark's angles echo smaltui's Chevron. Keep them apart in toolbars and lists.
 - The smaltts repository is private, so the social card and badge point to smaltworks.dev/products/smaltts.
