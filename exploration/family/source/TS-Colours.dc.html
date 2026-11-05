@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>smaltts colour</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400&amp;family=Martian+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#003399}a:hover{color:#151922}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1340px; box-sizing: border-box; padding: 56px 64px; background: #F5F6F8; color: #151922; font-family: 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 22px">
+<div>
+<p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 13px; color: #5C6375">smaltts · round 1 · colour</p>
+<h1 style="margin: 8px 0 0; font-size: 36px; font-weight: 700; letter-spacing: -0.03em">A seventh product colour, or none</h1>
+<p style="margin: 8px 0 0; font-size: 15px; color: #3F4656; max-width: 1240px">The wheel is now nearly full: smalt, cerulean and violet; ochre and kiln; magenta; and smaltql's leaf green. The one hue left with room is jade, between the success green and smaltui's cerulean. smaltts is also the product closest to the engine, which makes smalt only a real candidate rather than a fallback. ΔE is the CIELAB distance to the nearest colour in use; below about 20 two colours are easy to confuse. Each row shows the whole family, with smaltts's R1 mark as a placeholder.</p>
+</div>
+<sc-for list="{{options}}" as="o" hint-placeholder-count="3">
+<div style="background: #FFFFFF; border: 1px solid #D6DBE4; border-radius: 14px; display: grid; grid-template-columns: 360px minmax(0, 1fr) minmax(0, 1fr); overflow: hidden; flex-grow: 1">
+<div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #D6DBE4">
+<p style="margin: 0; font-weight: 700; font-size: 19px">{{o.id}} · {{o.name}}</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3F4656">{{o.desc}}</p>
+<div style="display: flex; flex-direction: column; gap: 6px; margin-top: auto">
+<sc-for list="{{o.swatches}}" as="s" hint-placeholder-count="2">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="width: 22px; height: 22px; border-radius: 5px; background: {{s.hex}}; flex-shrink: 0"></span>
+<span style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #3F4656">{{s.label}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<sc-for list="{{o.themes}}" as="th" hint-placeholder-count="2">
+<div style="padding: 16px 24px; display: flex; flex-direction: column; justify-content: center; gap: 10px; background: {{th.ground}}">
+<sc-for list="{{th.rows}}" as="r" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><sc-for list="{{r.paths}}" as="p" hint-placeholder-count="3"><path d="{{p.d}}" fill="{{p.fill}}"></path></sc-for></svg>
+<span style="font-family: 'Martian Mono', monospace; font-size: 21px; font-weight: 600; letter-spacing: -0.06em; color: {{th.ink}}">sm<span style="color: {{th.alt}}">alt</span><span style="color: {{r.suffix}}">{{r.name}}</span></span>
+<span style="margin-left: auto; font-size: 13px; color: {{th.note}}">{{r.note}}</span>
+</div>
+</sc-for>
+<div style="display: flex; gap: 14px; padding-top: 6px; border-top: 1px dashed {{th.rule}}; font-size: 12px; font-weight: 500">
+<span style="color: {{th.success}}">✓ Committed</span><span style="color: {{th.warning}}">▲ Stale</span><span style="color: {{th.danger}}">✕ Failed</span>
+<span style="margin-left: auto; color: {{th.note}}">status colours, for comparison</span>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+<p style="margin: 0; font-size: 14px; color: #3F4656">Dropped: vermilion red (ΔE 23 from kiln and 24 from danger, so it reads as an error), and every other green (within ΔE 21 of smaltql’s leaf green).</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1340}}'>
+class Component extends DCLogic {
+renderVals() {
+const rr = (x, y, w, h, r) => `M${x + r} ${y}h${w - 2 * r}a${r} ${r} 0 0 1 ${r} ${r}v${h - 2 * r}a${r} ${r} 0 0 1 -${r} ${r}h-${w - 2 * r}a${r} ${r} 0 0 1 -${r} -${r}v-${h - 2 * r}a${r} ${r} 0 0 1 ${r} -${r}z`;
+const GRAIN = 'M14 18h18v10h14v24a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6V24a6 6 0 0 1 6-6z';
+const SH = {
+  db: [[GRAIN, 'body'], [rr(38, 8, 16, 16, 3), 'chip']],
+  ui: [['M8 17L15 10L37 32L15 54L8 47L23 32Z', 'body'], [rr(38, 46, 20, 8, 3), 'ui']],
+  bi: [[rr(8, 44, 10, 10, 3), 'chip'], [rr(22, 42, 7, 7, 2), 'chip'], [rr(24, 28, 12, 12, 3), 'body'], [rr(40, 30, 7, 7, 2), 'chip'], [rr(46, 8, 12, 12, 3), 'bi']],
+  df: [['M8 8H56V17H17V56H8Z', 'body'], [rr(27, 27, 14, 14, 3), 'dfc']],
+  nb: [['M12 52 L19.78 52 L12 44.22Z', 'nbc'], ['M21.55 50.23 L47 24.78 L39.22 17 L13.77 42.45Z', 'body'], ['M49.12 22.66 L54.07 17.71 L46.29 9.93 L41.34 14.88Z', 'body']],
+  ql: [['M27.5 21.5L27.5 5L36.5 5L36.5 21.5Z', 'body'], ['M38.84 22.85L53.13 14.6L57.63 22.4L43.34 30.65Z', 'body'], ['M43.34 33.35L57.63 41.6L53.13 49.4L38.84 41.15Z', 'body'], ['M36.5 42.5L36.5 59L27.5 59L27.5 42.5Z', 'body'], ['M25.16 41.15L10.87 49.4L6.37 41.6L20.66 33.35Z', 'body'], ['M20.66 30.65L6.37 22.4L10.87 14.6L25.16 22.85Z', 'body'], [rr(25.5, 25.5, 13, 13, 3), 'qlc']],
+  ts: [['M4 32L18 18L25 25L18 32L25 39L18 46Z', 'body'], ['M60 32L46 18L39 25L46 32L39 39L46 46Z', 'body'], [rr(28, 25, 8, 14, 3), 'ts']],
+};
+const BASE = {
+  light: { ground: '#F5F6F8', ink: '#151922', alt: '#003399', note: '#5C6375', rule: '#D6DBE4', success: '#1D6B3A', warning: '#8A5A12', danger: '#A3195B',
+    body: '#003399', chip: '#7B97D4', ui: '#0E7FAE', bi: '#6E4BC2', dfc: '#8C6D00', text: { db: '#151922', ui: '#0B6A91', bi: '#6141AE', df: '#7A5F00', nb: '#981C89', ql: '#456810' }, nbc: '#B0249F', qlc: '#527A10' },
+  dark: { ground: '#14171F', ink: '#E9EBF0', alt: '#9DB4F5', note: '#9096A3', rule: '#2C3240', success: '#6FD69A', warning: '#F2B356', danger: '#FF9EC4',
+    body: '#9DB4F5', chip: '#D6E0F3', ui: '#5CBDE8', bi: '#B8A1F2', dfc: '#E6C24A', text: { db: '#E9EBF0', ui: '#5CBDE8', bi: '#B8A1F2', df: '#E6C24A', nb: '#F57FE6', ql: '#9ACD4A' }, nbc: '#F57FE6', qlc: '#9ACD4A' },
+};
+const NOTES = { db: 'the engine', ui: 'the console', bi: 'the reports', df: 'the dataframes', nb: 'the notebooks', ql: 'the SQL', ts: 'the typed API' };
+const theme = (t, ts, tsText) => {
+  const c = { ...BASE[t], ts };
+  return { ...c, rows: ['db', 'ui', 'bi', 'df', 'nb', 'ql', 'ts'].map((k) => ({
+    name: k, note: NOTES[k],
+    suffix: k === 'ts' ? tsText : c.text[k],
+    paths: SH[k].map(([d, role]) => ({ d, fill: c[role] })),
+  })) };
+};
+const opt = (id, name, desc, l, d, swatches) => ({ id, name, desc, swatches,
+  themes: [theme('light', l[0], l[1]), theme('dark', d[0], d[1])] });
+return {
+options: [
+  opt('C1', 'Jade', 'The one open hue: a blue-green between the success green and the smaltui cerulean. Clearly apart from smaltql’s leaf green. Like leaf green, it must never be used to mean success.',
+    ['#0A7C76', '#086A65'], ['#10C2B9', '#10C2B9'],
+    [{ hex: '#0A7C76', label: 'fill #0A7C76 · 5.1:1 white · 4.7:1 bg' }, { hex: '#086A65', label: 'text #086A65 · 6.0:1 bg' }, { hex: '#10C2B9', label: 'dark #10C2B9 · 8.1:1 bg · ΔE 27 success / 27 syntax' }]),
+  opt('C2', 'Smalt only', 'No new colour: the chip takes the pale smalt grade and the suffix stays ink, as in smaltdb. smaltts reads as the engine’s own API, which fits a thin layer over it. Only the mark sets it apart from smaltdb.',
+    ['#7B97D4', '#151922'], ['#D6E0F3', '#E9EBF0'],
+    [{ hex: '#7B97D4', label: 'chip #7B97D4 · suffix in ink, like smaltdb' }, { hex: '#D6E0F3', label: 'dark chip #D6E0F3 · no status conflicts' }]),
+  opt('C3', 'Graphite · picked', 'A neutral: the chip and suffix in the secondary text grey. Plain code, no colour. It never clashes, but a grey suffix can read as disabled next to the coloured ones.',
+    ['#4A5163', '#3F4656'], ['#B9BEC9', '#B9BEC9'],
+    [{ hex: '#4A5163', label: 'fill #4A5163 · 7.9:1 white' }, { hex: '#3F4656', label: 'text #3F4656 (text-2) · 8.7:1 bg' }, { hex: '#B9BEC9', label: 'dark #B9BEC9 (text-2) · 9.6:1 bg' }]),
+],
+};
+}
+}
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 
 Usage: python3 scripts/social_cards.py <Geist[wght].ttf> <MartianMono[wdth,wght].ttf>
 
-Writes social/smalt{db,ui,bi,df,nb,ql}.svg (the source) and .png (1280 x 640, for upload).
+Writes social/smalt{db,ui,bi,df,nb,ql,ts}.svg (the source) and .png (1280 x 640, for upload).
 Each card is the product's dark lockup, its tagline (Geist 700), its positioning
 line (Geist 400) and its address (Martian Mono 400) on the dark Kiln ground, with
 a bar in the product colour along the bottom. Text is converted to paths and the
@@ -28,7 +28,7 @@ W, H = 1280, 640
 LEFT = 96                       # left margin; content stays inside the 1.91:1 centre crop
 INK, INK_2, INK_3 = "#E9EBF0", "#B9BEC9", "#9096A3"   # text, text-2, text-3 (dark)
 GROUND = "#14171F"               # bg (dark)
-BAR = {"db": "#9DB4F5", "ui": "#5CBDE8", "bi": "#B8A1F2", "df": "#E6C24A", "nb": "#F57FE6", "ql": "#9ACD4A", "works": "#FF8A5C"}  # smalt-200, product-ui/-bi/-df/-nb/-ql, kiln (dark)
+BAR = {"db": "#9DB4F5", "ui": "#5CBDE8", "bi": "#B8A1F2", "df": "#E6C24A", "nb": "#F57FE6", "ql": "#9ACD4A", "ts": "#B9BEC9", "works": "#FF8A5C"}  # smalt-200, product-ui/-bi/-df/-nb/-ql/-ts, kiln (dark)
 
 PRODUCTS = {
     "db": ("Small. Alternative. Fast.",
@@ -49,9 +49,12 @@ PRODUCTS = {
     "ql": ("Small. Alternative. Familiar.",
            "The SQL you know, for smaltdb.",
            "github.com/stenhoor/smaltql"),
+    "ts": ("Small. Alternative. Typed.",
+           "smaltdb, straight from TypeScript.",
+           "smaltworks.dev/products/smaltts"),
     "works": ("Small. Alternative. Together.",
               "Stay smalty.",
-              "smaltdb · smaltui · smaltbi · smaltdf · smaltnb · smaltql"),
+              "smaltworks.dev"),
 }
 
 LOCKUP_H = 132                   # rendered height of the lockup's viewBox
@@ -74,8 +77,9 @@ def card(product, tag, body, mono):
     logo, _ = lockup(product, LEFT, 96)
     tag_svg, _ = tag.paths([(INK, tagline)], LEFT, 370)
     line_svg, line_end = body.paths([(INK_2, line)], LEFT, 432)
-    addr_svg, _ = mono.paths([(INK_3, address)], LEFT, 548)
+    addr_svg, addr_end = mono.paths([(INK_3, address)], LEFT, 548)
     assert line_end <= W - LEFT, f"smalt{product}: positioning line overruns ({line_end:.0f}px)"
+    assert addr_end <= W - LEFT, f"smalt{product}: address overruns ({addr_end:.0f}px)"
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
             f'role="img" aria-label="smalt{product}: {tagline} {line}">'
             f'<rect width="{W}" height="{H}" fill="{GROUND}"/>'

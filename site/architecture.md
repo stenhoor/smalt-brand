@@ -32,13 +32,16 @@ Tables come in two layouts, and one database can mix them:
   blocks of rows a filter can't match. Aggregates and scans over many rows run several times faster. Materialized
   views can be columnar too. [smaltdb →](/products/smaltdb)
 
-## Languages: smaltql and smaltdf
+## The language layer: smaltql, smaltdf and smaltts
 
-Two ways to tell the engine what you want, over the same tables.
+Three ways to tell the engine what you want, over the same tables.
 
 - **smaltql**, the SQL you know, in a dialect that follows SQLite. It ships with smaltdb. [smaltql →](/products/smaltql)
 - **smaltdf**, a dataframe language in TypeScript: frames, expressions and method chains. It builds plans for the
   same engine as smaltql, so a dataframe gets the same optimizer and the same storage. [smaltdf →](/products/smaltdf)
+
+- **smaltts**, a thin, typed TypeScript API, for code that works with the engine directly, with no query language in
+  between. [smaltts →](/products/smaltts)
 
 You don't need one engine for SQL tables and another for dataframes. There is one way to process your data.
 

@@ -145,7 +145,7 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## Social preview cards
 
-`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png` and `smaltql.png`, each 1280 × 640, with SVG sources beside them.
+`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltql.png` and `smaltts.png`, each 1280 × 640, with SVG sources beside them.
 
 - **GitHub:** in the repository, open Settings, then under "Social preview" click Edit and upload the PNG (PNG, JPG or GIF under 1 MB; 1280 × 640 displays best).
 - **Websites:** reference the PNG from `og:image` and `twitter:image`, with `twitter:card` set to `summary_large_image`.
@@ -165,26 +165,32 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## The smalt family
 
-smaltdb is the engine. Five products are built on it, and each shares smaltdb's brand: the Kiln neutrals, Geist and Martian Mono, the `sm`**`alt`**`…` wordmark, and marks drawn as a smalt body plus a chip. Each product gets its own mark and one product colour (smalt's sibling cobalt pigments).
+smaltdb is the engine. Six products are built on it, and each shares smaltdb's brand: the Kiln neutrals, Geist and Martian Mono, the `sm`**`alt`**`…` wordmark, and marks drawn as a smalt body plus a chip. Each product gets its own mark and one product colour (smalt's sibling cobalt pigments).
 
-| | smaltdb | smaltui | smaltbi | smaltdf | smaltnb | smaltql |
-| --- | --- | --- | --- | --- | --- | --- |
-| What it is | The engine | The SQL console | The reports | The dataframes | The notebooks | The SQL |
-| Tagline | Small. Alternative. Fast. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Frames. | Small. Alternative. Notebooks. | Small. Alternative. Familiar. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | A SQL console for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Dataframes for smaltdb. Small and fast. | TypeScript notebooks for smaltdb. | The SQL you know, for smaltdb. |
-| Mark | Grain | Chevron (`>` and `_`) | Scatter | Axes | Pencil | Star (`*`) |
-| Product colour | smalt `#003399` | `product-ui`: deep cerulean `#0E7FAE` | `product-bi`: blue-leaning violet `#6E4BC2` | `product-df`: aureolin ochre `#8C6D00` | `product-nb`: cobalt magenta `#B0249F` | `product-ql`: leaf green `#527A10` |
-| Suffix colour | ink | `product-ui-text` `#0B6A91` / `#5CBDE8` dark | `product-bi-text` `#6141AE` / `#B8A1F2` dark | `product-df-text` `#7A5F00` / `#E6C24A` dark | `product-nb-text` `#981C89` / `#F57FE6` dark | `product-ql-text` `#456810` / `#9ACD4A` dark |
-| Logos | `logos/smaltdb/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltdf/` | `logos/smaltnb/` | `logos/smaltql/` |
+| | smaltdb | smaltui | smaltbi | smaltdf | smaltnb | smaltql | smaltts |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| What it is | The engine | The SQL console | The reports | The dataframes | The notebooks | The SQL | The typed API |
+| Tagline | Small. Alternative. Fast. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Frames. | Small. Alternative. Notebooks. | Small. Alternative. Familiar. | Small. Alternative. Typed. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | A SQL console for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Dataframes for smaltdb. Small and fast. | TypeScript notebooks for smaltdb. | The SQL you know, for smaltdb. | smaltdb, straight from TypeScript. |
+| Mark | Grain | Chevron (`>` and `_`) | Scatter | Axes | Pencil | Star (`*`) | Generic (`<T>`) |
+| Product colour | smalt `#003399` | `product-ui`: deep cerulean `#0E7FAE` | `product-bi`: blue-leaning violet `#6E4BC2` | `product-df`: aureolin ochre `#8C6D00` | `product-nb`: cobalt magenta `#B0249F` | `product-ql`: leaf green `#527A10` | `product-ts`: graphite `#4A5163` |
+| Suffix colour | ink | `product-ui-text` `#0B6A91` / `#5CBDE8` dark | `product-bi-text` `#6141AE` / `#B8A1F2` dark | `product-df-text` `#7A5F00` / `#E6C24A` dark | `product-nb-text` `#981C89` / `#F57FE6` dark | `product-ql-text` `#456810` / `#9ACD4A` dark | `product-ts-text` `#3F4656` / `#B9BEC9` dark |
+| Logos | `logos/smaltdb/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltdf/` | `logos/smaltnb/` | `logos/smaltql/` | `logos/smaltts/` |
 
 Rules:
 
-- `alt` is always smalt (`primary`), in every product's wordmark. The suffix (`db`, `ui`, `bi`, `df`, `nb`, `ql`) takes the product's text colour; smaltdb's stays ink.
+- `alt` is always smalt (`primary`), in every product's wordmark. The suffix (`db`, `ui`, `bi`, `df`, `nb`, `ql`, `ts`) takes the product's text colour; smaltdb's stays ink.
 - The mark body is always smalt; only the chip takes the product colour. That keeps the products reading as one family.
 - smaltbi's 16 px mark is a simplified three-grain version; every other mark is the same drawing at every size.
 - Product colours are for the product's own mark, wordmark and accents, not for status or links. This matters most for smaltdf: its ochre sits close to the `warning` amber.
 - smaltql's leaf green is the nearest product colour to the `success` green (a CIELAB distance of 28 in light mode). Never use it to mean success, and keep status icons and words on every status.
+- smaltts's graphite is a neutral, the same grey as `text-2`. As a product colour it marks smaltts only: never use `product-ts` to show something disabled or secondary. Its chip has less contrast against the smalt body than the other products' chips, so the Generic mark relies on its shape.
+- smaltts's Generic mark uses two 45° angles, like smaltui's Chevron. Keep the two apart in toolbars and lists, where they could be mistaken for each other at small sizes.
 - smaltdb and smaltdf differ by one letter. Keep the `df` in its product colour wherever the wordmark appears, since the colour does most of the work of telling them apart at small sizes.
+
+### smaltts
+
+smaltts is a thin, typed TypeScript API over smaltdb's plan and schema operations, with structured flows, for applications and layers that want neither SQL nor dataframes. It sits at the language layer, beside smaltql and smaltdf. Its name says what it is: plain, typed TypeScript. Say it smalt-T-S.
 
 ### smaltdb and smaltql
 

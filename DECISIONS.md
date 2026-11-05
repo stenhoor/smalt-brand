@@ -223,6 +223,32 @@ Applied after the picks:
 - The Star is the same drawing at every size; at 16 px the chip is about three pixels.
 - **npm names (owner's decision):** packages publish under the smaltworks npm organisation, named after their repositories: `@smaltworks/smaltdb`, `@smaltworks/smaltql`, `@smaltworks/smaltdf`, `@smaltworks/smaltdb-parquet` and so on. This replaces the `@smaltdb` scope for plugins; nothing had been published under it.
 
+## smaltts
+
+smaltts (`stenhoor/smaltts`) is a thin, typed TypeScript API over smaltdb's plan and schema operations, adding structured flows for applications and layers that want neither SQL nor dataframes. Under smaltdb ADR 0015 the engine has no language built in, so without smaltts such an application works with the raw plan API. Two readings were shown: a way into the engine beside smaltql and smaltdf, or a layer the languages build on. The owner placed it at the language layer, beside smaltql and smaltdf.
+
+The options were shown on the family canvas:
+
+- **Taglines:** Typed, Direct, Structured, Code.
+- **Positioning:** "A typed TypeScript API for smaltdb.", "smaltdb, straight from TypeScript.", "Typed flows for smaltdb. Small and direct."
+- **Colour:** jade, smalt only, graphite. With smaltql's leaf green taken, jade was the one hue left with room. Vermilion (CIELAB distance 23 from kiln, 24 from danger) and every other green (within 21 of leaf green) were dropped.
+- **Marks:** Generic (`<T>`), Object (`{ }`), Flow, Direct, T.
+
+| | **Picked** |
+| --- | --- |
+| Tagline | **"Small. Alternative. Typed."** |
+| Positioning | **"smaltdb, straight from TypeScript."** |
+| Mark | **Generic:** the `<T>` of a TypeScript generic, two 45° angles with the type as the chip |
+| Colour | **Graphite:** `#4A5163` fill, `#3F4656` text (light, the same as `text-2`), `#B9BEC9` (dark) |
+
+Applied after the picks:
+
+- Graphite is the family's first neutral product colour. It never means disabled or secondary.
+- The graphite chip has less contrast against the smalt body than the other chips, most visibly on the app icon and at 16 px; the mark carries smaltts by its shape.
+- The Generic mark's angles echo smaltui's Chevron. Keep them apart in toolbars and lists.
+- The smaltts repository is private, so the social card and badge point to smaltworks.dev/products/smaltts.
+- The smaltworks social card's product list no longer fit with seven products; it now shows smaltworks.dev, and `scripts/social_cards.py` checks that every address fits.
+
 ## The family voice: smalty
 
 Smalt rhymes with salt (Merriam-Webster: ˈsmȯlt), so salt idioms were explored as a family-wide voice, on one board:
@@ -324,7 +350,7 @@ site can't drift apart.
 
 ## Exploration archive
 
-[`exploration/`](exploration/) keeps all 48 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
+[`exploration/`](exploration/) keeps all 51 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
 
 ## Still open
 
