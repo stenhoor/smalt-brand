@@ -138,7 +138,7 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 - **Solid shapes, no strokes.** Every line is a filled bar of constant thickness with square-cut ends. The Chevron's arms are about 15% of the icon's width thick (9.9 units on its 64-unit grid), which is about 3.5 px on a 24 px icon.
 - **Angles of 0°, 45° and 90° only**, like the Chevron's arms. The one exception is smaltql's Star mark, whose arms are 60° apart because an asterisk needs six evenly spaced arms. Icons still follow the rule.
 - **One chip at most:** a rounded bar with a 3-unit radius on the 64-unit grid (about 1.1 px at 24 px), like the Chevron's cursor `_`. It marks the one detail that matters: the cursor, a dot, the current item.
-- **Two tones.** The body is `smalt-700` (`smalt-200` on dark) and the chip takes the product colour, as in the marks. Status icons are drawn entirely in their status colour (`success`, `warning`, `danger`) and still always come with a word.
+- **Two tones.** The body is `smalt-700` (`smalt-200` on dark) and the chip takes the layer colour, as in the marks. Status icons are drawn entirely in their status colour (`success`, `warning`, `danger`) and still always come with a word.
 - **One drawing at every size**, like the marks: draw on a 24 px grid and keep bars at least 2 px thick at 16 px.
 
 `components/StatusBadge` shows the style: a check, an exclamation mark (a bar and a chip) and a cross.
@@ -149,7 +149,7 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 - **GitHub:** in the repository, open Settings, then under "Social preview" click Edit and upload the PNG (PNG, JPG or GIF under 1 MB; 1280 × 640 displays best).
 - **Websites:** reference the PNG from `og:image` and `twitter:image`, with `twitter:card` set to `summary_large_image`.
-- Each card is the product's dark lockup, tagline, positioning line and address, on the dark ground, with a bar in the product colour. Regenerate them with `scripts/social_cards.py` after any change to a lockup, tagline or positioning line; don't edit the PNGs by hand.
+- Each card is the product's dark lockup, tagline, positioning line and address, on the dark ground, with a bar in the layer colour. Regenerate them with `scripts/social_cards.py` after any change to a lockup, tagline or positioning line; don't edit the PNGs by hand.
 
 ## Tokens
 
@@ -165,28 +165,44 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## The smalt family
 
-smaltdb is the engine. Six products are built on it, and each shares smaltdb's brand: the Kiln neutrals, Geist and Martian Mono, the `sm`**`alt`**`…` wordmark, and marks drawn as a smalt body plus a chip. Each product gets its own mark and one product colour (smalt's sibling cobalt pigments).
+smaltdb is the engine. The other products are built on it, and each shares smaltdb's brand: the Kiln neutrals, Geist and Martian Mono, the `sm`**`alt`**`…` wordmark, and marks drawn as a smalt body plus a chip. Each product gets its own mark. Colour comes from the product's layer.
 
-| | smaltdb | smaltui | smaltbi | smaltdf | smaltnb | smaltql | smaltts |
+### Colour by layer
+
+Each layer of the stack has one colour, and every product in it takes that colour. The mark tells products in a layer apart; the colour says where a product sits.
+
+| Layer | Products | Colour | Text | Dark |
+| --- | --- | --- | --- | --- |
+| Engine | smaltdb and its plugins | smalt: the pale chip (`smalt-300`), suffix in ink | ink | `smalt-100` chip |
+| Languages | smaltql, smaltdf, smaltts | `layer-language`: cobalt magenta `#B0249F` | `#981C89` | `#F57FE6` |
+| Kits | smaltml (smaltkit and the other kits have no brand of their own) | `layer-kit`: jade `#0A7C76` | `#086A65` | `#10C2B9` |
+| User tools | smaltui, smaltbi, smaltnb, smaltfl | `layer-tool`: deep cerulean `#0E7FAE` | `#0B6A91` | `#5CBDE8` |
+| Alongside | smaltai, which runs alongside the languages, kits and user tools | `layer-ai`: blue-leaning violet `#6E4BC2` | `#6141AE` | `#B8A1F2` |
+
+smaltworks keeps kiln orange: it is the family, not a layer. The `product-*` tokens remain as aliases of their layer's token, so existing uses keep working.
+
+| | smaltdb | smaltql | smaltdf | smaltts | smaltui | smaltbi | smaltnb |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| What it is | The engine | The SQL console | The reports | The dataframes | The notebooks | The SQL | The typed API |
-| Tagline | Small. Alternative. Fast. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Frames. | Small. Alternative. Notebooks. | Small. Alternative. Familiar. | Small. Alternative. Typed. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | A SQL console for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Dataframes for smaltdb. Small and fast. | TypeScript notebooks for smaltdb. | The SQL you know, for smaltdb. | smaltdb, straight from TypeScript. |
-| Mark | Grain | Chevron (`>` and `_`) | Scatter | Axes | Pencil | Star (`*`) | Generic (`<T>`) |
-| Product colour | smalt `#003399` | `product-ui`: deep cerulean `#0E7FAE` | `product-bi`: blue-leaning violet `#6E4BC2` | `product-df`: aureolin ochre `#8C6D00` | `product-nb`: cobalt magenta `#B0249F` | `product-ql`: leaf green `#527A10` | `product-ts`: graphite `#4A5163` |
-| Suffix colour | ink | `product-ui-text` `#0B6A91` / `#5CBDE8` dark | `product-bi-text` `#6141AE` / `#B8A1F2` dark | `product-df-text` `#7A5F00` / `#E6C24A` dark | `product-nb-text` `#981C89` / `#F57FE6` dark | `product-ql-text` `#456810` / `#9ACD4A` dark | `product-ts-text` `#3F4656` / `#B9BEC9` dark |
-| Logos | `logos/smaltdb/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltdf/` | `logos/smaltnb/` | `logos/smaltql/` | `logos/smaltts/` |
+| Layer | Engine | Languages | Languages | Languages | User tools | User tools | User tools |
+| What it is | The engine | The SQL | The dataframes | The typed API | The SQL console | The reports | The notebooks |
+| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A SQL console for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | TypeScript notebooks for smaltdb. |
+| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Chevron (`>` and `_`) | Scatter | Pencil |
+| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` |
+
+smaltml, smaltai and smaltfl are in progress: their layers and colours are set, their marks and words are not.
 
 Rules:
 
-- `alt` is always smalt (`primary`), in every product's wordmark. The suffix (`db`, `ui`, `bi`, `df`, `nb`, `ql`, `ts`) takes the product's text colour; smaltdb's stays ink.
-- The mark body is always smalt; only the chip takes the product colour. That keeps the products reading as one family.
+- `alt` is always smalt (`primary`), in every product's wordmark. The suffix takes the layer's text colour; smaltdb's stays ink.
+- The mark body is always smalt; only the chip takes the layer colour. That keeps the products reading as one family.
+- Inside a layer, products share a colour, so the mark and the suffix letters tell them apart. Keep marks distinct within a layer.
 - smaltbi's 16 px mark is a simplified three-grain version; every other mark is the same drawing at every size.
-- Product colours are for the product's own mark, wordmark and accents, not for status or links. This matters most for smaltdf: its ochre sits close to the `warning` amber.
-- smaltql's leaf green is the nearest product colour to the `success` green (a CIELAB distance of 28 in light mode). Never use it to mean success, and keep status icons and words on every status.
-- smaltts's graphite is a neutral, the same grey as `text-2`. As a product colour it marks smaltts only: never use `product-ts` to show something disabled or secondary. Its chip has less contrast against the smalt body than the other products' chips, so the Generic mark relies on its shape.
+- Layer colours are for a product's own mark, wordmark and accents, not for status or links.
+- Jade (the kit layer) is the nearest layer colour to the `success` green (CIELAB distance 27). Never use it to mean success, and keep status icons and words on every status.
+- Violet (smaltai) sits close to smalt (CIELAB distance 21 light, 18 dark). It marks smaltai, which runs alongside the layers and doesn't touch the engine, not a layer that sits on the engine.
 - smaltts's Generic mark uses two 45° angles, like smaltui's Chevron. Keep the two apart in toolbars and lists, where they could be mistaken for each other at small sizes.
-- smaltdb and smaltdf differ by one letter. Keep the `df` in its product colour wherever the wordmark appears, since the colour does most of the work of telling them apart at small sizes.
+- If a product moves to another layer, its colour moves with it.
 
 ### smaltts
 
@@ -209,7 +225,7 @@ Ready-made distributions (the engine alone, or the engine with particular langua
 `badges/` has a badge for each product, light and dark: 172 × 28 px, with all text converted to paths. Sites and projects that use a smalt product show the matching badge and link it to the project. `badges/README.md` has the HTML and Markdown snippets.
 
 - Wording is always "Powered by", for every product.
-- Badge colours match the lockups: `alt` in smalt, the suffix in the product colour.
+- Badge colours match the lockups: `alt` in smalt, the suffix in the layer colour.
 - Every text colour on the badge is at least 6:1 against its surface in both themes.
 
 ## Plugins

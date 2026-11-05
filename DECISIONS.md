@@ -249,6 +249,27 @@ Applied after the picks:
 - The smaltts repository is private, so the social card and badge point to smaltworks.dev/products/smaltts.
 - The smaltworks social card's product list no longer fit with seven products; it now shows smaltworks.dev, and `scripts/social_cards.py` checks that every address fits.
 
+## Colour by layer
+
+With smaltql's leaf green and smaltts's graphite taken, and smaltml, smaltai and smaltfl on the way, the colour wheel had run out: every hue left sat near a status colour or another product. The owner proposed colouring by layer of the stack instead of by product, and placed the products: smaltfl is a user tool beside smaltui, smaltbi and smaltnb; smaltml sits at the kit level, between the languages and the user tools; smaltai runs alongside the languages, kits and user tools, plugging into each.
+
+The board (FAM-Layers) showed the whole family both ways, light and dark. Picked:
+
+| Layer | Products | Colour |
+| --- | --- | --- |
+| Engine | smaltdb and its plugins | smalt |
+| Languages | smaltql, smaltdf, smaltts | cobalt magenta `#B0249F` |
+| Kits | smaltml | jade `#0A7C76` |
+| User tools | smaltui, smaltbi, smaltnb, smaltfl | deep cerulean `#0E7FAE` |
+| Alongside | smaltai | blue-leaning violet `#6E4BC2` |
+
+- **Every layer colour was already in use and checked** against the status colours; the three that sat near one (ochre, leaf green) or read as disabled (graphite) retire.
+- **Violet went to smaltai, not the languages.** It is CIELAB distance 21 from smalt (18 in dark), too close for the layer that sits on the engine; smaltai doesn't touch the engine layer. Every other pair of layer colours is at least 33 apart.
+- **This replaces the product colours picked earlier:** smaltbi violet → cerulean; smaltdf ochre, smaltql leaf green and smaltts graphite → magenta; smaltnb magenta → cerulean. Their marks, words and the rounds that chose them stand; only the colour follows the layer now.
+- **Jade's reservation for smaltfl lapses:** smaltfl is a user tool, so it takes cerulean, and jade becomes the kit layer's colour.
+- **`product-*` tokens stay,** as aliases of their layer's token, so existing uses keep working. New tokens: `layer-language`, `layer-kit`, `layer-tool`, `layer-ai`, each with a `-text` variant.
+- **smaltai** went through an outline treatment (not chosen: the owner didn't like it), a first round of marks, and a round about plugging in; its marks are still open. **smaltml** has a first round of words and marks, also open.
+
 ## The family voice: smalty
 
 Smalt rhymes with salt (Merriam-Webster: ˈsmȯlt), so salt idioms were explored as a family-wide voice, on one board:
@@ -350,11 +371,12 @@ site can't drift apart.
 
 ## Exploration archive
 
-[`exploration/`](exploration/) keeps all 51 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
+[`exploration/`](exploration/) keeps all 58 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
 
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
+- **smaltai and smaltml:** marks and words are open; their colours are set by layer.
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 
 - **Research pages on smaltdb.dev** include benchmark comparisons with other engines. The no-comparisons rule covers marketing copy; whether those pages stay on the public site is undecided.

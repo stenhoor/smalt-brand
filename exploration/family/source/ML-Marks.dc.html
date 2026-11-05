@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>smaltml marks</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&amp;family=Martian+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#003399}a:hover{color:#151922}
+</style>
+</helmet>
+<div style="width: 1440px; height: 820px; box-sizing: border-box; padding: 56px 64px; background: #F5F6F8; color: #151922; font-family: 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 32px">
+<div>
+<p style="margin: 0; font-family: 'Martian Mono', monospace; font-size: 13px; color: #5C6375">smaltml · round 1 · marks</p>
+<h1 style="margin: 8px 0 0; font-size: 36px; font-weight: 700; letter-spacing: -0.03em">Four marks for machine learning</h1>
+<p style="margin: 8px 0 0; font-size: 15px; color: #3F4656; max-width: 900px">What classic machine learning looks like: a fitted line, a decision tree, the hardware it runs on, a model learning step by step. Drawn solid, by the family rules. No colour yet: the chip is pale smalt and “ml” stays ink. A scatter of points was left out: it reads as smaltbi.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 16px; background: #FFFFFF; border: 1px solid #D6DBE4; border-radius: 12px; padding: 12px 18px; flex-shrink: 0">
+<sc-for list="{{family}}" as="f" hint-placeholder-count="3">
+<svg width="32" height="32" viewBox="0 0 64 64" role="img" aria-label="{{f.name}}"><sc-for list="{{f.paths}}" as="p" hint-placeholder-count="3"><path d="{{p.d}}" fill="{{p.fill}}" fill-rule="evenodd"></path></sc-for></svg>
+</sc-for>
+<p style="margin: 0; font-size: 13px; color: #5C6375">the family:<br>db · ui · bi · df · nb · ql</p>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; flex-grow: 1">
+<sc-for list="{{marks}}" as="m" hint-placeholder-count="4">
+<div style="background: #FFFFFF; border: 1px solid #D6DBE4; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+<p style="margin: 16px 20px 0; font-weight: 700; font-size: 17px">{{m.id}} · {{m.name}}</p>
+<p style="margin: 4px 20px 0; font-size: 14px; line-height: 1.45; color: #3F4656; min-height: 80px">{{m.desc}}</p>
+<div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 8px 0">
+<svg width="120" height="120" viewBox="0 0 64 64" role="img" aria-label="{{m.name}} mark"><sc-for list="{{m.light}}" as="p" hint-placeholder-count="3"><path d="{{p.d}}" fill="{{p.fill}}" fill-rule="evenodd"></path></sc-for></svg>
+</div>
+<div style="display: flex; align-items: center; justify-content: center; gap: 12px; padding: 0 0 18px">
+<svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><sc-for list="{{m.light}}" as="p" hint-placeholder-count="3"><path d="{{p.d}}" fill="{{p.fill}}" fill-rule="evenodd"></path></sc-for></svg>
+<span style="font-family: 'Martian Mono', monospace; font-size: 26px; font-weight: 600; letter-spacing: -0.06em">sm<span style="color: #003399">alt</span><span>ml</span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #14171F">
+
+<span style="font-family: 'Martian Mono', monospace; font-size: 17px; font-weight: 600; letter-spacing: -0.06em; color: #E9EBF0; white-space: nowrap">sm<span style="color: #9DB4F5">alt</span><span>ml</span></span>
+<span style="margin-left: auto; display: flex; align-items: center; gap: 10px">
+<svg width="32" height="32" viewBox="0 0 64 64" role="img" aria-label="Favicon 32" style="flex-shrink: 0"><sc-for list="{{m.dark}}" as="p" hint-placeholder-count="3"><path d="{{p.d}}" fill="{{p.fill}}" fill-rule="evenodd"></path></sc-for></svg>
+<svg width="16" height="16" viewBox="0 0 64 64" role="img" aria-label="Favicon 16" style="flex-shrink: 0"><sc-for list="{{m.dark}}" as="p" hint-placeholder-count="3"><path d="{{p.d}}" fill="{{p.fill}}" fill-rule="evenodd"></path></sc-for></svg>
+</span>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+renderVals() {
+const rr = (x, y, w, h, r) => `M${x + r} ${y}h${w - 2 * r}a${r} ${r} 0 0 1 ${r} ${r}v${h - 2 * r}a${r} ${r} 0 0 1 -${r} ${r}h-${w - 2 * r}a${r} ${r} 0 0 1 -${r} -${r}v-${h - 2 * r}a${r} ${r} 0 0 1 ${r} -${r}z`;
+const GRAIN = 'M14 18h18v10h14v24a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6V24a6 6 0 0 1 6-6z';
+const L = { body: '#003399', chip: '#7B97D4', ui: '#0E7FAE', bi: '#6E4BC2', df: '#8C6D00', nb: '#B0249F', ql: '#527A10', acc: '#7B97D4' };
+const D = { body: '#9DB4F5', chip: '#D6E0F3', ui: '#5CBDE8', bi: '#B8A1F2', df: '#E6C24A', nb: '#F57FE6', ql: '#9ACD4A', acc: '#D6E0F3' };
+const mk = (id, name, desc, shapes) => ({ id, name, desc,
+  light: shapes.map(([d, k]) => ({ d, fill: L[k] })), dark: shapes.map(([d, k]) => ({ d, fill: D[k] })) });
+const fam = (name, shapes) => ({ name, paths: shapes.map(([d, k]) => ({ d, fill: L[k] })) });
+return {
+family: [
+  fam('smaltdb Grain', [[GRAIN, 'body'], [rr(38, 8, 16, 16, 3), 'chip']]),
+  fam('smaltui Chevron', [['M8 17L15 10L37 32L15 54L8 47L23 32Z', 'body'], [rr(38, 46, 20, 8, 3), 'ui']]),
+  fam('smaltbi Scatter', [[rr(8, 44, 10, 10, 3), 'chip'], [rr(22, 42, 7, 7, 2), 'chip'], [rr(24, 28, 12, 12, 3), 'body'], [rr(40, 30, 7, 7, 2), 'chip'], [rr(46, 8, 12, 12, 3), 'bi']]),
+  fam('smaltdf Axes', [['M8 8H56V17H17V56H8Z', 'body'], [rr(27, 27, 14, 14, 3), 'df']]),
+  fam('smaltnb Pencil', [['M12 52 L19.78 52 L12 44.22Z', 'nb'], ['M21.55 50.23 L47 24.78 L39.22 17 L13.77 42.45Z', 'body'], ['M49.12 22.66 L54.07 17.71 L46.29 9.93 L41.34 14.88Z', 'body']]),
+  fam('smaltql Star', [['M27.5 21.5L27.5 5L36.5 5L36.5 21.5Z', 'body'], ['M38.84 22.85L53.13 14.6L57.63 22.4L43.34 30.65Z', 'body'], ['M43.34 33.35L57.63 41.6L53.13 49.4L38.84 41.15Z', 'body'], ['M36.5 42.5L36.5 59L27.5 59L27.5 42.5Z', 'body'], ['M25.16 41.15L10.87 49.4L6.37 41.6L20.66 33.35Z', 'body'], ['M20.66 30.65L6.37 22.4L10.87 14.6L25.16 22.85Z', 'body'], [rr(25.5, 25.5, 13, 13, 3), 'ql']]),
+],
+marks: [
+  mk('M1', 'Fit', 'A fitted line at 45°, one point on each side: regression. The chip is the prediction.',
+    [['M8 49.6L49.6 8L56 14.4L14.4 56Z', 'body'], ['M14 14H24V24H14Z', 'body'], [rr(40, 40, 12, 12, 3), 'acc']]),
+  mk('M2', 'Tree', 'A decision tree: a root that splits into two leaves. The chip is the answer it reaches.',
+    [['M26 8H38V27H52V44H43V36H21V44H12V27H26Z', 'body'], ['M8 48H25V56H8Z', 'body'], [rr(39, 48, 17, 8, 3), 'acc']]),
+  mk('M3', 'Hardware', 'A processor with its pins, the chip at its core: the hardware you already have.',
+    [['M16 16H48V48H16Z M24 24V40H40V24Z', 'body'], ['M22 8H27V16H22Z', 'body'], ['M37 8H42V16H37Z', 'body'], ['M22 48H27V56H22Z', 'body'], ['M37 48H42V56H37Z', 'body'], ['M8 22H16V27H8Z', 'body'], ['M8 37H16V42H8Z', 'body'], ['M48 22H56V27H48Z', 'body'], ['M48 37H56V42H48Z', 'body'], [rr(27, 27, 10, 10, 2), 'acc']]),
+  mk('M4', 'Learn', 'A model learning step by step, the error falling with each step, down to the result.',
+    [['M8 8H17V21H30V34H43V43H21V30H8Z', 'body'], [rr(47, 34, 9, 9, 3), 'acc']]),
+],
+};
+}
+}
+</script>
+</body>
+</html>

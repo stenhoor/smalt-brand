@@ -1,12 +1,12 @@
 # smaltdf logos
 
-The Axes mark: the header row and index column that make a table a dataframe, drawn as one smalt bar (`#003399`), with a single value as the chip in aureolin ochre (`#8C6D00`).
+The Axes mark: the header row and index column that make a table a dataframe, drawn as one smalt bar (`#003399`), with a single value as the chip in cobalt magenta (`#B0249F`), the language layer's colour.
 
 | File | Use |
 | --- | --- |
 | `lockup.svg`, `lockup-on-dark.svg` | Mark + wordmark, outlined. README headers, docs, slides. |
-| `wordmark.svg`, `wordmark-on-dark.svg` | Wordmark alone: `alt` in smalt, `df` in `#7A5F00` (light) or `#E6C24A` (dark). |
-| `axes-mark.svg`, `axes-mark-on-dark.svg` | The mark alone. Dark version: `#9DB4F5` axes, `#E6C24A` chip. |
+| `wordmark.svg`, `wordmark-on-dark.svg` | Wordmark alone: `alt` in smalt, `df` in `#981C89` (light) or `#F57FE6` (dark). |
+| `axes-mark.svg`, `axes-mark-on-dark.svg` | The mark alone. Dark version: `#9DB4F5` axes, `#F57FE6` chip. |
 | `app-icon.svg` | Smalt tile with the mark knocked out. App and PWA icons, avatars. |
 | `favicon-32.svg`, `favicon-16.svg` | Browser tabs. The same drawing at both sizes. |
 

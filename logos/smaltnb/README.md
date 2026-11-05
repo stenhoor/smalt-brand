@@ -1,12 +1,12 @@
 # smaltnb logos
 
-The Pencil mark: a pencil at 45°, like the smaltui Chevron, drawn as a smalt body and cap (`#003399`) with its point in cobalt magenta (`#B0249F`). The point is set apart by a small gap so it reads as a point.
+The Pencil mark: a pencil at 45°, like the smaltui Chevron, drawn as a smalt body and cap (`#003399`) with its point in deep cerulean (`#0E7FAE`), the user-tool layer's colour. The point is set apart by a small gap so it reads as a point.
 
 | File | Use |
 | --- | --- |
 | `lockup.svg`, `lockup-on-dark.svg` | Mark + wordmark, outlined. README headers, docs, slides. |
-| `wordmark.svg`, `wordmark-on-dark.svg` | Wordmark alone: `alt` in smalt, `nb` in `#981C89` (light) or `#F57FE6` (dark). |
-| `pencil-mark.svg`, `pencil-mark-on-dark.svg` | The mark alone. Dark version: `#9DB4F5` pencil, `#F57FE6` point. |
+| `wordmark.svg`, `wordmark-on-dark.svg` | Wordmark alone: `alt` in smalt, `nb` in `#0B6A91` (light) or `#5CBDE8` (dark). |
+| `pencil-mark.svg`, `pencil-mark-on-dark.svg` | The mark alone. Dark version: `#9DB4F5` pencil, `#5CBDE8` point. |
 | `app-icon.svg` | Smalt tile with the mark knocked out. App and PWA icons, avatars. |
 | `favicon-32.svg`, `favicon-16.svg` | Browser tabs. The same drawing at both sizes; at 16 px the point is about two pixels. |
 

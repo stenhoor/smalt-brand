@@ -109,6 +109,18 @@ The later positioning lines (P4–P11 and the final "Dataframes for smaltdb. Sma
 | [TS-Marks](family/png/TS-Marks.png) | Marks R1–R5 (Generic, Object, Flow, Direct, T). Picked: R1 Generic. |
 | [TS-Colours](family/png/TS-Colours.png) | Jade, smalt only and graphite (picked), with the whole family and the status colours. |
 
+## Colour by layer, smaltai and smaltml
+
+| Board | Contents |
+| --- | --- |
+| [FAM-Layers](family/png/FAM-Layers.png) | One colour per layer instead of per product, shown light and dark beside today's colours. Picked. |
+| [AI-Outline](family/png/AI-Outline.png) | smaltai in outline instead of a colour (O1–O3). Not chosen. |
+| [AI-Words](family/png/AI-Words.png) | smaltai taglines and positioning lines, centred on your agents using the smalt tools. Open. |
+| [AI-Marks](family/png/AI-Marks.png) | smaltai round 1 marks A1–A4 (Build, Pointer, Agent, Toolbox). Not chosen. |
+| [AI-Marks2](family/png/AI-Marks2.png) | smaltai round 2: plugging in, P1–P4. Open. |
+| [ML-Words](family/png/ML-Words.png) | smaltml taglines, positioning lines and where it sits. Open. |
+| [ML-Marks](family/png/ML-Marks.png) | smaltml marks M1–M4 (Fit, Tree, Hardware, Learn). Open. |
+
 ## The family voice
 
 | Board | Contents |
