@@ -36,7 +36,7 @@ Tables come in two layouts, and one database can mix them:
 
 Two ways to tell the engine what you want, over the same tables.
 
-- **smaltql**, the SQL you know, in a dialect that follows SQLite. It ships with smaltdb. [smaltql →](/products/smaltql)
+- **smaltql**, the SQL you know, in a dialect that follows SQLite. Install it and you have a SQL database on smaltdb. [smaltql →](/products/smaltql)
 - **smaltdf**, a dataframe language in TypeScript: frames, expressions and method chains. It builds plans for the
   same engine as smaltql, so a dataframe gets the same optimizer and the same storage. [smaltdf →](/products/smaltdf)
 

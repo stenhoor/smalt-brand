@@ -188,7 +188,7 @@ Rules:
 
 ### smaltdb and smaltql
 
-SQL moves out of the smaltdb repository into smaltql ([smaltdb ADR 0015](https://github.com/stenhoor/smaltdb/blob/main/docs/adr/0015-smaltql.md)). smaltql and smaltdf are peers: two languages on one engine. smaltdb still ships with smaltql by default, so "smaltdb" keeps meaning the database people install and query with SQL, and its tagline and positioning line stay as they are.
+SQL moves out of the smaltdb repository into smaltql ([smaltdb ADR 0015](https://github.com/stenhoor/smaltdb/blob/main/docs/adr/0015-smaltql.md)). smaltql and smaltdf are peers: two languages on one engine. smaltdb has no language built in: each language exports its own `open()`, so installing smaltql gives a SQL database and installing smaltdf gives dataframes. smaltdb's tagline and positioning line stay as they are.
 
 smaltql's promise is in its words: familiar SQL always works. It can grow its own syntax, but only by adding to SQL, never by changing what working SQL means.
 

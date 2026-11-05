@@ -9,7 +9,7 @@ smaltdb is the engine under everything else in the family: an embedded SQL datab
   or **in memory** when nothing needs to persist.
 - **Row and columnar tables:** B-trees for reading and writing single rows, columns with zone maps for analytics.
 - **SQL that follows SQLite,** checked against it with differential tests. SQL is moving into its own package,
-  [smaltql](/products/smaltql), which smaltdb ships with by default.
+  [smaltql](/products/smaltql): smaltdb becomes the engine alone, and each language brings its own `open()`.
 - **A cost-based planner,** views and materialized views, and parallel readers across tabs.
 - **External tables** over CSV, JSON and Parquet files on the web, S3 and Azure, through [plugins](/products/plugins).
 

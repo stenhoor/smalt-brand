@@ -10,7 +10,7 @@ own identity.
   working SQL means.
 - **A peer of smaltdf.** Both languages build plans for the same plan layer, so SQL and dataframes get the same
   optimizer and the same storage.
-- **Ships with smaltdb.** Install smaltdb and you can query it in SQL, as you can today.
+- **Its own `open()`.** Install smaltql and you have a SQL database on smaltdb. Today, SQL is still inside smaltdb.
 
 **Status:** planned. SQL works today, inside smaltdb. The move to its own package comes after the last steps of smaltdb's
 shared plan layer.
