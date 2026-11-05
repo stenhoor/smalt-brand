@@ -6,7 +6,7 @@ We are developers, and we love to create. AI lets us build at scale and test ide
 could by hand, so smaltworks works AI-first.
 
 We build tools and libraries that help other people create, whether they write every line by hand or work AI-first.
-We love developers and the work they do, and everything we make is meant to help them make more.
+We love developers and the work they do, and everything we make is meant to help them create.
 
 **Built AI-first, by developers, for everyone who creates.**
 

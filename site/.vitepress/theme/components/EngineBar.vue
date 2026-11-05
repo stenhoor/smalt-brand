@@ -28,7 +28,7 @@ const apps = [
       <span class="sw-engine-line">One engine. Every layer above runs on it.</span>
     </a>
     <div class="sw-row sw-sources">
-      <span class="sw-src">OPFS · in your browser</span>
+      <span class="sw-src">OPFS or memory · in your browser</span>
       <span class="sw-src">External data · HTTP, S3, Azure</span>
       <span class="sw-src">Plugins · Parquet, CSV, JSON</span>
     </div>
