@@ -39,6 +39,7 @@ A lot of what we make stands on ideas from tools we've loved using, and we say s
 - **smaltui** is a SQL console in the spirit of Toad.
 - **smaltbi** takes its cue from Power BI and Tableau.
 - **smaltnb** is inspired by Jupyter and marimo.
+- **smaltql** follows SQLite's SQL dialect.
 - **smaltdf** uses Narwhals as its reference for the dataframe API, and owes a lot to pandas and Polars.
 
 We're not here to replace any of them. What we add is one family built to work together, all in the browser, for
