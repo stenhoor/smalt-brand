@@ -11,6 +11,9 @@ Where the data lives.
 
 - **OPFS, in your browser.** smaltdb keeps its databases in the browser's Origin Private File System, so data persists
   on the visitor's own machine.
+- **Memory.** A database can live in memory instead: nothing is written to disk, and it's gone when it closes. Good for
+  scratch work, tests and data you load fresh each time. An OPFS database can also keep a materialized view in memory,
+  rebuilt when the database opens, so frequent refreshes don't wear storage.
 - **External data.** Files on the web, Amazon S3 and Azure Blob Storage, read in place as external tables, through the
   [`@smaltworks/smaltdb-external`](/products/plugins) plugin.
 - **Plugins.** Formats and sources are plugins: CSV, TSV and JSON in `@smaltworks/smaltdb-io`, Parquet in `@smaltworks/smaltdb-parquet`.
@@ -19,7 +22,15 @@ Where the data lives.
 ## The engine: smaltdb
 
 One engine powers everything. smaltdb runs in a Web Worker, so the page never waits on it, and commits through a
-write-ahead log, so data survives a crash. Every tool above it uses this same engine. [smaltdb →](/products/smaltdb)
+write-ahead log, so data survives a crash. Every tool above it uses this same engine.
+
+Tables come in two layouts, and one database can mix them:
+
+- **Row tables,** the default: whole rows in B-trees, fast for reading and writing individual rows, with indexes,
+  unique constraints and foreign keys.
+- **Columnar tables,** for analytics: each column stored separately in compressed chunks, with zone maps that skip
+  blocks of rows a filter can't match. Aggregates and scans over many rows run several times faster. Materialized
+  views can be columnar too. [smaltdb →](/products/smaltdb)
 
 ## Languages: smaltql and smaltdf
 
