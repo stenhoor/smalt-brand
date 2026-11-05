@@ -192,7 +192,7 @@ Applied after the picks:
 
 ## smaltql
 
-SQL moves out of smaltdb into its own product, smaltql. smaltdb's work since ADR 0014 put a shared plan layer under the engine, with SQL and smaltdf as two languages on it; splitting SQL out gives the engine one job (execution performance) and lets the query language grow its own identity. smaltdb still ships with smaltql by default (the owner's proposal), so existing users and the "install smaltdb, run a query" start don't change. The technical record is [smaltdb ADR 0015](https://github.com/stenhoor/smaltdb/blob/main/docs/adr/0015-smaltql.md).
+SQL moves out of smaltdb into its own product, smaltql. smaltdb's work since ADR 0014 put a shared plan layer under the engine, with SQL and smaltdf as two languages on it; splitting SQL out gives the engine one job (execution performance) and lets the query language grow its own identity. The first draft had smaltdb ship with smaltql by default; the accepted ADR changed that. smaltdb has no language built in, and each language exports a ready `open()`: `import { open } from '@smaltworks/smaltql'` gives a SQL database. The technical record is [smaltdb ADR 0015](https://github.com/stenhoor/smaltdb/blob/main/docs/adr/0015-smaltql.md).
 
 Considered and dropped along the way:
 
