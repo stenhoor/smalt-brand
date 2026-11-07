@@ -42,6 +42,7 @@ import { withSmaltworks } from './stage'
 
 export default { extends: DefaultTheme, Layout: withSmaltworks(DefaultTheme) } satisfies Theme
 // From 1.0: withSmaltworks(DefaultTheme, 'release')
+// Badges in a folder of the public directory: withSmaltworks(DefaultTheme, 'wip', '/badges/'), smaltworksFooter(base, 'badges/')
 ```
 
 The hero's wordmark (`docs/index.md`), with the suffix in its layer's colour (`language`, `kit`, `tool` or `ai`;
