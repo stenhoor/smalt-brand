@@ -2,9 +2,9 @@
 
 <StageBadge />
 
-**Small. Alternative. Query.** A SQL console for smaltdb that runs entirely in the browser.
+**Small. Alternative. Query.** A query workbench for smaltdb that runs entirely in the browser.
 
-smaltui is in the spirit of Toad: a console for people who live in SQL.
+smaltui is in the spirit of Toad: a workbench for querying your data, in SQL today, with dataframes to come.
 
 - **Object explorer** for tables, views, external tables and connections.
 - **Tabbed SQL editors** with completion, bind variables, query plans, and results fetched on demand.
@@ -13,4 +13,4 @@ smaltui is in the spirit of Toad: a console for people who live in SQL.
 
 **Status:** 0.1.0.
 
-[Try the live demo →](https://stenhoor.github.io/smaltui/) · [Repository →](https://github.com/stenhoor/smaltui)
+[Try the live demo →](https://stenhoor.github.io/smaltui/workbench/?env=envs/demo/env.json) · [Read the docs →](https://stenhoor.github.io/smaltui/) · [Repository →](https://github.com/stenhoor/smaltui)

@@ -165,19 +165,21 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## Sites and READMEs
 
-Every product site and README follows the same rules, so the family reads as one. A product site is the product's own documentation or demo site; smaltworks.dev is the family's.
+Every product site and README follows the same rules, so the family reads as one. Before changing a product's site, README or description, read this file and [DECISIONS.md](DECISIONS.md): the family table, these rules and the latest decisions. Every repository's CLAUDE.md points here. A product site is the product's own documentation or demo site; smaltworks.dev is the family's.
 
 1. **Header:** the product lockup from `logos/<product>/`, light and dark.
 2. **Hero:** the wordmark with its suffix in the layer's text colour (`<span class="suffix language">ql</span>`; smaltdb's suffix has no span). The headline is the tagline, and the line under it is the positioning line from [the family table](#the-smalt-family), word for word. Anything more goes in the paragraph under the hero.
 3. **Stage badge:** work in progress under the hero and at the top of every page, linked to smaltworks.dev/stability. It becomes Release 1.x when the product reaches 1.0, and not before.
 4. **smaltworks menu:** the last item in the top nav, from `smaltworksMenu()`: "The family", then every product as `name · role`, then "Work in progress". The same items, in the same order, on every site.
 5. **Footer:** "A smaltworks project", linked to smaltworks.dev, and "MIT License". On pages with a sidebar, where VitePress hides its footer, `stage.ts` puts both at the foot of the page.
-6. **Link wording:** a product named in running text links to its own site. Calls to action are "Read the docs →", "Try the live demo →" and "Repository →". Roles are always the engine, SQL, dataframes, typed API, SQL console, reports and notebooks.
+6. **Link wording:** a product named in running text links to its own site. Calls to action are "Read the docs →", "Try the live demo →" and "Repository →". Roles are always the engine, SQL, dataframes, typed API, query workbench, reports and notebooks.
 7. **Theme:** `smaltdb.css`, `shiki.ts`, `smaltworks.ts` and `stage.ts` copied from `themes/vitepress/` unchanged. A product's own rules go in a file of its own (smaltbi's `smaltbi.css`), never into the copies.
 8. **Install lines:** the [npm names](#npm-names), `@smaltworks/<repository>`. Until a package is published, say so beside the line.
 9. **Status:** one stage from Planned, In early development, In development, Preview and Release 1.x. Each repository's status page is the source; smaltworks.dev's status page mirrors it.
 10. **README:** the lockup, the stage badge, the tagline and positioning line, then "Documentation" and "smaltworks.dev" links. It ends with the "A smaltworks project" badge.
 11. **Page metadata:** site search, and `og:` title, description and image.
+12. **Demo:** an app site (smaltui, smaltbi, smaltnb) opens its app on sample data from one nav item, **Demo**, first in the top nav. The home page embeds no demo. The language sites (smaltql, smaltdf) have no demo yet.
+13. **Status on smaltworks.dev:** its status page and product pages keep a one-line detail for each product. A change that alters a product's status or what it does comes with a smalt-brand PR that updates them, linked with `Depends on:`.
 
 smaltui's page is a web app, not VitePress: it follows the same rules in its own HTML, with the family's products as cards in place of the menu.
 
@@ -202,9 +204,9 @@ smaltworks keeps kiln orange: it is the family, not a layer. The `product-*` tok
 | | smaltdb | smaltql | smaltdf | smaltts | smaltui | smaltbi | smaltnb |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Layer | Engine | Languages | Languages | Languages | User tools | User tools | User tools |
-| What it is | The engine | The SQL | The dataframes | The typed API | The SQL console | The reports | The notebooks |
+| What it is | The engine | The SQL | The dataframes | The typed API | The query workbench | The reports | The notebooks |
 | Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A SQL console for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. |
 | Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Chevron (`>` and `_`) | Scatter | Pencil |
 | Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` |
 

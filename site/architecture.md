@@ -53,6 +53,6 @@ AI agents, including smaller ones. [Kits →](/products/kits)
 
 ## Apps
 
-- **smaltui**, the SQL console, for people who live in SQL. [smaltui →](/products/smaltui)
+- **smaltui**, the query workbench: SQL today, with dataframes to come. [smaltui →](/products/smaltui)
 - **smaltbi**, reports for analysts who'd rather drag a field than write a query. [smaltbi →](/products/smaltbi)
 - **smaltnb**, notebooks for working through data step by step. [smaltnb →](/products/smaltnb)

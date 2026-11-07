@@ -10,7 +10,8 @@ thing.
 - **One look.** Kits draw their colours and type from the smalt brand tokens, so smaltui, smaltbi and smaltnb look
   like one family.
 
-Today the kits live in **smaltkit**: the engine loader, number and date formatting, SVG chart helpers and charts,
-tables and pivots, and a small DOM toolkit, used by smaltui and smaltbi. smaltkit is 0.2.0 and isn't on npm yet.
+Today the kits live in **smaltkit**: the engine loader, URL rewriting, number and date formatting, SVG chart helpers and
+charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps
+and value-picking controls, used by smaltui and smaltbi. smaltkit is 0.4.0 and isn't on npm yet.
 
 [Repository →](https://github.com/stenhoor/smaltkit)

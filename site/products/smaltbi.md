@@ -12,6 +12,6 @@ and keeps SQL underneath for those who do.
 - **Design** reports by dragging fields onto a canvas, with cross-filtering and drill-down.
 - **Publish** a report as a static site that runs entirely in its reader's browser.
 
-**Status:** 0.1.0, a working skeleton: the designer, viewer, model and static publishing work end to end.
+**Status:** 0.1.0, in development: the designer, viewer, model and static publishing work end to end.
 
-[See the live sample report →](https://stenhoor.github.io/smaltbi/) · [Repository →](https://github.com/stenhoor/smaltbi)
+[Try the live demo →](https://stenhoor.github.io/smaltbi/designer.html?report=examples/sales/report.json) · [Read the docs →](https://stenhoor.github.io/smaltbi/) · [Repository →](https://github.com/stenhoor/smaltbi)

@@ -35,7 +35,7 @@ PRODUCTS = {
            "A fast alternative database for the browser, written in TypeScript.",
            "smaltdb.dev"),
     "ui": ("Small. Alternative. Query.",
-           "A SQL console for smaltdb that runs entirely in the browser.",
+           "A query workbench for smaltdb that runs entirely in the browser.",
            "github.com/stenhoor/smaltui"),
     "bi": ("Small. Alternative. Insight.",
            "Business intelligence in the browser, powered by smaltdb.",
