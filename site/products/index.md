@@ -10,7 +10,7 @@ site or repository with the full details; these pages are the overview.
 <ProductCard product="ts" tagline="Small. Alternative. Typed." line="smaltdb, straight from TypeScript." status="Planned" href="/products/smaltts" />
 <ProductCard product="ui" tagline="Small. Alternative. Query." line="A SQL console for smaltdb that runs entirely in the browser." status="0.1.0 · live demo" href="/products/smaltui" />
 <ProductCard product="bi" tagline="Small. Alternative. Insight." line="Business intelligence in the browser, powered by smaltdb." status="0.1.0 · live demo" href="/products/smaltbi" />
-<ProductCard product="nb" tagline="Small. Alternative. Notebooks." line="TypeScript notebooks for smaltdb." status="Planned" href="/products/smaltnb" />
+<ProductCard product="nb" tagline="Small. Alternative. Notebooks." line="TypeScript notebooks for smaltdb." status="In early development" href="/products/smaltnb" />
 </div>
 
 - [Plugins](/products/plugins): the formats and data sources smaltdb can load, and how others can build their own.
