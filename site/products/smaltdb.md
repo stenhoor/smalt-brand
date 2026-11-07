@@ -4,14 +4,14 @@
 
 **Small. Alternative. Fast.** A fast alternative database for the browser, written in TypeScript.
 
-smaltdb is the engine under everything else in the family: an embedded SQL database that runs inside the browser.
+smaltdb is the engine under everything else in the family: an embedded database engine that runs inside the browser.
 
 - **Runs in a Web Worker,** so queries never block the page.
 - **Stores data in OPFS,** the browser's private file system, with atomic, durable commits through a write-ahead log,
   or **in memory** when nothing needs to persist.
 - **Row and columnar tables:** B-trees for reading and writing single rows, columns with zone maps for analytics.
-- **SQL that follows SQLite,** checked against it with differential tests. SQL is moving into its own package,
-  [smaltql](/products/smaltql): smaltdb becomes the engine alone, and each language brings its own `open()`.
+- **Plans, not text.** The engine runs plans; languages build them: SQL is [smaltql](/products/smaltql), dataframes
+  are [smaltdf](/products/smaltdf), and each language brings its own `open()`.
 - **A cost-based planner,** views and materialized views, and parallel readers across tabs.
 - **External tables** over CSV, JSON and Parquet files on the web, S3 and Azure, through [plugins](/products/plugins).
 
