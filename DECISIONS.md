@@ -411,7 +411,9 @@ The owner's decisions, 2026-11-07:
   picked so the line and the app's name agree.
 - **Demos: one nav item, no embedded demos.** smaltui, smaltbi and smaltnb each open their app on sample data from a
   **Demo** nav item, first in the nav. The live demos embedded in smaltui's and smaltbi's home pages go. Before this,
-  each site did it differently (embedded and "Workbench"; embedded and "Demo"; "Open a notebook" only).
+  each site did it differently (embedded and "Workbench"; embedded and "Demo"; "Open a notebook" only). The hero
+  keeps one button, Getting started, on every app site: the Demo nav item is the only way into the app (the first pass
+  left "Open the workbench", "Open the designer", "View the published sample" and "Open a notebook" in the heroes).
 - **No demo on the language sites yet.** smaltql and smaltdf stay documentation only.
 - **smaltworks.dev keeps its one-line status details,** kept current by the sessions that change the products: a
   change to a product's status or what it does comes with a smalt-brand PR. Showing only the stage, with a link, was

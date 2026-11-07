@@ -178,7 +178,7 @@ Every product site and README follows the same rules, so the family reads as one
 9. **Status:** one stage from Planned, In early development, In development, Preview and Release 1.x. Each repository's status page is the source; smaltworks.dev's status page mirrors it.
 10. **README:** the lockup, the stage badge, the tagline and positioning line, then "Documentation" and "smaltworks.dev" links. It ends with the "A smaltworks project" badge.
 11. **Page metadata:** site search, and `og:` title, description and image.
-12. **Demo:** an app site (smaltui, smaltbi, smaltnb) opens its app on sample data from one nav item, **Demo**, first in the top nav. The home page embeds no demo. The language sites (smaltql, smaltdf) have no demo yet.
+12. **Demo:** an app site (smaltui, smaltbi, smaltnb) opens its app on sample data from one nav item, **Demo**, first in the top nav. The home page embeds no demo, and nothing else on the site opens the app: the hero has one button, **Getting started**, to the guide. The language sites (smaltql, smaltdf) have no demo yet.
 13. **Status on smaltworks.dev:** its status page and product pages keep a one-line detail for each product. A change that alters a product's status or what it does comes with a smalt-brand PR that updates them, linked with `Depends on:`.
 
 smaltui's page is a web app, not VitePress: it follows the same rules in its own HTML, with the family's products as cards in place of the menu.
