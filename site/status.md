@@ -9,7 +9,7 @@ As of November 2026. Each project's repository has its own roadmap.
 | [smaltql](/products/smaltql) | 0.9.0 | **In development.** SQL has moved out of smaltdb into smaltql; to be published with smaltdb 0.9.0. [Docs](https://stenhoor.github.io/smaltql/) |
 | [smaltts](/products/smaltts) | — | **Planned.** |
 | [smaltdf](/products/smaltdf) | 0.1.0 | **In development,** coming soon. [Docs](https://stenhoor.github.io/smaltdf/) |
-| [smaltui](/products/smaltui) | 0.1.0 | **In development.** SQL today; dataframes to come. [Demo](https://stenhoor.github.io/smaltui/workbench/?env=envs/demo/env.json) · [Docs](https://stenhoor.github.io/smaltui/) |
+| [smaltui](/products/smaltui) | 0.1.0 | **In development.** SQL and smaltdf dataframes, in editor tabs. [Demo](https://stenhoor.github.io/smaltui/workbench/?env=envs/demo/env.json) · [Docs](https://stenhoor.github.io/smaltui/) |
 | [smaltbi](/products/smaltbi) | 0.1.0 | **In development.** The designer, viewer and publishing work end to end. [Demo](https://stenhoor.github.io/smaltbi/designer.html?report=examples/sales/report.json) · [Docs](https://stenhoor.github.io/smaltbi/) |
 | [smaltnb](/products/smaltnb) | — | **In early development.** The notebook page is out: notebooks run in your browser, with SQL and smaltdf cells. [Demo](https://stenhoor.github.io/smaltnb/app/) · [Docs](https://stenhoor.github.io/smaltnb/) |
 | [smaltkit](/products/kits) | 0.4.0 | **In development,** used by smaltui and smaltbi; not on npm yet. |
