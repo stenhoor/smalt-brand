@@ -161,7 +161,25 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## Docs theme
 
-`themes/vitepress/` is the VitePress theme used by smaltdb.dev: the Kiln palette mapped onto VitePress's variables, the type rules, and Shiki code themes built from the `syn-*` tokens.
+`themes/vitepress/` is the VitePress theme every smalt product site uses: the Kiln palette mapped onto VitePress's variables, the type rules, the hero-suffix colour for each layer, and Shiki code themes built from the `syn-*` tokens. It also holds the parts every product site shares: the smaltworks menu and footer (`smaltworks.ts`) and the stage and "A smaltworks project" badges (`stage.ts`). Copy the files unchanged; [`themes/vitepress/README.md`](themes/vitepress/README.md) says how.
+
+## Sites and READMEs
+
+Every product site and README follows the same rules, so the family reads as one. A product site is the product's own documentation or demo site; smaltworks.dev is the family's.
+
+1. **Header:** the product lockup from `logos/<product>/`, light and dark.
+2. **Hero:** the wordmark with its suffix in the layer's text colour (`<span class="suffix language">ql</span>`; smaltdb's suffix has no span). The headline is the tagline, and the line under it is the positioning line from [the family table](#the-smalt-family), word for word. Anything more goes in the paragraph under the hero.
+3. **Stage badge:** work in progress under the hero and at the top of every page, linked to smaltworks.dev/stability. It becomes Release 1.x when the product reaches 1.0, and not before.
+4. **smaltworks menu:** the last item in the top nav, from `smaltworksMenu()`: "The family", then every product as `name · role`, then "Work in progress". The same items, in the same order, on every site.
+5. **Footer:** "A smaltworks project", linked to smaltworks.dev, and "MIT License". On pages with a sidebar, where VitePress hides its footer, `stage.ts` puts both at the foot of the page.
+6. **Link wording:** a product named in running text links to its own site. Calls to action are "Read the docs →", "Try the live demo →" and "Repository →". Roles are always the engine, SQL, dataframes, typed API, SQL console, reports and notebooks.
+7. **Theme:** `smaltdb.css`, `shiki.ts`, `smaltworks.ts` and `stage.ts` copied from `themes/vitepress/` unchanged. A product's own rules go in a file of its own (smaltbi's `smaltbi.css`), never into the copies.
+8. **Install lines:** the [npm names](#npm-names), `@smaltworks/<repository>`. Until a package is published, say so beside the line.
+9. **Status:** one stage from Planned, In early development, In development, Preview and Release 1.x. Each repository's status page is the source; smaltworks.dev's status page mirrors it.
+10. **README:** the lockup, the stage badge, the tagline and positioning line, then "Documentation" and "smaltworks.dev" links. It ends with the "A smaltworks project" badge.
+11. **Page metadata:** site search, and `og:` title, description and image.
+
+smaltui's page is a web app, not VitePress: it follows the same rules in its own HTML, with the family's products as cards in place of the menu.
 
 ## The smalt family
 
