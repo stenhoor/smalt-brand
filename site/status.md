@@ -6,7 +6,7 @@ As of November 2026. Each project's repository has its own roadmap.
 | --- | --- | --- |
 | [smaltdb](/products/smaltdb) | 0.9.0 | **Preview.** On npm: 0.8.3. 0.9.0, with the plugin system, is next. |
 | [smaltdb plugins](/products/plugins) | 0.9.0 | **Ready,** to be published with smaltdb 0.9.0. Plugin API version 1 is stable. |
-| [smaltql](/products/smaltql) | — | **Planned.** SQL works today inside smaltdb; it moves to its own package after the shared plan layer. |
+| [smaltql](/products/smaltql) | — | **Planned.** SQL works today inside smaltdb; it moves to its own package after the shared plan layer. [Docs](https://stenhoor.github.io/smaltql/) |
 | [smaltts](/products/smaltts) | — | **Planned.** |
 | [smaltdf](/products/smaltdf) | 0.1.0 | **In development,** coming soon. [Docs](https://stenhoor.github.io/smaltdf/) |
 | [smaltui](/products/smaltui) | 0.1.0 | **Usable,** with a [live demo](https://stenhoor.github.io/smaltui/). |

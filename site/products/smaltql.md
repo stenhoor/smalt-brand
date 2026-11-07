@@ -17,4 +17,4 @@ own identity.
 **Status:** planned. SQL works today, inside smaltdb. The move to its own package comes after the last steps of smaltdb's
 shared plan layer.
 
-[Repository →](https://github.com/stenhoor/smaltql)
+[Read the docs →](https://stenhoor.github.io/smaltql/) · [Repository →](https://github.com/stenhoor/smaltql)
