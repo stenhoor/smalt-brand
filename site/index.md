@@ -35,7 +35,7 @@ There is no second engine for dataframes and no server to set up.
 
 <div class="sw-cards">
 <ProductCard product="db" tagline="Small. Alternative. Fast." line="A fast alternative database for the browser, written in TypeScript." status="0.9.0 · preview" href="/products/smaltdb" />
-<ProductCard product="ql" tagline="Small. Alternative. Familiar." line="The SQL you know, for smaltdb." status="Planned · SQL is in smaltdb today" href="/products/smaltql" />
+<ProductCard product="ql" tagline="Small. Alternative. Familiar." line="The SQL you know, for smaltdb." status="In development" href="/products/smaltql" />
 <ProductCard product="df" tagline="Small. Alternative. Frames." line="Dataframes for smaltdb. Small and fast." status="In development" href="/products/smaltdf" />
 <ProductCard product="ts" tagline="Small. Alternative. Typed." line="smaltdb, straight from TypeScript." status="Planned" href="/products/smaltts" />
 <ProductCard product="ui" tagline="Small. Alternative. Query." line="A SQL console for smaltdb that runs entirely in the browser." status="0.1.0 · live demo" href="/products/smaltui" />

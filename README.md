@@ -1,26 +1,28 @@
 <h1>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="logos/smaltdb/lockup-on-dark.svg">
-    <img alt="smaltdb" src="logos/smaltdb/lockup.svg" width="320">
+    <source media="(prefers-color-scheme: dark)" srcset="logos/smaltworks/lockup-on-dark.svg">
+    <img alt="smaltworks" src="logos/smaltworks/lockup.svg" width="320">
   </picture>
 </h1>
 
-**Small. Alternative. Fast.**
+**Small. Alternative. Together.**
 
 Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](https://github.com/stenhoor/smaltdb), a fast alternative database for the browser, written in TypeScript; [smaltui](https://github.com/stenhoor/smaltui), a SQL console for smaltdb that runs entirely in the browser; [smaltbi](https://github.com/stenhoor/smaltbi), business intelligence in the browser, powered by smaltdb; [smaltdf](https://github.com/stenhoor/smaltdf), dataframes for smaltdb, small and fast; [smaltnb](https://github.com/stenhoor/smaltnb), TypeScript notebooks for smaltdb; [smaltql](https://github.com/stenhoor/smaltql), the SQL you know, for smaltdb; and smaltts, smaltdb, straight from TypeScript. Docs: [smaltdb.dev](https://smaltdb.dev).
 
 <p>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltdb/lockup-on-dark.svg"><img alt="smaltdb" src="logos/smaltdb/lockup.svg" width="200"></picture>
+  &nbsp;&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltql/lockup-on-dark.svg"><img alt="smaltql" src="logos/smaltql/lockup.svg" width="200"></picture>
+  &nbsp;&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltdf/lockup-on-dark.svg"><img alt="smaltdf" src="logos/smaltdf/lockup.svg" width="200"></picture>
+  &nbsp;&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltts/lockup-on-dark.svg"><img alt="smaltts" src="logos/smaltts/lockup.svg" width="200"></picture>
+  &nbsp;&nbsp;
   <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltui/lockup-on-dark.svg"><img alt="smaltui" src="logos/smaltui/lockup.svg" width="200"></picture>
   &nbsp;&nbsp;
   <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltbi/lockup-on-dark.svg"><img alt="smaltbi" src="logos/smaltbi/lockup.svg" width="200"></picture>
   &nbsp;&nbsp;
-  <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltdf/lockup-on-dark.svg"><img alt="smaltdf" src="logos/smaltdf/lockup.svg" width="200"></picture>
-  &nbsp;&nbsp;
   <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltnb/lockup-on-dark.svg"><img alt="smaltnb" src="logos/smaltnb/lockup.svg" width="200"></picture>
-  &nbsp;&nbsp;
-  <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltql/lockup-on-dark.svg"><img alt="smaltql" src="logos/smaltql/lockup.svg" width="200"></picture>
-  &nbsp;&nbsp;
-  <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltts/lockup-on-dark.svg"><img alt="smaltts" src="logos/smaltts/lockup.svg" width="200"></picture>
 </p>
 
 ## What's here

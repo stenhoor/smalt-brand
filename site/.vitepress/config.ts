@@ -87,6 +87,7 @@ export default defineConfig({
       ] },
     ],
     socialLinks: [{ icon: 'github', link: GH }],
-    footer: { message: 'Small. Alternative. Together. · Stay smalty.', copyright: 'smaltworks · code under the MIT licence' },
+    search: { provider: 'local' },
+    footer: { message: 'Small. Alternative. Together. · Stay smalty.', copyright: 'MIT License' },
   },
 })
