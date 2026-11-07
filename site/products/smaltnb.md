@@ -2,13 +2,13 @@
 
 <StageBadge />
 
-**Small. Alternative. Notebooks.** TypeScript notebooks for smaltdb.
+**Small. Alternative. Notebooks.** Reactive notebooks for smaltdb.
 
-smaltnb is inspired by Jupyter and marimo: a notebook for working through data step by step, scripted in TypeScript.
-Notebooks are reactive: change a cell and the cells that depend on it run again. One notebook will mix TypeScript, SQL
-on smaltdb and smaltdf dataframe cells, with charts from the smalt [kits](/products/kits).
+smaltnb is inspired by marimo, Jupyter and JupyterLab: a notebook for working through data step by step. Notebooks are
+reactive: change a cell and the cells that depend on it run again. One notebook mixes SQL on smaltdb, smaltdf dataframe
+and TypeScript cells, with charts from the smalt [kits](/products/kits).
 
-**Status:** in early development, not yet published. Notebooks run, with SQL and smaltdf cells, outside the page; the
-notebook page is next. See [its status page](https://stenhoor.github.io/smaltnb/guide/status).
+**Status:** in early development, not yet published. [Open a notebook](https://stenhoor.github.io/smaltnb/app/): it runs
+in your browser, with SQL and smaltdf cells. See [its status page](https://stenhoor.github.io/smaltnb/guide/status).
 
 [Read the docs →](https://stenhoor.github.io/smaltnb/) · [Repository →](https://github.com/stenhoor/smaltnb)

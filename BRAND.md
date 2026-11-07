@@ -204,7 +204,7 @@ smaltworks keeps kiln orange: it is the family, not a layer. The `product-*` tok
 | Layer | Engine | Languages | Languages | Languages | User tools | User tools | User tools |
 | What it is | The engine | The SQL | The dataframes | The typed API | The SQL console | The reports | The notebooks |
 | Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A SQL console for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | TypeScript notebooks for smaltdb. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A SQL console for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. |
 | Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Chevron (`>` and `_`) | Scatter | Pencil |
 | Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` |
 
