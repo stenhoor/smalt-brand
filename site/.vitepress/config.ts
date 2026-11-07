@@ -45,6 +45,7 @@ export default defineConfig({
       { text: 'Architecture', link: '/architecture' },
       { text: 'Why smalty', link: '/why-smalty' },
       { text: 'Status', link: '/status' },
+      { text: 'Work in progress', link: '/stability' },
       {
         text: 'Community',
         items: [
@@ -61,6 +62,7 @@ export default defineConfig({
         { text: 'Why smalty', link: '/why-smalty' },
         { text: 'How we work with AI', link: '/ai' },
         { text: 'Status', link: '/status' },
+        { text: 'Work in progress', link: '/stability' },
       ] },
       { text: 'Products', items: [
         { text: 'Overview', link: '/products/' },

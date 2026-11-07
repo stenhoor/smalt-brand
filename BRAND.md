@@ -220,6 +220,18 @@ Packages publish to npm under the smaltworks organisation, named after their rep
 
 Ready-made distributions (the engine alone, or the engine with particular languages) are planned but not yet named.
 
+## Before 1.0: work in progress
+
+Until 1.0, the family speaks as a work in progress and an invitation: **"Work in progress. Come build with us."** The first half says where things are; the second asks people in. The hype at this stage is for people who enjoy new things and will work through rough patches, not for anyone building a business on it.
+
+- **The badge:** one, twice the height of the others: **Work in progress** above **Come build with us**, led by a pull-request sign, the contributor's branch in kiln orange arrowing into the smalt main line (`badges/work-in-progress.svg`, `-on-dark`; the sign alone is in `badges/signs/`). Put it at the top of every README, release and preview page, linked to `https://smaltworks.dev/stability`. Signs are signage, not product marks: they may use strokes and rings, which the marks don't.
+- **Say who it's for:** people who like trying new things, don't mind breaking changes, and want a say in how it turns out. **Not yet for** production or data you can't recreate.
+- **Every release's notes start with Breaking,** even when it says "None" (`templates/release-notes.md`).
+- **Install lines pin exact versions** (`npm install --save-exact`).
+- **The call to action is "try it, break it, tell us",** not "use it" or "star it".
+- **Don't say** production-ready, stable, or enterprise, and don't lead with benchmark numbers. "Fast" stays in smaltdb's tagline as a goal.
+- **Not "salty",** in any form: the family's line is "Stay smalty".
+
 ## "Powered by" badges
 
 `badges/` has a badge for each product, light and dark: 172 × 28 px, with all text converted to paths. Sites and projects that use a smalt product show the matching badge and link it to the project. `badges/README.md` has the HTML and Markdown snippets.

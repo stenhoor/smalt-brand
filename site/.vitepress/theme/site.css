@@ -18,6 +18,7 @@
 .dark .sw-dark { display: inline-block; }
 
 img.sw-light, img.sw-dark { vertical-align: middle; margin: 2px 4px 2px 0; }
+img.sw-light { display: inline-block; }
 
 /* wordmark as text */
 .sw-word { font-family: var(--smalt-brand-font); font-weight: 600; letter-spacing: -0.06em; color: var(--sw-ink); }
