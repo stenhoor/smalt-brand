@@ -19,7 +19,7 @@ Use the badge for the project you build on, and link it to that project:
 | Powered by smaltdb | `https://smaltdb.dev` |
 | Powered by smaltui | `https://github.com/stenhoor/smaltui` |
 | Powered by smaltbi | `https://github.com/stenhoor/smaltbi` |
-| Powered by smaltdf | `https://github.com/stenhoor/smaltdf` |
+| Powered by smaltdf | `https://stenhoor.github.io/smaltdf/` |
 | Powered by smaltnb | `https://github.com/stenhoor/smaltnb` |
 | Powered by smaltql | `https://github.com/stenhoor/smaltql` |
 | Powered by smaltts | `https://smaltworks.dev/products/smaltts` |
