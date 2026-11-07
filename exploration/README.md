@@ -130,6 +130,10 @@ The later positioning lines (P4–P11 and the final "Dataframes for smaltdb. Sma
 | [FAM-WIP3](family/png/FAM-WIP3.png) | Round 3: hard hats drawn without the angle rule. The hard hat was dropped. |
 | [FAM-WIP4](family/png/FAM-WIP4.png) | Round 4: crane, bricks, wrench and merge in solid shapes. None picked. |
 | [FAM-WIP5](family/png/FAM-WIP5.png) | Round 5: branch and merge drawn the way Git tools draw them. Picked: G3 Pull request, at double size, in one two-line badge. |
+| [FAM-Stable](family/png/FAM-Stable.png) | From 1.0, round 1: merged, release-and-branch, and a tag on the main line. The tag was liked, the line wasn't. |
+| [FAM-Stable2](family/png/FAM-Stable2.png) | Round 2: the tag on its own, four ways. None picked. |
+| [FAM-Stable3](family/png/FAM-Stable3.png) | Round 3: releases the way Git tools draw them (a filled node, a release commit, merged, Gitflow). Picked: R2 Release commit. |
+| [FAM-Stable4](family/png/FAM-Stable4.png) | Round 4: R2's top line. Picked: "Release 1.x". |
 
 ## The family voice
 

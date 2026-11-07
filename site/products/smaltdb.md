@@ -1,5 +1,7 @@
 # <Mark product="db" :size="40" /> smaltdb
 
+<StageBadge />
+
 **Small. Alternative. Fast.** A fast alternative database for the browser, written in TypeScript.
 
 smaltdb is the engine under everything else in the family: an embedded SQL database that runs inside the browser.

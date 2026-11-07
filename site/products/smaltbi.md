@@ -1,5 +1,7 @@
 # <Mark product="bi" :size="40" /> smaltbi
 
+<StageBadge />
+
 **Small. Alternative. Insight.** Business intelligence in the browser, powered by smaltdb.
 
 smaltbi takes its cue from Power BI and Tableau. It's built for analysts who want answers without writing queries,

@@ -1,5 +1,7 @@
 # <Mark product="ql" :size="40" /> smaltql
 
+<StageBadge />
+
 **Small. Alternative. Familiar.** The SQL you know, for smaltdb.
 
 smaltql is smaltdb's SQL: the language you query the engine with, in a dialect that follows SQLite. It is moving out

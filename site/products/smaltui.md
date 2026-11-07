@@ -1,5 +1,7 @@
 # <Mark product="ui" :size="40" /> smaltui
 
+<StageBadge />
+
 **Small. Alternative. Query.** A SQL console for smaltdb that runs entirely in the browser.
 
 smaltui is in the spirit of Toad: a console for people who live in SQL.

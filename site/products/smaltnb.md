@@ -1,5 +1,7 @@
 # <Mark product="nb" :size="40" /> smaltnb
 
+<StageBadge />
+
 **Small. Alternative. Notebooks.** TypeScript notebooks for smaltdb.
 
 smaltnb is inspired by Jupyter and marimo: a notebook for working through data step by step, scripted in TypeScript.

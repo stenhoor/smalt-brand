@@ -65,7 +65,7 @@ Regenerate with `python3 scripts/badges.py <Geist[wght].ttf> <MartianMono[wdth,w
 
 ## Work in progress · Come build with us
 
-The preview badge, for the top of a README or release before 1.0. It is twice the height of the other badges: "Work in progress" above "Come build with us", led by a pull-request sign (your branch in kiln orange, arrowing into the smalt main line). Link it to the stability page. The sign alone, at 64 px, is in [`signs/`](signs/).
+The preview badge, for the top of a README or release before 1.0 (from 1.0, use Release 1.x, below, instead). It is twice the height of the other badges: "Work in progress" above "Come build with us", led by a pull-request sign (your branch in kiln orange, arrowing into the smalt main line). Link it to the stability page. The sign alone, at 64 px, is in [`signs/`](signs/).
 
 | Light | Dark |
 | --- | --- |
@@ -73,4 +73,16 @@ The preview badge, for the top of a README or release before 1.0. It is twice th
 
 ```html
 <a href="https://smaltworks.dev/stability"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/work-in-progress-on-dark.svg"><img alt="Work in progress. Come build with us." src="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/work-in-progress.svg" height="56"></picture></a>
+```
+
+## Release 1.x · Come build with us
+
+For a product from 1.0 on, in place of the preview badge; never before 1.0. "Release 1.x" above "Come build with us", led by a release-commit sign: a release node on the smalt main line, with your pull request still coming in. It names the major version only, so it changes only at 2.0 (`release-2x`, generated when needed). Link it to the stability page. The sign alone is in [`signs/`](signs/).
+
+| Light | Dark |
+| --- | --- |
+| ![Release 1.x. Come build with us.](release-1x.svg) | ![Release 1.x. Come build with us.](release-1x-on-dark.svg) |
+
+```html
+<a href="https://smaltworks.dev/stability"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/release-1x-on-dark.svg"><img alt="Release 1.x. Come build with us." src="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/release-1x.svg" height="56"></picture></a>
 ```
