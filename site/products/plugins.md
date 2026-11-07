@@ -28,3 +28,5 @@ test suite is published.
 
 Naming: the `@smaltworks` scope and names starting with `smalt` are reserved for smaltworks. Name your plugin
 `smaltdb-plugin-<name>`.
+
+[Read the docs →](https://smaltdb.dev/reference/api/plugins)

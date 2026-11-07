@@ -19,4 +19,4 @@ smaltdb is the engine under everything else in the family: an embedded database 
 as `@smaltworks/<repository>`, so smaltdb becomes `@smaltworks/smaltdb`. 0.9.0, with the plugin system, is next. The on-disk
 format may still change before 1.0.
 
-[Documentation at smaltdb.dev →](https://smaltdb.dev) · [Repository →](https://github.com/stenhoor/smaltdb)
+[Read the docs →](https://smaltdb.dev) · [Repository →](https://github.com/stenhoor/smaltdb)

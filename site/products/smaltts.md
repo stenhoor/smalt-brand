@@ -13,3 +13,5 @@ directly, without a query language or dataframes in between.
   so it gets smaltdb's optimizer and storage, like [smaltql](/products/smaltql) and [smaltdf](/products/smaltdf).
 
 **Status:** planned.
+
+[Repository →](https://github.com/stenhoor/smaltts)
