@@ -35,7 +35,7 @@ export default defineConfig({
           { text: 'smaltql · SQL', link: '/products/smaltql' },
           { text: 'smaltdf · dataframes', link: '/products/smaltdf' },
           { text: 'smaltts · typed API', link: '/products/smaltts' },
-          { text: 'smaltui · SQL console', link: '/products/smaltui' },
+          { text: 'smaltui · query workbench', link: '/products/smaltui' },
           { text: 'smaltbi · reports', link: '/products/smaltbi' },
           { text: 'smaltnb · notebooks', link: '/products/smaltnb' },
           { text: 'Plugins', link: '/products/plugins' },

@@ -398,6 +398,27 @@ The counterpart of the work-in-progress badge, for a product once it reaches 1.0
 - **Every product page shows its stage.** Product pages on smaltworks.dev show the work-in-progress badge now and
   switch to the release badge one by one, as each product reaches 1.0. That needs a 1.0 milestone for each product.
 
+## Sites and READMEs
+
+One standard for every product site and README (BRAND.md, "Sites and READMEs"), after a review found each repository
+had made its own choices. The shared parts (menu, footer, badges, suffix colours) are in `themes/vitepress/`.
+
+The owner's decisions, 2026-11-07:
+
+- **smaltui: "A query workbench for smaltdb that runs entirely in the browser."** It was "A SQL console…"; dataframes
+  are coming to smaltui, so "SQL" undersold it. Its role in menus is "query workbench", and the app is the workbench
+  everywhere (it was console in some places, workbench in others). "Query console" was considered; "workbench" was
+  picked so the line and the app's name agree.
+- **Demos: one nav item, no embedded demos.** smaltui, smaltbi and smaltnb each open their app on sample data from a
+  **Demo** nav item, first in the nav. The live demos embedded in smaltui's and smaltbi's home pages go. Before this,
+  each site did it differently (embedded and "Workbench"; embedded and "Demo"; "Open a notebook" only).
+- **No demo on the language sites yet.** smaltql and smaltdf stay documentation only.
+- **smaltworks.dev keeps its one-line status details,** kept current by the sessions that change the products: a
+  change to a product's status or what it does comes with a smalt-brand PR. Showing only the stage, with a link, was
+  considered.
+- **Brand first.** Every repository's CLAUDE.md points sessions to BRAND.md and this file before they change a site,
+  README or description. Sessions had copied an old line back onto a site after the owner changed it.
+
 ## Exploration archive
 
 [`exploration/`](exploration/) keeps all 67 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.

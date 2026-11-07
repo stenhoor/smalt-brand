@@ -11,4 +11,4 @@ and TypeScript cells, with charts from the smalt [kits](/products/kits).
 **Status:** in early development, not yet published. [Open a notebook](https://stenhoor.github.io/smaltnb/app/): it runs
 in your browser, with SQL and smaltdf cells. See [its status page](https://stenhoor.github.io/smaltnb/guide/status).
 
-[Read the docs →](https://stenhoor.github.io/smaltnb/) · [Repository →](https://github.com/stenhoor/smaltnb)
+[Try the live demo →](https://stenhoor.github.io/smaltnb/app/) · [Read the docs →](https://stenhoor.github.io/smaltnb/) · [Repository →](https://github.com/stenhoor/smaltnb)
