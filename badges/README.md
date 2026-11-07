@@ -21,7 +21,7 @@ Use the badge for the project you build on, and link it to that project:
 | Powered by smaltbi | `https://github.com/stenhoor/smaltbi` |
 | Powered by smaltdf | `https://stenhoor.github.io/smaltdf/` |
 | Powered by smaltnb | `https://stenhoor.github.io/smaltnb/` |
-| Powered by smaltql | `https://github.com/stenhoor/smaltql` |
+| Powered by smaltql | `https://stenhoor.github.io/smaltql/` |
 | Powered by smaltts | `https://smaltworks.dev/products/smaltts` |
 
 ## In a GitHub README or web page (follows light and dark mode)
