@@ -1,5 +1,7 @@
 # <Mark product="ts" :size="40" /> smaltts
 
+<StageBadge />
+
 **Small. Alternative. Typed.** smaltdb, straight from TypeScript.
 
 smaltts is a thin, typed TypeScript API for smaltdb, for applications and tools that want to work with the engine

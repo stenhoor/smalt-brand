@@ -1,5 +1,7 @@
 # <Mark product="df" :size="40" /> smaltdf
 
+<StageBadge />
+
 **Small. Alternative. Frames.** Dataframes for smaltdb. Small and fast.
 
 smaltdf is the second language for the smaltdb engine, next to [smaltql](/products/smaltql): a TypeScript dataframe API of frames,

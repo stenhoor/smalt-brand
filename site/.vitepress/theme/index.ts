@@ -6,6 +6,7 @@ import './site.css'
 import EngineBar from './components/EngineBar.vue'
 import ProductCard from './components/ProductCard.vue'
 import Mark from './components/Mark.vue'
+import StageBadge from './components/StageBadge.vue'
 
 export default {
   extends: DefaultTheme,
@@ -13,5 +14,6 @@ export default {
     app.component('EngineBar', EngineBar)
     app.component('ProductCard', ProductCard)
     app.component('Mark', Mark)
+    app.component('StageBadge', StageBadge)
   },
 } satisfies Theme

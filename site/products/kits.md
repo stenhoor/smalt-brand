@@ -1,5 +1,7 @@
 # Kits
 
+<StageBadge />
+
 The apps aren't built from scratch each time. They're built from **kits**: small, focused libraries that each do one
 thing.
 

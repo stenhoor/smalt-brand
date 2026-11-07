@@ -89,48 +89,70 @@ def endorsement(geist, mono, theme):
             f"{a_svg}{word_svg}{p_svg}</svg>\n")
 
 
-# The preview badge: "Work in progress" above "Come build with us", led by a pull-request sign
-# (the contributor's branch in kiln orange, arrowing into the smalt main line). Twice the height of
-# the other badges. Signs are signage, not product marks, so they use strokes and rings.
+# The two-line badges, twice the height of the others. Before 1.0, the preview badge: "Work in
+# progress" above "Come build with us", led by a pull-request sign (the contributor's branch in kiln
+# orange, arrowing into the smalt main line). From 1.0, the release badge: "Release 1.x" above "Come
+# build with us", led by a release-commit sign (a release node on the smalt main line, which runs on,
+# with the same pull request still coming in). Signs are signage, not product marks, so they use
+# strokes and rings.
 SIGN_COLOURS = {"light": ("#003399", "#E5622F"), "dark": ("#9DB4F5", "#FF8A5C")}
 SIGN_W, SIGN_R = 6, 7
 
 
+def _ring(x, y, c):
+    return f'<circle cx="{x}" cy="{y}" r="{SIGN_R}" fill="none" stroke="{c}" stroke-width="{SIGN_W - 1}"/>'
+
+
+def _line(d, c):
+    return (f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{SIGN_W}" '
+            f'stroke-linecap="round" stroke-linejoin="round"/>')
+
+
+def _incoming(k):
+    """The contributor's branch, in kiln, with the arrow asking to bring it in."""
+    return _line("M48 47V26C48 20 44 16 38 16H28", k) + _line("M34 10L28 16L34 22", k) + _ring(48, 54, k)
+
+
 def pull_request(theme):
     s, k = SIGN_COLOURS[theme]
+    return _line("M16 17V47", s) + _ring(16, 10, s) + _ring(16, 54, s) + _incoming(k)
 
-    def ring(x, y, c):
-        return f'<circle cx="{x}" cy="{y}" r="{SIGN_R}" fill="none" stroke="{c}" stroke-width="{SIGN_W - 1}"/>'
 
-    def line(d, c):
-        return (f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{SIGN_W}" '
-                f'stroke-linecap="round" stroke-linejoin="round"/>')
-    return (line("M16 17V47", s) + ring(16, 10, s) + ring(16, 54, s)
-            + line("M48 47V26C48 20 44 16 38 16H28", k) + line("M34 10L28 16L34 22", k) + ring(48, 54, k))
+def release_commit(theme):
+    """The main line runs on past a release node (a ring round a dot); the pull request still comes in."""
+    s, k = SIGN_COLOURS[theme]
+    return (_line("M16 6V26", s) + _line("M16 54V58", s)
+            + f'<circle cx="16" cy="40" r="9" fill="none" stroke="{s}" stroke-width="4"/>'
+            + f'<circle cx="16" cy="40" r="4" fill="{s}"/>' + _incoming(k))
 
 
 PREVIEW_H, PREVIEW_PAD, PREVIEW_SIGN = 56, 12, 32
+TWO_LINE = {
+    "work-in-progress": ("Work in progress", pull_request, "Work in progress. Come build with us."),
+    "release-1x": ("Release 1.x", release_commit, "Release 1.x. Come build with us."),
+}
 
 
-def preview_badge(strong, regular, theme):
-    """The two-line preview badge, twice the height of the others."""
+def two_line_badge(strong, regular, theme, kind):
+    """A two-line badge, twice the height of the others."""
+    top, sign_fn, label = TWO_LINE[kind]
     t = THEMES[theme]
     ink = "#151922" if theme == "light" else "#E9EBF0"
     x0 = BORDER + PREVIEW_PAD + PREVIEW_SIGN + 10
-    top_svg, x1 = strong.paths([(ink, "Work in progress")], x0, PREVIEW_H / 2 - 4)
+    top_svg, x1 = strong.paths([(ink, top)], x0, PREVIEW_H / 2 - 4)
     bottom_svg, x2 = regular.paths([(t["verb"], "Come build with us")], x0, PREVIEW_H / 2 + 4 + regular.cap)
     width = round(max(x1 - strong.track, x2 - regular.track) + PREVIEW_PAD + BORDER)
     sign = (f'<g transform="translate({BORDER + PREVIEW_PAD} {(PREVIEW_H - PREVIEW_SIGN) / 2}) '
-            f'scale({PREVIEW_SIGN / 64})">{pull_request(theme)}</g>')
+            f'scale({PREVIEW_SIGN / 64})">{sign_fn(theme)}</g>')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{PREVIEW_H}" '
-            f'viewBox="0 0 {width} {PREVIEW_H}" role="img" aria-label="Work in progress. Come build with us.">'
+            f'viewBox="0 0 {width} {PREVIEW_H}" role="img" aria-label="{label}">'
             f'<rect x="0.5" y="0.5" width="{width - 1}" height="{PREVIEW_H - 1}" rx="9.5" fill="{t["surface"]}" stroke="{t["border"]}"/>'
             f"{sign}{top_svg}{bottom_svg}</svg>\n")
 
 
-def sign_icon(theme):
+def sign_icon(sign_fn, label, theme):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" '
-            f'aria-label="Come build with us">{pull_request(theme)}</svg>\n')
+            f'aria-label="{label}">{sign_fn(theme)}</svg>\n')
 
 
 if __name__ == "__main__":
@@ -151,7 +173,10 @@ if __name__ == "__main__":
     regular = Face(sys.argv[1], {"wght": 400}, 13)
     (out / "signs").mkdir(exist_ok=True)
     for theme, suffix in (("light", ""), ("dark", "-on-dark")):
-        for path, text in ((out / f"work-in-progress{suffix}.svg", preview_badge(strong, regular, theme)),
-                           (out / "signs" / f"pull-request{suffix}.svg", sign_icon(theme))):
+        for path, text in (
+                (out / f"work-in-progress{suffix}.svg", two_line_badge(strong, regular, theme, "work-in-progress")),
+                (out / f"release-1x{suffix}.svg", two_line_badge(strong, regular, theme, "release-1x")),
+                (out / "signs" / f"pull-request{suffix}.svg", sign_icon(pull_request, "Come build with us", theme)),
+                (out / "signs" / f"release-commit{suffix}.svg", sign_icon(release_commit, "Release", theme))):
             path.write_text(text)
             print(path.relative_to(ROOT))

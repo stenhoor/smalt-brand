@@ -78,3 +78,8 @@ a.sw-box:hover, a.sw-kits:hover, a.sw-card:hover { border-color: var(--vp-c-bran
 
 /* badges keep their real size in tables */
 .vp-doc td img.sw-light, .vp-doc td img.sw-dark { max-width: none; }
+
+/* The stage badge under a product page's title. */
+.sw-stage { margin: 8px 0 16px; }
+.sw-stage a { display: inline-block; line-height: 0; }
+.sw-stage img { margin: 0; }

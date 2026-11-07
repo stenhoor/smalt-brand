@@ -1,5 +1,7 @@
 # Plugins
 
+<StageBadge />
+
 smaltdb keeps its core small. Formats and data sources are plugins, so each app loads only what it needs.
 
 | Plugin | What it adds |

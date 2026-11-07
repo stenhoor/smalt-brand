@@ -232,6 +232,14 @@ Until 1.0, the family speaks as a work in progress and an invitation: **"Work in
 - **Don't say** production-ready, stable, or enterprise, and don't lead with benchmark numbers. "Fast" stays in smaltdb's tagline as a goal.
 - **Not "salty",** in any form: the family's line is "Stay smalty".
 
+## From 1.0: Release 1.x
+
+When a product reaches 1.0, its badge becomes **Release 1.x** above **Come build with us**, led by a release-commit sign: a release node on the smalt main line, which runs on, with the same kiln pull request still coming in (`badges/release-1x.svg`, `-on-dark`; the sign alone is in `badges/signs/`). The invitation stays: 1.0 is stable, not finished.
+
+- **Only from 1.0.** Before 1.0 a product shows the work-in-progress badge, whatever its state. Nothing below 1.0 uses the release badge.
+- **The major version, not the exact one.** "Release 1.x" changes only when a breaking release ships, so a README badge never goes stale. At 2.0 it becomes "Release 2.x".
+- **Product pages show their stage** under the title, with `<StageBadge />` (work in progress) or `<StageBadge stage="release" />`. Switch one product at a time, as it reaches 1.0.
+
 ## "Powered by" badges
 
 `badges/` has a badge for each product, light and dark: 172 × 28 px, with all text converted to paths. Sites and projects that use a smalt product show the matching badge and link it to the project. `badges/README.md` has the HTML and Markdown snippets.

@@ -383,9 +383,23 @@ site can't drift apart.
 - **Core team:** Steve TenHoor, organizing founder. His day job and personal contact details are left out; people
   get in touch through GitHub.
 
+## From 1.0: the release badge
+
+The counterpart of the work-in-progress badge, for a product once it reaches 1.0.
+
+- **Sign: R2 Release commit.** The smalt main line runs on past a release node (a ring round a dot), and the same kiln
+  pull request still comes in. Picked over a filled node, a merged sign and a Gitflow in-and-out sign, and over four
+  rounds of tags, which the owner didn't like. Git tools rarely draw a tag: they label a commit and mark special
+  commits with a different node, which is what R2 does.
+- **Top line: "Release 1.x".** It names the major version, so it changes only when a breaking release ships, and it
+  says "stable" without the word. "Release 1.0" was rejected because a README badge would go stale at 1.0.1.
+- **"Come build with us" stays.** The invitation doesn't end at 1.0.
+- **Every product page shows its stage.** Product pages on smaltworks.dev show the work-in-progress badge now and
+  switch to the release badge one by one, as each product reaches 1.0. That needs a 1.0 milestone for each product.
+
 ## Exploration archive
 
-[`exploration/`](exploration/) keeps all 63 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
+[`exploration/`](exploration/) keeps all 67 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
 
 ## Still open
 
