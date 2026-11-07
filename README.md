@@ -7,7 +7,7 @@
 
 **Small. Alternative. Together.**
 
-Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](https://github.com/stenhoor/smaltdb), a fast alternative database for the browser, written in TypeScript; [smaltui](https://github.com/stenhoor/smaltui), a SQL console for smaltdb that runs entirely in the browser; [smaltbi](https://github.com/stenhoor/smaltbi), business intelligence in the browser, powered by smaltdb; [smaltdf](https://github.com/stenhoor/smaltdf), dataframes for smaltdb, small and fast; [smaltnb](https://github.com/stenhoor/smaltnb), TypeScript notebooks for smaltdb; [smaltql](https://github.com/stenhoor/smaltql), the SQL you know, for smaltdb; and smaltts, smaltdb, straight from TypeScript. Docs: [smaltdb.dev](https://smaltdb.dev).
+Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](https://github.com/stenhoor/smaltdb), a fast alternative database for the browser, written in TypeScript; [smaltui](https://github.com/stenhoor/smaltui), a SQL console for smaltdb that runs entirely in the browser; [smaltbi](https://github.com/stenhoor/smaltbi), business intelligence in the browser, powered by smaltdb; [smaltdf](https://github.com/stenhoor/smaltdf), dataframes for smaltdb, small and fast; [smaltnb](https://github.com/stenhoor/smaltnb), reactive notebooks for smaltdb; [smaltql](https://github.com/stenhoor/smaltql), the SQL you know, for smaltdb; and smaltts, smaltdb, straight from TypeScript. Docs: [smaltdb.dev](https://smaltdb.dev).
 
 <p>
   <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltdb/lockup-on-dark.svg"><img alt="smaltdb" src="logos/smaltdb/lockup.svg" width="200"></picture>

@@ -180,7 +180,7 @@ The options were shown on the family canvas:
 | | **Picked** |
 | --- | --- |
 | Tagline | **"Small. Alternative. Notebooks."** |
-| Positioning | **"TypeScript notebooks for smaltdb."** |
+| Positioning | **"Reactive notebooks for smaltdb."** (changed 2026-11-07, below; first pick "TypeScript notebooks for smaltdb.") |
 | Mark | **Pencil:** a 45° pencil, its point in the product colour |
 | Colour | **Cobalt magenta:** `#B0249F` fill, `#981C89` text (light), `#F57FE6` (dark) |
 
@@ -189,6 +189,7 @@ Applied after the picks:
 - The Pencil is the same drawing at every size; at 16 px its magenta point is about two pixels (owner's decision).
 - A 45° pencil resembles the common "edit" icon. The smalt body and magenta point set it apart, but avoid placing it beside edit buttons in a toolbar.
 - The magenta is at least CIELAB distance 33 from the smaltbi violet in light and 34 in dark. The badge text is at least 7.3:1 on its light surface and 7.1:1 on its dark one.
+- Positioning changed to **"Reactive notebooks for smaltdb."** (owner, 2026-11-07). A notebook holds SQL (smaltql) and dataframe (smaltdf) cells as well as TypeScript, so "TypeScript notebooks" undersold it; what sets it apart is that cells rerun when what they read changes. smaltnb's DESIGN.md decision 1 uses the same line everywhere.
 
 ## smaltql
 

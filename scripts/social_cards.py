@@ -44,7 +44,7 @@ PRODUCTS = {
            "Dataframes for smaltdb. Small and fast.",
            "github.com/stenhoor/smaltdf"),
     "nb": ("Small. Alternative. Notebooks.",
-           "TypeScript notebooks for smaltdb.",
+           "Reactive notebooks for smaltdb.",
            "github.com/stenhoor/smaltnb"),
     "ql": ("Small. Alternative. Familiar.",
            "The SQL you know, for smaltdb.",
