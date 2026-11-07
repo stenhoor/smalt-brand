@@ -14,4 +14,4 @@ smaltdb's optimizer, scans and storage. Use it from your own code, or interactiv
 **Status:** in development, coming soon. Its design decisions are recorded in the repository, and it builds on
 smaltdb's shared plan layer, which is in progress.
 
-[Repository →](https://github.com/stenhoor/smaltdf)
+[Read the docs →](https://stenhoor.github.io/smaltdf/) · [Repository →](https://github.com/stenhoor/smaltdf)
