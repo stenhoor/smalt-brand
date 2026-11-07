@@ -62,3 +62,15 @@ For smaltworks' own products: an endorsement under the product's own brand, in a
 - Use the dark version only on dark backgrounds, or let `<picture>` choose.
 
 Regenerate with `python3 scripts/badges.py <Geist[wght].ttf> <MartianMono[wdth,wght].ttf>` (fonts from [google/fonts](https://github.com/google/fonts)).
+
+## Work in progress · Come build with us
+
+The preview badge, for the top of a README or release before 1.0. It is twice the height of the other badges: "Work in progress" above "Come build with us", led by a pull-request sign (your branch in kiln orange, arrowing into the smalt main line). Link it to the stability page. The sign alone, at 64 px, is in [`signs/`](signs/).
+
+| Light | Dark |
+| --- | --- |
+| ![Work in progress. Come build with us.](work-in-progress.svg) | ![Work in progress. Come build with us.](work-in-progress-on-dark.svg) |
+
+```html
+<a href="https://smaltworks.dev/stability"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/work-in-progress-on-dark.svg"><img alt="Work in progress. Come build with us." src="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/work-in-progress.svg" height="56"></picture></a>
+```

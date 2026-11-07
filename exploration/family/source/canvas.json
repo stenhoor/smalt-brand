@@ -7,294 +7,336 @@
       "title": "smaltai R1 · Marks (A1–A4), not chosen",
       "w": 1440,
       "x": 1520,
-      "y": 3540
+      "y": 4960
+    },
+    "AI-Marks2.dc.html": {
+      "h": 820,
+      "title": "smaltai R2 · Marks: plugging in (P1–P4)",
+      "w": 1440,
+      "x": 4560,
+      "y": 4960
     },
     "AI-Outline.dc.html": {
       "h": 900,
       "title": "smaltai R1 · Outline treatment, not chosen",
       "w": 1440,
       "x": 3040,
-      "y": 3540
+      "y": 4960
     },
     "AI-Words.dc.html": {
       "h": 880,
       "title": "smaltai R1 · Words: your agents, the smalt tools",
       "w": 1440,
       "x": -40,
-      "y": 3480
+      "y": 4900
+    },
+    "Artboard-0tf4.dc.html": {
+      "h": 600,
+      "title": "Artboard 1",
+      "w": 800,
+      "x": 1840,
+      "y": 1457
     },
     "Badges.dc.html": {
       "h": 1160,
       "title": "4 · Powered by / Built on badges (S1–S3)",
       "w": 1440,
       "x": 1520,
-      "y": 25940
+      "y": 27360
     },
     "Colours.dc.html": {
       "h": 1080,
       "title": "3 · Product colour (A1–A3)",
       "w": 1440,
       "x": 0,
-      "y": 25940
+      "y": 27360
     },
     "DF-Colours.dc.html": {
       "h": 1080,
       "title": "smaltdf · Product colour: K3 picked",
       "w": 1440,
       "x": 3040,
-      "y": 16640
+      "y": 18060
     },
     "DF-Marks.dc.html": {
       "h": 820,
       "title": "smaltdf R1 · Marks (F1–F4), not chosen",
       "w": 1440,
       "x": 4560,
-      "y": 16640
+      "y": 18060
     },
     "DF-Marks2.dc.html": {
       "h": 820,
       "title": "smaltdf R2 · Marks (G1–G4), frames",
       "w": 1440,
       "x": 1520,
-      "y": 16640
+      "y": 18060
     },
     "DF-Words.dc.html": {
       "h": 720,
       "title": "smaltdf R1 · Words and name check",
       "w": 1440,
       "x": 0,
-      "y": 16640
+      "y": 18060
+    },
+    "FAM-Layers.dc.html": {
+      "h": 960,
+      "title": "Family · One colour per layer: picked",
+      "w": 1440,
+      "x": 0,
+      "y": 1720
     },
     "FAM-PluginBadges.dc.html": {
       "h": 1440,
       "title": "Family · Plugin badges and smaltkit (round 1)",
       "w": 1440,
       "x": 1520,
-      "y": 13240
+      "y": 14660
     },
     "FAM-Smalty.dc.html": {
       "h": 1180,
       "title": "Family idea · Smalty (picks marked)",
       "w": 1440,
       "x": 0,
-      "y": 13240
+      "y": 14660
+    },
+    "FAM-WIP.dc.html": {
+      "h": 1120,
+      "title": "Before 1.0 · round 1: W3 Barrier picked; hard hats not clear enough",
+      "w": 1440,
+      "x": 0,
+      "y": 300
+    },
+    "FAM-WIP2.dc.html": {
+      "h": 820,
+      "title": "Before 1.0 · round 2: Come build with us (K1–K4)",
+      "w": 1440,
+      "x": 1520,
+      "y": 300
     },
     "ML-Marks.dc.html": {
       "h": 820,
       "title": "smaltml R1 · Marks (M1–M4)",
       "w": 1440,
       "x": 1520,
-      "y": 1560
+      "y": 2980
     },
     "ML-Words.dc.html": {
       "h": 880,
       "title": "smaltml R1 · Words and where it sits",
       "w": 1440,
       "x": 0,
-      "y": 1560
+      "y": 2980
     },
     "Main.dc.html": {
       "h": 860,
       "title": "1 · Positioning and taglines",
       "w": 1440,
       "x": 0,
-      "y": 24740
+      "y": 26160
     },
     "Marks.dc.html": {
       "h": 1080,
       "title": "2 · Marks (3 each)",
       "w": 1440,
       "x": 1520,
-      "y": 24740
+      "y": 26160
     },
     "NB-Colours.dc.html": {
       "h": 1100,
       "title": "smaltnb · Product colour: N1 magenta picked",
       "w": 1440,
       "x": 3040,
-      "y": 15140
+      "y": 16560
     },
     "NB-Marks.dc.html": {
       "h": 820,
       "title": "smaltnb R1 · Marks (H1–H4), not chosen",
       "w": 1440,
       "x": 4560,
-      "y": 15140
+      "y": 16560
     },
     "NB-Marks2.dc.html": {
       "h": 820,
       "title": "smaltnb R2 · Marks (J1–J6), J2 Spiral closest",
       "w": 1440,
       "x": 6080,
-      "y": 15140
+      "y": 16560
     },
     "NB-Marks3.dc.html": {
       "h": 820,
       "title": "smaltnb R3 · Marks: pencil to paper (P1–P5)",
       "w": 1440,
       "x": 1520,
-      "y": 15140
+      "y": 16560
     },
     "NB-Words.dc.html": {
       "h": 720,
       "title": "smaltnb · Words: T1 and P2 picked",
       "w": 1440,
       "x": 0,
-      "y": 15140
+      "y": 16560
     },
     "QL-Colours.dc.html": {
       "h": 1220,
       "title": "smaltql · Product colour: V1 leaf green picked",
       "w": 1440,
       "x": 3040,
-      "y": 6560
+      "y": 7980
     },
     "QL-Marks.dc.html": {
       "h": 820,
       "title": "smaltql R1 · Marks (Q1–Q6), Q4 Star taken forward",
       "w": 1440,
       "x": 1520,
-      "y": 6560
+      "y": 7980
     },
     "QL-Stars.dc.html": {
       "h": 820,
       "title": "smaltql R2 · The star (S1–S4), not chosen",
       "w": 1440,
       "x": 4560,
-      "y": 6560
+      "y": 7980
     },
     "QL-Stars2.dc.html": {
       "h": 820,
       "title": "smaltql R3 · The star: T2 picked",
       "w": 1440,
       "x": 6080,
-      "y": 6560
+      "y": 7980
     },
     "QL-Words.dc.html": {
       "h": 800,
       "title": "smaltql R1 · Words: T2 and P2 picked",
       "w": 1440,
       "x": 0,
-      "y": 6560
+      "y": 7980
     },
     "R2-BIMarks.dc.html": {
       "h": 900,
       "title": "R2 · smaltbi marks: trend (B5–B8)",
       "w": 1440,
       "x": 0,
-      "y": 21060
+      "y": 22480
     },
     "R2-Badges.dc.html": {
       "h": 1500,
       "title": "R2 · Powered by: pill and inline variants",
       "w": 1440,
       "x": 0,
-      "y": 22160
+      "y": 23580
     },
     "R2-Colours.dc.html": {
       "h": 980,
       "title": "R2 · Cobalt blues, refined (C1, C2, C4)",
       "w": 1440,
       "x": 1520,
-      "y": 21060
+      "y": 22480
     },
     "R2-UIMarks.dc.html": {
       "h": 900,
       "title": "R2 · smaltui marks: terminal (U5–U8)",
       "w": 1440,
       "x": 1520,
-      "y": 20040
+      "y": 21460
     },
     "R2-Words.dc.html": {
       "h": 760,
       "title": "R2 · Words: tagline and positioning",
       "w": 1440,
       "x": 0,
-      "y": 20040
+      "y": 21460
     },
     "R3-Badge.dc.html": {
       "h": 900,
       "title": "R3 · P1 pill with the real marks",
       "w": 1440,
       "x": 1520,
-      "y": 18240
+      "y": 19660
     },
     "R3-Family.dc.html": {
       "h": 820,
       "title": "R3 · Picks applied: marks, colour, words",
       "w": 1440,
       "x": 0,
-      "y": 18240
+      "y": 19660
     },
     "SITE-Architecture.dc.html": {
       "h": 1340,
       "title": "smaltworks site · Architecture graphic (A–D)",
       "w": 1440,
       "x": 0,
-      "y": 8200
+      "y": 9620
     },
     "TS-Colours.dc.html": {
       "h": 1340,
       "title": "smaltts · Colour: C3 graphite picked",
       "w": 1440,
       "x": 3040,
-      "y": 4780
+      "y": 6200
     },
     "TS-Marks.dc.html": {
       "h": 820,
       "title": "smaltts R1 · Marks: R1 Generic picked",
       "w": 1440,
       "x": 1520,
-      "y": 4780
+      "y": 6200
     },
     "TS-Words.dc.html": {
       "h": 880,
       "title": "smaltts R1 · Words: T1 and P2 picked",
       "w": 1440,
       "x": 0,
-      "y": 4780
+      "y": 6200
     },
     "WORKS-Brand.dc.html": {
       "h": 1150,
       "title": "smaltworks · Round 1: mark, colour, words (marks not chosen)",
       "w": 1440,
       "x": 0,
-      "y": 11540
+      "y": 12960
     },
     "WORKS-Ideas.dc.html": {
       "h": 1260,
       "title": "smaltworks · Round 3: eight ideas (A7 picked)",
       "w": 1440,
       "x": 0,
-      "y": 9840
+      "y": 11260
     },
     "WORKS-Marks2.dc.html": {
       "h": 820,
       "title": "smaltworks · Round 2 marks (not chosen)",
       "w": 1440,
       "x": 1520,
-      "y": 11540
+      "y": 12960
     },
     "WORKS-Together.dc.html": {
       "h": 860,
       "title": "smaltworks · Round 4: Together, colour and words",
       "w": 1440,
       "x": 1520,
-      "y": 9840
+      "y": 11260
     },
-    "AI-Marks2.dc.html": {
-      "x": 4560,
-      "y": 3540,
-      "w": 1440,
-      "h": 820,
-      "title": "smaltai R2 · Marks: plugging in (P1–P4)"
-    },
-    "FAM-Layers.dc.html": {
-      "x": 0,
+    "FAM-WIP3.dc.html": {
+      "x": 3040,
       "y": 300,
       "w": 1440,
-      "h": 960,
-      "title": "Family · One colour per layer: picked"
+      "h": 820,
+      "title": "Before 1.0 · round 3: hard hats, dropped"
+    },
+    "FAM-WIP4.dc.html": {
+      "x": 4560,
+      "y": 300,
+      "w": 1440,
+      "h": 820,
+      "title": "Before 1.0 · round 4: crane, bricks, wrench, merge (not chosen)"
+    },
+    "FAM-WIP5.dc.html": {
+      "x": 6080,
+      "y": 300,
+      "w": 1440,
+      "h": 820,
+      "title": "Before 1.0 · round 5: branch and merge (G1–G3)"
     }
   },
   "createdOnFiles": {
@@ -319,16 +361,25 @@
     "smaltts1",
     "smaltai1",
     "smaltml1",
-    "layers1"
+    "layers1",
+    "wip1"
   ],
   "notes": {
+    "layers1": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Family · decided: one colour per layer",
+      "w": 240,
+      "x": 0,
+      "y": 1420
+    },
     "round1": {
       "kind": "title1",
       "maxW": 2960,
       "text": "Round 1",
       "w": 240,
       "x": 0,
-      "y": 24440
+      "y": 25860
     },
     "round2": {
       "kind": "title1",
@@ -336,7 +387,7 @@
       "text": "Round 2",
       "w": 240,
       "x": 0,
-      "y": 19740
+      "y": 21160
     },
     "round3": {
       "kind": "title1",
@@ -344,7 +395,7 @@
       "text": "Round 3 · your picks",
       "w": 240,
       "x": 0,
-      "y": 17940
+      "y": 19360
     },
     "site1": {
       "kind": "title1",
@@ -352,7 +403,7 @@
       "text": "smaltworks site",
       "w": 240,
       "x": 0,
-      "y": 7900
+      "y": 9320
     },
     "smaltai1": {
       "kind": "title1",
@@ -360,7 +411,7 @@
       "text": "smaltai · round 1–2 (proposed) · violet, by layer",
       "w": 240,
       "x": 0,
-      "y": 3240
+      "y": 4660
     },
     "smaltdf1": {
       "kind": "title1",
@@ -368,7 +419,7 @@
       "text": "smaltdf · decided: Frames · Axes · ochre (now magenta, by layer)",
       "w": 240,
       "x": 0,
-      "y": 16340
+      "y": 17760
     },
     "smaltml1": {
       "kind": "title1",
@@ -376,7 +427,7 @@
       "text": "smaltml · round 1 (proposed) · jade, by layer",
       "w": 240,
       "x": 0,
-      "y": 1260
+      "y": 2680
     },
     "smaltnb1": {
       "kind": "title1",
@@ -384,7 +435,7 @@
       "text": "smaltnb · decided: Notebooks · Pencil · magenta (now cerulean, by layer)",
       "w": 240,
       "x": 0,
-      "y": 14840
+      "y": 16260
     },
     "smaltql1": {
       "kind": "title1",
@@ -392,7 +443,7 @@
       "text": "smaltql · decided: Familiar · The SQL you know · Star T2 · leaf green (now magenta, by layer)",
       "w": 240,
       "x": 0,
-      "y": 6260
+      "y": 7680
     },
     "smaltts1": {
       "kind": "title1",
@@ -400,7 +451,7 @@
       "text": "smaltts · decided: Typed · straight from TypeScript · Generic · graphite (now magenta, by layer)",
       "w": 240,
       "x": 0,
-      "y": 4480
+      "y": 5900
     },
     "smalty": {
       "kind": "title1",
@@ -408,7 +459,15 @@
       "text": "Family · voice and plugin badges",
       "w": 240,
       "x": 0,
-      "y": 12940
+      "y": 14360
+    },
+    "wip1": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Family · before 1.0: work in progress, come build with us (round 1)",
+      "w": 240,
+      "x": 0,
+      "y": 0
     },
     "works1": {
       "kind": "title1",
@@ -416,7 +475,7 @@
       "text": "smaltworks · rounds 1–2 (not chosen)",
       "w": 240,
       "x": 0,
-      "y": 11240
+      "y": 12660
     },
     "works3": {
       "kind": "title1",
@@ -424,14 +483,7 @@
       "text": "smaltworks · rounds 3–4",
       "w": 240,
       "x": 0,
-      "y": 9540
-    },
-    "layers1": {
-      "x": 0,
-      "y": 0,
-      "text": "Family · decided: one colour per layer",
-      "kind": "title1",
-      "maxW": 2960
+      "y": 10960
     }
   },
   "order": [
@@ -476,7 +528,13 @@
     "ML-Words.dc.html",
     "ML-Marks.dc.html",
     "AI-Marks2.dc.html",
-    "FAM-Layers.dc.html"
+    "FAM-Layers.dc.html",
+    "FAM-WIP.dc.html",
+    "FAM-WIP2.dc.html",
+    "Artboard-0tf4.dc.html",
+    "FAM-WIP3.dc.html",
+    "FAM-WIP4.dc.html",
+    "FAM-WIP5.dc.html"
   ],
   "pages": [],
   "title": "smalt family Brand"

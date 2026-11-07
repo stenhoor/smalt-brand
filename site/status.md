@@ -14,7 +14,7 @@ As of November 2026. Each project's repository has its own roadmap.
 | [smaltnb](/products/smaltnb) | — | **Planned.** |
 | [smaltkit](/products/kits) | 0.2.0 | **In use** by smaltui and smaltbi; not on npm yet. |
 
-Everything before 1.0 can change, including smaltdb's on-disk format.
+Everything before 1.0 can change, including smaltdb's on-disk format: [work in progress, come build with us](/stability).
 
 Packages publish to npm under the smaltworks organisation, named after their repositories: `@smaltworks/smaltdb`,
 `@smaltworks/smaltql`, `@smaltworks/smaltdf`, `@smaltworks/smaltdb-parquet` and so on. smaltdb 0.8.3 is the last

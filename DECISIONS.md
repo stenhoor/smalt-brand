@@ -249,6 +249,20 @@ Applied after the picks:
 - The smaltts repository is private, so the social card and badge point to smaltworks.dev/products/smaltts.
 - The smaltworks social card's product list no longer fit with seven products; it now shows smaltworks.dev, and `scripts/social_cards.py` checks that every address fits.
 
+## Before 1.0: work in progress
+
+For the first public release (a new engine, smaltdf, smaltql as its own language, and smaltui and smaltbi on the new engine), the owner set the aim of the hype: reach people who are excited by new things and willing to work through rough patches, without over-promising, and without anyone building a business on it and being caught out by next week's breaking change.
+
+The preview line went through two rounds. "Fresh from the works. Expect salt." was rejected: the family says no to salty ("Stay smalty" is its counterpoint). The second round offered Wet paint, Still in the kiln, Unfired, First grind, On the workbench, Open studio, Work in progress, in public, and Come build with us. Picked, as a pair: **"Work in progress. Come build with us."**, one saying where things are, the other opening an invitation.
+
+Signs for the two phrases (owner's idea: a cone or warning tape for work in progress, a hard hat for come build with us):
+
+- **Work in progress:** the cone, warning tape and barrier were drawn; the barrier read best.
+- **Come build with us:** three rounds of hard hats didn't read convincingly as a hard hat and were dropped; a crane, bricks, a wrench and a block-drawn merge weren't chosen either. The owner then suggested a GitHub-style branch and merge: drawn in Git's own idiom (thin lines, ring nodes, curved branches), the pull request read at once.
+- **Picked: one badge, twice the height,** with the pull-request sign at double size, its kiln branch arrowing into the smalt line, and **Work in progress** above **Come build with us**. The barrier is not used.
+
+Applied: the badge, the pull-request sign in `badges/signs/`, the stability page on smaltworks.dev (who it's for and not yet for, what can change, how you'll hear, what to do), the release-notes template with Breaking first, and the rules in BRAND.md.
+
 ## Colour by layer
 
 With smaltql's leaf green and smaltts's graphite taken, and smaltml, smaltai and smaltfl on the way, the colour wheel had run out: every hue left sat near a status colour or another product. The owner proposed colouring by layer of the stack instead of by product, and placed the products: smaltfl is a user tool beside smaltui, smaltbi and smaltnb; smaltml sits at the kit level, between the languages and the user tools; smaltai runs alongside the languages, kits and user tools, plugging into each.
@@ -371,7 +385,7 @@ site can't drift apart.
 
 ## Exploration archive
 
-[`exploration/`](exploration/) keeps all 58 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
+[`exploration/`](exploration/) keeps all 63 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
 
 ## Still open
 
