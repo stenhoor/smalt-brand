@@ -11,7 +11,14 @@ thing.
   like one family.
 
 Today the kits live in **smaltkit**: the engine loader, URL rewriting, number and date formatting, SVG chart helpers and
-charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps
-and value-picking controls, used by smaltui and smaltbi. smaltkit is 0.4.0 and isn't on npm yet.
+charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps,
+value-picking controls and TypeScript type stripping, used by smaltui and smaltbi. smaltkit is 0.5.0 and isn't on npm
+yet.
 
 [Repository →](https://github.com/stenhoor/smaltkit)
+
+**smaltty** is the TypeScript kit inside it: TypeScript for the apps' TypeScript tabs and notebook cells, in our own
+code. It removes types without moving a line or column, so an error points where it was written, and type checking
+against smaltdf comes next.
+
+[Repository →](https://github.com/stenhoor/smaltty)

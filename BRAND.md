@@ -290,3 +290,5 @@ Three badges, in `badges/plugins/`, say how a plugin relates to smaltdb:
 smaltkit is shared UI code inside the smalt apps, not a product people choose, so it has no mark, product colour or badge. Its README header is the name in the wordmark style (`sm`**`alt`**`kit`, ink and smalt) with the line "Shared UI code for the smalt apps. Part of smaltworks."
 
 Its brand job is to carry the brand into the apps: its components should take their colours, type and icons from `tokens/`. Revisit this if smaltkit gains charts that users see (the brand has no chart palette yet), or if outside developers start building on it.
+
+smaltty, the TypeScript kit, is the same: no mark, colour or badge of its own (DECISIONS.md, "smaltty").

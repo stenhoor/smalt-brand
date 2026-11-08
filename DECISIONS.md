@@ -343,9 +343,32 @@ asking, and then took them out again without discussing it.
   first cases:
   - **Formatting:** JSON and TypeScript formatting is our own code (`smaltkit/pretty`), not Prettier.
   - **Compiling TypeScript at run time:** a plugin, `@smaltworks/smaltdb-sucrase`, replaces loading the TypeScript
-    compiler from jsDelivr in smaltui's TypeScript tabs.
+    compiler from jsDelivr in smaltui's TypeScript tabs. (Later the same day, our own code replaced it: see "smaltty:
+    TypeScript without outside code".)
   - **Parquet codecs:** the Parquet plugin owns `hyparquet-compressors` as its own dependency, instead of each app
     installing it.
+
+## smaltty: TypeScript without outside code
+
+Decided by the owner on 2026-11-08, in an interview with a session that proposed it.
+
+- **Why:** smaltui stripped TypeScript types with sucrase, and smaltnb loaded the TypeScript compiler (8.7 MB) to run
+  notebook cells. Both brought outside code into the apps, and neither checked types, so code written against smaltdf
+  lost its type checking just before it ran.
+- **What:** [smaltty](https://github.com/stenhoor/smaltty), our own TypeScript kit: a parser, a stripper, and later
+  scope analysis and type checking against smaltdf. In order: remove the outside code first, measure, and only then
+  decide how far checking goes.
+- **A kit, not a product.** smaltty is one of the kits, with no brand entry, mark or site of its own. It becomes a
+  top-level product only if it grows into our own TypeScript compiler, or a significant part of one, and that is the
+  owner's call. smaltworks isn't in the business of writing TypeScript compilers: work that doesn't remove outside code
+  or make the apps faster waits.
+- **TypeScript only:** no Rust and no WebAssembly. **Follow TypeScript, not sucrase:** where they differ, TypeScript's
+  behaviour is right. Types are removed, never compiled (TypeScript's `erasableSyntaxOnly`).
+- **smaltkit wraps it:** apps import `smaltkit/typescript`; smaltkit carries smaltty in its build.
+- **Retired:** `@smaltworks/smaltdb-sucrase`, once smaltui moved to smaltty (stenhoor/smaltui#33). Its repository stays
+  for reference.
+- **Later:** checking table and column names against a database is a separate future project, smaltsc (smalt schema
+  checker), not part of smaltty.
 
 ## How smaltworks works with AI
 
