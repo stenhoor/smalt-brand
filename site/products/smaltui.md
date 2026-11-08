@@ -4,10 +4,11 @@
 
 **Small. Alternative. Query.** A query workbench for smaltdb that runs entirely in the browser.
 
-smaltui is in the spirit of Toad: a workbench for querying your data, in SQL today, with dataframes to come.
+smaltui is in the spirit of Toad: a workbench for querying your data, in SQL and in dataframes.
 
 - **Object explorer** for tables, views, external tables and connections.
 - **Tabbed SQL editors** with completion, bind variables, query plans, and results fetched on demand.
+- **TypeScript tabs** for smaltdf dataframes beside them: frames run as plans in the same engine, on the same database.
 - **Data grids** you can browse and edit, and import tools for your own files.
 - **A static site.** The engine runs in each visitor's browser, and their databases stay in that browser.
 
