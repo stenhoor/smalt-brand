@@ -67,7 +67,7 @@ a.sw-box:hover, a.sw-kits:hover, a.sw-card:hover { border-color: var(--vp-c-bran
   border-radius: 14px; background: var(--sw-surface); text-decoration: none !important;
 }
 .sw-big { font-size: 24px; gap: 10px; }
-.sw-tag { font-weight: 700; color: var(--sw-ink); font-size: 16px; }
+.sw-tag { font-weight: 700; color: var(--sw-ink); font-size: 16px; white-space: pre-line; }
 .sw-line { color: var(--vp-c-text-2); font-size: 15px; line-height: 1.5; }
 .sw-status { margin-top: auto; font-family: var(--smalt-brand-font); font-size: 12px; color: var(--sw-muted); }
 
