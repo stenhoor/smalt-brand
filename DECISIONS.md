@@ -342,8 +342,8 @@ asking, and then took them out again without discussing it.
   its licence travels with it, never in core. This extends smaltdb ADR 0012 from the engine to the whole family. The
   first cases:
   - **Formatting:** JSON and TypeScript formatting is our own code (`smaltkit/pretty`), not Prettier.
-  - **Compiling TypeScript at run time:** a plugin, `@smaltdb/sucrase` (`stenhoor/smaltdb-sucrase`),
-    replaces loading the TypeScript compiler from jsDelivr in smaltui's TypeScript tabs.
+  - **Compiling TypeScript at run time:** a plugin, `@smaltworks/smaltdb-sucrase`, replaces loading the TypeScript
+    compiler from jsDelivr in smaltui's TypeScript tabs.
   - **Parquet codecs:** the Parquet plugin owns `hyparquet-compressors` as its own dependency, instead of each app
     installing it.
 
