@@ -12,7 +12,7 @@ As of November 2026. Each project's repository has its own roadmap.
 | [smaltui](/products/smaltui) | 0.1.0 | **In development.** SQL and smaltdf dataframes, in editor tabs. [Demo](https://stenhoor.github.io/smaltui/workbench/?env=envs/demo/env.json) · [Docs](https://stenhoor.github.io/smaltui/) |
 | [smaltbi](/products/smaltbi) | 0.1.0 | **In development.** The designer, viewer and publishing work end to end. [Demo](https://stenhoor.github.io/smaltbi/designer.html?report=examples/sales/report.json) · [Docs](https://stenhoor.github.io/smaltbi/) |
 | [smaltnb](/products/smaltnb) | — | **In early development.** The notebook page is out: notebooks run in your browser, with SQL and smaltdf cells. [Demo](https://stenhoor.github.io/smaltnb/app/) · [Docs](https://stenhoor.github.io/smaltnb/) |
-| [smaltkit](/products/kits) | 0.4.0 | **In development,** used by smaltui and smaltbi; not on npm yet. |
+| [smaltkit](/products/kits) | 0.5.0 | **In development,** used by smaltui and smaltbi; not on npm yet. Its TypeScript kit, smaltty, runs smaltui's TypeScript tabs. |
 
 Everything before 1.0 can change, including smaltdb's on-disk format: [work in progress, come build with us](/stability).
 
