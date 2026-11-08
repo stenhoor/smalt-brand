@@ -328,6 +328,25 @@ Reasoned through in conversation, then mocked up on one board.
 
 All approved by the owner. Still to build before Verified can be granted: the compatibility test suite and the smaltdb.dev/plugins page.
 
+## Outside code: ask first, and plugins carry it
+
+Decided by the owner on 2026-11-08, after a session added third-party tools (Prettier, then sucrase) to an app without
+asking, and then took them out again without discussing it.
+
+- **Ask before adding outside code.** A session asks the owner, and waits for a yes, before it adds a package (a
+  dependency of any kind, or a pin in `packed.json`), copies or bundles in someone else's code, or loads code from
+  another site at run time (a CDN such as jsDelivr). It says what the code is, its licence and size, what it's for, and
+  why our own code can't do it. Every repository's `CLAUDE.md` carries the rule, word for word, under "Working rules for
+  sessions".
+- **Plugins carry outside code.** Outside code that a feature needs goes in a plugin, so it is named and optional and
+  its licence travels with it, never in core. This extends smaltdb ADR 0012 from the engine to the whole family. The
+  first cases:
+  - **Formatting:** JSON and TypeScript formatting is our own code (`smaltkit/pretty`), not Prettier.
+  - **Compiling TypeScript at run time:** a plugin, `@smaltworks/smaltdb-sucrase`, replaces loading the TypeScript
+    compiler from jsDelivr in smaltui's TypeScript tabs.
+  - **Parquet codecs:** the Parquet plugin owns `hyparquet-compressors` as its own dependency, instead of each app
+    installing it.
+
 ## How smaltworks works with AI
 
 The owner set out the stance: developers love to create, and code has been how they do it. smaltworks is AI-first because AI lets it create at scale and iterate faster and better than by hand. It builds tools for everyone who creates, whether they code by hand or work AI-first.
