@@ -5,7 +5,7 @@ titleTemplate: Small. Alternative. Together.
 
 hero:
   name: 'sm<span class="alt">alt</span>works'
-  text: Small. Alternative. Together.
+  text: 'Small. Alternative.<br>Together.'
   tagline: Small data deserves good tools. One fast engine in your browser, and a family of tools built on it.
   image:
     light: /media/logos/smaltworks/together-mark.svg

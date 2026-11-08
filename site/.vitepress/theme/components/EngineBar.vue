@@ -4,7 +4,7 @@
 import Mark from './Mark.vue'
 import Word from './Word.vue'
 const apps = [
-  { p: 'ui', what: 'SQL console', href: '/products/smaltui' },
+  { p: 'ui', what: 'Query workbench', href: '/products/smaltui' },
   { p: 'bi', what: 'Reports', href: '/products/smaltbi' },
   { p: 'nb', what: 'Notebooks', href: '/products/smaltnb' },
 ] as const
