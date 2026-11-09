@@ -17,9 +17,12 @@ it exists) and automate work in them. It has three parts:
 3. **A local LLM in the browser,** running on WebGPU, weights included. That is the largest part, and it has its own
    record, [ADR 0026](0026-smaltai-in-browser-llm.md).
 
-**Performance is paramount.** The owner also set what the model is: always something the user brings. A remote API
-(Anthropic), a server on their machine (llama.cpp), or the in-browser harness of ADR 0026 are all the same to smaltai.
-None of them is required for smalt; the in-browser harness is a convenience.
+**Performance is paramount.** The owner also set what the model is: always something the user brings, through a
+gateway the user runs, or the in-browser harness of ADR 0026. None of them is required for smalt.
+
+**smalt never sees or holds a key** (owner, 2026-11-09): no API key is ever in a smaltworks app, not in its storage and
+not in its memory. A key that a page can hold, code on that page can leak, and smaltworks will not own keys for a user
+community. Reaching a hosted model (Claude, GPT, Gemini) is the user's own gateway's job.
 
 What is already set:
 
@@ -27,7 +30,9 @@ What is already set:
   blue-leaning violet (`layer-ai`). Its first round of words said "bring your own agent", "optional", "inspectable";
   its marks and words are open.
 - **The apps share one origin.** smaltui, smaltbi and smaltnb are served from `stenhoor.github.io`, so they share browser
-  storage: OPFS, local storage and IndexedDB. Every other page under `stenhoor.github.io` shares it too.
+  storage: OPFS, local storage and IndexedDB. Every other page under `stenhoor.github.io` shares it too. Code that runs
+  in the apps (smaltui's TypeScript tabs on the page, smaltnb's kernel in a worker) can reach that storage. This is why
+  the apps hold no keys.
 
 ### How ready each app is (the analysis the owner asked for)
 
@@ -47,32 +52,35 @@ own. In each app, an **AI agent button** appears once the user has set up a gate
 chat the model works in that app using the app's actions (section 4). Without a gateway, the apps show no AI at all,
 and smaltai's code isn't loaded.
 
-### 2. Gateways: the model the user brings
+### 2. Gateways: local, and run by the user
 
-A gateway is where the model runs. smaltai calls it directly from the browser. There is no smaltworks server between
-them. The gateways (owner, 2026-11-09):
+A gateway is where the model is reached. It is one of two kinds (owner, 2026-11-09):
 
-| Gateway | How the browser reaches it |
+| Gateway | What it is |
 |---|---|
-| Anthropic (Claude) | The Messages API, with tool use. Browsers may call it when the request carries `anthropic-dangerous-direct-browser-access: true`, which exists for this "bring your own key" case. |
-| OpenAI | Its API, with function calling. |
-| Google Gemini | The Gemini API, with function calling. |
-| OpenAI-compatible servers | llama.cpp's server, Ollama, LM Studio, on the user's machine or network. The server must allow the app's origin (Ollama: `OLLAMA_ORIGINS`), and Chrome (142 and later) asks the user once before a public page may reach a local address. |
-| The in-browser model | [ADR 0026](0026-smaltai-in-browser-llm.md), behind the same interface. No network request. |
+| **A local gateway** | A server the user runs on their machine or their own network: llama.cpp's server, Ollama, LM Studio, or a proxy of the user's that forwards to a hosted model (Claude, GPT, Gemini) with the user's key, which it keeps. smaltai is given its address. |
+| **The in-browser model** | [ADR 0026](0026-smaltai-in-browser-llm.md), behind the same interface. Nothing to install and no network request: the simple choice. |
 
-One interface covers them: a chat request with tools, streamed back. Each gateway's own format (Anthropic's tool use,
-OpenAI's and Gemini's function calling) stays inside its adapter. smaltai uses each gateway's prompt caching where it
-offers it (section 7).
+smaltai calls the gateway from the browser. There is no smaltworks server between them, and no hosted provider is
+called directly.
 
-### 3. Keys and settings: the user's choice per gateway
+- **Formats:** the OpenAI-compatible chat API, which llama.cpp, Ollama and LM Studio speak, first. A local gateway that
+  passes Anthropic's Messages API or Gemini's API through can be spoken to in those formats too. Each format stays inside
+  its adapter behind one interface: a chat request with tools, streamed back.
+- **Reaching it:** the gateway must allow the app's origin (CORS; Ollama's `OLLAMA_ORIGINS`), and Chrome (142 and later)
+  asks the user once before a public page may reach a local address.
+- **smaltai uses each gateway's prompt caching** where it offers it (section 7).
 
-When the user sets up a gateway, they choose whether to **remember** it on this device or keep it for **this session
-only** (owner, 2026-11-09). A forget button removes a remembered gateway.
+### 3. No keys, ever
 
-- **A key goes only to its gateway.** It is never put in a URL, a log, an exported file, or anything sent to a model.
-- **A remembered key is readable by every page on the same origin.** Browser storage isn't encrypted against scripts on
-  the same origin, and today the apps share `stenhoor.github.io` with every other page there. That is a reason to give
-  the apps their own domain before remembered keys ship. It is listed under "Still to decide".
+smaltai has nowhere to put a key, and that is checked:
+
+- **A gateway's settings are its address and its format,** with no field for a key, a token or a password. They are kept
+  in the browser like other preferences.
+- **Requests carry no credentials:** no `Authorization` or API-key header, and `credentials: 'omit'`, so not even
+  cookies go with them. A test fails if smaltai's code sets either.
+- **A gateway that needs a credential from the app is not supported.** The user's gateway authenticates to the hosted
+  provider; nothing authenticates the app to the gateway, which is on the user's machine or network.
 
 ### 4. Actions: what the model can do in an app
 
@@ -103,9 +111,9 @@ The user grants what the model can see and what it can change (owner, 2026-11-09
 
 - **Grants are per gateway and per database.** Outside its grant, an action asks first, and the user can allow it once
   or grant it.
-- **Before rows leave the browser, smaltai warns** (owner, 2026-11-09), and says where they are going: to a remote API,
-  or to a server on this machine or network. With the in-browser model, rows never leave the browser.
-- **By default, only the schema goes with a request to a remote gateway** (owner, 2026-11-09). Rows go when the user has
+- **Before rows leave the browser, smaltai warns** (owner, 2026-11-09). A local gateway may pass them on to a hosted
+  model, and smaltai can't tell, so the warning says so. With the in-browser model, rows never leave the browser.
+- **By default, only the schema goes with a request to a local gateway** (owner, 2026-11-09). Rows go when the user has
   granted them.
 
 ### 6. Context documents: what the model is told
@@ -158,16 +166,15 @@ The owner left this open, for this analysis (2026-11-09). The recommendation, fr
   a refactor of `main.ts`.
 - **Every action is a documented, typed operation.** The same declarations serve the model, the context documents and
   tests.
-- **Remote gateways see the schema by default and rows only when granted.** With the in-browser model, nothing leaves
-  the browser.
-- **The apps' shared origin matters now.** Keys, grants and cached weights (ADR 0026) are all per origin.
+- **No key is ever in a smaltworks app,** so there is none to leak. Using a hosted model means running a local gateway
+  that holds the key: more work for the user, and the user's to own.
+- **The in-browser model is the simple choice:** nothing to install, nothing leaves the browser.
+- **Gateways see the schema by default and rows only when granted.**
+- **The apps' shared origin still matters:** grants and cached weights (ADR 0026) are per origin.
 - **The brand words for smaltai need another look.** "Bring your own agent" still holds; "read-only until you approve"
   becomes "what you grant".
 
 ## Still to decide
 
 1. **Which app first:** the recommendation in section 9, for the owner's decision.
-2. **The apps' own domain before remembered keys ship** (section 3), or another way to keep keys away from other pages
-   on `stenhoor.github.io`.
-3. **The rows warning for a server on the user's own machine:** warn as for a remote API, or more quietly.
-4. **Whether grants are remembered** with the gateway, or asked for again each session.
+2. **Whether grants are remembered** with the gateway, or asked for again each session.

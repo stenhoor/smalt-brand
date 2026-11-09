@@ -17,6 +17,10 @@ The owner also set how it relates to the rest. It is **a harness that runs a mod
 treats it as one more gateway, like llama.cpp's server or the Anthropic API (ADR 0025, section 2). It is **not
 required** for smalt: it is a convenience. **Performance is paramount.**
 
+It is also **the simple choice.** smalt never holds a key (ADR 0025, section 3), so a hosted model is reached only through
+a gateway the user runs. The in-browser model needs nothing installed and no key, and nothing leaves the browser
+(owner, 2026-11-09).
+
 What the platform gives, and where it falls short:
 
 - **WebGPU** fully works for about 87% of users ([Can I use](https://caniuse.com/webgpu), 6 November 2026), almost all of
