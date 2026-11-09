@@ -24,6 +24,8 @@ starting point for this repository, and its working rules match smaltdb's `CLAUD
   only when that repository copies it again: say in the PR which repositories need to.
 - **smaltworks.dev follows the products.** Its status page and product pages keep a one-line detail per product; product
   sessions send the PR that updates them. `npm run build` in `site/` fails on dead links.
+- **WORK.md tracks cross-repository work.** A session that opens, advances or finishes work spanning repositories (an
+  ADR, a multi-PR plan) adds or updates its row in [WORK.md](WORK.md), linking the record rather than copying it.
 - Merging to `main` redeploys smaltworks.dev (`.github/workflows/site.yml`).
 
 ## Working rules for sessions

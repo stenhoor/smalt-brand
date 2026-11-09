@@ -32,6 +32,7 @@ Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](
 | [`site/`](site/) | The smaltworks.dev website: the family, the architecture, why smalty, status, community and the brand kit. VitePress, built and deployed by `.github/workflows/site.yml`. |
 | [`BRAND.md`](BRAND.md) | The brand book: name, voice, logo use, colour and readability rules, type, the product family, badges. |
 | [`DECISIONS.md`](DECISIONS.md) | How the brand was chosen: every round of options, what was picked and why. |
+| [`WORK.md`](WORK.md) | Cross-repository work in review and in progress: each item's record, status and next step. |
 | [`exploration/`](exploration/) | The exploration boards from every round, as rendered snapshots and as source. |
 | [`tokens/tokens.json`](tokens/tokens.json) | Design tokens, the source of truth: colours (light and dark), product colours, type styles, spacing, radii. |
 | [`tokens/tokens.css`](tokens/tokens.css) | The same tokens as CSS custom properties. Generated; don't edit by hand. |
