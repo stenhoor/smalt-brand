@@ -14,6 +14,7 @@ done; its record keeps the history.
 | --- | --- | --- | --- | --- | --- |
 | SQL for the new engine features: fixes for what SQL reaches by accident, Postgres and DuckDB spellings for the types and plan operations that smaltdf uses, `unnest` | smaltdb, smaltql | [smaltdb ADR 0022](https://github.com/stenhoor/smaltdb/pull/181) | Proposed | The owner's decisions 2–5: hide engine names from SQL; empty and NULL lists in `unnest`; `LATERAL`; several lists in `unnest` | Owner |
 | smaltts, the typed API: a thin typed language over the engine's plan and schema operations, with schemas as values, change sets reviewed before they run, typed plans, reflecting and interface views, and structured flows | smaltts, smaltdb, smaltfl | [smaltts ADR 0023](https://github.com/stenhoor/smaltts/pull/4) | Proposed | The owner's decisions on the ADR's open points: migrations on disk; expression names; plugin descriptors; which engine proposals to open (E1, E2, E10); and the yes on the prototype's dev dependencies (milestone 0) | Owner |
+| smaltml, machine learning on tables: classic supervised models, gradient-boosted trees, clustering, dimension reduction and anomaly detection in TypeScript, on the CPU everywhere and WebGPU where it helps, matched against scikit-learn and XGBoost | smaltml, smaltui, smaltnb | smaltml ADR 0024 (drafted; the PR opens once `stenhoor/smaltml` exists) | Proposed | The owner creates `stenhoor/smaltml`; the ADR goes up as its first PR. Then the owner's decisions on the ADR's open points: time series forecasting; importing other models (ONNX); the yes on the compare tests' Python packages; when phase 2 starts; own WebAssembly kernels if TypeScript can't reach Python's speed | Owner |
 
 ## SQL for the new engine features (smaltdb ADR 0022)
 
@@ -52,3 +53,20 @@ them.
 | M9 Plugins and external data | smaltts | M | M3 | Not started |
 | M10 The client and the browser | smaltts | M | M7 | Not started |
 | M11 Docs site and publish (the site is up; the publish waits on smaltdb's) | smaltts | M | M10 | Site done; publish not started |
+
+## smaltml, machine learning on tables (smaltml ADR 0024)
+
+The phases of ADR 0024, section 1. Sizes are by PRs, as for smaltts: S 1–2, M 3–5, L 6–10; they are estimates until
+each phase is planned. Every phase adds its compare cases (section 7) and its benchmarks against Python (section 8).
+
+| Milestone | Repository | Size | After | Status |
+| --- | --- | --- | --- | --- |
+| M0 The repository, ADR 0024 and the owner's decisions on its open points | smaltml | S | | Waiting on the owner: create `stenhoor/smaltml` |
+| M1 The owner's yes on outside code (the compare tests' Python packages) | smaltml | S | M0 | Not started |
+| M2 Phase 1: data preparation, linear models, metrics and model selection, pipelines, saving models, the worker entry | smaltml | L | M1 | Not started |
+| M3 Phase 2: decision trees, random forests, extra trees | smaltml | M | M2 | Not started |
+| M4 Phase 3: gradient-boosted trees, and XGBoost's model format | smaltml | L | M3 | Not started |
+| M5 Phase 4: k-nearest neighbours, naive Bayes, linear SVMs, clustering, PCA | smaltml | L | M4 | Not started |
+| M6 Phase 5: anomaly detection | smaltml | S–M | M5 | Not started |
+| M7 Using it from TypeScript tabs and notebooks | smaltui, smaltnb | S each | M2 | Not started |
+| M8 Brand (marks and words), docs site and publish | smalt-brand, smaltml | M | M2 | Brand round 1 on the canvas; rest not started |
