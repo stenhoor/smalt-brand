@@ -463,6 +463,19 @@ The owner's decisions, 2026-11-07:
 - **Brand first.** Every repository's CLAUDE.md points sessions to BRAND.md and this file before they change a site,
   README or description. Sessions had copied an old line back onto a site after the owner changed it.
 
+## Work items: one register
+
+Decided by the owner on 2026-11-09, when smaltdb ADR 0022 (SQL for the new engine features) needed tracking and review
+with other work, and smalt-brand had no place for it.
+
+- **[WORK.md](WORK.md)** lists cross-repository work that is proposed, waiting for decisions or under way: one row per
+  item, with its record's link, status, next step and what it waits on. A multi-step item can list its milestones
+  below the table.
+- **Records stay home.** An ADR or plan lives in its own repository; WORK.md links it and never copies its text, so
+  there is one copy to review. Copying the ADR into smalt-brand, and a tracking issue, were considered.
+- **Sessions keep it current.** A session that opens, advances or finishes such work updates its row in a smalt-brand
+  PR, as product sessions already do for the status page.
+
 ## Exploration archive
 
 [`exploration/`](exploration/) keeps all 67 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
