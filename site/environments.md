@@ -44,6 +44,25 @@ Internet Explorer and the original Edge (before it moved to Chromium) are not su
   supported version, [tell us](/community/get-involved).
 - **Phones and tablets** are not tested yet.
 
+## Why newer browsers
+
+We build on what browsers can do now, not on what they used to lack.
+
+- **A real database needs real files.** The engine keeps your data in files it reads and writes in place, from a worker,
+  without waiting on each call. Browsers gave web pages that only recently: Chrome and Edge 108, Firefox 111 and
+  Safari 17. Before then, a page had no file it could update in place like this.
+- **Small means no catch-up code.** We ship the JavaScript today's browsers run (ES2022), with nothing added to fill in
+  for older ones. Supporting them would mean translating our code down to older JavaScript and adding polyfills: more to
+  download, and most of it someone else's code. The family keeps
+  outside code out of its core, so we leave it out.
+- **One way through.** Every supported browser runs the same code. Where a newer browser offers more, such as files
+  that several workers can open at once, the engine uses it on top; there is no slower second path to keep working for
+  old browsers.
+- **Most people are already there.** Browsers update themselves, and the minimums above reach about nine in ten users
+  worldwide today. That share grows on its own.
+- **Before 1.0, we move with the platform.** As browsers add what a database can use, we may raise a minimum. Each
+  change is listed here and called out under **Breaking** in the release notes.
+
 ## What the page needs
 
 - **A secure context:** HTTPS, or `localhost` while you develop. Browsers don't give OPFS to plain HTTP pages.
