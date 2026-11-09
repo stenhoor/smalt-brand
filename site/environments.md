@@ -6,14 +6,24 @@ The smalt family runs in the browser: the engine in a Web Worker, your data in t
 
 ## Browsers
 
-The oldest version each product works in. Edge follows Chrome.
+The oldest version each product works in, and in brackets the share of that browser's users on a supported version.
+Edge follows Chrome. The last column is the share of all browser users worldwide.
 
-| Product | Chrome and Edge | Firefox | Safari |
-|---|---|---|---|
-| smaltdb, its plugins and the languages (smaltql, smaltdf) | 108 | 114 | 17 |
-| smaltui · query workbench | 111 | 114 | 17 |
-| smaltnb · notebooks | 111 | 114 | 17 |
-| smaltbi · reports | 111 | 121 | 17 |
+| Product | Chrome and Edge | Firefox | Safari | All users |
+|---|---|---|---|---|
+| smaltdb, its plugins and the languages (smaltql, smaltdf) | 108&nbsp;(99.3%) | 114&nbsp;(99.4%) | 17&nbsp;(94.5%) | 91.1% |
+| smaltui · query workbench | 111&nbsp;(98.3%) | 114&nbsp;(99.4%) | 17&nbsp;(94.5%) | 90.4% |
+| smaltnb · notebooks | 111&nbsp;(98.3%) | 114&nbsp;(99.4%) | 17&nbsp;(94.5%) | 90.4% |
+| smaltbi · reports | 111&nbsp;(98.3%) | 121&nbsp;(91.4%) | 17&nbsp;(94.5%) | 90.2% |
+
+Usage comes from [Can I use](https://caniuse.com/usage-table) (which takes it from StatCounter), as of 6 November 2026
+(`caniuse-lite` 1.0.30001823). Each browser includes its phone version: Safari includes Safari on iPhone and iPad, and
+Chrome includes Chrome for Android, whose current version is counted as supported. About two thirds of Safari's unsupported share
+is Safari on iPhone and iPad before iOS 17; the rest is Safari on the Mac before 17.
+
+Samsung Internet and Opera (4% of users) are built on newer versions of Chrome's engine than these minimums, but we
+don't test them, so they aren't counted. To recompute a line, run for example
+`npx browserslist --coverage "chrome >= 108, edge >= 108, and_chr >= 0, firefox >= 114, and_ff >= 0, safari >= 17, ios_saf >= 17"`.
 
 Why each line is where it is:
 
