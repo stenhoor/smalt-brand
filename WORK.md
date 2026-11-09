@@ -15,6 +15,7 @@ done; its record keeps the history.
 | SQL for the new engine features: fixes for what SQL reaches by accident, Postgres and DuckDB spellings for the types and plan operations that smaltdf uses, `unnest` | smaltdb, smaltql | [smaltdb ADR 0022](https://github.com/stenhoor/smaltdb/pull/181) | Proposed | The owner's decisions 2–5: hide engine names from SQL; empty and NULL lists in `unnest`; `LATERAL`; several lists in `unnest` | Owner |
 | smaltts, the typed API: a thin typed language over the engine's plan and schema operations, with schemas as values, change sets reviewed before they run, typed plans, reflecting and interface views, and structured flows | smaltts, smaltdb, smaltfl | [smaltts ADR 0023](https://github.com/stenhoor/smaltts/pull/4) | Proposed | The owner's decisions on the ADR's open points: migrations on disk; expression names; plugin descriptors; which engine proposals to open (E1, E2, E10); and the yes on the prototype's dev dependencies (milestone 0) | Owner |
 | smaltml, machine learning on tables: classic supervised models, gradient-boosted trees, clustering, dimension reduction and anomaly detection in TypeScript, on the CPU everywhere and WebGPU where it helps, matched against scikit-learn and XGBoost | smaltml, smaltui, smaltnb | [smaltml ADR 0024](docs/adr/0024-smaltml-scope-and-architecture.md) | Proposed | The owner's decisions on the ADR's open points: time series forecasting; importing other models (ONNX); the yes on the compare tests' Python packages; when phase 2 starts; own WebAssembly kernels if TypeScript can't reach Python's speed | Owner |
+| smaltai, AI in the smalt apps: an AI agent button that drives smaltui, smaltbi, smaltnb (and smaltfl) through typed actions, with a model the user brings through a local gateway they run (llama.cpp, Ollama, LM Studio, or their own proxy to a hosted model) or our own in-browser LLM on WebGPU; smalt never holds a key; permissions on what it sees and changes, and context documents generated from the code | smaltai (new), the in-browser engine (new), smaltkit, smaltnb, smaltbi, smaltui, smaltfl | [smaltai ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md), [ADR 0026](docs/adr/0026-smaltai-in-browser-llm.md) | Proposed | The owner's decisions on the ADRs' open points: which app first; remembered grants; the engine's name, first architectures and quantization types; a fallback without WebGPU; the yes on WebLLM for benchmarks | Owner |
 
 ## SQL for the new engine features (smaltdb ADR 0022)
 
@@ -70,3 +71,24 @@ each phase is planned. Every phase adds its compare cases (section 7) and its be
 | M6 Phase 5: anomaly detection | smaltml | S–M | M5 | Not started |
 | M7 Using it from TypeScript tabs and notebooks | smaltui, smaltnb | S each | M2 | Not started |
 | M8 Brand (marks and words), docs site and publish | smalt-brand, smaltml | M | M2 | Brand round 1 on the canvas; rest not started |
+
+## smaltai, AI in the smalt apps (ADRs 0025 and 0026)
+
+The order of work in ADR 0025 (the agent, its gateways and the apps' actions) and ADR 0026 (the in-browser LLM). Sizes
+are by PRs, as above: S 1–2, M 3–5, L 6–10; they are estimates until each step is planned. The two tracks can run side
+by side: the agent works with remote gateways before the in-browser engine exists.
+
+| Milestone | Repository | Size | After | Status |
+| --- | --- | --- | --- | --- |
+| M0 ADRs 0025 and 0026, and the owner's decisions on their open points | smalt-brand | S | | In review |
+| M1 The agent package: local gateways (OpenAI-compatible first), the agent loop, permissions, action types; no keys | smaltai | L | M0 | Not started |
+| M2 The chat panel | smaltkit | M | M1 | Not started |
+| M3 The first app's actions and context documents (smaltnb recommended) | smaltnb | M | M1, M2 | Not started |
+| M4 smaltbi's actions | smaltbi | M | M3 | Not started |
+| M5 smaltui: its actions moved out of `main.ts` (can start any time), then its agent | smaltui | L | M3 | Not started |
+| M6 smaltfl declares its actions as it is built | smaltfl | – | smaltfl's own plan | Not started |
+| M7 In-browser engine: a first end-to-end run (one architecture, a GGUF from a URL, cached in OPFS) | the engine (new) | L | M0 | Not started |
+| M8 In-browser engine: speed to the WebLLM goal | the engine | L | M7 | Not started |
+| M9 In-browser engine: tool calling and the gateway interface | the engine, smaltai | M | M1, M8 | Not started |
+| M10 In-browser engine: safetensors and more architectures | the engine | M–L | M9 | Not started |
+| M11 Brand: smaltai's marks and words, and the engine's name | smalt-brand | S–M | M0 | Round 1–2 on the canvas; rest not started |
