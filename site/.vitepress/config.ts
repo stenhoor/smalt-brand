@@ -63,6 +63,7 @@ export default defineConfig({
         { text: 'How we work with AI', link: '/ai' },
         { text: 'Status', link: '/status' },
         { text: 'Work in progress', link: '/stability' },
+        { text: 'Supported environments', link: '/environments' },
       ] },
       { text: 'Products', items: [
         { text: 'Overview', link: '/products/' },
