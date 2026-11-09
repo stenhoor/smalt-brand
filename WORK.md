@@ -14,7 +14,7 @@ done; its record keeps the history.
 | --- | --- | --- | --- | --- | --- |
 | SQL for the new engine features: fixes for what SQL reaches by accident, Postgres and DuckDB spellings for the types and plan operations that smaltdf uses, `unnest` | smaltdb, smaltql | [smaltdb ADR 0022](https://github.com/stenhoor/smaltdb/pull/181) | Proposed | The owner's decisions 2–5: hide engine names from SQL; empty and NULL lists in `unnest`; `LATERAL`; several lists in `unnest` | Owner |
 | smaltts, the typed API: a thin typed language over the engine's plan and schema operations, with schemas as values, change sets reviewed before they run, typed plans, reflecting and interface views, and structured flows | smaltts, smaltdb, smaltfl | [smaltts ADR 0023](https://github.com/stenhoor/smaltts/pull/4) | Proposed | The owner's decisions on the ADR's open points: migrations on disk; expression names; plugin descriptors; which engine proposals to open (E1, E2, E10); and the yes on the prototype's dev dependencies (milestone 0) | Owner |
-| smaltml, machine learning on tables: classic supervised models, gradient-boosted trees, clustering, dimension reduction and anomaly detection in TypeScript, on the CPU everywhere and WebGPU where it helps, matched against scikit-learn and XGBoost | smaltml, smaltui, smaltnb | smaltml ADR 0024 (drafted; the PR opens once `stenhoor/smaltml` exists) | Proposed | The owner creates `stenhoor/smaltml`; the ADR goes up as its first PR. Then the owner's decisions on the ADR's open points: time series forecasting; importing other models (ONNX); the yes on the compare tests' Python packages; when phase 2 starts; own WebAssembly kernels if TypeScript can't reach Python's speed | Owner |
+| smaltml, machine learning on tables: classic supervised models, gradient-boosted trees, clustering, dimension reduction and anomaly detection in TypeScript, on the CPU everywhere and WebGPU where it helps, matched against scikit-learn and XGBoost | smaltml, smaltui, smaltnb | [smaltml ADR 0024](docs/adr/0024-smaltml-scope-and-architecture.md) | Proposed | The owner's decisions on the ADR's open points: time series forecasting; importing other models (ONNX); the yes on the compare tests' Python packages; when phase 2 starts; own WebAssembly kernels if TypeScript can't reach Python's speed | Owner |
 
 ## SQL for the new engine features (smaltdb ADR 0022)
 
@@ -61,7 +61,7 @@ each phase is planned. Every phase adds its compare cases (section 7) and its be
 
 | Milestone | Repository | Size | After | Status |
 | --- | --- | --- | --- | --- |
-| M0 The repository, ADR 0024 and the owner's decisions on its open points | smaltml | S | | Waiting on the owner: create `stenhoor/smaltml` |
+| M0 ADR 0024 and the owner's decisions on its open points; the repository `stenhoor/smaltml` when work starts | smalt-brand, smaltml | S | | In review: ADR 0024 in smalt-brand |
 | M1 The owner's yes on outside code (the compare tests' Python packages) | smaltml | S | M0 | Not started |
 | M2 Phase 1: data preparation, linear models, metrics and model selection, pipelines, saving models, the worker entry | smaltml | L | M1 | Not started |
 | M3 Phase 2: decision trees, random forests, extra trees | smaltml | M | M2 | Not started |
