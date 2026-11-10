@@ -1,5 +1,5 @@
 <!--
-DRAFT, not published. The release notes for the smalt family's 0.9.0, for review before the publish.
+DRAFT, not published. The release notes for smaltworks 0.9.0, for review before the publish.
 After review: each package's section, with Breaking, Try it and Tell us, becomes that repository's GitHub release
 (templates/release-notes.md); this whole page is the family's notes. Before publishing, see "Before this goes out" in
 the PR that adds this file.
@@ -7,7 +7,7 @@ the PR that adds this file.
 
 <img alt="Work in progress. Come build with us." src="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/work-in-progress.svg" height="56">
 
-# smalt 0.9.0
+# smaltworks 0.9.0
 
 The first release of the smalt family as a family. smaltdb becomes an engine that runs plans and carries no language,
 and two languages run on it: SQL ([smaltql](https://github.com/stenhoor/smaltql)) and dataframes in TypeScript

@@ -1,15 +1,15 @@
 <!--
-DRAFT, not published. The news story for the smalt family's 0.9.0, for smaltworks.dev and wherever the release is
+DRAFT, not published. The news story for smaltworks 0.9.0, for smaltworks.dev and wherever the release is
 announced. Publish it the day the packages are on npm, and set the date below then.
 -->
 
 <img alt="Work in progress. Come build with us." src="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/work-in-progress.svg" height="56">
 
-# smalt 0.9.0: one engine, two languages, and your browser is the data lab
+# smaltworks 0.9.0: one engine, two languages, and your browser is the data lab
 
 *smaltworks · [date of the publish]*
 
-**smalt 0.9.0 is out.** It's the first release of the smalt family as a family: a database engine that lives in your
+**smaltworks 0.9.0 is out.** It's the first release of the smalt family as a family: a database engine that lives in your
 browser, the SQL you know, dataframes in TypeScript, a query workbench, reactive notebooks, and our own TypeScript kit
 holding it all together. Open a tab, load some data, and start asking it questions.
 
@@ -77,7 +77,7 @@ every line and column of an error points at the code you wrote.
 
 ## Who it's for
 
-smalt 0.9.0 is for people who like trying new things, don't mind a breaking change, and want a say in how it turns out.
+smaltworks 0.9.0 is for people who like trying new things, don't mind a breaking change, and want a say in how it turns out.
 It's not yet for production, or for data you can't recreate. Before 1.0, any release can change the API or the file
 format, and we'll always tell you up front, in a **Breaking** section at the top of every release's notes.
 [What that means →](https://smaltworks.dev/stability)
