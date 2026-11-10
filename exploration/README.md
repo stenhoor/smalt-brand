@@ -157,6 +157,24 @@ The later positioning lines (P4–P11 and the final "Dataframes for smaltdb. Sma
 | --- | --- |
 | [SITE-Architecture](family/png/SITE-Architecture.png) | Four layouts for the architecture graphic. Picked: B, Engine bar. |
 
+## Documentation standard
+
+Round 1, 2026-11-10: the standard for every product's documentation (BRAND.md, "Documentation"). The playgrounds are
+drawn, not running.
+
+| Board | Contents |
+| --- | --- |
+| [DOC-Structure](family/png/DOC-Structure.png) | Four sections on every site (from NumPy), and what each site has. Picked. |
+| [DOC-QuickStart](family/png/DOC-QuickStart.png) | Quick start: zero to working on one page, ending in a playground. Picked. |
+| [DOC-Function](family/png/DOC-Function.png) | A reference entry (from Polars), with a working demo. Picked. |
+| [DOC-Language](family/png/DOC-Language.png) | A language page: syntax diagrams (from SQLite), drawn by our own generator. Picked. |
+| [DOC-Playground](family/png/DOC-Playground.png) | The playground, built from smaltkit, in four states. Picked. |
+| [DOC-Standard](family/png/DOC-Standard.png) | The rules, and the decisions asked for. |
+| [PLN-Options](family/png/PLN-Options.png) | Three ways to document the plan format. Picked: A, a language, with C as its opening page. |
+| [PLN-Language](family/png/PLN-Language.png) | Option A: the plan format as a language (`aggregate`). Picked. |
+| [PLN-Rosetta](family/png/PLN-Rosetta.png) | One query, every language, one plan; the tree view. Picked, as the plan language's opening page. |
+| [AGT-Agents](family/png/AGT-Agents.png) | Docs for agents: Markdown twins, `/llms.txt`, an agent guide per product (Jake Rastberger's input). Picked. |
+
 ## How the snapshots were made
 
 Each `.dc.html` was rendered headless in Chromium at its board size, with the same Google Fonts files the boards load (Geist, Geist Mono, Martian Mono, IBM Plex Sans and Mono, Newsreader, Inter Tight, JetBrains Mono, Bricolage Grotesque, DM Mono).
