@@ -208,7 +208,10 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
    nothing still runs something real.
 3. **Reference entries:** one shape for every function, method, statement and plan operation: the name; the signature
    with its types; a one-line summary; parameters; what it returns (or its output columns); the errors it raises, with
-   their codes; notes; examples with their printed results; a working demo; see also.
+   their codes; notes; examples with their printed results; a working demo; see also. **One function, method or
+   statement per page**, grouped in the sidebar under its kind (String, Math, Aggregate …); a group's page lists its
+   members and states the rules they share. Names for the same function (`substr`, `substring`) share a page. A
+   language's functions and statements have syntax diagrams, as its grammar does (rule 4).
 4. **Syntax diagrams:** every statement and grammar rule of a language has a railroad diagram, drawn from its grammar
    (EBNF, in the W3C notation) by the site kit's generator, our own code (`railroad.ts`): keywords in rounded boxes,
    rules in square boxes that expand in place, long rules wrapped onto rows, and the EBNF beside them. A site keeps its
@@ -218,8 +221,10 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
 6. **Working demos:** every language and API reference page ends with a complete small program (its data, its code
    and its result) that runs as written.
 7. **Playgrounds:** on every guide and reference page, one component from the site kit (`playground.ts`), built from
-   smaltkit (`editor` and `grid`). An example becomes one when its fence says `play`. At rest it shows the code and its
-   tested result, and loads nothing; the first Run starts the engine, from the site's own copy and never a CDN, in a
+   smaltkit (`editor` and `grid`). **Every tested example runs in place:** at rest it is the example, a small Run
+   button and its tested result (or the error it is tested to raise), and it loads nothing; Run or Edit turns it into
+   a playground where it stands. A fence marked `noplay` doesn't run, nor does an example that needs a plugin the site
+   doesn't load; the first Run starts the engine, from the site's own copy and never a CDN, in a
    worker, once per visit. Each Run starts from the page's setup: the tested examples above it, as the examples test
    runs them, in an in-memory database. Run, Edit, Reset, Copy and Share (the code travels in the link's fragment,
    never to a server), and a link to the app where the app can open code from one. What a playground holds, and what it

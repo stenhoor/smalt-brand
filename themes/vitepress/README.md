@@ -112,10 +112,12 @@ A grammar error fails the build and names the page and the line.
 
 ## Playgrounds
 
-An example becomes a playground when its fence says `play`; the result table printed under it is its tested result:
+Every tested example runs in place (`run: 'every'`, the default; `run: 'marked'` runs only fences marked `play`).
+The result table printed under it is its tested result, and an example marked `docs:error CODE` is tested to fail
+with `CODE`. A fence marked `noplay` doesn't run, nor do examples marked `docs:skip` or `docs:plugin`:
 
 ````md
-```sql play
+```sql
 SELECT ARRAY[3, 1, 2] AS numbers;
 ```
 
@@ -124,7 +126,8 @@ SELECT ARRAY[3, 1, 2] AS numbers;
 | [3,1,2] |
 ````
 
-At rest it shows that and loads nothing. Run loads smaltkit's editor and grid, starts the site's runner once per visit,
+At rest it shows that, with a small Run button, and loads nothing. Run or Edit makes it a playground where it stands:
+Run loads smaltkit's editor and grid, starts the site's runner once per visit,
 and runs the page's setup, then the code. The setup is what the examples test runs first: every example of the same
 language above it, and `<!-- docs:setup … -->` markers, leaving out `docs:error` and `docs:skip` examples. Share copies a
 link with the code in its fragment (`#play-<n>=…`), which opens that playground with the code, ready to run.

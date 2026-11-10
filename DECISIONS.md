@@ -500,6 +500,17 @@ Building the playground (stenhoor/smalt-brand#64), the owner agreed, 2026-11-10:
 - **"Open in the app" waits for the app.** The link shows only where the site can give one that opens the code; smaltui
   can't open code from a link yet, and teaching it to is a task of its own.
 
+Reviewing smaltql's site under the standard, the owner decided, 2026-11-10:
+
+- **A function per page.** Function references give each function a page of its own, grouped in the sidebar under its
+  kind (scalar, string, math …), in place of one page per kind with every function on it.
+- **Every example runs in place.** One playground per page left the other examples on it unrunnable. Of the
+  alternatives offered (every example a full playground; examples loading one shared playground; a playground per
+  section), the owner chose examples that look like examples at rest, with a Run button that turns each into a
+  playground where it stands.
+- **SQL is a language too.** The plan format's treatment (BRAND.md rule 8) is the model for SQL's reference: syntax
+  diagrams for statements and for functions, and an entry for each. The plan language itself follows, as decided.
+
 ## Work items: one register
 
 Decided by the owner on 2026-11-09, when smaltdb ADR 0022 (SQL for the new engine features) needed tracking and review
