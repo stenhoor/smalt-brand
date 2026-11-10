@@ -210,9 +210,10 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
    with its types; a one-line summary; parameters; what it returns (or its output columns); the errors it raises, with
    their codes; notes; examples with their printed results; a working demo; see also.
 4. **Syntax diagrams:** every statement and grammar rule of a language has a railroad diagram, drawn from its grammar
-   (EBNF) by the site kit's generator, our own code (*to build*): keywords in rounded boxes, rules in square boxes that
-   expand in place, long rules wrapped onto rows. Prose after the diagrams says what they can't, such as where an
-   aggregate may appear.
+   (EBNF, in the W3C notation) by the site kit's generator, our own code (`railroad.ts`): keywords in rounded boxes,
+   rules in square boxes that expand in place, long rules wrapped onto rows, and the EBNF beside them. A site keeps its
+   grammar in one file, which the diagrams and the agent guide both read. Prose after the diagrams says what they
+   can't, such as where an aggregate may appear.
 5. **Examples are tests:** every example runs in CI, and its printed result is checked against what it gives.
 6. **Working demos:** every language and API reference page ends with a complete small program (its data, its code
    and its result) that runs as written.

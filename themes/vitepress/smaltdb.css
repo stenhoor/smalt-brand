@@ -159,3 +159,30 @@ img.sw-light { display: inline-block; }
 .VPHero .text { text-wrap: balance; }
 @media (min-width: 640px) { .VPHero .text { font-size: 44px; line-height: 52px; } }
 @media (min-width: 960px) { .VPHero .text { font-size: 50px; line-height: 58px; } }
+
+/* Syntax diagrams (railroad.ts): keywords in rounded smalt boxes, rules in square boxes in the language layer's colour
+   that expand in place, lines in the third text colour. Box widths are measured for Martian Mono at 13px. */
+.sw-rr-figure { margin: 16px 0; }
+.sw-rr-rule, .sw-rr-expansion { margin: 0 0 8px; overflow-x: auto; }
+.sw-rr-expansion { margin: 4px 0 8px 16px; padding-left: 12px; border-left: 2px solid var(--vp-c-divider); }
+.sw-rr-name { font-family: var(--smalt-brand-font); font-size: 13px; color: var(--vp-c-text-2); }
+.vp-doc .sw-rr-name a { text-decoration: none; color: inherit; }
+svg.sw-rr { display: block; max-width: none; }
+.sw-rr text { font-family: var(--smalt-brand-font); font-size: 13px; text-anchor: middle; }
+.sw-rr .sw-rr-line { fill: none; stroke: var(--vp-c-text-3); stroke-width: 1.5; }
+.sw-rr .sw-rr-end { fill: var(--vp-c-text-3); }
+.sw-rr .sw-rr-term rect { fill: var(--vp-c-brand-soft); stroke: var(--vp-c-brand-1); stroke-width: 1.5; }
+.sw-rr .sw-rr-term text { fill: var(--vp-c-brand-1); font-weight: 600; }
+.sw-rr .sw-rr-ref rect { fill: var(--vp-c-bg); stroke: #981C89; stroke-width: 1.5; }
+.sw-rr .sw-rr-ref text { fill: #981C89; }
+.sw-rr .sw-rr-ref[data-rule] { cursor: pointer; }
+.sw-rr .sw-rr-ref[data-rule]:hover rect, .sw-rr .sw-rr-ref[aria-expanded='true'] rect { fill: rgba(152, 28, 137, 0.08); }
+.sw-rr .sw-rr-ref:focus-visible { outline: none; }
+.sw-rr .sw-rr-ref:focus-visible rect { stroke-width: 3; }
+.sw-rr .sw-rr-undefined rect { stroke-dasharray: 4 3; }
+.dark .sw-rr .sw-rr-ref rect { stroke: #F57FE6; }
+.dark .sw-rr .sw-rr-ref text { fill: #F57FE6; }
+.dark .sw-rr .sw-rr-ref[data-rule]:hover rect, .dark .sw-rr .sw-rr-ref[aria-expanded='true'] rect { fill: rgba(245, 127, 230, 0.12); }
+.sw-rr-ebnf summary { font-family: var(--smalt-brand-font); font-size: 13px; color: var(--vp-c-text-2); cursor: pointer; }
+.sw-rr-ebnf pre { margin: 8px 0 0; padding: 12px 16px; border-radius: 8px; background: var(--vp-code-block-bg); overflow-x: auto; }
+.sw-rr-ebnf code { font-size: 14px; }
