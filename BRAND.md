@@ -231,10 +231,11 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
    the plan tree printer). The section is marked experimental, beside the work-in-progress badge, until the plan
    format's stability ADR.
 9. **Docs for agents:** every site also publishes Markdown for AI agents, generated from the same sources as its pages
-   (*to build*): a Markdown twin of every page (`page.md`), an `/llms.txt` index (the
-   [llms.txt proposal](https://llmstxt.org/)), and one agent guide per product (`/agents.md`). An agent guide is
-   complete rather than friendly: how to use the product, its rules, its grammar as EBNF text, every signature, tested
-   examples with their results, every error code, and what isn't supported, with the alternative. Each file names the
+   (the site kit's `agents.ts`, at the end of the build): a Markdown twin of every page (`page.md`), an `/llms.txt`
+   index (the [llms.txt proposal](https://llmstxt.org/)), and one agent guide per product (`/agents.md`). An agent guide
+   is complete rather than friendly: how to use the product, its rules (a page the site writes for agents), its grammar
+   as EBNF text, every signature, tested examples with their results, every error code, and what isn't supported, with
+   the alternative (the reference pages it names, in the sidebar's order). Each file names the
    package's version (and the plan format's, where plans appear). The same generator feeds smaltai's context documents
    ([ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md)).
 10. **Voice:** this file's, as everywhere: what it is, short sentences, the stage badge, no number without its
