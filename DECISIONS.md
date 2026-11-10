@@ -463,6 +463,36 @@ The owner's decisions, 2026-11-07:
 - **Brand first.** Every repository's CLAUDE.md points sessions to BRAND.md and this file before they change a site,
   README or description. Sessions had copied an old line back onto a site after the owner changed it.
 
+## Documentation standard
+
+One standard for every product's documentation (BRAND.md, "Documentation"), from a review of three projects whose docs
+the owner admires: Polars for its function entries with sample code, NumPy for its structure, SQLite for its syntax
+diagrams. Ten boards were mocked up (docs round 1, in the [exploration archive](exploration/README.md#documentation-standard)).
+
+The owner's decisions, 2026-11-10:
+
+- **Four sections on every site:** Quick start (zero to working), Getting started, User guide, Reference.
+- **Every reference entry the same shape,** with examples tested against their printed results, and a **working
+  demo** on every language and API page: a complete small program a reader sees run, then changes. **Playgrounds on
+  every page,** built from smaltkit.
+- **Syntax diagrams from our own generator.** Mermaid has railroad diagrams (beta since v11.16), but it is outside
+  code; a small generator of our own draws them in the brand's colours, and the mock-ups use it.
+- **Demos and playgrounds** (Sites and READMEs, rule 12, rewritten). In the owner's words: demos are full app
+  environments, the full interface; playgrounds have a stripped-down interface, fully functional, to show code actually
+  running (tell and show). Playgrounds are in the documentation; apps are in Demo. Keeping playgrounds off the app
+  sites, and dropping the rule's "nothing else opens the app", were considered.
+- **The standard in BRAND.md, the components in the site kit** (`themes/vitepress/`). A DOCS.md of its own, and the
+  components in smaltkit, were considered.
+- **smaltql first:** it already has a quick start, a guide and tested examples.
+- **The plan format documented as a language** (the owner's lean): the neutral way into the engine gets syntax
+  diagrams, an entry per operation and expression, and plan playgrounds, opened by "One query, every language" (SQL,
+  smaltdf and the plan they build). Documenting only the TypeScript builders, and only the side-by-side view, were
+  considered. It needs smaltql to give the plan of a statement, which it doesn't export yet, and a printer for whole
+  plans; the format stays marked experimental until its stability ADR.
+- **Docs for agents** (Jake Rastberger's input): beside the people docs, Markdown made for the AI agents that use the
+  languages and tools: a twin of every page, an `/llms.txt` index, and one agent guide per product, generated from the
+  same tested sources.
+
 ## Work items: one register
 
 Decided by the owner on 2026-11-09, when smaltdb ADR 0022 (SQL for the new engine features) needed tracking and review
@@ -478,7 +508,7 @@ with other work, and smalt-brand had no place for it.
 
 ## Exploration archive
 
-[`exploration/`](exploration/) keeps all 67 boards from every round: a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
+[`exploration/`](exploration/) keeps every board from every round (77 by the documentation standard's round): a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
 
 ## Still open
 

@@ -178,10 +178,65 @@ Every product site and README follows the same rules, so the family reads as one
 9. **Status:** one stage from Planned, In early development, In development, Preview and Release 1.x. Each repository's status page is the source; smaltworks.dev's status page mirrors it.
 10. **README:** the lockup, the stage badge, the tagline and positioning line, then "Documentation" and "smaltworks.dev" links. It ends with the "A smaltworks project" badge.
 11. **Page metadata:** site search, and `og:` title, description and image.
-12. **Demo:** an app site (smaltui, smaltbi, smaltnb) opens its app on sample data from one nav item, **Demo**, first in the top nav. The home page embeds no demo, and nothing else on the site opens the app: the hero has one button, **Getting started**, to the guide. The language sites (smaltql, smaltdf) have no demo yet.
+12. **Demos and playgrounds:** a **demo** is the app itself: its full interface, on sample data. An app site (smaltui, smaltbi, smaltnb) opens it from one nav item, **Demo**, first in the top nav; the home page embeds no demo, and nothing else on the site opens the app: the hero has one button, **Getting started**, to the guide. A **playground** is a small runner in a docs page: an editor, Run, Reset, Copy and Share, and the result (a grid, a value, a plan or an error), with nothing else of the app's interface (no explorer, tabs, import, settings or saved data). It shows the page's code running: tell and show. Docs pages have playgrounds ([Documentation](#documentation), rule 7); only Demo opens the app. A playground may link to the app ("Open in smaltui"), never embed it. The language sites (smaltql, smaltdf) have no demo yet.
 13. **Status on smaltworks.dev:** its status page and product pages keep a one-line detail for each product. A change that alters a product's status or what it does comes with a smalt-brand PR that updates them, linked with `Depends on:`.
 
 smaltui's page is a web app, not VitePress: it follows the same rules in its own HTML, with the family's products as cards in place of the menu.
+
+## Documentation
+
+Every product's documentation follows one standard, for people and for the AI agents that use the products. The
+mock-ups are in the [exploration archive](exploration/README.md#documentation-standard) and on the family canvas; the
+decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentation-standard). The components marked
+*to build* are not in the site kit yet: until they are, a site follows the rules it can, starting with smaltql.
+
+1. **Four sections:** Quick start, Getting started, User guide and Reference, in that order and with those names. The
+   home page opens on the four as cards. The top nav is Quick start, Guide, Reference, Playground, then the smaltworks
+   menu (an app site puts Demo first: Sites and READMEs, rule 12). A site leaves a section out only where this table
+   does:
+
+   | Site | Quick start | Getting started | User guide | Reference |
+   |---|---|---|---|---|
+   | smaltdb | yes | yes | Engine concepts | API, the plan language, errors |
+   | smaltql, smaltdf | yes | yes | Tasks in the language | The language (statements or methods, functions), its API |
+   | smaltts | yes | yes | Specs, changes, flows | API |
+   | smaltui, smaltbi, smaltnb | yes | yes | Working in the app | Formats (report, notebook), shortcuts |
+   | Plugins | yes | no | Per plugin | Functions, options, API |
+   | Kits (smaltkit, smaltty) | yes | no | no | API, module by module |
+
+2. **Quick start:** one page, five minutes, three steps at most, ending in a live playground, so a reader who installs
+   nothing still runs something real.
+3. **Reference entries:** one shape for every function, method, statement and plan operation: the name; the signature
+   with its types; a one-line summary; parameters; what it returns (or its output columns); the errors it raises, with
+   their codes; notes; examples with their printed results; a working demo; see also.
+4. **Syntax diagrams:** every statement and grammar rule of a language has a railroad diagram, drawn from its grammar
+   (EBNF) by the site kit's generator, our own code (*to build*): keywords in rounded boxes, rules in square boxes that
+   expand in place, long rules wrapped onto rows. Prose after the diagrams says what they can't, such as where an
+   aggregate may appear.
+5. **Examples are tests:** every example runs in CI, and its printed result is checked against what it gives.
+6. **Working demos:** every language and API reference page ends with a complete small program (its data, its code
+   and its result) that runs as written.
+7. **Playgrounds:** on every guide and reference page, one component from the site kit (*to build*), built from
+   smaltkit (`editor`, `grid`, `engine`, `typescript`, `pretty`). At rest it shows the code and its tested result, and
+   loads nothing; the first Run starts the engine, from the site's own copy and never a CDN, in a worker, once per page.
+   Each playground runs in an in-memory database from the page's setup block. Run, Reset, Copy and Share (the code
+   travels in the link's fragment, never to a server), and a link to the app. What a playground holds, and what it
+   leaves to the app, is in Sites and READMEs, rule 12.
+8. **The plan format is a language:** smaltdb's reference has a Plan language section, like a language's: syntax
+   diagrams of the JSON, an entry for each operation and expression kind, and playgrounds that run plan JSON, with a
+   tree view for reading a plan. It opens with "One query, every language": the same query in SQL and in smaltdf, and
+   the plan both build. Every SQL and smaltdf playground has a Plan tab (*to build*: smaltql's plan of a statement and
+   the plan tree printer). The section is marked experimental, beside the work-in-progress badge, until the plan
+   format's stability ADR.
+9. **Docs for agents:** every site also publishes Markdown for AI agents, generated from the same sources as its pages
+   (*to build*): a Markdown twin of every page (`page.md`), an `/llms.txt` index (the
+   [llms.txt proposal](https://llmstxt.org/)), and one agent guide per product (`/agents.md`). An agent guide is
+   complete rather than friendly: how to use the product, its rules, its grammar as EBNF text, every signature, tested
+   examples with their results, every error code, and what isn't supported, with the alternative. Each file names the
+   package's version (and the plan format's, where plans appear). The same generator feeds smaltai's context documents
+   ([ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md)).
+10. **Voice:** this file's, as everywhere: what it is, short sentences, the stage badge, no number without its
+    benchmark.
 
 ## The smalt family
 

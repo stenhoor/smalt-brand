@@ -17,6 +17,7 @@ done; its record keeps the history.
 | smaltml, machine learning on tables: classic supervised models, gradient-boosted trees, clustering, dimension reduction and anomaly detection in TypeScript, on the CPU everywhere and WebGPU where it helps, matched against scikit-learn and XGBoost | smaltml, smaltui, smaltnb | [smaltml ADR 0024](docs/adr/0024-smaltml-scope-and-architecture.md) | Proposed | The owner's decisions on the ADR's open points: time series forecasting; importing other models (ONNX); the yes on the compare tests' Python packages; when phase 2 starts; own WebAssembly kernels if TypeScript can't reach Python's speed | Owner |
 | smaltai, AI in the smalt apps: an AI agent button that drives smaltui, smaltbi, smaltnb (and smaltfl) through typed actions, with a model the user brings through a local gateway they run (llama.cpp, Ollama, LM Studio, or their own proxy to a hosted model) or our own in-browser LLM on WebGPU; smalt never holds a key; permissions on what it sees and changes, and context documents generated from the code | smaltai (new), the in-browser engine (new), smaltkit, smaltnb, smaltbi, smaltui, smaltfl | [smaltai ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md), [ADR 0026](docs/adr/0026-smaltai-in-browser-llm.md) | Proposed | The owner's decisions on the ADRs' open points: which app first; remembered grants; the engine's name, first architectures and quantization types; a fallback without WebGPU; the yes on WebLLM for benchmarks | Owner |
 | smaltworks 0.9.0, the release: smaltdb, smaltql, smaltdf, smaltui, smaltnb, smaltty and smaltkit, with the plugins | all seven, smaltdb-io, smaltdb-external, smaltdb-parquet, smalt-brand | [Release notes](releases/0.9.0/release-notes.md) and [news story](releases/0.9.0/news.md) (drafts); smaltdb ADR 0015 steps 11–12 | Drafting | The owner's review of the drafts; then the package renames (ADR 0015 step 11), the versions set to 0.9.0, an end-to-end check of the 0.8.3 export and 0.9.0 import, the publish (step 12), `smaltdb` 0.8.3 marked deprecated, the GitHub releases, and the news page on smaltworks.dev | Owner |
+| The documentation standard: four sections, reference entries, syntax diagrams, working demos, playgrounds, the plan language, docs for agents | smalt-brand (site kit), smaltkit, every product site; smaltql first, smaltdb for the plan language | [BRAND.md, Documentation](BRAND.md#documentation), [DECISIONS.md](DECISIONS.md#documentation-standard) | Decided; nothing built | Build the site kit's components (the syntax-diagram generator, the playground, the agent-docs build step), then move smaltql's site to the standard; smaltql gives the plan of a statement; smaltdb prints whole plans | – |
 
 ## SQL for the new engine features (smaltdb ADR 0022)
 
@@ -93,3 +94,18 @@ by side: the agent works with remote gateways before the in-browser engine exist
 | M9 In-browser engine: tool calling and the gateway interface | the engine, smaltai | M | M1, M8 | Not started |
 | M10 In-browser engine: safetensors and more architectures | the engine | M–L | M9 | Not started |
 | M11 Brand: smaltai's marks and words, and the engine's name | smalt-brand | S–M | M0 | Round 1–2 on the canvas; rest not started |
+
+## The documentation standard (BRAND.md, "Documentation")
+
+Decided 2026-11-10. Sizes are estimates, as above.
+
+| Milestone | Repository | Size | After | Status |
+| --- | --- | --- | --- | --- |
+| M1 The syntax-diagram generator (grammar in EBNF to SVG, rules expanding in place) | smalt-brand (site kit) | M | | Not started; the mock-ups' prototype is about 150 lines |
+| M2 The playground component, from smaltkit's editor, grid, engine, typescript and pretty | smalt-brand (site kit), smaltkit | M | | Not started |
+| M3 The agent-docs build step: Markdown twins, `/llms.txt`, the agent guide | smalt-brand (site kit) | M | | Not started |
+| M4 smaltql's site to the standard: diagrams, working demos, playgrounds, agent docs | smaltql | L | M1, M2, M3 | Not started |
+| M5 smaltql gives the plan of a statement, for the Plan tab | smaltql | S | | Not started |
+| M6 smaltdb prints whole plans (the tree view) | smaltdb | S | | Not started |
+| M7 smaltdb's Plan language section and "One query, every language" | smaltdb | L | M1–M3, M5, M6 | Not started |
+| M8 The other sites to the standard: smaltdf, then smaltts, the apps, the plugins and the kits | each | L each | M4 | Not started |
