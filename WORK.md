@@ -32,7 +32,7 @@ accepted ADRs (0018–0020), so it can start before ADR 0022 is accepted.
 | M4 `REGEXP`, `isnan`, `arg_min` / `arg_max`, `IGNORE NULLS` | smaltql | M, ~450 | 1 | M1 | Done: stenhoor/smaltql#35 |
 | M5 Lists: `ARRAY[…]`, the `array_*` names, `array_agg` | smaltql | M, ~600 | 1 | M1 | Done: stenhoor/smaltql#36 |
 | M6 `unnest` and struct fields | smaltql | L, ~1,000 | 2 | M5 | Not started |
-| M7 `DISTINCT ON`, `TABLESAMPLE`, `ASOF JOIN`, `PIVOT` / `UNPIVOT` | smaltdb, smaltql | L, ~1,800 | 4 | M1 | `TABLESAMPLE` done (stenhoor/smaltql#39, on stenhoor/smaltdb#183); `DISTINCT ON` in review: stenhoor/smaltql#40; `ASOF JOIN`, `PIVOT` / `UNPIVOT` not started |
+| M7 `DISTINCT ON`, `TABLESAMPLE`, `ASOF JOIN`, `PIVOT` / `UNPIVOT` | smaltdb, smaltql | L, ~1,800 | 4 | M1 | `TABLESAMPLE` done (stenhoor/smaltql#39, on stenhoor/smaltdb#183); `DISTINCT ON` done (stenhoor/smaltql#40); `ASOF JOIN` in review: stenhoor/smaltql#41; `PIVOT` / `UNPIVOT` not started |
 | M8 `TIME` literals (`cast_time` first) | smaltdb, smaltql | S, ~200 | 2 | M3 | Not started |
 
 ## smaltts, the typed API (smaltts ADR 0023)
