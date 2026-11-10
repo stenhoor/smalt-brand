@@ -217,11 +217,12 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
 5. **Examples are tests:** every example runs in CI, and its printed result is checked against what it gives.
 6. **Working demos:** every language and API reference page ends with a complete small program (its data, its code
    and its result) that runs as written.
-7. **Playgrounds:** on every guide and reference page, one component from the site kit (*to build*), built from
-   smaltkit (`editor`, `grid`, `engine`, `typescript`, `pretty`). At rest it shows the code and its tested result, and
-   loads nothing; the first Run starts the engine, from the site's own copy and never a CDN, in a worker, once per page.
-   Each playground runs in an in-memory database from the page's setup block. Run, Reset, Copy and Share (the code
-   travels in the link's fragment, never to a server), and a link to the app. What a playground holds, and what it
+7. **Playgrounds:** on every guide and reference page, one component from the site kit (`playground.ts`), built from
+   smaltkit (`editor` and `grid`). An example becomes one when its fence says `play`. At rest it shows the code and its
+   tested result, and loads nothing; the first Run starts the engine, from the site's own copy and never a CDN, in a
+   worker, once per visit. Each Run starts from the page's setup: the tested examples above it, as the examples test
+   runs them, in an in-memory database. Run, Edit, Reset, Copy and Share (the code travels in the link's fragment,
+   never to a server), and a link to the app where the app can open code from one. What a playground holds, and what it
    leaves to the app, is in Sites and READMEs, rule 12.
 8. **The plan format is a language:** smaltdb's reference has a Plan language section, like a language's: syntax
    diagrams of the JSON, an entry for each operation and expression kind, and playgrounds that run plan JSON, with a
