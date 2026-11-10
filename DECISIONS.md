@@ -493,6 +493,13 @@ The owner's decisions, 2026-11-10:
   languages and tools: a twin of every page, an `/llms.txt` index, and one agent guide per product, generated from the
   same tested sources.
 
+Building the playground (stenhoor/smalt-brand#64), the owner agreed, 2026-11-10:
+
+- **smaltkit in the docs sites.** A site with playgrounds pins smaltkit to a commit (`github:stenhoor/smaltkit#…`), as
+  smaltui and smaltbi do: playgrounds are built from it, and it is our own code.
+- **"Open in the app" waits for the app.** The link shows only where the site can give one that opens the code; smaltui
+  can't open code from a link yet, and teaching it to is a task of its own.
+
 ## Work items: one register
 
 Decided by the owner on 2026-11-09, when smaltdb ADR 0022 (SQL for the new engine features) needed tracking and review

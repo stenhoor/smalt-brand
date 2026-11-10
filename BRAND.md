@@ -217,11 +217,12 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
 5. **Examples are tests:** every example runs in CI, and its printed result is checked against what it gives.
 6. **Working demos:** every language and API reference page ends with a complete small program (its data, its code
    and its result) that runs as written.
-7. **Playgrounds:** on every guide and reference page, one component from the site kit (*to build*), built from
-   smaltkit (`editor`, `grid`, `engine`, `typescript`, `pretty`). At rest it shows the code and its tested result, and
-   loads nothing; the first Run starts the engine, from the site's own copy and never a CDN, in a worker, once per page.
-   Each playground runs in an in-memory database from the page's setup block. Run, Reset, Copy and Share (the code
-   travels in the link's fragment, never to a server), and a link to the app. What a playground holds, and what it
+7. **Playgrounds:** on every guide and reference page, one component from the site kit (`playground.ts`), built from
+   smaltkit (`editor` and `grid`). An example becomes one when its fence says `play`. At rest it shows the code and its
+   tested result, and loads nothing; the first Run starts the engine, from the site's own copy and never a CDN, in a
+   worker, once per visit. Each Run starts from the page's setup: the tested examples above it, as the examples test
+   runs them, in an in-memory database. Run, Edit, Reset, Copy and Share (the code travels in the link's fragment,
+   never to a server), and a link to the app where the app can open code from one. What a playground holds, and what it
    leaves to the app, is in Sites and READMEs, rule 12.
 8. **The plan format is a language:** smaltdb's reference has a Plan language section, like a language's: syntax
    diagrams of the JSON, an entry for each operation and expression kind, and playgrounds that run plan JSON, with a
@@ -230,10 +231,11 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
    the plan tree printer). The section is marked experimental, beside the work-in-progress badge, until the plan
    format's stability ADR.
 9. **Docs for agents:** every site also publishes Markdown for AI agents, generated from the same sources as its pages
-   (*to build*): a Markdown twin of every page (`page.md`), an `/llms.txt` index (the
-   [llms.txt proposal](https://llmstxt.org/)), and one agent guide per product (`/agents.md`). An agent guide is
-   complete rather than friendly: how to use the product, its rules, its grammar as EBNF text, every signature, tested
-   examples with their results, every error code, and what isn't supported, with the alternative. Each file names the
+   (the site kit's `agents.ts`, at the end of the build): a Markdown twin of every page (`page.md`), an `/llms.txt`
+   index (the [llms.txt proposal](https://llmstxt.org/)), and one agent guide per product (`/agents.md`). An agent guide
+   is complete rather than friendly: how to use the product, its rules (a page the site writes for agents), its grammar
+   as EBNF text, every signature, tested examples with their results, every error code, and what isn't supported, with
+   the alternative (the reference pages it names, in the sidebar's order). Each file names the
    package's version (and the plan format's, where plans appear). The same generator feeds smaltai's context documents
    ([ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md)).
 10. **Voice:** this file's, as everywhere: what it is, short sentences, the stage badge, no number without its
