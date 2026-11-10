@@ -27,7 +27,7 @@ accepted ADRs (0018–0020), so it can start before ADR 0022 is accepted.
 | --- | --- | --- | --- | --- | --- |
 | M0 ADR 0022 | smaltdb | S | 1 | | Done: stenhoor/smaltdb#181, decisions in the follow-up PR |
 | M1 Fix the leaks: computed dates, lists and truth values reach SQL as SQLite's; a function allow-list | smaltql | M, ~500 | 1 | | Done: stenhoor/smaltql#33 |
-| M2 The smaltdb extensions page of the functions reference | smaltql | S, ~250 | 1 | M1 | Not started |
+| M2 The smaltdb extensions page of the functions reference | smaltql | S, ~250 | 1 | M1 | In review: stenhoor/smaltql#34 |
 | M3 Dates: `EXTRACT`, `date_trunc`, literals, `INTERVAL`, `strptime` | smaltql | L, ~900 | 2 | M1 | Not started |
 | M4 `REGEXP`, `isnan`, `arg_min` / `arg_max`, `IGNORE NULLS` | smaltql | M, ~450 | 1 | M1 | Not started |
 | M5 Lists: `ARRAY[…]`, the `array_*` names, `array_agg` | smaltql | M, ~600 | 1 | M1 | Not started |
