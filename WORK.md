@@ -12,7 +12,7 @@ done; its record keeps the history.
 
 | Item | Repositories | Record | Status | Next step | Waiting on |
 | --- | --- | --- | --- | --- | --- |
-| SQL for the new engine features: fixes for what SQL reaches by accident, Postgres and DuckDB spellings for the types and plan operations that smaltdf uses, `unnest` | smaltdb, smaltql | [smaltdb ADR 0022](https://github.com/stenhoor/smaltdb/pull/181) | Proposed | The owner's decisions 2–5: hide engine names from SQL; empty and NULL lists in `unnest`; `LATERAL`; several lists in `unnest` | Owner |
+| SQL for the new engine features: fixes for what SQL reaches by accident, Postgres and DuckDB spellings for the types and plan operations that smaltdf uses, `unnest` | smaltdb, smaltql | [smaltdb ADR 0022](https://github.com/stenhoor/smaltdb/pull/181) | In progress | Accepted with the owner's decisions of 2026-11-10; M0 and M1 done; M2–M5 and M7 can start in parallel | Sessions to pick up |
 | smaltts, the typed API: a thin typed language over the engine's plan and schema operations, with schemas as values, change sets reviewed before they run, typed plans, reflecting and interface views, and structured flows | smaltts, smaltdb, smaltfl | [smaltts ADR 0023](https://github.com/stenhoor/smaltts/pull/4) | Proposed | The owner's decisions on the ADR's open points: migrations on disk; expression names; plugin descriptors; which engine proposals to open (E1, E2, E10); and the yes on the prototype's dev dependencies (milestone 0) | Owner |
 | smaltml, machine learning on tables: classic supervised models, gradient-boosted trees, clustering, dimension reduction and anomaly detection in TypeScript, on the CPU everywhere and WebGPU where it helps, matched against scikit-learn and XGBoost | smaltml, smaltui, smaltnb | [smaltml ADR 0024](docs/adr/0024-smaltml-scope-and-architecture.md) | Proposed | The owner's decisions on the ADR's open points: time series forecasting; importing other models (ONNX); the yes on the compare tests' Python packages; when phase 2 starts; own WebAssembly kernels if TypeScript can't reach Python's speed | Owner |
 | smaltai, AI in the smalt apps: an AI agent button that drives smaltui, smaltbi, smaltnb (and smaltfl) through typed actions, with a model the user brings through a local gateway they run (llama.cpp, Ollama, LM Studio, or their own proxy to a hosted model) or our own in-browser LLM on WebGPU; smalt never holds a key; permissions on what it sees and changes, and context documents generated from the code | smaltai (new), the in-browser engine (new), smaltkit, smaltnb, smaltbi, smaltui, smaltfl | [smaltai ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md), [ADR 0026](docs/adr/0026-smaltai-in-browser-llm.md) | Proposed | The owner's decisions on the ADRs' open points: which app first; remembered grants; the engine's name, first architectures and quantization types; a fallback without WebGPU; the yes on WebLLM for benchmarks | Owner |
@@ -25,8 +25,8 @@ accepted ADRs (0018–0020), so it can start before ADR 0022 is accepted.
 
 | Milestone | Repository | Size | PRs | After | Status |
 | --- | --- | --- | --- | --- | --- |
-| M0 ADR 0022 | smaltdb | S | 1 | | In review: stenhoor/smaltdb#181 |
-| M1 Fix the leaks: computed dates, lists and truth values reach SQL as SQLite's; a function allow-list | smaltql | M, ~500 | 1 | | Not started |
+| M0 ADR 0022 | smaltdb | S | 1 | | Done: stenhoor/smaltdb#181, decisions in the follow-up PR |
+| M1 Fix the leaks: computed dates, lists and truth values reach SQL as SQLite's; a function allow-list | smaltql | M, ~500 | 1 | | Done: stenhoor/smaltql#33 |
 | M2 The smaltdb extensions page of the functions reference | smaltql | S, ~250 | 1 | M1 | Not started |
 | M3 Dates: `EXTRACT`, `date_trunc`, literals, `INTERVAL`, `strptime` | smaltql | L, ~900 | 2 | M1 | Not started |
 | M4 `REGEXP`, `isnan`, `arg_min` / `arg_max`, `IGNORE NULLS` | smaltql | M, ~450 | 1 | M1 | Not started |
