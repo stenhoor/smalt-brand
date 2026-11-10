@@ -23,9 +23,9 @@ const html = (content: string) => Object.assign(new Token('html_block', '', 0), 
 const para = () => new Token('paragraph_open', 'p', 1)
 const table = () => [new Token('table_open', 'table', 1), new Token('tr_open', 'tr', 1), new Token('tr_close', 'tr', -1), new Token('table_close', 'table', -1)]
 
-function run(tokens: Token[]): Token[] {
+function run(tokens: Token[], options: Parameters<typeof playgroundPlugin>[1] = { run: 'marked' }): Token[] {
   let rule: ((state: any) => void) | undefined
-  playgroundPlugin({ core: { ruler: { push: (_: string, r: any) => (rule = r) } } })
+  playgroundPlugin({ core: { ruler: { push: (_: string, r: any) => (rule = r) } } }, options)
   const state = { tokens, env: {}, Token }
   rule!(state)
   return state.tokens
@@ -50,8 +50,8 @@ test('a play fence becomes a playground; its setup is the tested examples above 
     fence('sql play', "SELECT 'it''s';\n"),
   ])
   assert.deepEqual(attr(out, 'data-setup').map((s) => JSON.parse(s)), [
-    ['CREATE TABLE t(x);', 'INSERT INTO t VALUES (1);'],
-    ['CREATE TABLE t(x);', 'INSERT INTO t VALUES (1);', 'SELECT x FROM t;'],
+    ['CREATE TABLE t(x);', 'INSERT INTO t VALUES (1);', { sql: 'SELECT nope;', fails: true }],
+    ['CREATE TABLE t(x);', 'INSERT INTO t VALUES (1);', { sql: 'SELECT nope;', fails: true }, 'SELECT x FROM t;'],
   ])
   assert.deepEqual(attr(out, 'data-code'), ['SELECT x FROM t;\n', "SELECT 'it''s';\n"])
   assert.deepEqual(attr(out, 'data-index'), ['0', '1'])
@@ -67,6 +67,37 @@ test('a skipped example stays out of the setup, and markers apply to the next fe
   assert.deepEqual(JSON.parse(attr(out, 'data-setup')[0]), ['SELECT 1;'])
 })
 
+test('by default every tested example runs in place; skipped, plugin and noplay examples do not; errors show their code', () => {
+  const out = run(
+    [
+      fence('sql', 'CREATE TABLE t(x);\n'),
+      html('<!-- docs:error SMALT_ERROR -->\n'),
+      fence('sql', 'SELECT nope;\n'),
+      html('<!-- docs:skip -->\n'),
+      fence('sql', 'SELECT 1;\n'),
+      html('<!-- docs:plugin @smaltdb/io -->\n'),
+      fence('sql', "SELECT * FROM read_csv('x');\n"),
+      fence('sql noplay', 'SELECT 2;\n'),
+      fence('sql play', 'SELECT 3;\n'),
+    ],
+    {},
+  )
+  assert.deepEqual(attr(out, 'data-code'), ['CREATE TABLE t(x);\n', 'SELECT nope;\n', 'SELECT 3;\n'])
+  // The failing example is in the setup of the ones after it, expected to fail; skipped and plugin examples are not.
+  assert.deepEqual(JSON.parse(attr(out, 'data-setup')[2]), ['CREATE TABLE t(x);', { sql: 'SELECT nope;', fails: true }, 'SELECT 2;'])
+  assert.ok(out.some((t) => t.type === 'html_block' && t.content.includes('Fails with <code>SMALT_ERROR</code>')))
+  assert.deepEqual(out.filter((t) => t.type === 'fence').map((t) => t.info), ['sql', 'sql', 'sql', 'sql', 'sql', 'sql'])
+})
+
+test('front matter playground: false turns a page\'s playgrounds off', () => {
+  let rule: ((state: any) => void) | undefined
+  playgroundPlugin({ core: { ruler: { push: (_: string, r: any) => (rule = r) } } })
+  const state = { tokens: [fence('sql', 'SELECT 1;\n'), fence('sql play', 'SELECT 2;\n')], env: { frontmatter: { playground: false } }, Token }
+  rule!(state)
+  assert.deepEqual(attr(state.tokens, 'data-code'), [])
+  assert.deepEqual(state.tokens.map((t) => t.info), ['sql', 'sql'])
+})
+
 test('splitSql splits at semicolons outside strings, names and comments', () => {
   assert.deepEqual(splitSql("SELECT 'a;b'; SELECT \"c;d\" -- x;\n; /* ; */ SELECT [e;f];"), ["SELECT 'a;b'", 'SELECT "c;d" -- x;', '/* ; */ SELECT [e;f]'])
   assert.deepEqual(splitSql("SELECT 'it''s; fine'"), ["SELECT 'it''s; fine'"])
@@ -78,31 +109,36 @@ test('share codes round-trip any text', () => {
   assert.match(encodeCode('SELECT ??? >>>'), /^[A-Za-z0-9_-]*$/)
 })
 
-test('the SQL runner clears the database, runs the setup, then the code, and shows the last rows', async () => {
+test('the SQL runner gives every Run a fresh database: setup, then the code, then close; the next one opens early', async () => {
   const log: string[] = []
-  let tables: unknown[][] = [['table', 'old'], ['view', 'v']]
-  const db: SqlDatabase = {
-    async query(sql) {
-      log.push(`query ${sql}`)
-      const rows = sql.startsWith('SELECT type, name FROM sqlite_schema') ? tables : [[1, 'a']]
-      return Object.assign(rows.slice(), { columns: sql.startsWith('SELECT type') ? ['type', 'name'] : sql.startsWith('INSERT') ? [] : ['x', 'y'] })
-    },
-    async exec(sql) {
-      log.push(`exec ${sql}`)
-      return { changes: 1 }
-    },
+  let opened = 0
+  const open = async (): Promise<SqlDatabase> => {
+    const n = ++opened
+    log.push(`open ${n}`)
+    return {
+      async query(sql) {
+        log.push(`${n} query ${sql}`)
+        if (sql === 'BAD') throw Object.assign(new Error('near "BAD": syntax error'), { code: 'SMALT_SYNTAX' })
+        return Object.assign([[1, 'a']], { columns: sql.startsWith('INSERT') ? [] : ['x', 'y'] })
+      },
+      async exec(sql) {
+        log.push(`${n} exec ${sql}`)
+        if (sql === 'BAD') throw Object.assign(new Error('near "BAD": syntax error'), { code: 'SMALT_SYNTAX' })
+        return { changes: 1 }
+      },
+      close() {
+        log.push(`close ${n}`)
+      },
+    }
   }
-  const runner = await sqlRunner(async () => db)()
-  const r = await runner.run('INSERT INTO t VALUES (1); SELECT * FROM t', ['CREATE TABLE t(x); CREATE VIEW w AS SELECT 1'])
-  assert.deepEqual(r, { columns: ['x', 'y'], rows: [[1, 'a']] })
-  assert.deepEqual(log.slice(1), [
-    'exec DROP VIEW "v"',
-    'exec DROP TABLE "old"',
-    'exec CREATE TABLE t(x)',
-    'exec CREATE VIEW w AS SELECT 1',
-    'exec INSERT INTO t VALUES (1)',
-    'query SELECT * FROM t',
-  ])
-  tables = []
+  const runner = await sqlRunner(open)()
+  assert.deepEqual(await runner.run('INSERT INTO t VALUES (1); SELECT * FROM t', ['CREATE TABLE t(x)', { sql: 'SELECT 1; BAD', fails: true }]), { columns: ['x', 'y'], rows: [[1, 'a']] })
+  await assert.rejects(runner.run('BAD', []), /syntax error/)
   assert.deepEqual(await runner.run('INSERT INTO t VALUES (2)', []), { columns: [], rows: [], note: 'Done: the last statement returns no rows' })
+  assert.deepEqual(log, [
+    'open 1',
+    'open 2', '1 exec CREATE TABLE t(x)', '1 exec SELECT 1', '1 exec BAD', '1 exec INSERT INTO t VALUES (1)', '1 query SELECT * FROM t', 'close 1',
+    'open 3', '2 query BAD', 'close 2',
+    'open 4', '3 query INSERT INTO t VALUES (2)', 'close 3',
+  ])
 })
