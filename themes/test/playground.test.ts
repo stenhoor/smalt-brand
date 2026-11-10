@@ -86,6 +86,9 @@ test('by default every tested example runs in place; skipped, plugin and noplay 
   // The failing example is in the setup of the ones after it, expected to fail; skipped and plugin examples are not.
   assert.deepEqual(JSON.parse(attr(out, 'data-setup')[2]), ['CREATE TABLE t(x);', { sql: 'SELECT nope;', fails: true }, 'SELECT 2;'])
   assert.ok(out.some((t) => t.type === 'html_block' && t.content.includes('Fails with <code>SMALT_ERROR</code>')))
+  // Run shows the failure as the expected result: the playground carries the code it expects.
+  const failsAttr = out.filter((t) => t.type === 'html_block' && t.content.includes('class="sw-play"')).map((t) => /data-fails="([^"]*)"/.exec(t.content)?.[1] ?? null)
+  assert.deepEqual(failsAttr, [null, 'SMALT_ERROR', null])
   assert.deepEqual(out.filter((t) => t.type === 'fence').map((t) => t.info), ['sql', 'sql', 'sql', 'sql', 'sql', 'sql'])
 })
 
