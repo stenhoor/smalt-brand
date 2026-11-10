@@ -14,6 +14,8 @@ these files, unchanged, into the site's `.vitepress/theme/`; a site's own rules 
 - `playground.ts`: playgrounds (BRAND.md, Documentation, rule 7): a markdown-it plugin that makes a `play` fence a
   playground, the browser side that runs it with smaltkit's editor and grid, and `sqlRunner()` for a SQL site. Its
   styles are in `smaltdb.css`.
+- `agents.ts`: docs for agents (BRAND.md, Documentation, rule 9): Markdown twins of the pages, `/llms.txt` and
+  `/agents.md`, written at the end of the build. Node only, for `.vitepress/config.ts`.
 
 Copy these badges from [`badges/`](../../badges/) into the site's public directory: `work-in-progress.svg`,
 `work-in-progress-on-dark.svg`, `a-smaltworks-project.svg` and `a-smaltworks-project-on-dark.svg` (from 1.0,
@@ -157,3 +159,35 @@ export default {
 
 A runner for another language implements `run(code, setup)` and returns `{ columns, rows }`, or `{ columns: [], rows:
 [], note }`; an Error it throws is shown with its `code`.
+
+## Docs for agents
+
+At the end of the build, `agentDocs()` writes Markdown for AI agents beside the pages:
+
+- **A twin of every page** (`guide/queries.md` beside `guide/queries.html`): the page's source, with what only a browser
+  shows made plain. Playground fences lose `play`; a `railroad` fence becomes the EBNF of its rules; the examples test's
+  markers become sentences (`docs:error CODE` is "This example fails with `CODE`:", `docs:setup` a "Run first:" block);
+  VitePress containers become quotes; components, scripts and other comments go. Links to other pages point at their
+  twins, absolute; headings keep their `{#id}`. A line under the title names the version and the page for people.
+- **`/llms.txt`:** the twins, grouped as the sidebar is, each with a one-line description (its front matter's
+  `description`, or its first sentence), then the pages the sidebar leaves out under "Optional".
+- **`/agents.md`, the agent guide:** the site's introduction for agents (`intro`: how to use the product and its rules,
+  written for agents), the grammar as EBNF, then the pages `guide` names, each a section in the sidebar's order.
+
+In `.vitepress/config.ts`:
+
+```ts
+import { readFileSync } from 'node:fs'
+import { agentDocs, packageVersion } from './theme/agents'
+
+buildEnd: (config) => {
+  agentDocs(config, {
+    product: 'smaltql',
+    version: packageVersion('package.json'),
+    url: 'https://stenhoor.github.io/smaltql/',
+    intro: 'guide/agents.md',
+    grammar: readFileSync('docs/grammar.ebnf', 'utf8'),
+    guide: ['reference/sql/', 'reference/functions/', 'guide/errors'],
+  })
+},
+```
