@@ -12,29 +12,11 @@ done; its record keeps the history.
 
 | Item | Repositories | Record | Status | Next step | Waiting on |
 | --- | --- | --- | --- | --- | --- |
-| SQL for the new engine features: fixes for what SQL reaches by accident, Postgres and DuckDB spellings for the types and plan operations that smaltdf uses, `unnest` | smaltdb, smaltql | [smaltdb ADR 0022](https://github.com/stenhoor/smaltdb/pull/181) | In progress | Accepted with the owner's decisions of 2026-11-10; M0–M5 done; M1–M7 done; M8 in review | Sessions to pick up |
 | smaltts, the typed API: a thin typed language over the engine's plan and schema operations, with schemas as values, change sets reviewed before they run, typed plans, reflecting and interface views, and structured flows | smaltts, smaltdb, smaltfl | [smaltts ADR 0023](https://github.com/stenhoor/smaltts/pull/4) | Proposed | The owner's decisions on the ADR's open points: migrations on disk; expression names; plugin descriptors; which engine proposals to open (E1, E2, E10); and the yes on the prototype's dev dependencies (milestone 0) | Owner |
 | smaltml, machine learning on tables: classic supervised models, gradient-boosted trees, clustering, dimension reduction and anomaly detection in TypeScript, on the CPU everywhere and WebGPU where it helps, matched against scikit-learn and XGBoost | smaltml, smaltui, smaltnb | [smaltml ADR 0024](docs/adr/0024-smaltml-scope-and-architecture.md) | Proposed | The owner's decisions on the ADR's open points: time series forecasting; importing other models (ONNX); the yes on the compare tests' Python packages; when phase 2 starts; own WebAssembly kernels if TypeScript can't reach Python's speed | Owner |
 | smaltai, AI in the smalt apps: an AI agent button that drives smaltui, smaltbi, smaltnb (and smaltfl) through typed actions, with a model the user brings through a local gateway they run (llama.cpp, Ollama, LM Studio, or their own proxy to a hosted model) or our own in-browser LLM on WebGPU; smalt never holds a key; permissions on what it sees and changes, and context documents generated from the code | smaltai (new), the in-browser engine (new), smaltkit, smaltnb, smaltbi, smaltui, smaltfl | [smaltai ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md), [ADR 0026](docs/adr/0026-smaltai-in-browser-llm.md) | Proposed | The owner's decisions on the ADRs' open points: which app first; remembered grants; the engine's name, first architectures and quantization types; a fallback without WebGPU; the yes on WebLLM for benchmarks | Owner |
 | smaltworks 0.9.0, the release: smaltdb, smaltql, smaltdf, smaltui, smaltnb, smaltty and smaltkit, with the plugins | all seven, smaltdb-io, smaltdb-external, smaltdb-parquet, smalt-brand | [Release notes](releases/0.9.0/release-notes.md) and [news story](releases/0.9.0/news.md) (drafts); smaltdb ADR 0015 steps 11–12 | Drafting | The owner's review of the drafts; then the package renames (ADR 0015 step 11), the versions set to 0.9.0, an end-to-end check of the 0.8.3 export and 0.9.0 import, the publish (step 12), `smaltdb` 0.8.3 marked deprecated, the GitHub releases, and the news page on smaltworks.dev | Owner |
 | The documentation standard: four sections, reference entries, syntax diagrams, working demos, playgrounds, the plan language, docs for agents | smalt-brand (site kit), smaltkit, every product site; smaltql first, smaltdb for the plan language | [BRAND.md, Documentation](BRAND.md#documentation), [DECISIONS.md](DECISIONS.md#documentation-standard) | Decided; nothing built | Build the site kit's components (the syntax-diagram generator, the playground, the agent-docs build step), then move smaltql's site to the standard; smaltql gives the plan of a statement; smaltdb prints whole plans | – |
-
-## SQL for the new engine features (smaltdb ADR 0022)
-
-The ADR's order of work. Sizes count tests and docs: S under 300 lines, M 300–800, L over 800. M1 fixes bugs under
-accepted ADRs (0018–0020), so it can start before ADR 0022 is accepted.
-
-| Milestone | Repository | Size | PRs | After | Status |
-| --- | --- | --- | --- | --- | --- |
-| M0 ADR 0022 | smaltdb | S | 1 | | Done: stenhoor/smaltdb#181, decisions in the follow-up PR |
-| M1 Fix the leaks: computed dates, lists and truth values reach SQL as SQLite's; a function allow-list | smaltql | M, ~500 | 1 | | Done: stenhoor/smaltql#33 |
-| M2 The smaltdb extensions page of the functions reference | smaltql | S, ~250 | 1 | M1 | Done: stenhoor/smaltql#34 |
-| M3 Dates: `EXTRACT`, `date_trunc`, literals, `INTERVAL`, `strptime` | smaltql | L, ~900 | 2 | M1 | Done: stenhoor/smaltql#37, #38 (no `date ± int`: ADR 0019 §6 keeps SQLite's text arithmetic) |
-| M4 `REGEXP`, `isnan`, `arg_min` / `arg_max`, `IGNORE NULLS` | smaltql | M, ~450 | 1 | M1 | Done: stenhoor/smaltql#35 |
-| M5 Lists: `ARRAY[…]`, the `array_*` names, `array_agg` | smaltql | M, ~600 | 1 | M1 | Done: stenhoor/smaltql#36 |
-| M6 `unnest` and struct fields | smaltql | L, ~1,000 | 2 | M5 | `unnest` done (stenhoor/smaltql#42); `(s).name` done (stenhoor/smaltql#43); list and struct fields done (stenhoor/smaltql#44, stenhoor/smaltdb#184). Not planned: `(s).*` |
-| M7 `DISTINCT ON`, `TABLESAMPLE`, `ASOF JOIN`, `PIVOT` / `UNPIVOT` | smaltdb, smaltql | L, ~1,800 | 4 | M1 | `TABLESAMPLE` done (stenhoor/smaltql#39, on stenhoor/smaltdb#183); `DISTINCT ON` done (stenhoor/smaltql#40); `ASOF JOIN` done (stenhoor/smaltql#41); `UNPIVOT` done (stenhoor/smaltql#45); `PIVOT` done (stenhoor/smaltql#46); both the standard FROM-clause form |
-| M8 `TIME` literals (`cast_time` first) | smaltdb, smaltql | S, ~200 | 2 | M3 | In review: stenhoor/smaltdb#185, stenhoor/smaltql#47 |
 
 ## smaltts, the typed API (smaltts ADR 0023)
 
