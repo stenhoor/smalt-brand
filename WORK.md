@@ -27,7 +27,7 @@ them.
 | Milestone | Repository | Size | After | Status |
 | --- | --- | --- | --- | --- |
 | M0 The owner's decisions on outside code: TypeScript tooling from smaltty, no `typescript` | smaltts | S | | Done: stenhoor/smaltts#5 |
-| Alongside: smaltty's checker covers calls into smaltts as well as smaltdf (smaltty milestone 7) | smaltty | L | | Scope recorded: stenhoor/smaltty#4; checker not started |
+| Alongside: smaltty's checker covers calls into smaltts as well as smaltdf (smaltty milestone 7) | smaltty | L | | Done for smaltts: stenhoor/smaltty#5–#9, and smaltts's npm run check runs it (stenhoor/smaltts#17); smaltdf and the built-in types next |
 | M1 Re-base the prototype on smaltdb 0.9.0 (behaviour names, the language interface, the catalog API) | smaltts | M | M0 | Done: stenhoor/smaltts#6 |
 | M2 Specs with the engine's types (`bool`, dates and times, lists, structs) | smaltts | M | M1 | Done: stenhoor/smaltts#7, #8 |
 | M3 Diff, change sets and history, complete | smaltts, smaltdb (the catalog's foreign keys, CHECKs and defaults: S) | L | M1 | Done: stenhoor/smaltts#9 |
