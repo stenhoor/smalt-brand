@@ -214,6 +214,9 @@ The owner picked, 2026-11-11:
   is smalt and only the chip takes the layer colour, as for every other product.
 - `scripts/brand_assets.py` draws the Twin with the same curve functions as smaltfl's round 3, so its paths match that
   drawing exactly.
+- **smaltfl is an app site** (owner, 2026-11-11): Sites and READMEs rule 12 (Demo first in the nav) and the
+  Documentation standard's user-tools row apply to it as to smaltui, smaltbi and smaltnb. Its format in the
+  Reference is the flow document.
 
 ## smaltql
 
