@@ -511,6 +511,14 @@ Reviewing smaltql's site under the standard, the owner decided, 2026-11-10:
 - **SQL is a language too.** The plan format's treatment (BRAND.md rule 8) is the model for SQL's reference: syntax
   diagrams for statements and for functions, and an entry for each. The plan language itself follows, as decided.
 
+The owner decided, 2026-11-11:
+
+- **The home page is not part of the standard.** Rule 1 had said "the home page opens on the four as cards". The
+  session that wrote the standard into BRAND.md added that line; the owner never decided it, and smaltql's home page
+  was changed under it without being asked for (its six feature cards replaced by four docs cards). The line is
+  removed: the standard does not change a product's home page, and smaltql's goes back to what it was
+  (stenhoor/smaltql#64).
+
 ## Work items: one register
 
 Decided by the owner on 2026-11-09, when smaltdb ADR 0022 (SQL for the new engine features) needed tracking and review

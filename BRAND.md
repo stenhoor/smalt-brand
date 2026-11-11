@@ -191,9 +191,9 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
 *to build* are not in the site kit yet: until they are, a site follows the rules it can, starting with smaltql.
 
 1. **Four sections:** Quick start, Getting started, User guide and Reference, in that order and with those names. The
-   home page opens on the four as cards. The top nav is Quick start, Guide, Reference, Playground, then the smaltworks
-   menu (an app site puts Demo first: Sites and READMEs, rule 12). A site leaves a section out only where this table
-   does:
+   standard does not change a product's home page. The top nav is Quick start, Guide, Reference, Playground, then the
+   smaltworks menu (an app site puts Demo first: Sites and READMEs, rule 12). A site leaves a section out only where
+   this table does:
 
    | Site | Quick start | Getting started | User guide | Reference |
    |---|---|---|---|---|
