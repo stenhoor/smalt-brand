@@ -145,7 +145,7 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## Social preview cards
 
-`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltql.png` and `smaltts.png`, each 1280 × 640, with SVG sources beside them.
+`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltfl.png`, `smaltql.png` and `smaltts.png`, each 1280 × 640, with SVG sources beside them.
 
 - **GitHub:** in the repository, open Settings, then under "Social preview" click Edit and upload the PNG (PNG, JPG or GIF under 1 MB; 1280 × 640 displays best).
 - **Websites:** reference the PNG from `og:image` and `twitter:image`, with `twitter:card` set to `summary_large_image`.
@@ -264,16 +264,16 @@ Each layer of the stack has one colour, and every product in it takes that colou
 
 smaltworks keeps kiln orange: it is the family, not a layer. The `product-*` tokens remain as aliases of their layer's token, so existing uses keep working.
 
-| | smaltdb | smaltql | smaltdf | smaltts | smaltui | smaltbi | smaltnb |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Layer | Engine | Languages | Languages | Languages | User tools | User tools | User tools |
-| What it is | The engine | The SQL | The dataframes | The typed API | The query workbench | The reports | The notebooks |
-| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. |
-| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Chevron (`>` and `_`) | Scatter | Pencil |
-| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` |
+| | smaltdb | smaltql | smaltdf | smaltts | smaltui | smaltbi | smaltnb | smaltfl |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Layer | Engine | Languages | Languages | Languages | User tools | User tools | User tools | User tools |
+| What it is | The engine | The SQL | The dataframes | The typed API | The query workbench | The reports | The notebooks | The pipelines |
+| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
+| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
+| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
 
-smaltml, smaltai and smaltfl are in progress: their layers and colours are set, their marks and words are not.
+smaltml and smaltai are in progress: their layers and colours are set, their marks and words are not.
 
 Rules:
 
@@ -284,8 +284,13 @@ Rules:
 - Layer colours are for a product's own mark, wordmark and accents, not for status or links.
 - Jade (the kit layer) is the nearest layer colour to the `success` green (CIELAB distance 27). Never use it to mean success, and keep status icons and words on every status.
 - Violet (smaltai) sits close to smalt (CIELAB distance 21 light, 18 dark). It marks smaltai, which runs alongside the layers and doesn't touch the engine, not a layer that sits on the engine.
+- smaltfl's Twin is curved, a second exception to the 0°, 45° and 90° rule after smaltql's Star.
 - smaltts's Generic mark uses two 45° angles, like smaltui's Chevron. Keep the two apart in toolbars and lists, where they could be mistaken for each other at small sizes.
 - If a product moves to another layer, its colour moves with it.
+
+### smaltfl
+
+smaltfl, said smalt-flow, is a user tool: data pipelines for smaltdb, built visually and run in the browser, whose steps are smaltnb notebooks. A day that is off is paused, not published. It is a shared project: its maintainers decide its design in its own ADRs, and its brand record ([smaltfl `docs/brand/`](https://github.com/stenhoor/smaltfl/tree/main/docs/brand)) has the three rounds of marks that led to the Twin.
 
 ### smaltts
 

@@ -7,11 +7,12 @@ const apps = [
   { p: 'ui', what: 'Query workbench', href: '/products/smaltui' },
   { p: 'bi', what: 'Reports', href: '/products/smaltbi' },
   { p: 'nb', what: 'Notebooks', href: '/products/smaltnb' },
+  { p: 'fl', what: 'Pipelines', href: '/products/smaltfl' },
 ] as const
 </script>
 
 <template>
-  <figure class="sw-stack" aria-label="The smalt family architecture: sources feed one engine, smaltdb; smaltql (SQL), smaltdf (dataframes) and smaltts (a typed API) are the ways into that engine; kits sit above them; smaltui, smaltbi and smaltnb are built on the kits.">
+  <figure class="sw-stack" aria-label="The smalt family architecture: sources feed one engine, smaltdb; smaltql (SQL), smaltdf (dataframes) and smaltts (a typed API) are the ways into that engine; kits sit above them; smaltui, smaltbi, smaltnb and smaltfl are built on the kits.">
     <div class="sw-row sw-apps">
       <a v-for="a in apps" :key="a.p" :href="a.href" class="sw-box">
         <span class="sw-name"><Mark :product="a.p" :size="22" /><Word :product="a.p" /></span>
