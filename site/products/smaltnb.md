@@ -9,6 +9,7 @@ reactive: change a cell and the cells that depend on it run again. One notebook 
 and TypeScript cells, with charts from the smalt [kits](/products/kits).
 
 **Status:** in early development, not yet published. [Open a notebook](https://stenhoor.github.io/smaltnb/app/): it runs
-in your browser, with SQL and smaltdf cells. See [its status page](https://stenhoor.github.io/smaltnb/guide/status).
+in your browser, with SQL and smaltdf cells, and type errors marked as you type. See
+[its status page](https://stenhoor.github.io/smaltnb/guide/status).
 
 [Try the live demo →](https://stenhoor.github.io/smaltnb/app/) · [Read the docs →](https://stenhoor.github.io/smaltnb/) · [Repository →](https://github.com/stenhoor/smaltnb)
