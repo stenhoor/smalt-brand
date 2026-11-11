@@ -56,3 +56,5 @@ AI agents, including smaller ones. [Kits →](/products/kits)
 - **smaltui**, the query workbench: SQL today, with dataframes to come. [smaltui →](/products/smaltui)
 - **smaltbi**, reports for analysts who'd rather drag a field than write a query. [smaltbi →](/products/smaltbi)
 - **smaltnb**, notebooks for working through data step by step. [smaltnb →](/products/smaltnb)
+- **smaltfl**, data pipelines whose steps are smaltnb notebooks: a day that is off is paused, not published.
+  [smaltfl →](/products/smaltfl)

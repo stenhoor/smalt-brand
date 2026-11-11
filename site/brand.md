@@ -16,6 +16,7 @@ the full [brand book](https://github.com/stenhoor/smalt-brand/blob/main/BRAND.md
 | smaltui | <Mark product="ui" :size="28" /> Chevron | user tools: deep cerulean `#0E7FAE` |
 | smaltbi | <Mark product="bi" :size="28" /> Scatter | user tools: deep cerulean `#0E7FAE` |
 | smaltnb | <Mark product="nb" :size="28" /> Pencil | user tools: deep cerulean `#0E7FAE` |
+| smaltfl | <Mark product="fl" :size="28" /> Twin | user tools: deep cerulean `#0E7FAE` |
 
 Each layer of the stack has one colour: the engine is smalt, the languages cobalt magenta, the kits jade, the user tools
 deep cerulean, and smaltai, which runs alongside them, blue-leaning violet. The mark tells products in a layer apart.
@@ -32,6 +33,7 @@ For sites and projects that use a smalt product.
 <img class="sw-light" src="/media/badges/powered-by-smaltbi.svg" alt="Powered by smaltbi" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltbi-on-dark.svg" alt="Powered by smaltbi" height="28">
 <img class="sw-light" src="/media/badges/powered-by-smaltdf.svg" alt="Powered by smaltdf" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltdf-on-dark.svg" alt="Powered by smaltdf" height="28">
 <img class="sw-light" src="/media/badges/powered-by-smaltnb.svg" alt="Powered by smaltnb" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltnb-on-dark.svg" alt="Powered by smaltnb" height="28">
+<img class="sw-light" src="/media/badges/powered-by-smaltfl.svg" alt="Powered by smaltfl" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltfl-on-dark.svg" alt="Powered by smaltfl" height="28">
 <img class="sw-light" src="/media/badges/powered-by-smaltql.svg" alt="Powered by smaltql" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltql-on-dark.svg" alt="Powered by smaltql" height="28">
 <img class="sw-light" src="/media/badges/powered-by-smaltts.svg" alt="Powered by smaltts" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltts-on-dark.svg" alt="Powered by smaltts" height="28">
 </p>

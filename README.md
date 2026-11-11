@@ -7,7 +7,7 @@
 
 **Small. Alternative. Together.**
 
-Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](https://github.com/stenhoor/smaltdb), a fast alternative database for the browser, written in TypeScript; [smaltui](https://github.com/stenhoor/smaltui), a query workbench for smaltdb that runs entirely in the browser; [smaltbi](https://github.com/stenhoor/smaltbi), business intelligence in the browser, powered by smaltdb; [smaltdf](https://github.com/stenhoor/smaltdf), dataframes for smaltdb, small and fast; [smaltnb](https://github.com/stenhoor/smaltnb), reactive notebooks for smaltdb; [smaltql](https://github.com/stenhoor/smaltql), the SQL you know, for smaltdb; and smaltts, smaltdb, straight from TypeScript. Docs: [smaltdb.dev](https://smaltdb.dev).
+Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](https://github.com/stenhoor/smaltdb), a fast alternative database for the browser, written in TypeScript; [smaltui](https://github.com/stenhoor/smaltui), a query workbench for smaltdb that runs entirely in the browser; [smaltbi](https://github.com/stenhoor/smaltbi), business intelligence in the browser, powered by smaltdb; [smaltdf](https://github.com/stenhoor/smaltdf), dataframes for smaltdb, small and fast; [smaltnb](https://github.com/stenhoor/smaltnb), reactive notebooks for smaltdb; [smaltfl](https://github.com/stenhoor/smaltfl), data pipelines for smaltdb; [smaltql](https://github.com/stenhoor/smaltql), the SQL you know, for smaltdb; and smaltts, smaltdb, straight from TypeScript. Docs: [smaltdb.dev](https://smaltdb.dev).
 
 <p>
   <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltdb/lockup-on-dark.svg"><img alt="smaltdb" src="logos/smaltdb/lockup.svg" width="200"></picture>
@@ -23,6 +23,8 @@ Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](
   <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltbi/lockup-on-dark.svg"><img alt="smaltbi" src="logos/smaltbi/lockup.svg" width="200"></picture>
   &nbsp;&nbsp;
   <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltnb/lockup-on-dark.svg"><img alt="smaltnb" src="logos/smaltnb/lockup.svg" width="200"></picture>
+  &nbsp;&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="logos/smaltfl/lockup-on-dark.svg"><img alt="smaltfl" src="logos/smaltfl/lockup.svg" width="200"></picture>
 </p>
 
 ## What's here
@@ -36,7 +38,7 @@ Brand assets and design tokens for smaltworks and the smalt projects: [smaltdb](
 | [`exploration/`](exploration/) | The exploration boards from every round, as rendered snapshots and as source. |
 | [`tokens/tokens.json`](tokens/tokens.json) | Design tokens, the source of truth: colours (light and dark), product colours, type styles, spacing, radii. |
 | [`tokens/tokens.css`](tokens/tokens.css) | The same tokens as CSS custom properties. Generated; don't edit by hand. |
-| [`logos/smaltworks/`](logos/smaltworks/), [`logos/smaltdb/`](logos/smaltdb/), [`logos/smaltui/`](logos/smaltui/), [`logos/smaltbi/`](logos/smaltbi/), [`logos/smaltdf/`](logos/smaltdf/), [`logos/smaltnb/`](logos/smaltnb/), [`logos/smaltql/`](logos/smaltql/), [`logos/smaltts/`](logos/smaltts/) | Marks, lockups and wordmarks (light and dark), app icons, favicons. |
+| [`logos/smaltworks/`](logos/smaltworks/), [`logos/smaltdb/`](logos/smaltdb/), [`logos/smaltui/`](logos/smaltui/), [`logos/smaltbi/`](logos/smaltbi/), [`logos/smaltdf/`](logos/smaltdf/), [`logos/smaltnb/`](logos/smaltnb/), [`logos/smaltfl/`](logos/smaltfl/), [`logos/smaltql/`](logos/smaltql/), [`logos/smaltts/`](logos/smaltts/) | Marks, lockups and wordmarks (light and dark), app icons, favicons. |
 | [`social/`](social/) | Social preview cards (1280 × 640) for each product's repository and site. |
 | [`badges/`](badges/) | "Powered by" badges for each product, and the Official, Verified and Works with plugin badges in `badges/plugins/`, light and dark, with embed snippets. |
 | [`components/`](components/) | Static HTML/CSS references: Button, StatusBadge, CodeBlock, Wordmark. |

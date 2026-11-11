@@ -3,7 +3,7 @@
 
 Usage: python3 scripts/social_cards.py <Geist[wght].ttf> <MartianMono[wdth,wght].ttf>
 
-Writes social/smalt{db,ui,bi,df,nb,ql,ts}.svg (the source) and .png (1280 x 640, for upload).
+Writes social/smalt{db,ui,bi,df,nb,fl,ql,ts}.svg (the source) and .png (1280 x 640, for upload).
 Each card is the product's dark lockup, its tagline (Geist 700), its positioning
 line (Geist 400) and its address (Martian Mono 400) on the dark Kiln ground, with
 a bar in the product colour along the bottom. Text is converted to paths and the
@@ -28,7 +28,7 @@ W, H = 1280, 640
 LEFT = 96                       # left margin; content stays inside the 1.91:1 centre crop
 INK, INK_2, INK_3 = "#E9EBF0", "#B9BEC9", "#9096A3"   # text, text-2, text-3 (dark)
 GROUND = "#14171F"               # bg (dark)
-BAR = {"db": "#9DB4F5", "ui": "#5CBDE8", "bi": "#5CBDE8", "nb": "#5CBDE8", "df": "#F57FE6", "ql": "#F57FE6", "ts": "#F57FE6", "works": "#FF8A5C"}  # smalt-200, layer-tool / layer-language (dark), kiln
+BAR = {"db": "#9DB4F5", "ui": "#5CBDE8", "bi": "#5CBDE8", "nb": "#5CBDE8", "fl": "#5CBDE8", "df": "#F57FE6", "ql": "#F57FE6", "ts": "#F57FE6", "works": "#FF8A5C"}  # smalt-200, layer-tool / layer-language (dark), kiln
 
 PRODUCTS = {
     "db": ("Small. Alternative. Fast.",
@@ -46,6 +46,9 @@ PRODUCTS = {
     "nb": ("Small. Alternative. Notebooks.",
            "Reactive notebooks for smaltdb.",
            "github.com/stenhoor/smaltnb"),
+    "fl": ("Small. Alternative. Flow.",
+           "Data pipelines for smaltdb.",
+           "github.com/stenhoor/smaltfl"),
     "ql": ("Small. Alternative. Familiar.",
            "The SQL you know, for smaltdb.",
            "github.com/stenhoor/smaltql"),

@@ -191,6 +191,30 @@ Applied after the picks:
 - The magenta is at least CIELAB distance 33 from the smaltbi violet in light and 34 in dark. The badge text is at least 7.3:1 on its light surface and 7.1:1 on its dark one.
 - Positioning changed to **"Reactive notebooks for smaltdb."** (owner, 2026-11-07). A notebook holds SQL (smaltql) and dataframe (smaltdf) cells as well as TypeScript, so "TypeScript notebooks" undersold it; what sets it apart is that cells rerun when what they read changes. smaltnb's DESIGN.md decision 1 uses the same line everywhere.
 
+## smaltfl
+
+smaltfl, said "smalt-flow", is data pipelines for smaltdb, built visually and run in the browser. It is a shared
+project; its maintainers chose its words (smaltfl ADR 0001 §13) and ran three rounds of marks, recorded in smaltfl's
+[`docs/brand/DECISIONS.md`](https://github.com/stenhoor/smaltfl/blob/main/docs/brand/DECISIONS.md): bars and 45°
+flows first (Fork, Merge, Relay, Pipe-forward, Stages), then marks that read as flow (Cascade, Stream, Tide, Bend,
+Pour, Wave), then waves (Swell, Twin, Current, Wave arrow, Undercurrent, Twin in teal, Current in teal). Round 3 was
+held for the owner.
+
+The owner picked, 2026-11-11:
+
+| | **Picked** |
+| --- | --- |
+| Tagline | **"Small. Alternative. Flow."** |
+| Positioning | **"Data pipelines for smaltdb."** |
+| Mark | **Twin** (round 3, M13): two waves in step, the old sign for water, and a small chip where they arrive |
+| Colour | **Deep cerulean,** the user-tool layer's (`layer-tool`). smaltfl's rounds were drawn in cobalt teal, its own pick before colour by layer; the layer decision wins |
+
+- **Curved, an exception:** the Twin's waves break the 0°, 45° and 90° rule, as smaltql's Star does.
+- **The chip stays small:** the variants that gave the colour a whole wave (M16 to M18) were not picked, so the body
+  is smalt and only the chip takes the layer colour, as for every other product.
+- `scripts/brand_assets.py` draws the Twin with the same curve functions as smaltfl's round 3, so its paths match that
+  drawing exactly.
+
 ## smaltql
 
 SQL moves out of smaltdb into its own product, smaltql. smaltdb's work since ADR 0014 put a shared plan layer under the engine, with SQL and smaltdf as two languages on it; splitting SQL out gives the engine one job (execution performance) and lets the query language grow its own identity. The first draft had smaltdb ship with smaltql by default; the accepted ADR changed that. smaltdb has no language built in, and each language exports a ready `open()`: `import { open } from '@smaltworks/smaltql'` gives a SQL database. The technical record is [smaltdb ADR 0015](https://github.com/stenhoor/smaltdb/blob/main/docs/adr/0015-smaltql.md).
@@ -539,7 +563,7 @@ with other work, and smalt-brand had no place for it.
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
-- **smaltai and smaltml:** marks and words are open; their colours are set by layer.
+- **smaltai and smaltml:** marks and words are open; their colours are set by layer. smaltfl's were settled on 2026-11-11 (above).
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 
 - **Research pages on smaltdb.dev** include benchmark comparisons with other engines. The no-comparisons rule covers marketing copy; whether those pages stay on the public site is undecided.

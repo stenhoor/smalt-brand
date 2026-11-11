@@ -1,6 +1,6 @@
 # The family
 
-One engine, three ways into it, three apps, and the plugins and kits that hold them together. Each product has its own
+One engine, three ways into it, four apps, and the plugins and kits that hold them together. Each product has its own
 site or repository with the full details; these pages are the overview.
 
 <div class="sw-cards">
@@ -11,6 +11,7 @@ site or repository with the full details; these pages are the overview.
 <ProductCard product="ui" tagline="Small. Alternative. Query." line="A query workbench for smaltdb that runs entirely in the browser." status="0.1.0 · In development" href="/products/smaltui" />
 <ProductCard product="bi" tagline="Small. Alternative. Insight." line="Business intelligence in the browser, powered by smaltdb." status="0.1.0 · In development" href="/products/smaltbi" />
 <ProductCard product="nb" tagline="Small. Alternative. Notebooks." line="Reactive notebooks for smaltdb." status="In early development" href="/products/smaltnb" />
+<ProductCard product="fl" tagline="Small. Alternative. Flow." line="Data pipelines for smaltdb." status="In early development" href="/products/smaltfl" />
 </div>
 
 - [Plugins](/products/plugins): the formats and data sources smaltdb can load, and how others can build their own.
