@@ -18,7 +18,7 @@ yet.
 [Repository →](https://github.com/stenhoor/smaltkit)
 
 **smaltty** is the TypeScript kit inside it: TypeScript for the apps' TypeScript tabs and notebook cells, in our own
-code. It removes types without moving a line or column, so an error points where it was written, and type checking
-against smaltdf comes next.
+code. It removes types without moving a line or column, so an error points where it was written, and checks calls
+into smaltdf as the code is typed, marking TypeScript's errors as warnings while the code still runs.
 
 [Repository →](https://github.com/stenhoor/smaltty)
