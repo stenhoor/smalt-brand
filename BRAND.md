@@ -300,7 +300,7 @@ smaltts is a thin, typed TypeScript API over smaltdb's plan and schema operation
 
 ### smaltty
 
-smaltty is our own TypeScript kit, now a product of its own: it parses, strips, binds and type-checks TypeScript in the browser, with no dependencies. It runs the TypeScript in smaltui's tabs and smaltnb's cells and checks calls into smaltdf and smaltts as they are typed. It takes the family's kiln rather than a layer's colour, because TypeScript is the language of everything smalt. In the stack it sits between the languages, whose declarations it checks against, and the user tools, which use it through smaltkit (`smaltkit/typescript`). smaltty and smaltworks share kiln; their marks tell them apart. Its docs site is a kit site under [Documentation](#documentation).
+smaltty is our own TypeScript kit, now a product of its own: it parses, strips, binds and type-checks TypeScript in the browser, with no dependencies. It runs the TypeScript in smaltui's tabs and smaltnb's cells and checks calls into smaltdf and smaltts as they are typed. It takes the family's kiln rather than a layer's colour, because TypeScript is the language of everything smalt. In the family's architecture it sits under smaltdb, beneath every layer, not at the kit level: TypeScript is the language of everything smalt. The apps use it through smaltkit (`smaltkit/typescript`), and it checks code against the declarations the languages publish. smaltty and smaltworks share kiln; their marks tell them apart. Its docs site is a kit site under [Documentation](#documentation).
 
 ### smaltdb and smaltql
 

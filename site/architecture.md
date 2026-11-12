@@ -20,6 +20,13 @@ Where the data lives.
   and databases in files on disk in Node.js in `@smaltworks/smaltdb-node`.
   Other people can write their own. [Plugins →](/products/plugins)
 
+## Under the engine: smaltty
+
+TypeScript is the language of everything smalt, and smaltty is TypeScript in our own code: it parses, strips, binds
+and type-checks TypeScript in the page, with no dependencies. It runs the TypeScript you type into an app's tab or a
+notebook cell, and checks calls into smaltdf and smaltts as you type, against the declarations the languages publish.
+The apps use it through smaltkit. [smaltty →](/products/smaltty)
+
 ## The engine: smaltdb
 
 One engine powers everything. smaltdb runs in a Web Worker, so the page never waits on it, and commits through a
@@ -51,10 +58,6 @@ You don't need one engine for SQL tables and another for dataframes. There is on
 Small, focused libraries that the apps are built from: charts, tables, number formatting, the engine loader. Each kit
 does one thing with few options, which keeps the apps consistent and makes them easier and more repeatable to build with
 AI agents, including smaller ones. [Kits →](/products/kits)
-
-- **smaltty**, the TypeScript kit: the TypeScript in the apps, in our own code. It strips types so a tab or a cell
-  runs, and checks calls into smaltdf and smaltts as you type, against the declarations the languages publish. The
-  apps use it through smaltkit. [smaltty →](/products/smaltty)
 
 ## Apps
 

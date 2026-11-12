@@ -416,6 +416,9 @@ kit, not a product" and BRAND.md's line that smaltty, like smaltkit, has no mark
   fill (`kiln-500`), `#A33A12` as text (`accent`), `#FF8A5C` on dark; the `product-ty` tokens alias them. smaltty sits
   in no layer, as smaltworks doesn't. Kiln keeps its other meaning everywhere else (commits and focus); in smaltty's
   mark and suffix it names the product, and the mark, not the colour, tells smaltty from smaltworks' Together.
+- **Place: under smaltdb (owner).** In the family's architecture smaltty sits under the engine, beneath every layer,
+  not at the kit level: TypeScript is the language of everything smalt. The architecture diagram shows it as a bar under
+  smaltdb, and the architecture page gives it its own section below the engine.
 - **First recorded as jade, not the owner's pick.** The session that carried the decision out put smaltty in the kit
   layer, jade (`layer-kit`), by its own reading of "Colour by layer", and the commit carrying it was never merged. Its
   reasoning, kept for the record: by "Colour by layer", colour says where a product sits. The language
