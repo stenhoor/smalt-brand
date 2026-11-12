@@ -47,13 +47,15 @@ a.sw-box:hover, a.sw-kits:hover, a.sw-card:hover { border-color: var(--vp-c-bran
   padding: 18px 22px; border-radius: 12px; background: #003399; text-decoration: none !important;
 }
 .sw-engine .sw-name { font-size: 26px; gap: 12px; }
-.sw-engine img { margin: 0; }
+.sw-engine img, .sw-base-mark { margin: 0; flex: none; }
 .sw-on-smalt { color: #FFFFFF; } .sw-on-smalt .sw-alt { color: #9DB4F5; }
 .sw-engine-line { color: #D6E0F3; font-weight: 500; font-size: 16px; }
-/* smaltty's bar, at the base: kiln-500 as the fill, ink text (5.1:1); alt stays smalt, large text (3.2:1). */
-.sw-engine.sw-base { background: #E5622F; }
-.sw-on-kiln { color: #151922; } .sw-on-kiln .sw-alt { color: #003399; }
-.sw-base-line { color: #151922; font-weight: 500; font-size: 16px; }
+/* smaltty's bar, at the base: the engine bar's treatment in kiln. Deep kiln (#A33A12, the accent) as the fill, as
+   the engine bar uses deep smalt; white wordmark (6.6:1), alt in pale smalt as on the engine bar (3.2:1, large text),
+   the line in pale kiln (5.6:1). */
+.sw-engine.sw-base { background: #A33A12; }
+.sw-on-kiln { color: #FFFFFF; } .sw-on-kiln .sw-alt { color: #9DB4F5; }
+.sw-base-line { color: #FFE7DC; font-weight: 500; font-size: 16px; }
 .sw-src {
   font-family: var(--smalt-brand-font); font-size: 12px; color: var(--vp-c-text-2);
   border: 1px solid var(--sw-border); border-radius: 6px; padding: 6px 8px; position: relative; background: var(--sw-tint);

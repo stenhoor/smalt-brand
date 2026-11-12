@@ -36,7 +36,7 @@ const apps = [
       <span class="sw-src">Plugins · Parquet, CSV, JSON</span>
     </div>
     <a href="/products/smaltty" class="sw-engine sw-base">
-      <span class="sw-name"><img src="/media/logos/smaltty/app-icon.svg" width="40" height="40" alt="" /><span class="sw-word sw-on-kiln">sm<span class="sw-alt">alt</span>ty</span></span>
+      <span class="sw-name"><svg class="sw-base-mark" width="40" height="40" viewBox="0 0 64 64" aria-hidden="true"><g transform="translate(10.9 10.9) scale(0.66)"><path d="M50 46h-18v-10h-14v-24a6 6 0 0 1 6-6h26a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6z" fill="#F5F6F8"/><path d="M13 40h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-10a3 3 0 0 1-3-3v-10a3 3 0 0 1 3-3z" fill="#FFD2BF"/></g></svg><span class="sw-word sw-on-kiln">sm<span class="sw-alt">alt</span>ty</span></span>
       <span class="sw-base-line">TypeScript, the language of everything smalt.</span>
     </a>
   </figure>
