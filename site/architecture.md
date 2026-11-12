@@ -52,6 +52,10 @@ Small, focused libraries that the apps are built from: charts, tables, number fo
 does one thing with few options, which keeps the apps consistent and makes them easier and more repeatable to build with
 AI agents, including smaller ones. [Kits →](/products/kits)
 
+- **smaltty**, the TypeScript kit: the TypeScript in the apps, in our own code. It strips types so a tab or a cell
+  runs, and checks calls into smaltdf and smaltts as you type, against the declarations the languages publish. The
+  apps use it through smaltkit. [smaltty →](/products/smaltty)
+
 ## Apps
 
 - **smaltui**, the query workbench: SQL today, with dataframes to come. [smaltui →](/products/smaltui)
