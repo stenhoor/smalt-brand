@@ -32,3 +32,25 @@ Andrew Beers has spent 13 years in IT, software development, and cybersecurity, 
 
 </div>
 </div>
+
+<div class="sw-person">
+<img src="/team/jake.png" alt="Jake, in pink mirrored sunglasses, grinning">
+<div>
+
+### Jake
+
+**Chief Smalty Officer (self-appointed)** · [@beepboopbop64 on GitHub](https://github.com/beepboopbop64)
+
+Jake works with data for a living, which mostly means writing a query, pressing run, and then waiting. And waiting.
+Enough hours staring at another Spark pool spinning up will give anyone strong opinions about loading spinners, and Jake
+has rated every one of them. smaltworks is the antidote: open a tab, load the data, get an answer while the coffee is
+still hot. Jake signed on for the speed, stayed for the pigment, and is treating the whole thing as a fun adventure:
+rose-tinted shades on, data in the browser, and every hot take served with a grain of smalt.
+
+> "I've waited on so many Spark pools I could tell you how each one feels about Mondays. Life's too short, and my
+> laptop is already on. Pass the smalt."
+
+Stay smalty.
+
+</div>
+</div>
