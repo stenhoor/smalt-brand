@@ -9,8 +9,9 @@ smaltdb keeps its core small. Formats and data sources are plugins, so each app 
 | [`@smaltworks/smaltdb-io`](https://github.com/stenhoor/smaltdb-io) | CSV, TSV and JSON: external tables, `read_csv()`, `read_json()`, import and export |
 | [`@smaltworks/smaltdb-external`](https://github.com/stenhoor/smaltdb-external) | Where data is read from: the web, Amazon S3, Azure Blob Storage, and files the app registers |
 | [`@smaltworks/smaltdb-parquet`](https://github.com/stenhoor/smaltdb-parquet) | Parquet files, reading only the columns and row groups a query needs |
+| [`@smaltworks/smaltdb-node`](https://github.com/stenhoor/smaltdb-node) | Databases in files on disk in Node.js, where the browser uses its private storage (OPFS) |
 
-All three are version 0.9.0 and will be published together with smaltdb 0.9.0. The plugin interface is stable as API version 1, and
+All four are version 0.9.0 and will be published together with smaltdb 0.9.0. The plugin interface is stable as API version 1, and
 anyone can write a plugin: see [Writing plugins](https://smaltdb.dev/reference/api/plugins) on smaltdb.dev.
 
 ## Official, Verified, Works with
