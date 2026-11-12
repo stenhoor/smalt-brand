@@ -172,7 +172,7 @@ Every product site and README follows the same rules, so the family reads as one
 3. **Stage badge:** work in progress under the hero and at the top of every page, linked to smaltworks.dev/stability. It becomes Release 1.x when the product reaches 1.0, and not before.
 4. **smaltworks menu:** the last item in the top nav, from `smaltworksMenu()`: "The family", then every product as `name · role`, then "Work in progress". The same items, in the same order, on every site.
 5. **Footer:** "A smaltworks project", linked to smaltworks.dev, and "MIT License". On pages with a sidebar, where VitePress hides its footer, `stage.ts` puts both at the foot of the page.
-6. **Link wording:** a product named in running text links to its own site. Calls to action are "Try the live demo →", "Read the docs →" and "Repository →": every product page on smaltworks.dev ends with those it has, in that order, and nothing else ("Documentation at …" and "See the live sample" are out). On the status page, each row ends with "Demo" and "Docs" links, where they exist. Roles are always the engine, SQL, dataframes, typed API, smalt TypeScript, query workbench, reports, notebooks and pipelines.
+6. **Link wording:** a product named in running text links to its own site. Calls to action are "Try the live demo →", "Read the docs →" and "Repository →": every product page on smaltworks.dev ends with those it has, in that order, and nothing else ("Documentation at …" and "See the live sample" are out). On the status page, each row ends with "Demo" and "Docs" links, where they exist. Roles are always the engine, SQL, dataframes, typed API, TypeScript implementation, query workbench, reports, notebooks and pipelines.
 7. **Theme:** `smaltdb.css`, `shiki.ts`, `smaltworks.ts` and `stage.ts` copied from `themes/vitepress/` unchanged. A product's own rules go in a file of its own (smaltbi's `smaltbi.css`), never into the copies.
 8. **Install lines:** the [npm names](#npm-names), `@smaltworks/<repository>`. Until a package is published, say so beside the line.
 9. **Status:** one stage from Planned, In early development, In development, Preview and Release 1.x. Each repository's status page is the source; smaltworks.dev's status page mirrors it.
@@ -267,7 +267,7 @@ smaltworks keeps kiln orange: it is the family, not a layer. smaltty takes kiln 
 | | smaltdb | smaltql | smaltdf | smaltts | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Layer | Engine | Languages | Languages | Languages | None: kiln, the family's | User tools | User tools | User tools | User tools |
-| What it is | The engine | The SQL | The dataframes | The typed API | smalt TypeScript | The query workbench | The reports | The notebooks | The pipelines |
+| What it is | The engine | The SQL | The dataframes | The typed API | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines |
 | Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
 | Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
 | Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
@@ -300,7 +300,7 @@ smaltts is a thin, typed TypeScript API over smaltdb's plan and schema operation
 
 ### smaltty
 
-smaltty is smalt TypeScript, a product of its own: TypeScript in our own code. It parses, strips, binds and type-checks TypeScript in the browser, with no dependencies. It runs the TypeScript in smaltui's tabs and smaltnb's cells and checks calls into smaltdf and smaltts as they are typed. It takes the family's kiln rather than a layer's colour, because TypeScript is the language of everything smalt. In the family's architecture it sits at the base, under smaltdb and its plugins, beneath every layer, not at the kit level: TypeScript is the language of everything smalt. The apps use it through smaltkit (`smaltkit/typescript`), and it checks code against the declarations the languages publish. smaltty and smaltworks share kiln; their marks tell them apart. Its docs site is a kit site under [Documentation](#documentation).
+smaltty is smalt's TypeScript implementation, in our own code, and a product of its own. It parses, strips, binds and type-checks TypeScript in the browser, with no dependencies. It runs the TypeScript in smaltui's tabs and smaltnb's cells and checks calls into smaltdf and smaltts as they are typed. It takes the family's kiln rather than a layer's colour, because TypeScript is the language of everything smalt. In the family's architecture it sits at the base, under smaltdb and its plugins, beneath every layer, not at the kit level: TypeScript is the language of everything smalt. The apps use it through smaltkit (`smaltkit/typescript`), and it checks code against the declarations the languages publish. smaltty and smaltworks share kiln; their marks tell them apart. Its docs site is a kit site under [Documentation](#documentation).
 
 ### smaltdb and smaltql
 
@@ -372,4 +372,4 @@ smaltkit is shared UI code inside the smalt apps, not a product people choose, s
 
 Its brand job is to carry the brand into the apps: its components should take their colours, type and icons from `tokens/`. Revisit this if smaltkit gains charts that users see (the brand has no chart palette yet), or if outside developers start building on it.
 
-smaltty, smalt TypeScript, which smaltkit wraps, is a top-level product with its own mark, colour and badge (DECISIONS.md, "smaltty: a product"); it was branded like smaltkit until 2026-11-12.
+smaltty, smalt's TypeScript implementation, which smaltkit wraps, is a top-level product with its own mark, colour and badge (DECISIONS.md, "smaltty: a product"); it was branded like smaltkit until 2026-11-12.

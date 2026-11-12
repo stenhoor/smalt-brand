@@ -1,6 +1,6 @@
 # The family
 
-One engine, three ways into it, smalt TypeScript underneath, checking the code written against them, four apps, and the
+One engine, three ways into it, smalt's TypeScript implementation underneath, checking the code written against them, four apps, and the
 plugins and kits that hold them together. Each product has its own
 site or repository with the full details; these pages are the overview.
 

@@ -14,7 +14,7 @@ but its changelog still lists only #1–#3; add its later pull requests (the che
 The first release of the smalt family as a family. smaltdb becomes an engine that runs plans and carries no language,
 and two languages run on it: SQL ([smaltql](https://github.com/stenhoor/smaltql)) and dataframes in TypeScript
 ([smaltdf](https://github.com/stenhoor/smaltdf)). With them come a query workbench (smaltui), reactive notebooks
-(smaltnb), smalt TypeScript (smaltty) and the shared browser code the apps are built from (smaltkit).
+(smaltnb), our own TypeScript implementation (smaltty) and the shared browser code the apps are built from (smaltkit).
 
 **Work in progress. Come build with us.** This is a preview: before 1.0, any release can change the API or the file
 format. [What that means →](https://smaltworks.dev/stability)
@@ -26,7 +26,7 @@ format. [What that means →](https://smaltworks.dev/stability)
 | smaltdf | `@smaltworks/smaltdf` | The dataframes | First release |
 | smaltui | (a site) | The query workbench | First release |
 | smaltnb | (a site) | The notebooks | First release |
-| smaltty | (used through smaltkit) | smalt TypeScript | First release |
+| smaltty | (used through smaltkit) | The TypeScript implementation | First release |
 | smaltkit | (used by the apps) | Shared browser code for the apps | First release |
 
 The plugins ship with it: `@smaltworks/smaltdb-io` (CSV, TSV and JSON), `@smaltworks/smaltdb-external` (files, URLs, S3,
@@ -82,7 +82,7 @@ For anyone upgrading from smaltdb 0.8.3. The other packages are new, so nothing 
   Stop and Format.
 - **smaltnb, reactive notebooks.** A notebook is a TypeScript file: cells are top-level code, the graph comes from the
   names they define and read, and SQL and smaltdf cells are first-class.
-- **smaltty, smalt TypeScript.** It parses, strips, binds and type-checks TypeScript in the browser, runs the
+- **smaltty, smalt's TypeScript implementation.** It parses, strips, binds and type-checks TypeScript in the browser, runs the
   TypeScript in smaltui's tabs and smaltnb's notebooks, and checks calls into smaltdf as you type.
 
 ## Try it
@@ -474,7 +474,7 @@ cells, text cells, run modes, guards, typed parameters and held writes. Its firs
 
 ## smaltty 0.9.0
 
-**Small. Alternative. Code.** smalt TypeScript, now a product of its own: it parses, strips, binds and type-checks
+**Small. Alternative. Code.** smalt's TypeScript implementation, now a product of its own: it parses, strips, binds and type-checks
 TypeScript, in our own code with no dependencies. Types are stripped to spaces, so every line and column of the
 JavaScript is the one written; parsing gives TypeScript's own syntax tree; and binding says which declaration each name
 means, as TypeScript's checker does. The apps use it through

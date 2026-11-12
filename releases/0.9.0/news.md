@@ -10,8 +10,8 @@ announced. Publish it the day the packages are on npm, and set the date below th
 *smaltworks · [date of the publish]*
 
 **smaltworks 0.9.0 is out.** It's the first release of the smalt family as a family: a database engine that lives in your
-browser, the SQL you know, dataframes in TypeScript, a query workbench, reactive notebooks, and smalt TypeScript,
-smaltty, holding it all together. Open a tab, load some data, and start asking it questions.
+browser, the SQL you know, dataframes in TypeScript, a query workbench, reactive notebooks, and our own TypeScript
+implementation, smaltty, holding it all together. Open a tab, load some data, and start asking it questions.
 
 It's a preview. It works, it's moving fast, and it will change. If that sounds like fun, read on.
 
@@ -62,8 +62,8 @@ Both are static sites: the engine runs in your browser, and your data stays ther
 
 ## TypeScript, our way
 
-Typing code into a workbench tab or a notebook cell means TypeScript has to run in the page. **smaltty**, smalt
-TypeScript, does that: it parses, strips and binds TypeScript right in the browser. Types are stripped to spaces, so
+Typing code into a workbench tab or a notebook cell means TypeScript has to run in the page. **smaltty**, smalt's
+TypeScript implementation, does that: it parses, strips and binds TypeScript right in the browser. Types are stripped to spaces, so
 every line and column of an error points at the code you wrote. It also checks your calls into smaltdf as you type,
 and shows TypeScript's errors as warnings while the code still runs.
 

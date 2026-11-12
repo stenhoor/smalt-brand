@@ -433,7 +433,8 @@ kit, not a product" and BRAND.md's line that smaltty, like smaltkit, has no mark
 - **Positioning line (owner, 2026-11-12):** **"TypeScript for the smalt apps."** The session that carried the
   decision out proposed "TypeScript for the smalt apps, checked in the browser."; the owner dropped "checked in the
   browser".
-- **Role (owner):** **smalt TypeScript**, in the family table and in menus ("smaltty · smalt TypeScript"). First
+- **Role (owner):** **smalt's TypeScript implementation**: "The TypeScript implementation" in the family table,
+  "smaltty · TypeScript implementation" in menus. First
   recorded as "The TypeScript kit". smaltty is not a kit: it sits at the base, not among the kits.
 - **Mark: the Grain, turned (owner, 2026-11-12).** smaltdb's Grain rotated half a turn: a smalt base block with its
   bottom-left corner cut away, and the chip in the cut, a little apart, in kiln. Picked from three readings of the
