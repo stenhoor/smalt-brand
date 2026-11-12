@@ -4,7 +4,7 @@
 
 **Small. Alternative. Code.** TypeScript for the smalt apps.
 
-smaltty is our own TypeScript kit: it parses, strips, binds and type-checks TypeScript in the page, with no
+smaltty is TypeScript in our own code: it parses, strips, binds and type-checks TypeScript in the page, with no
 dependencies. It runs the TypeScript you type into a [smaltui](/products/smaltui) tab or a [smaltnb](/products/smaltnb)
 cell, and checks your calls into [smaltdf](/products/smaltdf) and [smaltts](/products/smaltts) as you type.
 

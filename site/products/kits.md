@@ -17,7 +17,7 @@ yet.
 
 [Repository →](https://github.com/stenhoor/smaltkit)
 
-**[smaltty](/products/smaltty)**, the TypeScript kit, is a product of its own, in the family's kiln: TypeScript for the
+**[smaltty](/products/smaltty)**, the TypeScript at the base of the family, is a product of its own, in kiln: TypeScript for the
 apps' tabs and notebook cells, in our own code. smaltkit wraps it as `smaltkit/typescript`, which is how the apps use
 it. It removes types without moving a line or column, so an error points where it was written, and checks calls into
 smaltdf and smaltts as the code is typed, marking TypeScript's errors as warnings while the code still runs.
