@@ -19,7 +19,10 @@ In the wordmark, `alt` is set in `primary`. Write the name in lowercase, as one 
 
 - Plain and specific. Say what the engine does, such as "runs in a Web Worker", "stores data in OPFS", or "commits through a write-ahead log".
 - Describe what smaltdb is, never what it isn't. No "no WASM", "unlike X" or "without Y" framing.
-- No comparisons with other databases. Let readers draw their own; never name another engine in marketing copy.
+- We don't throw shade at others. No comparisons with other databases, tools or libraries in what we say about our
+  products: never name another engine, tool or library to say ours is better or faster. Let readers draw their own.
+- Comparisons live on benchmark pages only: apples-for-apples timings, the same work on the same machine, with the
+  method beside them. A product page or README may link its benchmarks; it doesn't quote another tool's numbers.
 - No unsourced performance claims. A number appears only with its benchmark and method linked beside it.
 - Written for coders: show code early, keep sentences short.
 
