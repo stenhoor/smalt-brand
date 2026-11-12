@@ -1,9 +1,16 @@
 # How it fits together
 
-The smalt family is one stack. Data comes in at the bottom, one engine runs everything, and each layer above it is a
-different way to put that engine to work.
+The smalt family is one stack. smaltty, the TypeScript it is all written in, is at the base. Data comes in above it,
+one engine runs everything, and each layer above the engine is a different way to put it to work.
 
 <EngineBar />
+
+## At the base: smaltty
+
+TypeScript is the language of everything smalt, and smaltty is TypeScript in our own code: it parses, strips, binds
+and type-checks TypeScript in the page, with no dependencies. It runs the TypeScript you type into an app's tab or a
+notebook cell, and checks calls into smaltdf and smaltts as you type, against the declarations the languages publish.
+The apps use it through smaltkit. [smaltty →](/products/smaltty)
 
 ## Sources
 
@@ -19,13 +26,6 @@ Where the data lives.
 - **Plugins.** Formats and sources are plugins: CSV, TSV and JSON in `@smaltworks/smaltdb-io`, Parquet in `@smaltworks/smaltdb-parquet`,
   and databases in files on disk in Node.js in `@smaltworks/smaltdb-node`.
   Other people can write their own. [Plugins →](/products/plugins)
-
-## Under the engine: smaltty
-
-TypeScript is the language of everything smalt, and smaltty is TypeScript in our own code: it parses, strips, binds
-and type-checks TypeScript in the page, with no dependencies. It runs the TypeScript you type into an app's tab or a
-notebook cell, and checks calls into smaltdf and smaltts as you type, against the declarations the languages publish.
-The apps use it through smaltkit. [smaltty →](/products/smaltty)
 
 ## The engine: smaltdb
 
