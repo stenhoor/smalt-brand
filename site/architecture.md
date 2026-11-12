@@ -16,7 +16,8 @@ Where the data lives.
   rebuilt when the database opens, so frequent refreshes don't wear storage.
 - **External data.** Files on the web, Amazon S3 and Azure Blob Storage, read in place as external tables, through the
   [`@smaltworks/smaltdb-external`](/products/plugins) plugin.
-- **Plugins.** Formats and sources are plugins: CSV, TSV and JSON in `@smaltworks/smaltdb-io`, Parquet in `@smaltworks/smaltdb-parquet`.
+- **Plugins.** Formats and sources are plugins: CSV, TSV and JSON in `@smaltworks/smaltdb-io`, Parquet in `@smaltworks/smaltdb-parquet`,
+  and databases in files on disk in Node.js in `@smaltworks/smaltdb-node`.
   Other people can write their own. [Plugins →](/products/plugins)
 
 ## The engine: smaltdb
