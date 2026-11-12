@@ -377,7 +377,8 @@ asking, and then took them out again without discussing it.
 
 ## smaltty: TypeScript without outside code
 
-Decided by the owner on 2026-11-08, in an interview with a session that proposed it.
+Decided by the owner on 2026-11-08, in an interview with a session that proposed it. **Partly superseded on
+2026-11-12:** smaltty is now a top-level product ("smaltty: a product", below). The rest of this section stands.
 
 - **Why:** smaltui stripped TypeScript types with sucrase, and smaltnb loaded the TypeScript compiler (8.7 MB) to run
   notebook cells. Both brought outside code into the apps, and neither checked types, so code written against smaltdf
@@ -385,7 +386,7 @@ Decided by the owner on 2026-11-08, in an interview with a session that proposed
 - **What:** [smaltty](https://github.com/stenhoor/smaltty), our own TypeScript kit: a parser, a stripper, and later
   scope analysis and type checking against smaltdf. In order: remove the outside code first, measure, and only then
   decide how far checking goes.
-- **A kit, not a product.** smaltty is one of the kits, with no brand entry, mark or site of its own. It becomes a
+- **A kit, not a product** (superseded 2026-11-12, below). smaltty is one of the kits, with no brand entry, mark or site of its own. It becomes a
   top-level product only if it grows into our own TypeScript compiler, or a significant part of one, and that is the
   owner's call. smaltworks isn't in the business of writing TypeScript compilers: work that doesn't remove outside code
   or make the apps faster waits.
@@ -396,6 +397,68 @@ Decided by the owner on 2026-11-08, in an interview with a session that proposed
   for reference.
 - **Later:** checking table and column names against a database is a separate future project, smaltsc (smalt schema
   checker), not part of smaltty.
+
+## smaltty: a product
+
+Decided by the owner on 2026-11-12, at smaltty's gate D ([smaltty ADR 0029](https://github.com/stenhoor/smaltty/blob/main/docs/adr/0029-after-the-checker-trial.md),
+[ADR 0030](https://github.com/stenhoor/smaltty/blob/main/docs/adr/0030-changing-smaltty-without-breaking-its-consumers.md)).
+This is the owner's call that "smaltty: TypeScript without outside code" left open, and it reverses that section's "a
+kit, not a product" and BRAND.md's line that smaltty, like smaltkit, has no mark, colour or badge.
+
+- **Why:** smaltty has grown into a significant part of a TypeScript compiler. Besides parsing, stripping and binding,
+  it now type-checks calls into smaltdf and smaltts in smaltui's tabs and smaltnb's cells, and every error it reports
+  is one tsc reports too. In a page it is 58 KB gzipped and checks app code faster than tsc and tsrs, and re-checks
+  after an edit in under a millisecond ([smaltty's benchmarks](https://stenhoor.github.io/smaltty/BENCHMARKS),
+  "Checking in a page"; ADR 0029's table).
+- **Tagline (owner):** **"Small. Alternative. Code."**
+- **Layer: the kits, so jade** (`layer-kit`). By "Colour by layer", colour says where a product sits. The language
+  layer is the ways into the engine (smaltql, smaltdf, smaltts): each builds plans for smaltdb. smaltty doesn't touch
+  the engine. It sits above the languages, whose declarations it checks against, and below the user tools, which use
+  it through smaltkit: the kit level, between the languages and the user tools, where smaltml was placed. The
+  Documentation standard already lists it with the kits, and smaltty's docs site already sets its suffix as a kit's.
+  Jade also keeps it apart from smaltts, one letter away in name and also about TypeScript, which is magenta.
+- **Wordmark:** `sm`**`alt`**`ty`, `ty` in the kit layer's text colour (`#086A65`, `#10C2B9` on dark).
+- **Positioning line:** "TypeScript for the smalt apps, checked in the browser." Proposed by the session that carried
+  the decision out, from smaltty's own site ("TypeScript for the smalt apps, in our own code"), with "code" moved out
+  so the line doesn't repeat the tagline's word. Not yet confirmed by the owner.
+- **Role:** "The TypeScript kit" in the family table; "TypeScript kit" in menus.
+- **Mark: Tree, a first version.** The syntax tree smaltty builds, TypeScript's node for node: two branches from one
+  stem, and the root, where the parse starts, as the chip. Bars 9 units thick, at 0° and 90° only, so it follows the
+  Chevron style with no exception. No options round was held: the session drew it to the mark rules for the owner to
+  review, and it can be replaced by a round on the family canvas. Kept apart from smaltdf's Axes (one corner, with
+  the chip inside) and from the Together frame by its stem and its two legs.
+- **Applied:** the logos (`scripts/brand_assets.py`), the badge, the social card (pointing to the public repository),
+  the `product-ty` tokens, smaltworks.dev (a product page, the home and products cards at "0.9.0 · In development",
+  the engine bar, the architecture, kits, status and brand pages) and the site kit's family menu
+  (`themes/vitepress/smaltworks.ts`), which every product site copies again.
+- **What stays:** smaltkit still wraps smaltty for the apps (`smaltkit/typescript`) and keeps no brand of its own.
+  smaltty's rules (TypeScript only, follow TypeScript, erasable syntax only, no outside code) are unchanged.
+
+## TypeScript and browsers
+
+Family rules, decided by the owner on 2026-11-12 in smaltty's [ADR 0030](https://github.com/stenhoor/smaltty/blob/main/docs/adr/0030-changing-smaltty-without-breaking-its-consumers.md)
+(decisions 5 and 6, accepted). The owner chose to make them rules for every smalt repository, recorded here as well.
+BRAND.md, "TypeScript and browsers", has the rules; smaltworks.dev's supported environments page says what they mean
+for users.
+
+- **TypeScript: the latest stable, within one minor release,** in every smalt repository. Now, in two steps:
+  - **Checking moves to TypeScript 7 (7.0.2)** in every repository: the `typecheck` scripts. It is faster, and the
+    builds are compatible. The work in each repository is that repository's own session's.
+  - **Emitting stays on TypeScript 6.0.3 for one more release.** Anything that builds `dist/` or `.d.ts` is built
+    with 6.0.3 while 7's output is compared with it; then it moves to 7. Emitted `.d.ts` is what other repositories
+    read, so it moves only once compared.
+  - **smaltty keeps 6.0.3 for its compiler API** (its differential tests) until TypeScript 7 has a stable JavaScript
+    API, 7.1 at the earliest.
+  - **tsrs is the early warning.** tsrs, a Rust port of TypeScript 7's checker that follows its next version (7.1
+    beta now), shows what the next release changes before it ships.
+- **Browsers: a stated baseline.**
+  - Output stays plain ES2022 modules, which every current browser loads without a bundler.
+  - smaltty's built-in types follow web-features Baseline "widely available": what users can call in the browsers
+    the apps support.
+  - The output target and the baseline are reviewed once a year, in a decision record. The next step is Baseline
+    2024 (`Array.fromAsync`, ES2025's `Set` methods), with smaltty's milestone 14.
+- **Considered** (ADR 0030): moving checking and emitting to TypeScript 7 at once, and staying on an older
+  TypeScript until 7's API is stable.
 
 ## How smaltworks works with AI
 
@@ -566,6 +629,8 @@ with other work, and smalt-brand had no place for it.
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
+- **smaltty's mark and positioning line:** the Tree is a first version and the line a proposal, both for the owner's
+  review (2026-11-12, above).
 - **smaltai and smaltml:** marks and words are open; their colours are set by layer. smaltfl's were settled on 2026-11-11 (above).
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 
