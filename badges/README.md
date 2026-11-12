@@ -1,6 +1,6 @@
 # "Powered by" badges
 
-For sites and projects that use smaltdb, smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql or smaltts. Each badge is 172 × 28 px, with a light and a dark version, and its text converted to paths so it needs no fonts.
+For sites and projects that use smaltdb, smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts or smaltty. Each badge is 172 × 28 px, with a light and a dark version, and its text converted to paths so it needs no fonts.
 
 | Light | Dark |
 | --- | --- |
@@ -12,6 +12,7 @@ For sites and projects that use smaltdb, smaltui, smaltbi, smaltdf, smaltnb, sma
 | ![Powered by smaltfl](powered-by-smaltfl.svg) | ![Powered by smaltfl](powered-by-smaltfl-on-dark.svg) |
 | ![Powered by smaltql](powered-by-smaltql.svg) | ![Powered by smaltql](powered-by-smaltql-on-dark.svg) |
 | ![Powered by smaltts](powered-by-smaltts.svg) | ![Powered by smaltts](powered-by-smaltts-on-dark.svg) |
+| ![Powered by smaltty](powered-by-smaltty.svg) | ![Powered by smaltty](powered-by-smaltty-on-dark.svg) |
 
 Use the badge for the project you build on, and link it to that project:
 
@@ -25,6 +26,7 @@ Use the badge for the project you build on, and link it to that project:
 | Powered by smaltfl | `https://stenhoor.github.io/smaltfl/` |
 | Powered by smaltql | `https://stenhoor.github.io/smaltql/` |
 | Powered by smaltts | `https://smaltworks.dev/products/smaltts` |
+| Powered by smaltty | `https://stenhoor.github.io/smaltty/` |
 
 ## In a GitHub README or web page (follows light and dark mode)
 
@@ -37,7 +39,7 @@ Use the badge for the project you build on, and link it to that project:
 </a>
 ```
 
-For smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql or smaltts, replace `smaltdb` in the three file names and the alt text, and use that project's link.
+For smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts or smaltty, replace `smaltdb` in the three file names and the alt text, and use that project's link.
 
 ## Plain Markdown (light badge only)
 
