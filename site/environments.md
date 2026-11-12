@@ -63,6 +63,19 @@ We build on what browsers can do now, not on what they used to lack.
 - **Before 1.0, we move with the platform.** As browsers add what a database can use, we may raise a minimum. Each
   change is listed here and called out under **Breaking** in the release notes.
 
+## Targets, and when they move
+
+Family rules since 2026-11-12 ([smaltty ADR 0030](https://github.com/stenhoor/smaltty/blob/main/docs/adr/0030-changing-smaltty-without-breaking-its-consumers.md),
+decisions 5 and 6):
+
+- **Plain ES2022 modules.** What every product ships loads in a current browser as it is, with no bundler.
+- **Built-in types follow Baseline.** The browser APIs smaltty's checker knows are web-features Baseline "widely
+  available": what you can call in the browsers the apps support. The next step is Baseline 2024.
+- **Reviewed once a year.** The output target and the baseline are reviewed together, in a decision record.
+- **The latest TypeScript.** Every smalt repository is on the latest stable TypeScript, within one minor release.
+  Type checking runs on TypeScript 7; the JavaScript and `.d.ts` files the packages ship are built with TypeScript
+  6.0.3 for one more release, then with 7.
+
 ## What the page needs
 
 - **A secure context:** HTTPS, or `localhost` while you develop. Browsers don't give OPFS to plain HTTP pages.

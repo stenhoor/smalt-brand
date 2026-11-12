@@ -3,6 +3,8 @@ DRAFT, not published. The release notes for smaltworks 0.9.0, for review before 
 After review: each package's section, with Breaking, Try it and Tell us, becomes that repository's GitHub release
 (templates/release-notes.md); this whole page is the family's notes. Before publishing, see "Before this goes out" in
 the PR that adds this file.
+smaltty became a top-level product on 2026-11-12 (DECISIONS.md, "smaltty: a product"): its description below says so,
+but its changelog still lists only #1–#3; add its later pull requests (the checker, milestones 6–8) before publishing.
 -->
 
 <img alt="Work in progress. Come build with us." src="https://raw.githubusercontent.com/stenhoor/smalt-brand/main/badges/work-in-progress.svg" height="56">
@@ -80,8 +82,8 @@ For anyone upgrading from smaltdb 0.8.3. The other packages are new, so nothing 
   Stop and Format.
 - **smaltnb, reactive notebooks.** A notebook is a TypeScript file: cells are top-level code, the graph comes from the
   names they define and read, and SQL and smaltdf cells are first-class.
-- **smaltty, our own TypeScript kit.** It parses, strips and binds TypeScript in the browser, and runs the TypeScript
-  in smaltui's tabs and smaltnb's notebooks.
+- **smaltty, our own TypeScript kit.** It parses, strips, binds and type-checks TypeScript in the browser, runs the
+  TypeScript in smaltui's tabs and smaltnb's notebooks, and checks calls into smaltdf as you type.
 
 ## Try it
 
@@ -472,11 +474,13 @@ cells, text cells, run modes, guards, typed parameters and held writes. Its firs
 
 ## smaltty 0.9.0
 
-The TypeScript kit: it parses, strips and binds TypeScript, in our own code with no dependencies. Types are stripped to
-spaces, so every line and column of the JavaScript is the one written; parsing gives TypeScript's own syntax tree; and
-binding says which declaration each name means, as TypeScript's checker does. The apps use it through
+**Small. Alternative. Code.** The TypeScript kit, now a product of its own: it parses, strips, binds and type-checks
+TypeScript, in our own code with no dependencies. Types are stripped to spaces, so every line and column of the
+JavaScript is the one written; parsing gives TypeScript's own syntax tree; and binding says which declaration each name
+means, as TypeScript's checker does. The apps use it through
 `smaltkit/typescript`, which refuses code that would make code of its own (enums, namespaces with values, parameter
-properties) with the line, the column and what to write instead. Its first release.
+properties) with the line, the column and what to write instead. Checking marks the errors tsc would report on calls
+into smaltdf as warnings, while the code still runs. Its first release.
 
 ### Breaking
 
