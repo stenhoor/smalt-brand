@@ -430,11 +430,14 @@ kit, not a product" and BRAND.md's line that smaltty, like smaltkit, has no mark
   the decision out, from smaltty's own site ("TypeScript for the smalt apps, in our own code"), with "code" moved out
   so the line doesn't repeat the tagline's word. Not yet confirmed by the owner.
 - **Role:** "The TypeScript kit" in the family table; "TypeScript kit" in menus.
-- **Mark: Tree, a first version.** The syntax tree smaltty builds, TypeScript's node for node: two branches from one
-  stem, and the root, where the parse starts, as the chip. Bars 9 units thick, at 0° and 90° only, so it follows the
-  Chevron style with no exception. No options round was held: the session drew it to the mark rules for the owner to
-  review, and it can be replaced by a round on the family canvas. Kept apart from smaltdf's Axes (one corner, with
-  the chip inside) and from the Together frame by its stem and its two legs.
+- **Mark: the Grain, turned (owner, 2026-11-12).** smaltdb's Grain rotated half a turn: a smalt base block with its
+  bottom-left corner cut away, and the chip in the cut, a little apart, in kiln. Picked from three readings of the
+  owner's description, "an orange chip at the bottom left of a blue base block" (A, chip set apart; B, chip on the
+  corner; C, wide base: exploration board TY-Marks). It shares smaltdb's geometry exactly; the turn and the kiln chip
+  tell the two apart, and the whole Grain stays smaltdb's.
+- **The Tree was never approved.** The session that carried the promotion out drew a Tree (two branches from one stem,
+  the chip at the root) without an options round, and #87 restored it to main as "a first version". It was never the
+  owner's mark and is replaced here.
 - **Applied:** the logos (`scripts/brand_assets.py`), the badge, the social card (pointing to the public repository),
   the `product-ty` tokens, smaltworks.dev (a product page, the home and products cards at "0.9.0 · In development",
   the engine bar, the architecture, kits, status and brand pages) and the site kit's family menu
@@ -637,8 +640,8 @@ with other work, and smalt-brand had no place for it.
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
-- **smaltty's mark and positioning line:** the Tree is a first version and the line a proposal, both for the owner's
-  review (2026-11-12, above).
+- **smaltty's positioning line:** "TypeScript for the smalt apps, checked in the browser." is a proposal, for the
+  owner's review (2026-11-12, above). The mark is settled: the Grain, turned.
 - **smaltai and smaltml:** marks and words are open; their colours are set by layer. smaltfl's were settled on 2026-11-11 (above).
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 

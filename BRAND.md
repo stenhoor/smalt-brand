@@ -270,7 +270,7 @@ smaltworks keeps kiln orange: it is the family, not a layer. smaltty takes kiln 
 | What it is | The engine | The SQL | The dataframes | The typed API | The TypeScript kit | The query workbench | The reports | The notebooks | The pipelines |
 | Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
 | Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | TypeScript for the smalt apps, checked in the browser. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
-| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Tree | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
+| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
 | Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
 
 smaltml and smaltai are in progress: their layers and colours are set, their marks and words are not.
@@ -287,7 +287,7 @@ Rules:
 - smaltfl's Twin is curved, a second exception to the 0°, 45° and 90° rule after smaltql's Star.
 - smaltts's Generic mark uses two 45° angles, like smaltui's Chevron. Keep the two apart in toolbars and lists, where they could be mistaken for each other at small sizes.
 - smaltty and smaltts are one letter apart and both about TypeScript. Their colours keep them apart: `ty` is always kiln and `ts` always magenta, so neither suffix is ever set in ink.
-- smaltty's Tree is a first version, drawn to these rules without an options round; it waits for the owner's review (DECISIONS.md, "smaltty: a product").
+- smaltty's mark is smaltdb's Grain turned half a turn, with a kiln chip at the bottom left. Never show it unturned or with a smalt chip, which would make it smaltdb's; the whole Grain stays smaltdb's (DECISIONS.md, "smaltty: a product").
 - If a product moves to another layer, its colour moves with it.
 
 ### smaltfl

@@ -104,15 +104,17 @@ MARKS = {
     # smaltty's Tree: the syntax tree it builds, TypeScript's node for node. Two branches from one stem, and the root,
     # where the parse starts, as the chip. Bars 9 units thick, 0 and 90 degrees only. A first version (2026-11-12),
     # drawn to the mark rules without an options round: for the owner's review.
-    "ty": [("M27.5 24H36.5V32H56V56H47V41H17V56H8V32H27.5Z", "body"), (rr(23, 8, 18, 13, 3), "accent")],
+    # smaltty's Grain, turned: smaltdb's Grain rotated half a turn, the notch and the chip at the bottom left, the chip
+    # in kiln (owner, 2026-11-12).
+    "ty": [("M50 46h-18v-10h-14v-24a6 6 0 0 1 6-6h26a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6z", "body"), (rr(10, 40, 16, 16, 3), "accent")],
     # smaltworks' Together: two L-shaped pieces that lock into one frame.
     "works": [("M8 8H44V18H18V44H8Z", "body"), ("M56 56H20V46H46V20H56Z", "accent")],
 }
 # smaltbi's 16 px mark: three larger grains, because the full scatter breaks into specks.
 MARK_16 = {"bi": [(rr(6, 40, 16, 16, 4), "chip"), (rr(22, 22, 20, 20, 5), "body"), (rr(44, 4, 16, 16, 4), "accent")]}
 # Horizontal extent of each mark's artwork on the 64 grid, used to space the lockup.
-ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "fl": (5.7, 56), "ql": (6.37, 57.63), "ts": (4, 60), "ty": (8, 56), "works": (8, 56)}
-MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl": "twin", "ql": "star", "ts": "generic", "ty": "tree", "works": "together"}
+ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "fl": (5.7, 56), "ql": (6.37, 57.63), "ts": (4, 60), "ty": (10, 56), "works": (8, 56)}
+MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl": "twin", "ql": "star", "ts": "generic", "ty": "grain", "works": "together"}
 
 # Colour by layer: each layer of the stack has one colour, and a product takes its layer's colour.
 # (fill, text, dark) per layer. The engine layer (smaltdb) uses smalt itself: the pale chip and an ink suffix.

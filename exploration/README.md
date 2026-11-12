@@ -109,6 +109,12 @@ The later positioning lines (P4–P11 and the final "Dataframes for smaltdb. Sma
 | [TS-Marks](family/png/TS-Marks.png) | Marks R1–R5 (Generic, Object, Flow, Direct, T). Picked: R1 Generic. |
 | [TS-Colours](family/png/TS-Colours.png) | Jade, smalt only and graphite (picked), with the whole family and the status colours. |
 
+## smaltty
+
+| Board | Contents |
+| --- | --- |
+| [TY-Marks](family/png/TY-Marks.png) | Three readings of the owner's "an orange chip at the bottom left of a blue base block", in kiln: A, the Grain turned (chip set apart); B, chip on the corner; C, wide base. Picked: A, the Grain turned. Its source, `TY-Marks.html`, is a plain HTML page, not a canvas board, rendered the same way. |
+
 ## Colour by layer, smaltai and smaltml
 
 | Board | Contents |
