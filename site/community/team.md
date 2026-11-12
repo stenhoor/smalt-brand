@@ -34,7 +34,7 @@ Andrew Beers has spent 13 years in IT, software development, and cybersecurity, 
 </div>
 
 <div class="sw-person">
-<img src="/team/jake.png" alt="Jake, in pink mirrored sunglasses, grinning">
+<img src="https://github.com/beepboopbop64.png?size=192" alt="Jake, in pink mirrored sunglasses, grinning">
 <div>
 
 ### Jake
