@@ -35,6 +35,9 @@ const apps = [
       <span class="sw-src">External data · HTTP, S3, Azure</span>
       <span class="sw-src">Plugins · Parquet, CSV, JSON</span>
     </div>
-    <a href="/products/smaltty" class="sw-box sw-under"><span class="sw-name"><Mark product="ty" :size="22" /><Word product="ty" /></span><span class="sw-what">TypeScript, the language of everything smalt, under the engine, its plugins and every layer</span></a>
+    <a href="/products/smaltty" class="sw-engine sw-base">
+      <span class="sw-name"><img src="/media/logos/smaltty/app-icon.svg" width="40" height="40" alt="" /><span class="sw-word sw-on-kiln">sm<span class="sw-alt">alt</span>ty</span></span>
+      <span class="sw-base-line">TypeScript, the language of everything smalt.</span>
+    </a>
   </figure>
 </template>
