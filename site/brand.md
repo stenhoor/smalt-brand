@@ -13,6 +13,7 @@ the full [brand book](https://github.com/stenhoor/smalt-brand/blob/main/BRAND.md
 | smaltql | <Mark product="ql" :size="28" /> Star | languages: cobalt magenta `#B0249F` |
 | smaltdf | <Mark product="df" :size="28" /> Axes | languages: cobalt magenta `#B0249F` |
 | smaltts | <Mark product="ts" :size="28" /> Generic | languages: cobalt magenta `#B0249F` |
+| smaltty | <Mark product="ty" :size="28" /> Grain, turned | the family: kiln `#E5622F` |
 | smaltui | <Mark product="ui" :size="28" /> Chevron | user tools: deep cerulean `#0E7FAE` |
 | smaltbi | <Mark product="bi" :size="28" /> Scatter | user tools: deep cerulean `#0E7FAE` |
 | smaltnb | <Mark product="nb" :size="28" /> Pencil | user tools: deep cerulean `#0E7FAE` |
@@ -36,6 +37,7 @@ For sites and projects that use a smalt product.
 <img class="sw-light" src="/media/badges/powered-by-smaltfl.svg" alt="Powered by smaltfl" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltfl-on-dark.svg" alt="Powered by smaltfl" height="28">
 <img class="sw-light" src="/media/badges/powered-by-smaltql.svg" alt="Powered by smaltql" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltql-on-dark.svg" alt="Powered by smaltql" height="28">
 <img class="sw-light" src="/media/badges/powered-by-smaltts.svg" alt="Powered by smaltts" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltts-on-dark.svg" alt="Powered by smaltts" height="28">
+<img class="sw-light" src="/media/badges/powered-by-smaltty.svg" alt="Powered by smaltty" height="28"><img class="sw-dark" src="/media/badges/powered-by-smaltty-on-dark.svg" alt="Powered by smaltty" height="28">
 </p>
 
 Snippets and dark versions: [`badges/`](https://github.com/stenhoor/smalt-brand/tree/main/badges). Plugin badges are

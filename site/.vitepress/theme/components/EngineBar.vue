@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // The family architecture, as the "engine bar": smaltdb is one wide bar; the sources plug in
-// below it; the languages, the kits and the apps stand on it.
+// below it; smaltty, the TypeScript everything is written in, is at the base, under the plugins; the languages, the
+// kits and the apps stand on the engine.
 import Mark from './Mark.vue'
 import Word from './Word.vue'
 const apps = [
@@ -12,7 +13,7 @@ const apps = [
 </script>
 
 <template>
-  <figure class="sw-stack" aria-label="The smalt family architecture: sources feed one engine, smaltdb; smaltql (SQL), smaltdf (dataframes) and smaltts (a typed API) are the ways into that engine; kits sit above them; smaltui, smaltbi, smaltnb and smaltfl are built on the kits.">
+  <figure class="sw-stack" aria-label="The smalt family architecture: sources feed one engine, smaltdb; smaltql (SQL), smaltdf (dataframes) and smaltts (a typed API) are the ways into that engine; kits sit above them; smaltui, smaltbi, smaltnb and smaltfl are built on the kits. At the base, under the engine's plugins, is smaltty, the TypeScript everything is written in.">
     <div class="sw-row sw-apps">
       <a v-for="a in apps" :key="a.p" :href="a.href" class="sw-box">
         <span class="sw-name"><Mark :product="a.p" :size="22" /><Word :product="a.p" /></span>
@@ -34,5 +35,9 @@ const apps = [
       <span class="sw-src">External data · HTTP, S3, Azure</span>
       <span class="sw-src">Plugins · Parquet, CSV, JSON</span>
     </div>
+    <a href="/products/smaltty" class="sw-engine sw-base">
+      <span class="sw-name"><svg class="sw-base-mark" width="40" height="40" viewBox="0 0 64 64" aria-hidden="true"><g transform="translate(10.9 10.9) scale(0.66)"><path d="M50 46h-18v-10h-14v-24a6 6 0 0 1 6-6h26a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6z" fill="#F5F6F8"/><path d="M13 40h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-10a3 3 0 0 1-3-3v-10a3 3 0 0 1 3-3z" fill="#FFD2BF"/></g></svg><span class="sw-word sw-on-kiln">sm<span class="sw-alt">alt</span>ty</span></span>
+      <span class="sw-base-line">TypeScript, the language of everything smalt.</span>
+    </a>
   </figure>
 </template>

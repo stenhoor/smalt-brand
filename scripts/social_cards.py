@@ -56,7 +56,7 @@ PRODUCTS = {
            "smaltdb, straight from TypeScript.",
            "smaltworks.dev/products/smaltts"),
     "ty": ("Small. Alternative. Code.",
-           "TypeScript for the smalt apps, checked in the browser.",
+           "TypeScript for the smalt apps.",
            "github.com/stenhoor/smaltty"),
     "works": ("Small. Alternative. Together.",
               "Stay smalty.",

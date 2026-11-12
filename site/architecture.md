@@ -1,9 +1,16 @@
 # How it fits together
 
-The smalt family is one stack. Data comes in at the bottom, one engine runs everything, and each layer above it is a
-different way to put that engine to work.
+The smalt family is one stack. smaltty, the TypeScript it is all written in, is at the base. Data comes in above it,
+one engine runs everything, and each layer above the engine is a different way to put it to work.
 
 <EngineBar />
+
+## At the base: smaltty
+
+TypeScript is the language of everything smalt, and smaltty is smalt's TypeScript implementation, in our own code: it parses, strips, binds
+and type-checks TypeScript in the page, with no dependencies. It runs the TypeScript you type into an app's tab or a
+notebook cell, and checks calls into smaltdf and smaltts as you type, against the declarations the languages publish.
+The apps use it through smaltkit. [smaltty →](/products/smaltty)
 
 ## Sources
 
