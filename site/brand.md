@@ -13,7 +13,7 @@ the full [brand book](https://github.com/stenhoor/smalt-brand/blob/main/BRAND.md
 | smaltql | <Mark product="ql" :size="28" /> Star | languages: cobalt magenta `#B0249F` |
 | smaltdf | <Mark product="df" :size="28" /> Axes | languages: cobalt magenta `#B0249F` |
 | smaltts | <Mark product="ts" :size="28" /> Generic | languages: cobalt magenta `#B0249F` |
-| smaltty | <Mark product="ty" :size="28" /> Tree | kits: jade `#0A7C76` |
+| smaltty | <Mark product="ty" :size="28" /> Tree | the family: kiln `#E5622F` |
 | smaltui | <Mark product="ui" :size="28" /> Chevron | user tools: deep cerulean `#0E7FAE` |
 | smaltbi | <Mark product="bi" :size="28" /> Scatter | user tools: deep cerulean `#0E7FAE` |
 | smaltnb | <Mark product="nb" :size="28" /> Pencil | user tools: deep cerulean `#0E7FAE` |

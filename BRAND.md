@@ -258,15 +258,15 @@ Each layer of the stack has one colour, and every product in it takes that colou
 | --- | --- | --- | --- | --- |
 | Engine | smaltdb and its plugins | smalt: the pale chip (`smalt-300`), suffix in ink | ink | `smalt-100` chip |
 | Languages | smaltql, smaltdf, smaltts | `layer-language`: cobalt magenta `#B0249F` | `#981C89` | `#F57FE6` |
-| Kits | smaltty, smaltml (smaltkit and the other kits have no brand of their own) | `layer-kit`: jade `#0A7C76` | `#086A65` | `#10C2B9` |
+| Kits | smaltml (smaltkit and the other kits have no brand of their own) | `layer-kit`: jade `#0A7C76` | `#086A65` | `#10C2B9` |
 | User tools | smaltui, smaltbi, smaltnb, smaltfl | `layer-tool`: deep cerulean `#0E7FAE` | `#0B6A91` | `#5CBDE8` |
 | Alongside | smaltai, which runs alongside the languages, kits and user tools | `layer-ai`: blue-leaning violet `#6E4BC2` | `#6141AE` | `#B8A1F2` |
 
-smaltworks keeps kiln orange: it is the family, not a layer. The `product-*` tokens remain as aliases of their layer's token, so existing uses keep working.
+smaltworks keeps kiln orange: it is the family, not a layer. smaltty takes kiln too, and sits in no layer: TypeScript is the language of everything smalt (DECISIONS.md, "smaltty: a product"). The `product-*` tokens remain as aliases of their layer's token, so existing uses keep working.
 
 | | smaltdb | smaltql | smaltdf | smaltts | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Layer | Engine | Languages | Languages | Languages | Kits | User tools | User tools | User tools | User tools |
+| Layer | Engine | Languages | Languages | Languages | None: kiln, the family's | User tools | User tools | User tools | User tools |
 | What it is | The engine | The SQL | The dataframes | The typed API | The TypeScript kit | The query workbench | The reports | The notebooks | The pipelines |
 | Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
 | Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | TypeScript for the smalt apps, checked in the browser. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
@@ -286,7 +286,7 @@ Rules:
 - Violet (smaltai) sits close to smalt (CIELAB distance 21 light, 18 dark). It marks smaltai, which runs alongside the layers and doesn't touch the engine, not a layer that sits on the engine.
 - smaltfl's Twin is curved, a second exception to the 0°, 45° and 90° rule after smaltql's Star.
 - smaltts's Generic mark uses two 45° angles, like smaltui's Chevron. Keep the two apart in toolbars and lists, where they could be mistaken for each other at small sizes.
-- smaltty and smaltts are one letter apart and both about TypeScript. Their layers keep them apart: `ty` is always jade and `ts` always magenta, so neither suffix is ever set in ink.
+- smaltty and smaltts are one letter apart and both about TypeScript. Their colours keep them apart: `ty` is always kiln and `ts` always magenta, so neither suffix is ever set in ink.
 - smaltty's Tree is a first version, drawn to these rules without an options round; it waits for the owner's review (DECISIONS.md, "smaltty: a product").
 - If a product moves to another layer, its colour moves with it.
 
@@ -300,7 +300,7 @@ smaltts is a thin, typed TypeScript API over smaltdb's plan and schema operation
 
 ### smaltty
 
-smaltty is our own TypeScript kit, now a product of its own: it parses, strips, binds and type-checks TypeScript in the browser, with no dependencies. It runs the TypeScript in smaltui's tabs and smaltnb's cells and checks calls into smaltdf and smaltts as they are typed. It sits at the kit layer, between the languages, whose declarations it checks against, and the user tools, which use it through smaltkit (`smaltkit/typescript`). Its docs site is a kit site under [Documentation](#documentation).
+smaltty is our own TypeScript kit, now a product of its own: it parses, strips, binds and type-checks TypeScript in the browser, with no dependencies. It runs the TypeScript in smaltui's tabs and smaltnb's cells and checks calls into smaltdf and smaltts as they are typed. It takes the family's kiln rather than a layer's colour, because TypeScript is the language of everything smalt. In the stack it sits between the languages, whose declarations it checks against, and the user tools, which use it through smaltkit (`smaltkit/typescript`). smaltty and smaltworks share kiln; their marks tell them apart. Its docs site is a kit site under [Documentation](#documentation).
 
 ### smaltdb and smaltql
 

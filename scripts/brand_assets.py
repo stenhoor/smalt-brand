@@ -118,11 +118,14 @@ MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl
 # (fill, text, dark) per layer. The engine layer (smaltdb) uses smalt itself: the pale chip and an ink suffix.
 LAYER_COLOURS = {
     "language": ("#B0249F", "#981C89", "#F57FE6"),   # magenta: smaltql, smaltdf, smaltts
-    "kit": ("#0A7C76", "#086A65", "#10C2B9"),        # jade: smaltty, smaltml
+    "kit": ("#0A7C76", "#086A65", "#10C2B9"),        # jade: smaltml
+    # smaltty is in no layer: TypeScript is the language of everything smalt, so it takes the family's kiln
+    # (owner, 2026-11-12): kiln-500 as the fill, the accent token as text.
+    "family": ("#E5622F", "#A33A12", "#FF8A5C"),     # kiln: smaltty
     "tool": ("#0E7FAE", "#0B6A91", "#5CBDE8"),       # cerulean: smaltui, smaltbi, smaltnb, smaltfl
     "ai": ("#6E4BC2", "#6141AE", "#B8A1F2"),         # violet: smaltai, alongside the layers
 }
-LAYER = {"ql": "language", "df": "language", "ts": "language", "ty": "kit", "ui": "tool", "bi": "tool", "nb": "tool", "fl": "tool"}
+LAYER = {"ql": "language", "df": "language", "ts": "language", "ty": "family", "ui": "tool", "bi": "tool", "nb": "tool", "fl": "tool"}
 # smaltworks is not a layer: it keeps kiln orange.
 WORKS = ("#E5622F", "#151922", "#FF8A5C")
 

@@ -1,7 +1,7 @@
 # smaltty logos
 
 The Tree mark: the syntax tree smaltty builds, TypeScript's node for node. Two branches from one stem, and the root,
-where the parse starts, as the chip. The tree is smalt (`#003399`) and the chip jade (`#0A7C76`), the kit layer's
+where the parse starts, as the chip. The tree is smalt (`#003399`) and the chip kiln (`#E5622F`), the family's
 colour. Bars of one thickness, at 0° and 90° only.
 
 A first version (2026-11-12), drawn to the family's mark rules without an options round: it waits for the owner's
@@ -10,8 +10,8 @@ review (DECISIONS.md, "smaltty: a product").
 | File | Use |
 | --- | --- |
 | `lockup.svg`, `lockup-on-dark.svg` | Mark + wordmark, outlined. README headers, docs, slides. |
-| `wordmark.svg`, `wordmark-on-dark.svg` | Wordmark alone: `alt` in smalt, `ty` in `#086A65` (light) or `#10C2B9` (dark). |
-| `tree-mark.svg`, `tree-mark-on-dark.svg` | The mark alone. Dark version: `#9DB4F5` tree, `#10C2B9` chip. |
+| `wordmark.svg`, `wordmark-on-dark.svg` | Wordmark alone: `alt` in smalt, `ty` in `#A33A12` (light) or `#FF8A5C` (dark). |
+| `tree-mark.svg`, `tree-mark-on-dark.svg` | The mark alone. Dark version: `#9DB4F5` tree, `#FF8A5C` chip. |
 | `app-icon.svg` | Smalt tile with the mark knocked out. App and PWA icons, avatars. |
 | `favicon-32.svg`, `favicon-16.svg` | Browser tabs. The same drawing at both sizes. |
 

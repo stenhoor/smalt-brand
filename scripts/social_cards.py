@@ -28,7 +28,7 @@ W, H = 1280, 640
 LEFT = 96                       # left margin; content stays inside the 1.91:1 centre crop
 INK, INK_2, INK_3 = "#E9EBF0", "#B9BEC9", "#9096A3"   # text, text-2, text-3 (dark)
 GROUND = "#14171F"               # bg (dark)
-BAR = {"db": "#9DB4F5", "ui": "#5CBDE8", "bi": "#5CBDE8", "nb": "#5CBDE8", "fl": "#5CBDE8", "df": "#F57FE6", "ql": "#F57FE6", "ts": "#F57FE6", "ty": "#10C2B9", "works": "#FF8A5C"}  # smalt-200, layer-tool / layer-language / layer-kit (dark), kiln
+BAR = {"db": "#9DB4F5", "ui": "#5CBDE8", "bi": "#5CBDE8", "nb": "#5CBDE8", "fl": "#5CBDE8", "df": "#F57FE6", "ql": "#F57FE6", "ts": "#F57FE6", "ty": "#FF8A5C", "works": "#FF8A5C"}  # smalt-200, layer-tool / layer-language / layer-kit (dark), kiln
 
 PRODUCTS = {
     "db": ("Small. Alternative. Fast.",
