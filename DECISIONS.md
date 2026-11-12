@@ -643,10 +643,23 @@ with other work, and smalt-brand had no place for it.
 
 [`exploration/`](exploration/) keeps every board from every round (77 by the documentation standard's round): a rendered snapshot (PNG) for viewing, and its source (`.dc.html`, the Claude design-canvas format) for reference. Its README lists each board in the order it was shown, with what was picked from it.
 
+## No shade: comparisons only under benchmarks
+
+Decided by the owner on 2026-11-12, after smaltty's README and docs home said "Faster than sucrase" (taken out in
+stenhoor/smaltty#23). In the owner's words: "We don't throw shade at others. We can share apples for apples timing
+comparisons, but that is the extent to what we do. Those are listed under benchmarks."
+
+- **The rule widens** from "no comparisons with other databases" to other databases, tools and libraries alike: no
+  copy names another project to say ours is better or faster (BRAND.md, "Voice").
+- **Benchmarks are the one place for comparisons:** apples-for-apples timings, the same work on the same machine, with
+  the method beside them, on a page listed as benchmarks. Product pages, READMEs, release notes and news link to it.
+- **Facts stay:** naming another tool as a test input, a dependency we replaced, or the reference we follow (TypeScript
+  for smaltty, SQLite for smaltql) is not a comparison.
+
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
 - **smaltai and smaltml:** marks and words are open; their colours are set by layer. smaltfl's were settled on 2026-11-11 (above).
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 
-- **Research pages on smaltdb.dev** include benchmark comparisons with other engines. The no-comparisons rule covers marketing copy; whether those pages stay on the public site is undecided.
+- **Research pages on smaltdb.dev** include benchmark comparisons with other engines. Settled by "No shade" (2026-11-12): apples-for-apples timings may stay public, listed as benchmarks; anything else on them that compares goes.
