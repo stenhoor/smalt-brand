@@ -64,7 +64,8 @@ Both are static sites: the engine runs in your browser, and your data stays ther
 
 Typing code into a workbench tab or a notebook cell means TypeScript has to run in the page. **smaltty** is our own
 TypeScript kit for that: it parses, strips and binds TypeScript right in the browser. Types are stripped to spaces, so
-every line and column of an error points at the code you wrote.
+every line and column of an error points at the code you wrote. It also checks your calls into smaltdf as you type,
+and shows TypeScript's errors as warnings while the code still runs.
 
 ## Under the hood
 
