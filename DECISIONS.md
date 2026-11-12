@@ -426,9 +426,9 @@ kit, not a product" and BRAND.md's line that smaltty, like smaltkit, has no mark
   Jade also keeps it apart from smaltts, one letter away in name and also about TypeScript, which is magenta. Kiln
   keeps it apart from smaltts too. Corrected to kiln on 2026-11-12, when the work was restored.
 - **Wordmark:** `sm`**`alt`**`ty`, `ty` in kiln as text (`#A33A12`, `#FF8A5C` on dark).
-- **Positioning line:** "TypeScript for the smalt apps, checked in the browser." Proposed by the session that carried
-  the decision out, from smaltty's own site ("TypeScript for the smalt apps, in our own code"), with "code" moved out
-  so the line doesn't repeat the tagline's word. Not yet confirmed by the owner.
+- **Positioning line (owner, 2026-11-12):** **"TypeScript for the smalt apps."** The session that carried the
+  decision out proposed "TypeScript for the smalt apps, checked in the browser."; the owner dropped "checked in the
+  browser".
 - **Role:** "The TypeScript kit" in the family table; "TypeScript kit" in menus.
 - **Mark: the Grain, turned (owner, 2026-11-12).** smaltdb's Grain rotated half a turn: a smalt base block with its
   bottom-left corner cut away, and the chip in the cut, a little apart, in kiln. Picked from three readings of the
@@ -640,8 +640,6 @@ with other work, and smalt-brand had no place for it.
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
-- **smaltty's positioning line:** "TypeScript for the smalt apps, checked in the browser." is a proposal, for the
-  owner's review (2026-11-12, above). The mark is settled: the Grain, turned.
 - **smaltai and smaltml:** marks and words are open; their colours are set by layer. smaltfl's were settled on 2026-11-11 (above).
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 
