@@ -411,13 +411,21 @@ kit, not a product" and BRAND.md's line that smaltty, like smaltkit, has no mark
   after an edit in under a millisecond ([smaltty's benchmarks](https://stenhoor.github.io/smaltty/BENCHMARKS),
   "Checking in a page"; ADR 0029's table).
 - **Tagline (owner):** **"Small. Alternative. Code."**
-- **Layer: the kits, so jade** (`layer-kit`). By "Colour by layer", colour says where a product sits. The language
+- **Colour: kiln (owner).** smaltty takes the family's kiln orange, not a layer's colour: TypeScript is the language
+  of everything smalt, so the language that runs through every product takes the family's colour. `#E5622F` as the
+  fill (`kiln-500`), `#A33A12` as text (`accent`), `#FF8A5C` on dark; the `product-ty` tokens alias them. smaltty sits
+  in no layer, as smaltworks doesn't. Kiln keeps its other meaning everywhere else (commits and focus); in smaltty's
+  mark and suffix it names the product, and the mark, not the colour, tells smaltty from smaltworks' Together.
+- **First recorded as jade, not the owner's pick.** The session that carried the decision out put smaltty in the kit
+  layer, jade (`layer-kit`), by its own reading of "Colour by layer", and the commit carrying it was never merged. Its
+  reasoning, kept for the record: by "Colour by layer", colour says where a product sits. The language
   layer is the ways into the engine (smaltql, smaltdf, smaltts): each builds plans for smaltdb. smaltty doesn't touch
   the engine. It sits above the languages, whose declarations it checks against, and below the user tools, which use
   it through smaltkit: the kit level, between the languages and the user tools, where smaltml was placed. The
   Documentation standard already lists it with the kits, and smaltty's docs site already sets its suffix as a kit's.
-  Jade also keeps it apart from smaltts, one letter away in name and also about TypeScript, which is magenta.
-- **Wordmark:** `sm`**`alt`**`ty`, `ty` in the kit layer's text colour (`#086A65`, `#10C2B9` on dark).
+  Jade also keeps it apart from smaltts, one letter away in name and also about TypeScript, which is magenta. Kiln
+  keeps it apart from smaltts too. Corrected to kiln on 2026-11-12, when the work was restored.
+- **Wordmark:** `sm`**`alt`**`ty`, `ty` in kiln as text (`#A33A12`, `#FF8A5C` on dark).
 - **Positioning line:** "TypeScript for the smalt apps, checked in the browser." Proposed by the session that carried
   the decision out, from smaltty's own site ("TypeScript for the smalt apps, in our own code"), with "code" moved out
   so the line doesn't repeat the tagline's word. Not yet confirmed by the owner.

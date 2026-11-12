@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // A product mark, light and dark, from the committed logo files.
-const props = withDefaults(defineProps<{ product: 'db' | 'ui' | 'bi' | 'df' | 'nb' | 'fl' | 'ql' | 'ts' | 'ty' | 'works'; size?: number }>(), { size: 24 })
-const FILE = { db: 'grain', ui: 'chevron', bi: 'scatter', df: 'axes', nb: 'pencil', fl: 'twin', ql: 'star', ts: 'generic', ty: 'tree', works: 'together' } as const
+const props = withDefaults(defineProps<{ product: 'db' | 'ui' | 'bi' | 'df' | 'nb' | 'fl' | 'ql' | 'ts' | 'works'; size?: number }>(), { size: 24 })
+const FILE = { db: 'grain', ui: 'chevron', bi: 'scatter', df: 'axes', nb: 'pencil', fl: 'twin', ql: 'star', ts: 'generic', works: 'together' } as const
 const base = `/media/logos/smalt${props.product}/${FILE[props.product]}-mark`
 </script>
 

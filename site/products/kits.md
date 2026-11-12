@@ -12,14 +12,13 @@ thing.
 
 Today the kits live in **smaltkit**: the engine loader, URL rewriting, number and date formatting, SVG chart helpers and
 charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps,
-value-picking controls and TypeScript (smaltty, below), used by smaltui, smaltbi and smaltnb. smaltkit is 0.5.0 and isn't on npm
+value-picking controls and TypeScript type stripping, used by smaltui and smaltbi. smaltkit is 0.5.0 and isn't on npm
 yet.
 
 [Repository →](https://github.com/stenhoor/smaltkit)
 
-**[smaltty](/products/smaltty)**, the TypeScript kit, is a product of its own, in the kit layer: TypeScript for the
-apps' tabs and notebook cells, in our own code. smaltkit wraps it as `smaltkit/typescript`, which is how the apps use
-it. It removes types without moving a line or column, so an error points where it was written, and checks calls into
-smaltdf and smaltts as the code is typed, marking TypeScript's errors as warnings while the code still runs.
+**smaltty** is the TypeScript kit inside it: TypeScript for the apps' TypeScript tabs and notebook cells, in our own
+code. It removes types without moving a line or column, so an error points where it was written, and checks calls
+into smaltdf as the code is typed, marking TypeScript's errors as warnings while the code still runs.
 
-[Read the docs →](https://stenhoor.github.io/smaltty/) · [Repository →](https://github.com/stenhoor/smaltty)
+[Repository →](https://github.com/stenhoor/smaltty)
