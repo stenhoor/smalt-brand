@@ -1,6 +1,8 @@
 # ADR 0032: git through the local repository: no credentials, no remotes
 
-- **Status:** accepted (2026-11-13), with the owner's answers below ("The owner's decisions").
+- **Status:** accepted (2026-11-13), with the owner's answers below ("The owner's decisions"). Built the same day:
+  stenhoor/smaltkit#26 (the reader), stenhoor/smaltnb#39 (the folder and per-cell changes), #40 (history and blame) and
+  #41 (conflicts by cell).
 - **Date:** 2026-11-13
 - **Replaces:** smaltnb's [DESIGN.md](https://github.com/stenhoor/smaltnb/blob/main/docs/DESIGN.md) decision 16 ("The
   repo lives in OPFS as real git (isomorphic-git) and syncs with GitHub through its REST Git Data API").
@@ -81,7 +83,7 @@ What was found:
 | Commit | the user's tools | the page |
 | Push, pull, fetch | the user's tools | the user's tools |
 | Our code | about 1,200 lines | about 600 more (writing objects, refs, the index) |
-| Risk to the user's repository | none (working files only) | medium: must match git exactly |
+| Risk to the local clone | none (working files only) | medium: must match git exactly |
 
 Not handled at either level: hooks, Git LFS, submodules, a `.git` outside the picked folder (worktrees, `--separate-git-dir`).
 
