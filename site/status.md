@@ -10,11 +10,11 @@ As of November 2026. Each project's repository has its own roadmap.
 | [smaltts](/products/smaltts) | — | **Planned.** |
 | [smaltdf](/products/smaltdf) | 0.1.0 | **In development,** coming soon. [Docs](https://stenhoor.github.io/smaltdf/) |
 | [smaltui](/products/smaltui) | 0.1.0 | **In development.** SQL and smaltdf dataframes, in editor tabs. [Demo](https://stenhoor.github.io/smaltui/workbench/?env=envs/demo/env.json) · [Docs](https://stenhoor.github.io/smaltui/) |
-| [smaltbi](/products/smaltbi) | 0.1.0 | **In development.** The designer, viewer and publishing work end to end. [Demo](https://stenhoor.github.io/smaltbi/designer.html?report=examples/sales/report.json) · [Docs](https://stenhoor.github.io/smaltbi/) |
+| [smaltbi](/products/smaltbi) | 0.2.0 | **In development.** The designer, viewer and publishing work end to end, with time intelligence, conditional formatting and phone layouts. [Demo](https://stenhoor.github.io/smaltbi/designer.html?report=examples/sales/report.json) · [Docs](https://stenhoor.github.io/smaltbi/) |
 | [smaltnb](/products/smaltnb) | — | **In early development.** Notebooks run in your browser, with SQL, smaltdf and text cells, parameters, controls and charts; `smaltnb run` runs them in Node and GitHub Actions. [Demo](https://stenhoor.github.io/smaltnb/app/) · [Docs](https://stenhoor.github.io/smaltnb/) |
 | [smaltfl](/products/smaltfl) | — | **In early development.** Pipelines run in your browser: a day that is off is paused, not published. [Demo](https://stenhoor.github.io/smaltfl/app/) · [Docs](https://stenhoor.github.io/smaltfl/) |
 | [smaltty](/products/smaltty) | 0.9.0 | **In development,** used through smaltkit; not on npm yet. Runs and type-checks the TypeScript in smaltui's tabs and smaltnb's cells. [Docs](https://stenhoor.github.io/smaltty/) |
-| [smaltkit](/products/kits) | 0.5.0 | **In development,** used by smaltui and smaltbi; not on npm yet. Wraps smaltty for the apps. |
+| [smaltkit](/products/kits) | 0.10.0 | **In development,** used by smaltui, smaltbi and smaltnb; not on npm yet. Wraps smaltty for the apps. |
 
 Everything before 1.0 can change, including smaltdb's on-disk format: [work in progress, come build with us](/stability).
 
