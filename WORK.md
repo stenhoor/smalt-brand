@@ -18,6 +18,7 @@ done; its record keeps the history.
 | smaltworks 0.9.0, the release: smaltdb, smaltql, smaltdf, smaltui, smaltnb, smaltty and smaltkit, with the plugins | all seven, smaltdb-io, smaltdb-external, smaltdb-parquet, smaltdb-node, smalt-brand | [Release notes](releases/0.9.0/release-notes.md) and [news story](releases/0.9.0/news.md) (drafts); smaltdb ADR 0015 steps 11–12 | Drafting | The owner's review of the drafts; then the package renames (ADR 0015 step 11), the versions set to 0.9.0, an end-to-end check of the 0.8.3 export and 0.9.0 import, the publish (step 12), `smaltdb` 0.8.3 marked deprecated, the GitHub releases, and the news page on smaltworks.dev | Owner |
 | TypeScript 7 in every smalt repository: checking (`typecheck`) on TypeScript 7.0.2 now; `dist/` and `.d.ts` built with 6.0.3 for one more release, then 7; smaltty keeps 6.0.3 for its compiler API until 7 has a stable JavaScript API | every smalt repository | [smaltty ADR 0030](https://github.com/stenhoor/smaltty/blob/main/docs/adr/0030-changing-smaltty-without-breaking-its-consumers.md), decision 5; [DECISIONS.md](DECISIONS.md#typescript-and-browsers) | Accepted | Each repository's own session moves its `typecheck` script to TypeScript 7 (the owner's yes to the dev dependency is in the ADR); smaltty first, with its milestone 9; then, one release later, the builds | – |
 | The documentation standard: four sections, reference entries, syntax diagrams, working demos, playgrounds, the plan language, docs for agents | smalt-brand (site kit), smaltkit, every product site; smaltql first, smaltdb for the plan language | [BRAND.md, Documentation](BRAND.md#documentation), [DECISIONS.md](DECISIONS.md#documentation-standard) | In progress | M1–M3, the site kit's components, done; M4, smaltql's site: the four sections, playgrounds and agent docs live, the grammar and diagrams in review (stenhoor/smaltql#53), then working demos; then smaltql gives the plan of a statement; smaltdb prints whole plans | – |
+| Processing lists and structs: expressions over list elements (`each`), a list's elements as rows (`list_elements`, `explode` on it), about 20 functions of one list, struct building and methods in smaltdf, and a fix for semi and anti joins against derived inputs | smaltdb, smaltdf, smaltql | [smaltdb ADR 0031](https://github.com/stenhoor/smaltdb/blob/main/docs/adr/0031-processing-lists-and-structs.md) | Accepted | The owner's decisions recorded (stenhoor/smaltdb#220); step 1, the semi and anti join fix, first | – |
 
 ## smaltts, the typed API (smaltts ADR 0023)
 
@@ -93,3 +94,19 @@ Decided 2026-11-10. Sizes are estimates, as above.
 | M6 smaltdb prints whole plans (the tree view) | smaltdb | S | | Not started |
 | M7 smaltdb's Plan language section and "One query, every language" | smaltdb | L | M1–M3, M5, M6 | Not started |
 | M8 The other sites to the standard: smaltdf, then smaltts, the apps, the plugins and the kits | each | L each | M4 | Not started |
+
+## Processing lists and structs (smaltdb ADR 0031)
+
+The order of work of [ADR 0031](https://github.com/stenhoor/smaltdb/blob/main/docs/adr/0031-processing-lists-and-structs.md),
+where the details are. Sizes: S one PR, M two or three. Steps 1, 2, 4 and 5 can run side by side.
+
+| Step | Repository | Size | After | Status |
+| --- | --- | --- | --- | --- |
+| 1 Semi and anti joins against any input: the right side once, hashed | smaltdb | S | | Next |
+| 2 smaltdf: building and changing structs and lists; the comparison case for `list.get` out of range | smaltdf | S | | |
+| 3 `list_elements`; `explode` and `unnest` as a lateral join on it | smaltdb | M | 1 | |
+| 4 Functions of one list: statistics, changes, sets, options | smaltdb | M | | |
+| 5 Expressions over elements: `each`, `element`, `eachAgg`, with a benchmark | smaltdb | M | | |
+| 6 smaltdf: the new methods, `element()`, `list.eval` / `filter` / `agg`, `explode` of several columns | smaltdf | M | 3, 4, 5 | |
+| 7 smaltql: the functions of step 4 in SQL (element syntax later, in smaltql's own record) | smaltql | M | 4 | |
+| 8 The roadmap and status pages; the ADR's status | smaltdb, smaltdf | S | 6 | |
