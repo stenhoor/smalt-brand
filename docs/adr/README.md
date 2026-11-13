@@ -13,4 +13,4 @@ in any repository, open PRs included.
 | [ADR 0024: smaltml's scope and architecture](0024-smaltml-scope-and-architecture.md) | Proposed |
 | [ADR 0025: smaltai, the AI agent in the smalt apps: gateways, actions and context](0025-smaltai-agent-gateways-and-actions.md) | Proposed |
 | [ADR 0026: smaltai's in-browser LLM: an inference engine on WebGPU](0026-smaltai-in-browser-llm.md) | Proposed |
-| [ADR 0032: git through the local repository: no credentials, no remotes](0032-git-through-the-local-repository.md) | Proposed |
+| [ADR 0032: git through the local repository: no credentials, no remotes](0032-git-through-the-local-repository.md) | Accepted |

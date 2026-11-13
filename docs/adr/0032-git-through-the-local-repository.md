@@ -1,10 +1,9 @@
 # ADR 0032: git through the local repository: no credentials, no remotes
 
-- **Status:** proposed. The owner set the constraints on 2026-11-12/13 (below); the items under "Still to decide" are
-  open.
+- **Status:** accepted (2026-11-13), with the owner's answers below ("The owner's decisions").
 - **Date:** 2026-11-13
 - **Replaces:** smaltnb's [DESIGN.md](https://github.com/stenhoor/smaltnb/blob/main/docs/DESIGN.md) decision 16 ("The
-  repo lives in OPFS as real git (isomorphic-git) and syncs with GitHub through its REST Git Data API"), once accepted.
+  repo lives in OPFS as real git (isomorphic-git) and syncs with GitHub through its REST Git Data API").
 - **Builds on:** smaltnb DESIGN.md decision 19 (credentials: secrets stay secret); smalt-brand's
   [DECISIONS.md](../../DECISIONS.md) (outside code: ask first);
   [smaltworks.dev/environments](https://smaltworks.dev/environments) (supported browsers).
@@ -56,14 +55,14 @@ What was found:
      and which notebooks changed;
    - shows a merge conflict per cell: git writes conflict markers into the file, and the page resolves them cell by
      cell and saves the file.
-3. **Git's format, read by our own code.** The reader handles git's objects (blob, tree, commit, tag), loose and packed,
+3. **Git's format, read by our own code, in smaltkit** (owner, 2026-11-13). The reader handles git's objects (blob, tree, commit, tag), loose and packed,
    including delta-compressed objects (cloned repositories are packed), refs and packed refs, and a line diff (Myers),
    with a per-cell diff on top. SHA-1 from `crypto.subtle`; zlib from the browser's `DecompressionStream('deflate')`. No
    outside code. Tests compare every result with the `git` command in Node CI. Estimated at about 1,200 lines.
-4. **Committing from the page is a later, separate step** (Level 2): writing objects, the branch ref and the index into
+4. **No commits from the page** (owner, 2026-11-13: until further notice). Level 2, for the record, would be writing objects, the branch ref and the index into
    `.git`, following git's own lock protocol (`*.lock` files moved into place), refusing while a merge or rebase is in
-   progress (`MERGE_HEAD`, `rebase-merge/`), and tested against the `git` command. It comes only once Level 1 has been
-   used, and the owner decides whether to build it. Push stays with the user's tools either way.
+   progress (`MERGE_HEAD`, `rebase-merge/`), and tested against the `git` command. It is not built: the user makes
+   every commit, and all work with remotes, in their own tools.
 5. **Headless runs** (`smaltnb run`, `smaltnb build`) read and write ordinary files on disk; git around them is the
    user's, or a CI system's (GitHub Actions commits with the job's own token, which GitHub issues and expires; smalt
    never sees it).
@@ -73,7 +72,7 @@ What was found:
 
 ### What it costs and what it leaves out
 
-| | Level 1 (this ADR) | Level 2 (later, if decided) |
+| | Level 1 (this ADR) | Level 2 (not built) |
 |---|---|---|
 | Credentials in smalt | none | none |
 | Install | none (git, if the user syncs, is theirs) | none |
@@ -107,27 +106,24 @@ Not handled at either level: hooks, Git LFS, submodules, a `.git` outside the pi
 - smalt stays independent of every git host; whatever the user syncs with works.
 - In the page, notebooks in git need Chrome or Edge on a desktop. Phones and the other browsers get files, not git.
 - The cell-aware layer (diffs, history, conflicts by cell) is what smalt adds over git; git itself stays git.
-- smaltnb's DESIGN.md decision 16 and its milestone 2 are rewritten to match, in smaltnb, once this is accepted.
+- smaltnb's DESIGN.md decision 16 and its milestone 2 are rewritten to match, in smaltnb.
 
 ## Order of work
 
-1. **Read git:** objects, packs with deltas, refs; checked against `git` in CI.
+1. **Read git** (in smaltkit): objects, packs with deltas, refs; checked against `git` in CI.
 2. **The page in a repository folder:** open and save notebooks there; which notebooks changed.
 3. **Per-cell diff** against `HEAD` and branches, then per-cell history and blame.
 4. **Conflicts by cell.**
-5. **Level 2,** only if decided: commits from the page.
 
-## Still to decide
+## The owner's decisions (2026-11-13)
 
-1. **Where the git layer lives.** As **smaltcr**, a product of its own (a family entry, a role, a repository, the name),
-   or as part of smaltnb (a module, `smaltnb/git`), or in smaltkit for smaltui and smaltbi to share.
-2. **Level 2:** build commits from the page, after Level 1 has been used, or leave committing to the user's tools for
-   good.
-3. **Signed commits** (with Level 2): a key generated in the browser that no code can read (`extractable: false`) signs
-   commits in git's SSH format, which GitHub verifies once the user registers the public key; a passkey prompt could
-   approve each commit. Wanted, or not?
-4. **Browsers without folder access:** files only (as above), or also a history kept in the browser (OPFS, git's
-   format) that can be exported as a patch or a git bundle for the user's git to take in.
+1. **The git layer lives in smaltkit**, so smaltui and smaltbi can use it too. It is not a product of its own (no
+   smaltcr for now).
+2. **No commits from the page.** Until further notice the user makes every commit, and all work with remote
+   repositories, in their own tools. Level 2 (section 4 of the decision) is not built.
+3. **No signed commits:** no keys in the browser, of any kind.
+4. **Firefox and Safari: downloads.** They open and download files; no history kept in the browser, no patch or bundle
+   export.
 
 ## Sources
 
