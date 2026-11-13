@@ -10,6 +10,8 @@ and TypeScript cells, with charts from the smalt [kits](/products/kits).
 
 **Status:** in early development, not yet published. [Open a notebook](https://stenhoor.github.io/smaltnb/app/): it runs
 in your browser, with SQL, smaltdf and text cells, parameters, controls and charts. `smaltnb run` runs a notebook in Node
-or as a GitHub Action, for scheduled data work. See [its status page](https://stenhoor.github.io/smaltnb/guide/status).
+or as a GitHub Action, for scheduled data work. In Chrome and Edge, notebooks open from a local clone of a git
+repository and save back to it, with changes, history and merge conflicts shown cell by cell; commits and syncing stay
+in your usual git tools, and smalt holds no credentials. See [its status page](https://stenhoor.github.io/smaltnb/guide/status).
 
 [Try the live demo →](https://stenhoor.github.io/smaltnb/app/) · [Read the docs →](https://stenhoor.github.io/smaltnb/) · [Repository →](https://github.com/stenhoor/smaltnb)
