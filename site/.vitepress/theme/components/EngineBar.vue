@@ -13,14 +13,18 @@ const apps = [
 </script>
 
 <template>
-  <figure class="sw-stack" aria-label="The smalt family architecture: sources feed one engine, smaltdb; smaltql (SQL), smaltdf (dataframes), smaltts (a typed API) and smaltcy (Cypher) are the languages; kits sit above them; smaltui, smaltbi, smaltnb and smaltfl are built on the kits. At the base, under the engine's plugins, is smaltty, the TypeScript everything is written in.">
+  <figure class="sw-stack" aria-label="The smalt family architecture: sources feed one engine, smaltdb; smaltql (SQL), smaltdf (dataframes), smaltts (a typed API) and smaltcy (Cypher) are the languages; kits, smaltkit and smaltml, sit above them; smaltui, smaltbi, smaltnb and smaltfl are built on the kits. At the base, under the engine's plugins, is smaltty, the TypeScript everything is written in.">
     <div class="sw-row sw-apps">
       <a v-for="a in apps" :key="a.p" :href="a.href" class="sw-box">
         <span class="sw-name"><Mark :product="a.p" :size="22" /><Word :product="a.p" /></span>
         <span class="sw-what">{{ a.what }}</span>
       </a>
     </div>
-    <a href="/products/kits" class="sw-kits"><span class="sw-name"><Mark product="kit" :size="22" /><Word product="kit" /></span> <b>Kits</b> <span>small, focused libraries: fewer choices for AI agents, one consistent interface</span></a>
+    <div class="sw-kits">
+      <a href="/products/kits" class="sw-name"><Mark product="kit" :size="22" /><Word product="kit" /></a>
+      <a href="/products/smaltml" class="sw-name"><Mark product="ml" :size="22" /><Word product="ml" /></a>
+      <a href="/products/kits" class="sw-kits-label"><b>Kits</b> <span>small, focused libraries: fewer choices for AI agents, one consistent interface</span></a>
+    </div>
     <div class="sw-row sw-langs">
       <a href="/products/smaltql" class="sw-box"><span class="sw-name"><Mark product="ql" :size="22" /><Word product="ql" /></span><span class="sw-what">SQL</span></a>
       <a href="/products/smaltdf" class="sw-box"><span class="sw-name"><Mark product="df" :size="22" /><Word product="df" /></span><span class="sw-what">dataframe language</span></a>
