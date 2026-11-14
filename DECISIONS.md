@@ -298,6 +298,32 @@ CY-Words and CY-Marks), all in the language layer's magenta.
 Picked 2026-11-14, except where marked. The Graph's right angle sits beside smaltdf's Axes in the same layer; the
 diagonal edge and the three nodes keep the two apart.
 
+## smaltml
+
+smaltml (`stenhoor/smaltml`, said "smalt-M-L") is machine learning for the smalt family: classic models on tables, in
+TypeScript, on the CPU everywhere and WebGPU where it helps (smaltml's
+[ADR 0024](docs/adr/0024-smaltml-scope-and-architecture.md)).
+
+Round 1 showed four taglines, three positioning lines, two ways of saying it and four marks (exploration boards
+ML-Words and ML-Marks), drawn before the colour by layer, with the chip in pale smalt.
+
+| | **Picked** |
+| --- | --- |
+| Tagline | **"Small. Alternative. Predict."** (T2) |
+| Positioning | **"Machine learning for smaltdb, on the hardware you have."** (P1) |
+| Saying it | **smalt-M-L** (S1), letter by letter, like smalt-D-B |
+| Mark | **Hardware** (M3): a processor with its pins, the chip at its core: the hardware you already have |
+| Layer | **Kits**, jade, as set by the colour by layer |
+
+Picked by the owner, 2026-11-14. The owner also kept smaltml in the Kits layer only. It spans several layers in use
+(notebooks and pipelines train models; queries may one day score rows), and how `predict()` reaches the languages, if
+it does, is open: as a TypeScript function only, registered with a language by the app, or imported by a language
+directly (ADR 0024, "Still to decide"). The Hardware mark is the family's only mark with a hole in its body; at 16 px
+it stays the same drawing.
+
+Its docs follow the documentation standard as a product, not as a plain kit: all four sections, with tasks as its
+user guide and one estimator or function per reference page (the owner asked for docs "similar to other smalt pages").
+
 ## smaltkit: a brand
 
 smaltkit (`stenhoor/smaltkit`) is the shared UI code the smalt apps are built from: the editor, the grid, the charts and
@@ -313,8 +339,8 @@ Round 1 showed five marks (exploration board KIT-Marks), all in the kit layer's 
 | Mark | **Case** (K2): a kit case with a handle, a lid and a base; the latch that holds them is the chip |
 | Layer | **Kits**, jade (owner, 2026-11-14), the colour the layer already had for smaltml |
 
-Picked 2026-11-14. smaltkit is the first product in the kit layer with a mark; smaltml, when it gets one, keeps apart
-from the Case. Jade's chip is a latch, never a check: jade sits next to the `success` green.
+Picked 2026-11-14, the same day as smaltml's Hardware ("smaltml" above): the kit layer's first two marks. A case with
+its latch and a processor with its pins keep the two apart. Jade's chip is a latch, never a check: jade sits next to the `success` green.
 
 ## Before 1.0: work in progress
 
@@ -487,7 +513,7 @@ kit, not a product" and BRAND.md's line that smaltty, like smaltkit, has no mark
   the `product-ty` tokens, smaltworks.dev (a product page, the home and products cards at "0.9.0 · In development",
   the engine bar, the architecture, kits, status and brand pages) and the site kit's family menu
   (`themes/vitepress/smaltworks.ts`), which every product site copies again.
-- **What stays:** smaltkit still wraps smaltty for the apps (`smaltkit/typescript`) and keeps no brand of its own.
+- **What stays:** smaltkit still wraps smaltty for the apps (`smaltkit/typescript`) and keeps no brand of its own (until 2026-11-14: "smaltkit: a brand").
   smaltty's rules (TypeScript only, follow TypeScript, erasable syntax only, no outside code) are unchanged.
 
 ## TypeScript and browsers
@@ -708,7 +734,7 @@ comparisons, but that is the extent to what we do. Those are listed under benchm
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
-- **smaltai and smaltml:** marks and words are open; their colours are set by layer. smaltfl's were settled on 2026-11-11 (above).
+- **smaltai:** marks and words are open; its colour is set by layer. smaltml's were settled on 2026-11-14 (above). smaltfl's were settled on 2026-11-11 (above).
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 
 - **Research pages on smaltdb.dev** include benchmark comparisons with other engines. Settled by "No shade" (2026-11-12): apples-for-apples timings may stay public, listed as benchmarks; anything else on them that compares goes.

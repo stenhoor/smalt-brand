@@ -3,7 +3,7 @@
 
 Usage: python3 scripts/social_cards.py <Geist[wght].ttf> <MartianMono[wdth,wght].ttf>
 
-Writes social/smalt{db,ui,bi,df,nb,fl,ql,ts,ty,cy,kit}.svg (the source) and .png (1280 x 640, for upload).
+Writes social/smalt{db,ui,bi,df,nb,fl,ql,ts,ty,cy,kit,ml}.svg (the source) and .png (1280 x 640, for upload).
 Each card is the product's dark lockup, its tagline (Geist 700), its positioning
 line (Geist 400) and its address (Martian Mono 400) on the dark Kiln ground, with
 a bar in the product colour along the bottom. Text is converted to paths and the
@@ -28,7 +28,7 @@ W, H = 1280, 640
 LEFT = 96                       # left margin; content stays inside the 1.91:1 centre crop
 INK, INK_2, INK_3 = "#E9EBF0", "#B9BEC9", "#9096A3"   # text, text-2, text-3 (dark)
 GROUND = "#14171F"               # bg (dark)
-BAR = {"db": "#9DB4F5", "ui": "#5CBDE8", "bi": "#5CBDE8", "nb": "#5CBDE8", "fl": "#5CBDE8", "df": "#F57FE6", "ql": "#F57FE6", "ts": "#F57FE6", "cy": "#F57FE6", "kit": "#10C2B9", "ty": "#FF8A5C", "works": "#FF8A5C"}  # smalt-200, layer-tool / layer-language / layer-kit (dark), kiln
+BAR = {"db": "#9DB4F5", "ui": "#5CBDE8", "bi": "#5CBDE8", "nb": "#5CBDE8", "fl": "#5CBDE8", "df": "#F57FE6", "ql": "#F57FE6", "ts": "#F57FE6", "cy": "#F57FE6", "kit": "#10C2B9", "ml": "#10C2B9", "ty": "#FF8A5C", "works": "#FF8A5C"}  # smalt-200, layer-tool / layer-language / layer-kit (dark), kiln
 
 PRODUCTS = {
     "db": ("Small. Alternative. Fast.",
@@ -61,6 +61,9 @@ PRODUCTS = {
     "kit": ("Small. Alternative. Reusable.",
             "Shared UI code for the smalt apps.",
             "smaltworks.dev/products/kits"),
+    "ml": ("Small. Alternative. Predict.",
+           "Machine learning for smaltdb, on the hardware you have.",
+           "github.com/stenhoor/smaltml"),
     "ty": ("Small. Alternative. Code.",
            "TypeScript for the smalt apps.",
            "github.com/stenhoor/smaltty"),

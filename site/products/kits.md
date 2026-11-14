@@ -21,6 +21,14 @@ with smaltty. smaltui, smaltbi and smaltnb use it. smaltkit is 0.12.0 and isn't 
 
 [Read the docs →](https://stenhoor.github.io/smaltkit/) · [Repository →](https://github.com/stenhoor/smaltkit)
 
+## smaltml
+
+**[smaltml](/products/smaltml)** is machine learning for the smalt family, and the one kit with a brand of its own: the
+Hardware mark, in the kit layer's jade. Notebooks and pipelines train models with it; apps call `predict()` from
+TypeScript.
+
+[Repository →](https://github.com/stenhoor/smaltml)
+
 ## smaltty, which smaltkit wraps
 
 **[smaltty](/products/smaltty)**, smalt's TypeScript implementation, is not a kit but a product of its own, at the base of the family: TypeScript for the
