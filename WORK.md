@@ -94,6 +94,7 @@ Decided 2026-11-10. Sizes are estimates, as above.
 | M6 smaltdb prints whole plans (the tree view) | smaltdb | S | | Not started |
 | M7 smaltdb's Plan language section and "One query, every language" | smaltdb | L | M1–M3, M5, M6 | Not started |
 | M8 The other sites to the standard: smaltdf, then smaltts, the apps, the plugins and the kits | each | L each | M4 | Not started |
+| M8a smaltcy's site to the standard: the playground's attributes and `render` in the kit, then the four sections, the grammar and diagrams, a page per clause and per function | smalt-brand (site kit), smaltcy | L | M1–M3 | Started: the kit's attributes and `render` (this repository's `claude/playground-attributes`); smaltcy in three PRs after it |
 
 ## Processing lists and structs (smaltdb ADR 0031)
 
