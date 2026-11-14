@@ -106,6 +106,11 @@ MARKS = {
     # drawn to the mark rules without an options round: for the owner's review.
     # smaltty's Grain, turned: smaltdb's Grain rotated half a turn, the notch and the chip at the bottom left, the chip
     # in kiln (owner, 2026-11-12).
+    # smaltcy's Graph: three nodes and the edges between them at 0, 45 and 90 degrees; the node a query returns is the
+    # chip (owner, 2026-11-14, from smaltcy's round 1: C2).
+    "cy": [("M11 14L11 50L17 50L17 14Z", "body"), ("M14 53L50 53L50 47L14 47Z", "body"),
+           ("M11.88 16.12L47.88 52.12L52.12 47.88L16.12 11.88Z", "body"),
+           (rr(6, 6, 16, 16, 3), "body"), (rr(6, 42, 16, 16, 3), "body"), (rr(42, 42, 16, 16, 3), "accent")],
     "ty": [("M50 46h-18v-10h-14v-24a6 6 0 0 1 6-6h26a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6z", "body"), (rr(10, 40, 16, 16, 3), "accent")],
     # smaltworks' Together: two L-shaped pieces that lock into one frame.
     "works": [("M8 8H44V18H18V44H8Z", "body"), ("M56 56H20V46H46V20H56Z", "accent")],
@@ -113,13 +118,13 @@ MARKS = {
 # smaltbi's 16 px mark: three larger grains, because the full scatter breaks into specks.
 MARK_16 = {"bi": [(rr(6, 40, 16, 16, 4), "chip"), (rr(22, 22, 20, 20, 5), "body"), (rr(44, 4, 16, 16, 4), "accent")]}
 # Horizontal extent of each mark's artwork on the 64 grid, used to space the lockup.
-ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "fl": (5.7, 56), "ql": (6.37, 57.63), "ts": (4, 60), "ty": (10, 56), "works": (8, 56)}
-MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl": "twin", "ql": "star", "ts": "generic", "ty": "grain", "works": "together"}
+ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "fl": (5.7, 56), "ql": (6.37, 57.63), "ts": (4, 60), "cy": (6, 58), "ty": (10, 56), "works": (8, 56)}
+MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl": "twin", "ql": "star", "ts": "generic", "cy": "graph", "ty": "grain", "works": "together"}
 
 # Colour by layer: each layer of the stack has one colour, and a product takes its layer's colour.
 # (fill, text, dark) per layer. The engine layer (smaltdb) uses smalt itself: the pale chip and an ink suffix.
 LAYER_COLOURS = {
-    "language": ("#B0249F", "#981C89", "#F57FE6"),   # magenta: smaltql, smaltdf, smaltts
+    "language": ("#B0249F", "#981C89", "#F57FE6"),   # magenta: smaltql, smaltdf, smaltts, smaltcy
     "kit": ("#0A7C76", "#086A65", "#10C2B9"),        # jade: smaltml
     # smaltty is in no layer: TypeScript is the language of everything smalt, so it takes the family's kiln
     # (owner, 2026-11-12): kiln-500 as the fill, the accent token as text.
@@ -127,7 +132,7 @@ LAYER_COLOURS = {
     "tool": ("#0E7FAE", "#0B6A91", "#5CBDE8"),       # cerulean: smaltui, smaltbi, smaltnb, smaltfl
     "ai": ("#6E4BC2", "#6141AE", "#B8A1F2"),         # violet: smaltai, alongside the layers
 }
-LAYER = {"ql": "language", "df": "language", "ts": "language", "ty": "family", "ui": "tool", "bi": "tool", "nb": "tool", "fl": "tool"}
+LAYER = {"ql": "language", "df": "language", "ts": "language", "cy": "language", "ty": "family", "ui": "tool", "bi": "tool", "nb": "tool", "fl": "tool"}
 # smaltworks is not a layer: it keeps kiln orange.
 WORKS = ("#E5622F", "#151922", "#FF8A5C")
 
@@ -242,7 +247,7 @@ def build_wordmarks(font_path, product):
 
 if __name__ == "__main__":
     font = sys.argv[1]
-    for p in ("ui", "bi", "df", "nb", "fl", "ql", "ts", "ty", "works"):
+    for p in ("ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "ty", "works"):
         build_marks(p)
-    for p in ("db", "ui", "bi", "df", "nb", "fl", "ql", "ts", "ty", "works"):
+    for p in ("db", "ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "ty", "works"):
         build_wordmarks(font, p)

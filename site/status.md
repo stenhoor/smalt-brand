@@ -8,6 +8,7 @@ As of November 2026. Each project's repository has its own roadmap.
 | [smaltdb plugins](/products/plugins) | 0.9.0 | **Preview.** To be published with smaltdb 0.9.0. Plugin API version 1 is stable. [Docs](https://smaltdb.dev/reference/api/plugins) |
 | [smaltql](/products/smaltql) | 0.9.0 | **In development.** SQL has moved out of smaltdb into smaltql; to be published with smaltdb 0.9.0. [Docs](https://stenhoor.github.io/smaltql/) |
 | [smaltts](/products/smaltts) | — | **Planned.** |
+| [smaltcy](/products/smaltcy) | 0.1.0 | **In development.** Cypher on graph plans, two stores, history and a WebGPU graph view; graphs live in memory for now. [Playground](https://stenhoor.github.io/smaltcy/playground) · [Docs](https://stenhoor.github.io/smaltcy/) |
 | [smaltdf](/products/smaltdf) | 0.1.0 | **In development,** coming soon. [Docs](https://stenhoor.github.io/smaltdf/) |
 | [smaltui](/products/smaltui) | 0.1.0 | **In development.** SQL and smaltdf dataframes, in editor tabs. [Demo](https://stenhoor.github.io/smaltui/workbench/?env=envs/demo/env.json) · [Docs](https://stenhoor.github.io/smaltui/) |
 | [smaltbi](/products/smaltbi) | 0.2.0 | **In development.** The designer, viewer and publishing work end to end, with time intelligence, conditional formatting and phone layouts. [Demo](https://stenhoor.github.io/smaltbi/designer.html?report=examples/sales/report.json) · [Docs](https://stenhoor.github.io/smaltbi/) |

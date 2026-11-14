@@ -148,7 +148,7 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## Social preview cards
 
-`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltfl.png`, `smaltql.png`, `smaltts.png` and `smaltty.png`, each 1280 × 640, with SVG sources beside them.
+`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltfl.png`, `smaltql.png`, `smaltts.png`, `smaltcy.png` and `smaltty.png`, each 1280 × 640, with SVG sources beside them.
 
 - **GitHub:** in the repository, open Settings, then under "Social preview" click Edit and upload the PNG (PNG, JPG or GIF under 1 MB; 1280 × 640 displays best).
 - **Websites:** reference the PNG from `og:image` and `twitter:image`, with `twitter:card` set to `summary_large_image`.
@@ -203,6 +203,7 @@ decisions and what was considered are in [DECISIONS.md](DECISIONS.md#documentati
    | smaltdb | yes | yes | Engine concepts | API, the plan language, errors |
    | smaltql, smaltdf | yes | yes | Tasks in the language | The language (statements or methods, functions), its API |
    | smaltts | yes | yes | Specs, changes, flows | API |
+   | smaltcy | yes | yes | Tasks in the language | The language (clauses, functions), its API |
    | smaltui, smaltbi, smaltnb, smaltfl | yes | yes | Working in the app | Formats (report, notebook, flow), shortcuts |
    | Plugins | yes | no | Per plugin | Functions, options, API |
    | Kits (smaltkit, smaltty) | yes | no | no | API, module by module |
@@ -260,21 +261,21 @@ Each layer of the stack has one colour, and every product in it takes that colou
 | Layer | Products | Colour | Text | Dark |
 | --- | --- | --- | --- | --- |
 | Engine | smaltdb and its plugins | smalt: the pale chip (`smalt-300`), suffix in ink | ink | `smalt-100` chip |
-| Languages | smaltql, smaltdf, smaltts | `layer-language`: cobalt magenta `#B0249F` | `#981C89` | `#F57FE6` |
+| Languages | smaltql, smaltdf, smaltts, smaltcy | `layer-language`: cobalt magenta `#B0249F` | `#981C89` | `#F57FE6` |
 | Kits | smaltml (smaltkit and the other kits have no brand of their own) | `layer-kit`: jade `#0A7C76` | `#086A65` | `#10C2B9` |
 | User tools | smaltui, smaltbi, smaltnb, smaltfl | `layer-tool`: deep cerulean `#0E7FAE` | `#0B6A91` | `#5CBDE8` |
 | Alongside | smaltai, which runs alongside the languages, kits and user tools | `layer-ai`: blue-leaning violet `#6E4BC2` | `#6141AE` | `#B8A1F2` |
 
 smaltworks keeps kiln orange: it is the family, not a layer. smaltty takes kiln too, and sits in no layer: TypeScript is the language of everything smalt (DECISIONS.md, "smaltty: a product"). The `product-*` tokens remain as aliases of their layer's token, so existing uses keep working.
 
-| | smaltdb | smaltql | smaltdf | smaltts | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Layer | Engine | Languages | Languages | Languages | None: kiln, the family's | User tools | User tools | User tools | User tools |
-| What it is | The engine | The SQL | The dataframes | The typed API | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines |
-| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
-| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
-| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
+| | smaltdb | smaltql | smaltdf | smaltts | smaltcy | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Layer | Engine | Languages | Languages | Languages | Languages | None: kiln, the family's | User tools | User tools | User tools | User tools |
+| What it is | The engine | The SQL | The dataframes | The typed API | The Cypher | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines |
+| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Connected. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A graph database for the browser that speaks Cypher. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
+| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Graph | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
+| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltcy/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
 
 smaltml and smaltai are in progress: their layers and colours are set, their marks and words are not.
 
@@ -300,6 +301,10 @@ smaltfl, said smalt-flow, is a user tool: data pipelines for smaltdb, built visu
 ### smaltts
 
 smaltts is a thin, typed TypeScript API over smaltdb's plan and schema operations, with structured flows, for applications and layers that want neither SQL nor dataframes. It sits at the language layer, beside smaltql and smaltdf. Its name says what it is: plain, typed TypeScript. Say it smalt-T-S.
+
+### smaltcy
+
+smaltcy, said smalt-sigh, is Cypher for the smalt family: a graph database for the browser that speaks Cypher. It sits at the language layer, beside smaltql, smaltdf and smaltts: Cypher compiles to graph plans that an engine runs on stores. Today the engine and stores are its own, in memory; durable storage comes from smaltdb (smaltcy's ADR 0001). Its Graph mark is three nodes at 0°, 45° and 90°; keep it apart from smaltdf's Axes, the other right angle in the layer.
 
 ### smaltty
 

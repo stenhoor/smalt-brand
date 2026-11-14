@@ -3,7 +3,7 @@
 
 Usage: python3 scripts/badges.py <Geist[wght].ttf> <MartianMono[wdth,wght].ttf>
 
-Writes badges/powered-by-smalt{db,ui,bi,df,nb,fl,ql,ts,ty}.svg and -on-dark.svg: 172 x 28 px,
+Writes badges/powered-by-smalt{db,ui,bi,df,nb,fl,ql,ts,ty,cy}.svg and -on-dark.svg: 172 x 28 px,
 padding 0 10, gap 6, radius 7, 1 px border, 16 px mark, "Powered by" in Geist 400
 11 px, wordmark in Martian Mono 600 12.5 px tracking -0.06em. All text is
 converted to paths, so the files need no fonts. Requires fonttools.
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     mono = Face(sys.argv[2], {"wght": 600, "wdth": 112.5}, 12.5, -0.06)
     out = ROOT / "badges"
     out.mkdir(exist_ok=True)
-    for product in ("db", "ui", "bi", "df", "nb", "fl", "ql", "ts", "ty"):
+    for product in ("db", "ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "ty"):
         for theme, suffix in (("light", ""), ("dark", "-on-dark")):
             path = out / f"powered-by-smalt{product}{suffix}.svg"
             path.write_text(badge(geist, mono, product, theme))
