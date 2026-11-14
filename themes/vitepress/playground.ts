@@ -8,6 +8,9 @@
 //   runs in place: at rest it is the example, a Run button and its tested result (the table printed under it, or the
 //   error its `docs:error` marker names); Run or Edit turns it into a playground where it stands.
 // - enablePlaygrounds(): wires the playgrounds in the browser, for .vitepress/theme/index.ts, with the site's runners.
+// A fence's `key=value` flags (```cypher dataset=metro), over the page's front matter `play:` map, are the example's
+// attributes: they reach the runner with the code and with each setup step, for a language whose examples need more
+// than their code, such as the sample data they read. A runner's result can draw more under its table (`render`).
 // sqlRunner() makes a runner from a smaltdb `open()` that reads SQL, such as smaltql's.
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -41,6 +44,19 @@ const esc = (s: string): string =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
 
 const MARKER = /^<!--\s*(docs:[\s\S]*?)\s*-->\s*$/
+const ATTRIBUTE = /^([A-Za-z][\w-]*)=(\S*)$/
+
+/** An example's attributes: the page's front matter `play:` map, then its fence's `key=value` flags. */
+function attributesOf(flags: string[], frontmatter: unknown): Attributes {
+  const out: Attributes = {}
+  const page = (frontmatter as { play?: unknown } | undefined)?.play
+  if (page && typeof page === 'object') for (const [k, v] of Object.entries(page)) if (v !== null && v !== undefined) out[k] = String(v)
+  for (const f of flags) {
+    const m = ATTRIBUTE.exec(f)
+    if (m) out[m[1]] = m[2]
+  }
+  return out
+}
 
 /**
  * Makes examples run in place. A playground's setup is what the page's examples test runs before it: every example of
@@ -85,7 +101,9 @@ export function playgroundPlugin(md: MarkdownIt, options: PlaygroundPluginOption
         out.push(t)
         continue
       }
-      const [lang, ...flags] = t.info.trim().split(/\s+/)
+      const [lang, ...allFlags] = t.info.trim().split(/\s+/)
+      // Attributes leave the info string, which stays for highlighting.
+      const flags = allFlags.filter((f) => !ATTRIBUTE.test(f))
       const kinds = markers.map((m) => m.split(/\s+/)[0])
       const fails = markers.find((m) => m.startsWith('docs:error'))?.split(/\s+/)[1]
       // What this site's examples test runs (an example marked docs:plugin runs in the plugin's repository).
@@ -96,10 +114,16 @@ export function playgroundPlugin(md: MarkdownIt, options: PlaygroundPluginOption
         out.push(t)
         continue
       }
+      const attrs = attributesOf(allFlags, state.env?.frontmatter)
+      const has = Object.keys(attrs).length > 0
       const before = list(setup, lang).slice()
       // The examples test runs an example marked docs:error too, and expects its last statement to fail: a failing
       // statement can still change the database (INSERT OR ROLLBACK ends the open transaction).
-      if (tested) list(setup, lang).push(fails !== undefined || kinds.includes('docs:error') ? { sql: t.content.trim(), fails: true } : t.content.trim())
+      const failing = fails !== undefined || kinds.includes('docs:error')
+      if (tested) {
+        const sql = t.content.trim()
+        list(setup, lang).push(failing ? (has ? { sql, fails: true, attrs } : { sql, fails: true }) : has ? { sql, attrs } : sql)
+      }
       if (!runnable || flags.includes('noplay') || !(every || flags.includes('play'))) {
         t.info = [lang, ...flags.filter((f) => f !== 'play' && f !== 'noplay')].join(' ')
         out.push(t)
@@ -110,7 +134,9 @@ export function playgroundPlugin(md: MarkdownIt, options: PlaygroundPluginOption
       const n = index++
       out.push(
         html(
-          `<div class="sw-play" id="play-${n}" data-index="${n}" data-lang="${esc(lang)}" data-code="${esc(t.content)}" data-setup="${esc(JSON.stringify(before))}" v-pre>\n` +
+          `<div class="sw-play" id="play-${n}" data-index="${n}" data-lang="${esc(lang)}" data-code="${esc(t.content)}" data-setup="${esc(JSON.stringify(before))}"` +
+            (has ? ` data-attrs="${esc(JSON.stringify(attrs))}"` : '') +
+            ` v-pre>\n` +
             `<div class="sw-play-code">\n`,
         ),
       )
@@ -142,7 +168,7 @@ export function playgroundPlugin(md: MarkdownIt, options: PlaygroundPluginOption
   })
 }
 
-function list(map: Map<string, string[]>, key: string): string[] {
+function list<T>(map: Map<string, T[]>, key: string): T[] {
   let l = map.get(key)
   if (!l) map.set(key, (l = []))
   return l
@@ -157,14 +183,28 @@ export interface PlayResult {
   rows: unknown[][]
   /** Shown instead of a table when there are no columns, such as "3 rows changed". */
   note?: string
+  /**
+   * Draws more under the table or note, such as a graph of the rows, into `host` (the result's box). Called once the
+   * table is in place; the next Run, Reset or page clears `host`, and `signal` aborts then, for anything to free.
+   */
+  render?: (host: HTMLElement, signal: AbortSignal) => void | Promise<void>
 }
 
-/** One example of a playground's setup: its code, and whether its last statement is expected to fail. */
-export type SetupStep = string | { sql: string; fails: true }
+/** An example's attributes: its fence's `key=value` flags over its page's front matter `play:` map. */
+export type Attributes = Record<string, string>
 
-/** Runs a playground's code after its setup. Throws an Error, with `code` when the language has one, to show it. */
+/**
+ * One example of a playground's setup: its code, whether its last statement is expected to fail, and its attributes
+ * when it has any. A plain string is an example with neither.
+ */
+export type SetupStep = string | { sql: string; fails?: true; attrs?: Attributes }
+
+/**
+ * Runs a playground's code after its setup, with the example's attributes (`{}` when it has none). Throws an Error,
+ * with `code` when the language has one, to show it.
+ */
 export interface Runner {
-  run(code: string, setup: SetupStep[]): Promise<PlayResult>
+  run(code: string, setup: SetupStep[], attrs: Attributes): Promise<PlayResult>
 }
 
 /** The part of a smaltdb `Database` a SQL runner uses. */
@@ -232,7 +272,7 @@ export function sqlRunner(open: () => Promise<SqlDatabase>): () => Promise<Runne
         for (const step of setup) {
           const statements = splitSql(typeof step === 'string' ? step : step.sql)
           for (const [i, s] of statements.entries()) {
-            if (typeof step !== 'string' && i === statements.length - 1) await db.exec(s).catch(() => undefined)
+            if (typeof step !== 'string' && step.fails && i === statements.length - 1) await db.exec(s).catch(() => undefined)
             else await db.exec(s)
           }
         }
@@ -268,7 +308,7 @@ export interface PlaygroundOptions {
   /** A runner for each language, started on the first Run of that language and kept for the visit. */
   runners: Record<string, () => Promise<Runner>>
   /** A link that opens the code in the app (Sites and READMEs, rule 12), or undefined for none. */
-  app?: (lang: string, code: string) => string | undefined
+  app?: (lang: string, code: string, attrs: Attributes) => string | undefined
   /** How many rows a result shows before it scrolls (default 10). */
   visibleRows?: number
 }
@@ -345,10 +385,17 @@ export function enablePlaygrounds(options: PlaygroundOptions, doc: Document = do
   const original = (play: HTMLElement) => (play.getAttribute('data-code') ?? '').replace(/\n+$/, '')
   const current = (play: HTMLElement) => editors.get(play)?.value ?? original(play)
   const say = (play: HTMLElement, text: string) => (parts(play).status.textContent = text)
+  const attrsOf = (play: HTMLElement): Attributes => JSON.parse(play.getAttribute('data-attrs') ?? '{}') as Attributes
+  // What a result's render drew is freed when the result goes.
+  const drawn = new WeakMap<HTMLElement, AbortController>()
+  const clear = (play: HTMLElement) => {
+    drawn.get(play)?.abort()
+    drawn.delete(play)
+  }
 
   const setupApp = (play: HTMLElement) => {
     const a = play.querySelector<HTMLAnchorElement>('[data-play="app"]')!
-    const url = options.app?.(play.getAttribute('data-lang') ?? '', current(play))
+    const url = options.app?.(play.getAttribute('data-lang') ?? '', current(play), attrsOf(play))
     a.hidden = !url
     if (url) a.href = url
   }
@@ -397,8 +444,9 @@ export function enablePlaygrounds(options: PlaygroundOptions, doc: Document = do
       started.add(lang)
       say(play, 'Running…')
       const setup = JSON.parse(play.getAttribute('data-setup') ?? '[]') as SetupStep[]
-      const r = await runner.run(editor.value, setup)
+      const r = await runner.run(editor.value, setup, attrsOf(play))
       const ms = Math.round(performance.now() - t0)
+      clear(play)
       result.removeAttribute('data-tested')
       if (r.columns.length) {
         const k = await loadKit()
@@ -416,6 +464,11 @@ export function enablePlaygrounds(options: PlaygroundOptions, doc: Document = do
         result.replaceChildren(note)
         say(play, `${ms} ms`)
       }
+      if (r.render) {
+        const abort = new AbortController()
+        drawn.set(play, abort)
+        await r.render(result, abort.signal)
+      }
     } catch (e) {
       const err = e as Error & { code?: string }
       const box = doc.createElement('div')
@@ -427,6 +480,7 @@ export function enablePlaygrounds(options: PlaygroundOptions, doc: Document = do
         box.append(code, ' ')
       }
       box.append(err.message ?? String(e))
+      clear(play)
       result.removeAttribute('data-tested')
       result.replaceChildren(box)
       say(play, 'Error')
@@ -438,6 +492,7 @@ export function enablePlaygrounds(options: PlaygroundOptions, doc: Document = do
   const reset = async (play: HTMLElement) => {
     const editor = editors.get(play)
     if (editor) editor.value = original(play)
+    clear(play)
     const { result } = parts(play)
     const saved = tested.get(play)
     if (saved) {
@@ -500,8 +555,12 @@ export function enablePlaygrounds(options: PlaygroundOptions, doc: Document = do
       play.scrollIntoView({ block: 'center' })
     })
   }
+  const live = new Set<HTMLElement>()
   const ready = () => {
+    // A page VitePress swapped out frees what its results drew.
+    for (const p of live) if (!doc.contains(p)) (clear(p), live.delete(p))
     doc.querySelectorAll<HTMLElement>('.sw-play').forEach((p) => {
+      live.add(p)
       p.classList.add('sw-play-ready')
       setupApp(p)
     })
@@ -509,7 +568,7 @@ export function enablePlaygrounds(options: PlaygroundOptions, doc: Document = do
   }
   // VitePress swaps the page's content on navigation: look again when it does.
   new MutationObserver(() => {
-    if (doc.querySelector('.sw-play:not(.sw-play-ready)')) ready()
+    if (doc.querySelector('.sw-play:not(.sw-play-ready)') || [...live].some((p) => !doc.contains(p))) ready()
   }).observe(doc.body, { childList: true, subtree: true })
   ready()
 }

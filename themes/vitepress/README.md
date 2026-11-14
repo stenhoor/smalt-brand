@@ -160,8 +160,28 @@ export default {
 } satisfies Theme
 ```
 
-A runner for another language implements `run(code, setup)` and returns `{ columns, rows }`, or `{ columns: [], rows:
-[], note }`; an Error it throws is shown with its `code`.
+A runner for another language implements `run(code, setup, attrs)` and returns `{ columns, rows }`, or `{ columns: [],
+rows: [], note }`; an Error it throws is shown with its `code`.
+
+Some languages' examples need more than their code: smaltcy's Cypher examples each read a sample graph. A fence's
+`key=value` flags are the example's **attributes**, over the page's front matter `play:` map, and leave the info
+string (the fence keeps its highlighting). They reach `run` as `attrs`, and each setup step that has any carries them
+(`{ sql, attrs }`), so a runner can, say, keep only the steps that read the same data:
+
+````md
+---
+play:
+  dataset: social
+---
+
+```cypher dataset=metro
+MATCH (s:Station {name: 'Central'}) RETURN s.name
+```
+````
+
+A result can draw more under its table: `render(host, signal)` is called once the table or note is in place, with the
+result's box, and `signal` aborts when the next Run, Reset or page clears it, for anything it holds (a GPU context).
+It shows its own errors. `app(lang, code, attrs)` gets the attributes too.
 
 ## Docs for agents
 

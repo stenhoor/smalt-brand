@@ -647,6 +647,16 @@ The owner decided, 2026-11-11:
   removed: the standard does not change a product's home page, and smaltql's goes back to what it was
   (stenhoor/smaltql#64).
 
+Bringing smaltcy's site to the standard, the owner chose, 2026-11-14, to extend the kit's playground rather than keep
+smaltcy's own runner or drop its graphs. smaltcy's examples each read a sample graph and draw their result as a graph:
+
+- **Attributes:** a fence's `key=value` flags (```` ```cypher dataset=metro ````), over the page's front matter
+  `play:` map, reach the runner with the code and with each setup step.
+- **A result can draw more** under its table (`render`), freed when the result goes.
+
+Keeping smaltcy's own component (an exception to rule 7), and the kit as it was (datasets through `docs:setup`
+markers, and grids only), were considered.
+
 ## Work items: one register
 
 Decided by the owner on 2026-11-09, when smaltdb ADR 0022 (SQL for the new engine features) needed tracking and review

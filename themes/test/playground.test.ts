@@ -142,3 +142,53 @@ test('the SQL runner gives every Run a fresh database: setup, then the code, the
     'open 4', '3 query INSERT INTO t VALUES (2)', 'close 3',
   ])
 })
+
+test('key=value flags and front matter play: are an example\'s attributes, for it and for its setup steps', () => {
+  let rule: ((state: any) => void) | undefined
+  playgroundPlugin({ core: { ruler: { push: (_: string, r: any) => (rule = r) } } }, { languages: ['cypher'] })
+  const state = {
+    tokens: [
+      fence('cypher', 'CREATE (:A)\n'),
+      html('<!-- docs:error E -->\n'),
+      fence('cypher dataset=metro', 'MATCH (n) RETURN n\n'),
+      fence('cypher dataset=social {2}', 'RETURN 1\n'),
+    ],
+    env: { frontmatter: { play: { dataset: 'family', size: 300 } } },
+    Token,
+  }
+  rule!(state)
+  assert.deepEqual(attr(state.tokens, 'data-attrs').map((s) => JSON.parse(s)), [
+    { dataset: 'family', size: '300' },
+    { dataset: 'metro', size: '300' },
+    { dataset: 'social', size: '300' },
+  ])
+  assert.deepEqual(JSON.parse(attr(state.tokens, 'data-setup')[2]), [
+    { sql: 'CREATE (:A)', attrs: { dataset: 'family', size: '300' } },
+    { sql: 'MATCH (n) RETURN n', fails: true, attrs: { dataset: 'metro', size: '300' } },
+  ])
+  // Attributes leave the info string; other flags stay for highlighting.
+  assert.deepEqual(state.tokens.filter((t) => t.type === 'fence').map((t) => t.info), ['cypher', 'cypher', 'cypher {2}'])
+})
+
+test('an example with no attributes has no data-attrs, and its setup steps stay plain', () => {
+  const out = run([fence('sql', 'SELECT 1;\n'), fence('sql play', 'SELECT 2;\n')], {})
+  assert.ok(!out.some((t) => t.type === 'html_block' && t.content.includes('data-attrs')))
+  assert.deepEqual(JSON.parse(attr(out, 'data-setup')[1]), ['SELECT 1;'])
+})
+
+test('the SQL runner runs a setup step with attributes but no fails as an ordinary step', async () => {
+  const log: string[] = []
+  const runner = await sqlRunner(async () => ({
+    async query(sql) {
+      log.push(`query ${sql}`)
+      return Object.assign([[1]], { columns: ['x'] })
+    },
+    async exec(sql) {
+      log.push(`exec ${sql}`)
+      if (sql === 'BAD') throw new Error('bad')
+      return {}
+    },
+  }))()
+  await assert.rejects(runner.run('SELECT 1', [{ sql: 'BAD', attrs: { a: 'b' } }], {}), /bad/)
+  assert.deepEqual(log, ['exec BAD'])
+})
