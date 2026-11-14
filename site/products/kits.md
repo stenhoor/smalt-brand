@@ -12,7 +12,7 @@ applications, each doing one thing, from loading the engine and reading files to
 
 ## <Mark product="kit" :size="32" /> smaltkit
 
-**Small. Alternative. Reusable.** Reusable components for the smaltworks applications.
+**Small. Alternative. Reusable.** Components for the smaltworks applications, built to be reused.
 
 Today the kits live in **smaltkit**: the engine loader, URL rewriting, number and date formatting, SVG chart helpers and
 charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps,
