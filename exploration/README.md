@@ -124,6 +124,12 @@ The later positioning lines (P4–P11 and the final "Dataframes for smaltdb. Sma
 
 The smaltcy boards' sources are plain HTML pages (`CY-Words.html`, `CY-Marks.html`), not canvas boards, rendered the same way.
 
+## smaltkit
+
+| Board | Contents |
+| --- | --- |
+| [KIT-Marks](family/png/KIT-Marks.png) | Marks K1–K5 (Modules, Case, Reuse, Joint, Slot), in the kit layer's jade. Picked: K2 Case, with "Small. Alternative. Reusable." (2026-11-14). Its source, `KIT-Marks.html`, is a plain HTML page, rendered the same way. |
+
 ## Colour by layer, smaltai and smaltml
 
 | Board | Contents |

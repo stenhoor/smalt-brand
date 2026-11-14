@@ -298,6 +298,24 @@ CY-Words and CY-Marks), all in the language layer's magenta.
 Picked 2026-11-14, except where marked. The Graph's right angle sits beside smaltdf's Axes in the same layer; the
 diagonal edge and the three nodes keep the two apart.
 
+## smaltkit: a brand
+
+smaltkit (`stenhoor/smaltkit`) is the shared UI code the smalt apps are built from: the editor, the grid, the charts and
+tables, the graph view, the controls and the engine loader. "Plugins and smaltkit" below gave it no brand, as shared
+code inside the apps rather than a product people choose; on 2026-11-14 the owner gave it one, with the words.
+
+Round 1 showed five marks (exploration board KIT-Marks), all in the kit layer's jade.
+
+| | **Picked** |
+| --- | --- |
+| Tagline | **"Small. Alternative. Reusable."** (the owner's word, 2026-11-14; first given as "Small. Alternate. Reusable.", then set to "Alternative" like every other tagline) |
+| Positioning | **"Shared UI code for the smalt apps."**, the README line it already had |
+| Mark | **Case** (K2): a kit case with a handle, a lid and a base; the latch that holds them is the chip |
+| Layer | **Kits**, jade (owner, 2026-11-14), the colour the layer already had for smaltml |
+
+Picked 2026-11-14. smaltkit is the first product in the kit layer with a mark; smaltml, when it gets one, keeps apart
+from the Case. Jade's chip is a latch, never a check: jade sits next to the `success` green.
+
 ## Before 1.0: work in progress
 
 For the first public release (a new engine, smaltdf, smaltql as its own language, and smaltui and smaltbi on the new engine), the owner set the aim of the hype: reach people who are excited by new things and willing to work through rough patches, without over-promising, and without anyone building a business on it and being caught out by next week's breaking change.
@@ -362,7 +380,7 @@ Applied after the picks:
 
 Reasoned through in conversation, then mocked up on one board.
 
-- **smaltkit gets no brand:** it is shared code inside the apps, not a product people choose. It gets only a README header in the wordmark style.
+- **smaltkit gets no brand:** it is shared code inside the apps, not a product people choose. It gets only a README header in the wordmark style. (Changed 2026-11-14: smaltkit has a brand, "smaltkit: a brand" above.)
 - **Product brands for plugins:** only when people use the plugin directly (smaltdf); infrastructure plugins use smaltdb's brand.
 - **Three tiers:**
   - **Official:** from smaltworks, in the `@smaltdb` scope.

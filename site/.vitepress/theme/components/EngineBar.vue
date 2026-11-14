@@ -20,7 +20,7 @@ const apps = [
         <span class="sw-what">{{ a.what }}</span>
       </a>
     </div>
-    <a href="/products/kits" class="sw-kits"><b>Kits</b> <span>small, focused libraries: fewer choices for AI agents, one consistent interface</span></a>
+    <a href="/products/kits" class="sw-kits"><span class="sw-name"><Mark product="kit" :size="22" /><Word product="kit" /></span> <b>Kits</b> <span>small, focused libraries: fewer choices for AI agents, one consistent interface</span></a>
     <div class="sw-row sw-langs">
       <a href="/products/smaltql" class="sw-box"><span class="sw-name"><Mark product="ql" :size="22" /><Word product="ql" /></span><span class="sw-what">SQL</span></a>
       <a href="/products/smaltdf" class="sw-box"><span class="sw-name"><Mark product="df" :size="22" /><Word product="df" /></span><span class="sw-what">dataframe language</span></a>
