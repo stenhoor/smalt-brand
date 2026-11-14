@@ -12,10 +12,10 @@ thing.
 
 Today the kits live in **smaltkit**: the engine loader, URL rewriting, number and date formatting, SVG chart helpers and
 charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps,
-value-picking controls, a reader for a local git repository's files, and TypeScript (smaltty, below), used by smaltui, smaltbi and smaltnb. smaltkit is 0.10.0 and isn't on npm
+value-picking controls, a reader for a local git repository's files, and TypeScript (smaltty, below), used by smaltui, smaltbi and smaltnb. smaltkit is 0.12.0 and isn't on npm
 yet.
 
-[Repository →](https://github.com/stenhoor/smaltkit)
+[Read the docs →](https://stenhoor.github.io/smaltkit/) · [Repository →](https://github.com/stenhoor/smaltkit)
 
 **[smaltty](/products/smaltty)**, smalt's TypeScript implementation, is not a kit but a product of its own, at the base of the family: TypeScript for the
 apps' tabs and notebook cells, in our own code. smaltkit wraps it as `smaltkit/typescript`, which is how the apps use
