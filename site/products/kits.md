@@ -10,7 +10,9 @@ thing.
 - **One look.** Kits draw their colours and type from the smalt brand tokens, so smaltui, smaltbi and smaltnb look
   like one family.
 
-## smaltkit
+## <Mark product="kit" :size="32" /> smaltkit
+
+**Small. Alternative. Reusable.** Shared UI code for the smalt apps.
 
 Today the kits live in **smaltkit**: the engine loader, URL rewriting, number and date formatting, SVG chart helpers and
 charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps,

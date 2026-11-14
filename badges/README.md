@@ -1,6 +1,6 @@
 # "Powered by" badges
 
-For sites and projects that use smaltdb, smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltml or smaltty. Each badge is 172 × 28 px, with a light and a dark version, and its text converted to paths so it needs no fonts.
+For sites and projects that use smaltdb, smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltkit, smaltml or smaltty. Each badge is 172 × 28 px, with a light and a dark version, and its text converted to paths so it needs no fonts.
 
 | Light | Dark |
 | --- | --- |
@@ -13,6 +13,7 @@ For sites and projects that use smaltdb, smaltui, smaltbi, smaltdf, smaltnb, sma
 | ![Powered by smaltql](powered-by-smaltql.svg) | ![Powered by smaltql](powered-by-smaltql-on-dark.svg) |
 | ![Powered by smaltts](powered-by-smaltts.svg) | ![Powered by smaltts](powered-by-smaltts-on-dark.svg) |
 | ![Powered by smaltcy](powered-by-smaltcy.svg) | ![Powered by smaltcy](powered-by-smaltcy-on-dark.svg) |
+| ![Powered by smaltkit](powered-by-smaltkit.svg) | ![Powered by smaltkit](powered-by-smaltkit-on-dark.svg) |
 | ![Powered by smaltml](powered-by-smaltml.svg) | ![Powered by smaltml](powered-by-smaltml-on-dark.svg) |
 | ![Powered by smaltty](powered-by-smaltty.svg) | ![Powered by smaltty](powered-by-smaltty-on-dark.svg) |
 
@@ -29,6 +30,7 @@ Use the badge for the project you build on, and link it to that project:
 | Powered by smaltql | `https://stenhoor.github.io/smaltql/` |
 | Powered by smaltts | `https://smaltworks.dev/products/smaltts` |
 | Powered by smaltcy | `https://stenhoor.github.io/smaltcy/` |
+| Powered by smaltkit | `https://stenhoor.github.io/smaltkit/` |
 | Powered by smaltml | `https://stenhoor.github.io/smaltml/` |
 | Powered by smaltty | `https://stenhoor.github.io/smaltty/` |
 
@@ -43,7 +45,7 @@ Use the badge for the project you build on, and link it to that project:
 </a>
 ```
 
-For smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltml or smaltty, replace `smaltdb` in the three file names and the alt text, and use that project's link.
+For smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltkit, smaltml or smaltty, replace `smaltdb` in the three file names and the alt text, and use that project's link.
 
 ## Plain Markdown (light badge only)
 

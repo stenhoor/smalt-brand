@@ -148,7 +148,7 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## Social preview cards
 
-`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltfl.png`, `smaltql.png`, `smaltts.png`, `smaltcy.png` and `smaltty.png`, each 1280 × 640, with SVG sources beside them.
+`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltfl.png`, `smaltql.png`, `smaltts.png`, `smaltcy.png`, `smaltkit.png` and `smaltty.png`, each 1280 × 640, with SVG sources beside them.
 
 - **GitHub:** in the repository, open Settings, then under "Social preview" click Edit and upload the PNG (PNG, JPG or GIF under 1 MB; 1280 × 640 displays best).
 - **Websites:** reference the PNG from `og:image` and `twitter:image`, with `twitter:card` set to `summary_large_image`.
@@ -263,20 +263,20 @@ Each layer of the stack has one colour, and every product in it takes that colou
 | --- | --- | --- | --- | --- |
 | Engine | smaltdb and its plugins | smalt: the pale chip (`smalt-300`), suffix in ink | ink | `smalt-100` chip |
 | Languages | smaltql, smaltdf, smaltts, smaltcy | `layer-language`: cobalt magenta `#B0249F` | `#981C89` | `#F57FE6` |
-| Kits | smaltml (smaltkit and the other kits have no brand of their own) | `layer-kit`: jade `#0A7C76` | `#086A65` | `#10C2B9` |
+| Kits | smaltkit, smaltml | `layer-kit`: jade `#0A7C76` | `#086A65` | `#10C2B9` |
 | User tools | smaltui, smaltbi, smaltnb, smaltfl | `layer-tool`: deep cerulean `#0E7FAE` | `#0B6A91` | `#5CBDE8` |
 | Alongside | smaltai, which runs alongside the languages, kits and user tools | `layer-ai`: blue-leaning violet `#6E4BC2` | `#6141AE` | `#B8A1F2` |
 
 smaltworks keeps kiln orange: it is the family, not a layer. smaltty takes kiln too, and sits in no layer: TypeScript is the language of everything smalt (DECISIONS.md, "smaltty: a product"). The `product-*` tokens remain as aliases of their layer's token, so existing uses keep working.
 
-| | smaltdb | smaltql | smaltdf | smaltts | smaltcy | smaltml | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Layer | Engine | Languages | Languages | Languages | Languages | Kits | None: kiln, the family's | User tools | User tools | User tools | User tools |
-| What it is | The engine | The SQL | The dataframes | The typed API | The Cypher | The machine learning | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines |
-| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Connected. | Small. Alternative. Predict. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A graph database for the browser that speaks Cypher. | Machine learning for smaltdb, on the hardware you have. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
-| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Graph | Hardware | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
-| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltcy/` | `logos/smaltml/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
+| | smaltdb | smaltql | smaltdf | smaltts | smaltcy | smaltkit | smaltml | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Layer | Engine | Languages | Languages | Languages | Languages | Kits | Kits | None: kiln, the family's | User tools | User tools | User tools | User tools |
+| What it is | The engine | The SQL | The dataframes | The typed API | The Cypher | The shared UI code | The machine learning | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines |
+| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Connected. | Small. Alternative. Reusable. | Small. Alternative. Predict. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A graph database for the browser that speaks Cypher. | Shared UI code for the smalt apps. | Machine learning for smaltdb, on the hardware you have. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
+| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Graph | Case | Hardware | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
+| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltcy/` | `logos/smaltkit/` | `logos/smaltml/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
 
 smaltai is in progress: its layer and colour are set, its marks and words are not.
 
@@ -289,6 +289,7 @@ Rules:
 - Layer colours are for a product's own mark, wordmark and accents, not for status or links.
 - Jade (the kit layer) is the nearest layer colour to the `success` green (CIELAB distance 27). Never use it to mean success, and keep status icons and words on every status.
 - Violet (smaltai) sits close to smalt (CIELAB distance 21 light, 18 dark). It marks smaltai, which runs alongside the layers and doesn't touch the engine, not a layer that sits on the engine.
+- smaltkit's Case: its jade chip is a latch, never a check or a status: jade sits next to the `success` green.
 - smaltfl's Twin is curved, a second exception to the 0°, 45° and 90° rule after smaltql's Star.
 - smaltts's Generic mark uses two 45° angles, like smaltui's Chevron. Keep the two apart in toolbars and lists, where they could be mistaken for each other at small sizes.
 - smaltty and smaltts are one letter apart and both about TypeScript. Their colours keep them apart: `ty` is always kiln and `ts` always magenta, so neither suffix is ever set in ink.
@@ -385,8 +386,10 @@ Three badges, in `badges/plugins/`, say how a plugin relates to smaltdb:
 
 ## smaltkit
 
-smaltkit is shared UI code inside the smalt apps, not a product people choose, so it has no mark, product colour or badge. Its README header is the name in the wordmark style (`sm`**`alt`**`kit`, ink and smalt) with the line "Shared UI code for the smalt apps. Part of smaltworks."
+smaltkit is the shared UI code the smalt apps are built from: the editor, the grid, the charts and tables, the graph view, the controls and the engine loader. It sits at the kit layer, between the languages and the user tools, and takes the layer's jade. It had no brand of its own until 2026-11-14, when the owner gave it one (DECISIONS.md, "smaltkit: a brand").
 
-Its brand job is to carry the brand into the apps: its components should take their colours, type and icons from `tokens/`. Revisit this if smaltkit gains charts that users see (the brand has no chart palette yet), or if outside developers start building on it.
+- **Words:** "Small. Alternative. Reusable." and "Shared UI code for the smalt apps." Its README header is the lockup with that line and "Part of smaltworks."
+- **Mark:** the Case: a kit case with a handle, a lid and a base, and the latch that holds them as the chip, in jade.
+- **Its other brand job** stays: its components take their colours, type and icons from `tokens/`, so the apps look like one family.
 
-smaltty, smalt's TypeScript implementation, which smaltkit wraps, is a top-level product with its own mark, colour and badge (DECISIONS.md, "smaltty: a product"); it was branded like smaltkit until 2026-11-12.
+smaltty, smalt's TypeScript implementation, which smaltkit wraps, is a top-level product with its own mark, colour and badge (DECISIONS.md, "smaltty: a product"); it had no brand of its own, like smaltkit then, until 2026-11-12.
