@@ -5,11 +5,12 @@
 **Small. Alternative. Notebooks.** Reactive notebooks for smaltdb.
 
 smaltnb is inspired by marimo, Jupyter and JupyterLab: a notebook for working through data step by step. Notebooks are
-reactive: change a cell and the cells that depend on it run again. One notebook mixes SQL on smaltdb, smaltdf dataframe
-and TypeScript cells, with charts from the smalt [kits](/products/kits).
+reactive: change a cell and the cells that depend on it run again. One notebook mixes SQL on smaltdb, smaltdf dataframe,
+[smaltcy](/products/smaltcy) Cypher and TypeScript cells, with charts and graph views from the smalt [kits](/products/kits).
 
 **Status:** in early development, not yet published. [Open a notebook](https://stenhoor.github.io/smaltnb/app/): it runs
-in your browser, with SQL, smaltdf and text cells, parameters, controls and charts. `smaltnb run` runs a notebook in Node
+in your browser, with SQL, smaltdf and text cells, parameters, controls and charts. Cypher cells query a graph each
+notebook keeps in memory, built from SQL results, and draw what they return as a graph. `smaltnb run` runs a notebook in Node
 or as a GitHub Action, for scheduled data work. In Chrome and Edge, notebooks open from a local clone of a git
 repository and save back to it, with changes, history and merge conflicts shown cell by cell; commits and syncing stay
 in your usual git tools, and smalt holds no credentials. See [its status page](https://stenhoor.github.io/smaltnb/guide/status).
