@@ -18,4 +18,4 @@ models with it, and apps call `predict()` from TypeScript.
 
 **Status:** in early development. The first models are being built.
 
-[Repository →](https://github.com/stenhoor/smaltml)
+[Read the docs →](https://stenhoor.github.io/smaltml/) · [Repository →](https://github.com/stenhoor/smaltml)

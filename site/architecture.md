@@ -61,7 +61,7 @@ Reusable components for the smaltworks applications, which the apps are built fr
 does one thing with few options, which keeps the apps consistent and makes them easier and more repeatable to build with
 AI agents, including smaller ones. [Kits →](/products/kits)
 
-**smaltml**, machine learning on tables, is the kit with a brand of its own: notebooks and pipelines train models
+**smaltml**, machine learning on tables, is a kit with a brand of its own, like smaltkit: notebooks and pipelines train models
 with it, and apps call `predict()` from TypeScript. [smaltml →](/products/smaltml)
 
 ## Apps
