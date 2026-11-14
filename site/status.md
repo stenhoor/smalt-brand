@@ -15,7 +15,7 @@ As of November 2026. Each project's repository has its own roadmap.
 | [smaltnb](/products/smaltnb) | — | **In early development.** Notebooks run in your browser, with SQL, smaltdf, Cypher (smaltcy) and text cells, parameters, controls and charts, and Cypher results drawn as graphs; `smaltnb run` runs them in Node and GitHub Actions. Notebooks open from a local clone of a git repository, with changes, history and merge conflicts shown cell by cell; smalt holds no credentials. [Demo](https://stenhoor.github.io/smaltnb/app/) · [Docs](https://stenhoor.github.io/smaltnb/) |
 | [smaltfl](/products/smaltfl) | — | **In early development.** Pipelines run in your browser: a day that is off is paused, not published. [Demo](https://stenhoor.github.io/smaltfl/app/) · [Docs](https://stenhoor.github.io/smaltfl/) |
 | [smaltty](/products/smaltty) | 0.9.0 | **In development,** used through smaltkit; not on npm yet. Runs and type-checks the TypeScript in smaltui's tabs and smaltnb's cells. [Docs](https://stenhoor.github.io/smaltty/) |
-| [smaltkit](/products/kits) | 0.10.0 | **In development,** used by smaltui, smaltbi and smaltnb; not on npm yet. Wraps smaltty for the apps. |
+| [smaltkit](/products/kits) | 0.12.0 | **In development,** used by smaltui, smaltbi and smaltnb; not on npm yet. Wraps smaltty for the apps. [Docs](https://stenhoor.github.io/smaltkit/) |
 
 Everything before 1.0 can change, including smaltdb's on-disk format: [work in progress, come build with us](/stability).
 
