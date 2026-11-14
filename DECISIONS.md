@@ -335,13 +335,14 @@ Round 1 showed five marks (exploration board KIT-Marks), all in the kit layer's 
 | | **Picked** |
 | --- | --- |
 | Tagline | **"Small. Alternative. Reusable."** (the owner's word, 2026-11-14; first given as "Small. Alternate. Reusable.", then set to "Alternative" like every other tagline) |
-| Positioning | **"Reusable components for the smaltworks applications."** (the owner, 2026-11-14: "kits are more than UI"). First set to "Shared UI code for the smalt apps.", the README line it already had |
+| Positioning | **"Components for the smaltworks applications, built to be reused."** (the owner, 2026-11-14: "kits are more than UI"). First "Shared UI code for the smalt apps.", the README line it already had; then "Reusable components for the smaltworks applications.", which echoed the tagline's "Reusable" |
 | Mark | **Case** (K2): a kit case with a handle, a lid and a base; the latch that holds them is the chip |
 | Layer | **Kits**, jade (owner, 2026-11-14), the colour the layer already had for smaltml |
 
 The positioning line changed the same day. smaltkit holds the engine loader, the manifest's data steps, file and URL
 handling, formatting, SQL and Cypher text tools and TypeScript as much as UI, so "UI code" undersold it: the owner's
-words, "reusable components for the smaltworks applications", became the line. The kits page no longer describes
+words, "reusable components for the smaltworks applications", became the line, then, so it doesn't repeat the
+tagline's last word, "Components for the smaltworks applications, built to be reused." (the owner's pick). The kits page no longer describes
 smaltty, which is a product of its own ("smaltty: a product"), not part of the kits.
 
 Picked 2026-11-14, the same day as smaltml's Hardware ("smaltml" above): the kit layer's first two marks. A case with

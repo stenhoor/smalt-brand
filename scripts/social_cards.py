@@ -59,7 +59,7 @@ PRODUCTS = {
            "A graph database for the browser that speaks Cypher.",
            "github.com/stenhoor/smaltcy"),
     "kit": ("Small. Alternative. Reusable.",
-            "Reusable components for the smaltworks applications.",
+            "Components for the smaltworks applications, built to be reused.",
             "smaltworks.dev/products/kits"),
     "ml": ("Small. Alternative. Predict.",
            "Machine learning for smaltdb, on the hardware you have.",
