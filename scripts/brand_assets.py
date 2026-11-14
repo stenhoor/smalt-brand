@@ -3,9 +3,9 @@
 
 Usage: python3 scripts/brand_assets.py <MartianMono[wdth,wght].ttf>
 
-For every product (smaltdb, smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltty, and the parent, smaltworks) writes, under logos/<product>/:
+For every product (smaltdb, smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltml, smaltty, and the parent, smaltworks) writes, under logos/<product>/:
   wordmark.svg, wordmark-on-dark.svg, lockup.svg, lockup-on-dark.svg
-For smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltty and smaltworks it also writes the mark, app icon and favicons:
+For smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltml, smaltty and smaltworks it also writes the mark, app icon and favicons:
   <mark>-mark.svg, <mark>-mark-on-dark.svg, app-icon.svg, favicon-32.svg, favicon-16.svg
 (smaltdb's mark, app icon and favicons were drawn by hand and are left untouched.)
 
@@ -111,6 +111,12 @@ MARKS = {
     "cy": [("M11 14L11 50L17 50L17 14Z", "body"), ("M14 53L50 53L50 47L14 47Z", "body"),
            ("M11.88 16.12L47.88 52.12L52.12 47.88L16.12 11.88Z", "body"),
            (rr(6, 6, 16, 16, 3), "body"), (rr(6, 42, 16, 16, 3), "body"), (rr(42, 42, 16, 16, 3), "accent")],
+    # smaltml's Hardware: a processor with its pins, the chip at its core: the hardware you already have (owner,
+    # 2026-11-14, from smaltml's round 1: M3). The frame is drawn outer clockwise, inner anticlockwise, so it has a hole.
+    "ml": [("M16 16H48V48H16Z M24 24V40H40V24Z", "body"), ("M22 8H27V16H22Z", "body"), ("M37 8H42V16H37Z", "body"),
+           ("M22 48H27V56H22Z", "body"), ("M37 48H42V56H37Z", "body"), ("M8 22H16V27H8Z", "body"),
+           ("M8 37H16V42H8Z", "body"), ("M48 22H56V27H48Z", "body"), ("M48 37H56V42H48Z", "body"),
+           (rr(27, 27, 10, 10, 2), "accent")],
     "ty": [("M50 46h-18v-10h-14v-24a6 6 0 0 1 6-6h26a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6z", "body"), (rr(10, 40, 16, 16, 3), "accent")],
     # smaltworks' Together: two L-shaped pieces that lock into one frame.
     "works": [("M8 8H44V18H18V44H8Z", "body"), ("M56 56H20V46H46V20H56Z", "accent")],
@@ -118,8 +124,8 @@ MARKS = {
 # smaltbi's 16 px mark: three larger grains, because the full scatter breaks into specks.
 MARK_16 = {"bi": [(rr(6, 40, 16, 16, 4), "chip"), (rr(22, 22, 20, 20, 5), "body"), (rr(44, 4, 16, 16, 4), "accent")]}
 # Horizontal extent of each mark's artwork on the 64 grid, used to space the lockup.
-ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "fl": (5.7, 56), "ql": (6.37, 57.63), "ts": (4, 60), "cy": (6, 58), "ty": (10, 56), "works": (8, 56)}
-MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl": "twin", "ql": "star", "ts": "generic", "cy": "graph", "ty": "grain", "works": "together"}
+ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "fl": (5.7, 56), "ql": (6.37, 57.63), "ts": (4, 60), "cy": (6, 58), "ml": (8, 56), "ty": (10, 56), "works": (8, 56)}
+MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl": "twin", "ql": "star", "ts": "generic", "cy": "graph", "ml": "hardware", "ty": "grain", "works": "together"}
 
 # Colour by layer: each layer of the stack has one colour, and a product takes its layer's colour.
 # (fill, text, dark) per layer. The engine layer (smaltdb) uses smalt itself: the pale chip and an ink suffix.
@@ -132,7 +138,7 @@ LAYER_COLOURS = {
     "tool": ("#0E7FAE", "#0B6A91", "#5CBDE8"),       # cerulean: smaltui, smaltbi, smaltnb, smaltfl
     "ai": ("#6E4BC2", "#6141AE", "#B8A1F2"),         # violet: smaltai, alongside the layers
 }
-LAYER = {"ql": "language", "df": "language", "ts": "language", "cy": "language", "ty": "family", "ui": "tool", "bi": "tool", "nb": "tool", "fl": "tool"}
+LAYER = {"ql": "language", "df": "language", "ts": "language", "cy": "language", "ml": "kit", "ty": "family", "ui": "tool", "bi": "tool", "nb": "tool", "fl": "tool"}
 # smaltworks is not a layer: it keeps kiln orange.
 WORKS = ("#E5622F", "#151922", "#FF8A5C")
 
@@ -247,7 +253,7 @@ def build_wordmarks(font_path, product):
 
 if __name__ == "__main__":
     font = sys.argv[1]
-    for p in ("ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "ty", "works"):
+    for p in ("ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "ml", "ty", "works"):
         build_marks(p)
-    for p in ("db", "ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "ty", "works"):
+    for p in ("db", "ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "ml", "ty", "works"):
         build_wordmarks(font, p)

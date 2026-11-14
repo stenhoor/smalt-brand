@@ -298,6 +298,32 @@ CY-Words and CY-Marks), all in the language layer's magenta.
 Picked 2026-11-14, except where marked. The Graph's right angle sits beside smaltdf's Axes in the same layer; the
 diagonal edge and the three nodes keep the two apart.
 
+## smaltml
+
+smaltml (`stenhoor/smaltml`, said "smalt-M-L") is machine learning for the smalt family: classic models on tables, in
+TypeScript, on the CPU everywhere and WebGPU where it helps (smaltml's
+[ADR 0024](docs/adr/0024-smaltml-scope-and-architecture.md)).
+
+Round 1 showed four taglines, three positioning lines, two ways of saying it and four marks (exploration boards
+ML-Words and ML-Marks), drawn before the colour by layer, with the chip in pale smalt.
+
+| | **Picked** |
+| --- | --- |
+| Tagline | **"Small. Alternative. Predict."** (T2) |
+| Positioning | **"Machine learning for smaltdb, on the hardware you have."** (P1) |
+| Saying it | **smalt-M-L** (S1), letter by letter, like smalt-D-B |
+| Mark | **Hardware** (M3): a processor with its pins, the chip at its core: the hardware you already have |
+| Layer | **Kits**, jade, as set by the colour by layer |
+
+Picked by the owner, 2026-11-14. The owner also kept smaltml in the Kits layer only. It spans several layers in use
+(notebooks and pipelines train models; queries may one day score rows), and how `predict()` reaches the languages, if
+it does, is open: as a TypeScript function only, registered with a language by the app, or imported by a language
+directly (ADR 0024, "Still to decide"). The Hardware mark is the family's only mark with a hole in its body; at 16 px
+it stays the same drawing.
+
+Its docs follow the documentation standard as a product, not as a plain kit: all four sections, with tasks as its
+user guide and one estimator or function per reference page (the owner asked for docs "similar to other smalt pages").
+
 ## Before 1.0: work in progress
 
 For the first public release (a new engine, smaltdf, smaltql as its own language, and smaltui and smaltbi on the new engine), the owner set the aim of the hype: reach people who are excited by new things and willing to work through rough patches, without over-promising, and without anyone building a business on it and being caught out by next week's breaking change.
@@ -690,7 +716,7 @@ comparisons, but that is the extent to what we do. Those are listed under benchm
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
-- **smaltai and smaltml:** marks and words are open; their colours are set by layer. smaltfl's were settled on 2026-11-11 (above).
+- **smaltai:** marks and words are open; its colour is set by layer. smaltml's were settled on 2026-11-14 (above). smaltfl's were settled on 2026-11-11 (above).
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 
 - **Research pages on smaltdb.dev** include benchmark comparisons with other engines. Settled by "No shade" (2026-11-12): apples-for-apples timings may stay public, listed as benchmarks; anything else on them that compares goes.

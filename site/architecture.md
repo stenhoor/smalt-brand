@@ -61,6 +61,9 @@ Small, focused libraries that the apps are built from: charts, tables, number fo
 does one thing with few options, which keeps the apps consistent and makes them easier and more repeatable to build with
 AI agents, including smaller ones. [Kits →](/products/kits)
 
+**smaltml**, machine learning on tables, is the kit with a brand of its own: notebooks and pipelines train models
+with it, and apps call `predict()` from TypeScript. [smaltml →](/products/smaltml)
+
 ## Apps
 
 - **smaltui**, the query workbench: SQL, smaltdf dataframes and Cypher on smaltcy's graphs. [smaltui →](/products/smaltui)

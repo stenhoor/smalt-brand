@@ -133,8 +133,8 @@ The smaltcy boards' sources are plain HTML pages (`CY-Words.html`, `CY-Marks.htm
 | [AI-Words](family/png/AI-Words.png) | smaltai taglines and positioning lines, centred on your agents using the smalt tools. Open. |
 | [AI-Marks](family/png/AI-Marks.png) | smaltai round 1 marks A1–A4 (Build, Pointer, Agent, Toolbox). Not chosen. |
 | [AI-Marks2](family/png/AI-Marks2.png) | smaltai round 2: plugging in, P1–P4. Open. |
-| [ML-Words](family/png/ML-Words.png) | smaltml taglines, positioning lines and where it sits. Open. |
-| [ML-Marks](family/png/ML-Marks.png) | smaltml marks M1–M4 (Fit, Tree, Hardware, Learn). Open. |
+| [ML-Words](family/png/ML-Words.png) | smaltml taglines, positioning lines and where it sits. Picked T2, P1 and S1 (2026-11-14). |
+| [ML-Marks](family/png/ML-Marks.png) | smaltml marks M1–M4 (Fit, Tree, Hardware, Learn). Picked M3, Hardware (2026-11-14). |
 
 ## Before 1.0: work in progress
 

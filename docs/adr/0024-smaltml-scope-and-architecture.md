@@ -1,7 +1,7 @@
 # ADR 0024: smaltml's scope and architecture
 
-- **Status:** proposed. The owner's answers of 2026-11-09 are recorded below; the items under "Still to decide" are
-  open.
+- **Status:** accepted, 2026-11-14. The owner's answers of 2026-11-09 and 2026-11-14 are recorded below; the items
+  under "Still to decide" are open. The decisions of 2026-11-14 are gathered in [section 10](#10-the-owners-decisions-of-2026-11-14).
 - **Date:** 2026-11-09
 - **Builds on:** smaltdb [ADR 0002](https://smaltdb.dev/adr/0002-second-round-decisions) (supported browsers),
   [ADR 0012](https://smaltdb.dev/adr/0012-plugins) (plugins), [ADR 0014](https://smaltdb.dev/adr/0014-shared-plan-layer)
@@ -22,7 +22,8 @@ people analysing datasets in smaltnb notebooks and smaltui's TypeScript tabs. Th
 What is already set:
 
 - **Brand:** smaltml is in the Kits layer, coloured jade (`layer-kit`, smalt-brand DECISIONS.md, "Colour by layer").
-  Its marks and words are open; a first round is on the family canvas.
+  Its words and mark were picked on 2026-11-14 (DECISIONS.md, "smaltml"): "Small. Alternative. Predict.", "Machine
+  learning for smaltdb, on the hardware you have.", said smalt-M-L, and the Hardware mark.
 - **Browsers:** the family's minimums are on [smaltworks.dev/environments](https://smaltworks.dev/environments). WebGPU
   is newer than all of them: per [Can I use](https://caniuse.com/webgpu) (6 November 2026) it fully works for about 87%
   of users, almost all of them on Chrome and Edge 113 or later. Firefox has it on Windows only, and Safari's support is
@@ -88,13 +89,17 @@ smaltml matches its references' behaviour and writes its own code (owner, 2026-1
 
 ### 4. Placement: a library over the engine
 
-smaltml is a library in the Kits layer. It is not a smaltdb plugin and not a language (owner, 2026-11-09):
+smaltml is a library in the Kits layer. It is not a smaltdb plugin and not a language (owner, 2026-11-09; the Kits
+layer confirmed 2026-11-14):
 
 - **Data in:** a smaltdf frame, a smaltdb query result read as columns, or plain typed arrays. smaltml holds data as a
   column-major `Float64Array` matrix, the shape the engine's columnar results already have.
 - **Results out:** predictions and transformed columns as typed arrays, which smaltdf or SQL write back as tables.
-- **The engine is not changed.** Scoring rows inside a query (a `predict()` function in SQL or smaltdf) would be a
-  smaltdb plugin; it can be proposed later.
+- **The engine is not changed.**
+- **`predict()` is a TypeScript function** (owner, 2026-11-14): `await predict(model, X)`, or by name,
+  `await predict('churn', X)`, through a model registry (section 6). Notebooks and flows train models; apps and
+  notebooks call `predict()`. How it reaches the query languages, if it does, is open ("Still to decide", item 6). The
+  2026-11-09 text named a smaltdb plugin for scoring rows inside a query; that is now one of the options, not the plan.
 
 ### 5. API: scikit-style estimators, asynchronous calls over a synchronous core
 
@@ -148,6 +153,10 @@ map field for field. The limits:
 If these limits turn out to constrain the boosted trees themselves, the format moves out of the model code into a
 converter, as the owner asked.
 
+- **A model registry** (owner, 2026-11-14) keeps fitted models by name for `predict()`: an interface with two stores,
+  in memory (tests, docs, apps without a database) and a smaltdb table (a row per model and version, holding the
+  JSON document). The smaltdb store takes smaltdb as an optional peer, like the data helpers (section 9).
+
 ### 7. Verification: compared with Python once, then kept as tests
 
 - **First, compare tests.** Each case runs through smaltml and through scikit-learn or XGBoost in Python on the same
@@ -160,7 +169,8 @@ converter, as the owner asked.
 - **GPU results** are checked against the CPU results (section 3).
 - **Outside code:** the compare step uses Python with scikit-learn (BSD-3-Clause), XGBoost (Apache-2.0) and NumPy
   (BSD-3-Clause), pinned in `compare/requirements.txt`. They are for development only and never part of the package.
-  Pinning them is adding outside code, so the owner approves the list before the first compare PR.
+  Pinning them is adding outside code, so the owner approves the list before the first compare PR. **Approved**
+  (owner, 2026-11-14): scikit-learn and NumPy. XGBoost waits for phase 3 and its own yes.
 
 ### 8. Performance: a goal to meet or beat Python's native throughput
 
@@ -188,9 +198,25 @@ for it and reports where it stands, and a model that is behind still ships.
   `/decomposition`, `/anomaly`, `/io` (saving, loading and XGBoost's format) and `/worker`. An app loads only what it
   imports. The name follows ADR 0015: `@smaltworks/<repository name>`.
 - **No runtime dependencies.** smaltdb and smaltdf are optional peers, used only by the helpers that read their data.
-- **The repository, `stenhoor/smaltml`,** is created when the work starts, and follows the family's working rules
-  (CLAUDE.md, `packed.json` pins for tests, the family docs theme, brand from smalt-brand). Until then this record lives
-  in smalt-brand, beside [WORK.md](../../WORK.md), which tracks it.
+- **The repository, `stenhoor/smaltml`,** exists (2026-11-14) and follows the family's working rules (CLAUDE.md,
+  `packed.json` pins for tests, the family docs theme, brand from smalt-brand), with pull requests to `main`. This record
+  moves into it with its first pull request (`docs/adr/0024-smaltml-scope-and-architecture.md` there); from then this
+  file points to it, and [WORK.md](../../WORK.md) tracks the work.
+
+### 10. The owner's decisions of 2026-11-14
+
+- **Brand:** the words and mark above (Context, "Brand").
+- **Layer:** the Kits layer only. smaltml spans several layers in use, and how best it fits will be seen from working
+  code; for now `predict()` is a TypeScript function (section 4).
+- **A first slice before the rest of phase 1.** Phase 1 is split. **Phase 1a** runs one model of each kind through every
+  part of the workflow before more models are added: `StandardScaler`, `LinearRegression`, `LogisticRegression`,
+  `trainTestSplit`, `pipeline()`, four metrics (mean squared error, R², accuracy, log loss), saving and loading as JSON,
+  the worker entry, matrix products on WebGPU checked against the CPU, `predict()` and the model registry, the compare
+  tests against scikit-learn, and the docs site. **Phase 1b** adds the rest of phase 1: the other scalers, encoders and
+  imputers, ridge, lasso and elastic net, the other metrics, folds, cross-validation and grid search.
+- **Docs like the other smalt sites:** the four sections of the documentation standard, with tasks as the user guide
+  and one estimator or function per reference page (BRAND.md, "Documentation").
+- **The compare tests' Python packages:** scikit-learn and NumPy (section 7).
 
 ## Consequences
 
@@ -212,6 +238,10 @@ for it and reports where it stands, and a model that is behind still ships.
 
 1. **Time series forecasting:** in scope as a later phase, or left out.
 2. **Importing other models** (such as ONNX) beyond XGBoost's format.
-3. **The outside code for the compare tests** (section 7): the Python packages and their versions.
+3. ~~**The outside code for the compare tests**~~: decided 2026-11-14, scikit-learn and NumPy (section 7).
 4. **When phase 2 starts:** after phase 1 is released, or alongside it.
 5. **If a model can't reach Python's speed in TypeScript:** whether smaltml may write its own WebAssembly kernels.
+6. **How `predict()` reaches the query languages, if at all** (owner, 2026-11-14: "the jury is still out"): a
+   TypeScript function only; a function the apps (smaltui, smaltnb, smaltfl) register with a language when they open a
+   database; or a language (smaltql, smaltcy, smaltdf) importing smaltml directly, an exception to the layering. The
+   core is the same in every case; only the caller differs. To be decided once phase 1a can be tried in smaltnb.
