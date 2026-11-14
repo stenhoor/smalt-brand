@@ -2,22 +2,22 @@
 
 <StageBadge />
 
-The apps aren't built from scratch each time. They're built from **kits**: small, focused libraries that each do one
-thing.
+The apps aren't built from scratch each time. They're built from **kits**: reusable components for the smaltworks
+applications, each doing one thing, from loading the engine and reading files to formatting, charts and the editor.
 
 - **Few options, on purpose.** A kit offers a narrow set of choices. That keeps every app consistent, and it makes the
   kits easy for AI agents to use well. With fewer options, even a smaller agent produces repeatable results.
-- **One look.** Kits draw their colours and type from the smalt brand tokens, so smaltui, smaltbi and smaltnb look
-  like one family.
+- **One family.** Components that draw take their colours and type from the smalt brand tokens, so smaltui, smaltbi
+  and smaltnb look like one family.
 
 ## <Mark product="kit" :size="32" /> smaltkit
 
-**Small. Alternative. Reusable.** Shared UI code for the smalt apps.
+**Small. Alternative. Reusable.** Reusable components for the smaltworks applications.
 
 Today the kits live in **smaltkit**: the engine loader, URL rewriting, number and date formatting, SVG chart helpers and
 charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps,
-value-picking controls, a reader for a local git repository's files, and `smaltkit/typescript`, which runs TypeScript
-with smaltty. smaltui, smaltbi and smaltnb use it. smaltkit is 0.12.0 and isn't on npm yet.
+value-picking controls, a reader for a local git repository's files, and TypeScript for the apps' tabs and cells.
+smaltui, smaltbi and smaltnb use it. smaltkit is 0.12.0 and isn't on npm yet.
 
 [Read the docs →](https://stenhoor.github.io/smaltkit/) · [Repository →](https://github.com/stenhoor/smaltkit)
 
@@ -28,12 +28,3 @@ Hardware mark, in the kit layer's jade. Notebooks and pipelines train models wit
 TypeScript.
 
 [Repository →](https://github.com/stenhoor/smaltml)
-
-## smaltty, which smaltkit wraps
-
-**[smaltty](/products/smaltty)**, smalt's TypeScript implementation, is not a kit but a product of its own, at the base of the family: TypeScript for the
-apps' tabs and notebook cells, in our own code. smaltkit wraps it as `smaltkit/typescript`, which is how the apps use
-it. It removes types without moving a line or column, so an error points where it was written, and checks calls into
-smaltdf and smaltts as the code is typed, marking TypeScript's errors as warnings while the code still runs.
-
-[Read the docs →](https://stenhoor.github.io/smaltty/) · [Repository →](https://github.com/stenhoor/smaltty)

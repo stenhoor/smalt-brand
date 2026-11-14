@@ -326,8 +326,8 @@ user guide and one estimator or function per reference page (the owner asked for
 
 ## smaltkit: a brand
 
-smaltkit (`stenhoor/smaltkit`) is the shared UI code the smalt apps are built from: the editor, the grid, the charts and
-tables, the graph view, the controls and the engine loader. "Plugins and smaltkit" below gave it no brand, as shared
+smaltkit (`stenhoor/smaltkit`) is the reusable components the smalt apps are built from: the editor, the grid, the charts
+and tables, the graph view, the controls and the engine loader, and more than UI (see the positioning line below). "Plugins and smaltkit" below gave it no brand, as shared
 code inside the apps rather than a product people choose; on 2026-11-14 the owner gave it one, with the words.
 
 Round 1 showed five marks (exploration board KIT-Marks), all in the kit layer's jade.
@@ -335,9 +335,14 @@ Round 1 showed five marks (exploration board KIT-Marks), all in the kit layer's 
 | | **Picked** |
 | --- | --- |
 | Tagline | **"Small. Alternative. Reusable."** (the owner's word, 2026-11-14; first given as "Small. Alternate. Reusable.", then set to "Alternative" like every other tagline) |
-| Positioning | **"Shared UI code for the smalt apps."**, the README line it already had |
+| Positioning | **"Reusable components for the smaltworks applications."** (the owner, 2026-11-14: "kits are more than UI"). First set to "Shared UI code for the smalt apps.", the README line it already had |
 | Mark | **Case** (K2): a kit case with a handle, a lid and a base; the latch that holds them is the chip |
 | Layer | **Kits**, jade (owner, 2026-11-14), the colour the layer already had for smaltml |
+
+The positioning line changed the same day. smaltkit holds the engine loader, the manifest's data steps, file and URL
+handling, formatting, SQL and Cypher text tools and TypeScript as much as UI, so "UI code" undersold it: the owner's
+words, "reusable components for the smaltworks applications", became the line. The kits page no longer describes
+smaltty, which is a product of its own ("smaltty: a product"), not part of the kits.
 
 Picked 2026-11-14, the same day as smaltml's Hardware ("smaltml" above): the kit layer's first two marks. A case with
 its latch and a processor with its pins keep the two apart. Jade's chip is a latch, never a check: jade sits next to the `success` green.
