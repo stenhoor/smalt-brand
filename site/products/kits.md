@@ -23,8 +23,8 @@ smaltui, smaltbi and smaltnb use it. smaltkit is 0.12.0 and isn't on npm yet.
 
 ## smaltml
 
-**[smaltml](/products/smaltml)** is machine learning for the smalt family, and the one kit with a brand of its own: the
+**[smaltml](/products/smaltml)** is machine learning for the smalt family, with a brand of its own like smaltkit: the
 Hardware mark, in the kit layer's jade. Notebooks and pipelines train models with it; apps call `predict()` from
 TypeScript.
 
-[Repository →](https://github.com/stenhoor/smaltml)
+[Read the docs →](https://stenhoor.github.io/smaltml/) · [Repository →](https://github.com/stenhoor/smaltml)
