@@ -277,6 +277,27 @@ Applied after the picks:
 - The smaltts repository is private, so the social card and badge point to smaltworks.dev/products/smaltts.
 - The smaltworks social card's product list no longer fit with seven products; it now shows smaltworks.dev, and `scripts/social_cards.py` checks that every address fits.
 
+## smaltcy
+
+smaltcy (`stenhoor/smaltcy`, said "smalt-sigh") is Cypher for the smalt family: a graph database for the browser that
+speaks Cypher. Cypher compiles to graph plans, an engine runs them on stores, and a WebGPU view draws the graph
+(smaltcy's [ADR 0001](https://github.com/stenhoor/smaltcy/blob/main/docs/adr/0001-smaltcy.md)). Its engine and stores
+are its own and in memory today; durable storage comes from smaltdb.
+
+Round 1 showed four taglines, three positioning lines, two ways of saying it and four marks (exploration boards
+CY-Words and CY-Marks), all in the language layer's magenta.
+
+| | **Picked** |
+| --- | --- |
+| Tagline | **"Small. Alternative. Connected."** (T1; owner, 2026-11-11, in smaltcy's ADR 0001) |
+| Positioning | **"A graph database for the browser that speaks Cypher."** (the owner's own line, 2026-11-11, not one of the board's P1–P3) |
+| Saying it | **smalt-sigh** (S1), said like Cypher |
+| Mark | **Graph** (C2): three nodes and the edges between them at 0°, 45° and 90°; the node a query returns is the chip |
+| Layer | **Languages**, cobalt magenta (owner, 2026-11-14), beside smaltql, smaltdf and smaltts |
+
+Picked 2026-11-14, except where marked. The Graph's right angle sits beside smaltdf's Axes in the same layer; the
+diagonal edge and the three nodes keep the two apart.
+
 ## Before 1.0: work in progress
 
 For the first public release (a new engine, smaltdf, smaltql as its own language, and smaltui and smaltbi on the new engine), the owner set the aim of the hype: reach people who are excited by new things and willing to work through rough patches, without over-promising, and without anyone building a business on it and being caught out by next week's breaking change.

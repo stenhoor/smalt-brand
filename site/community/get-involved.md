@@ -15,7 +15,7 @@ Open an issue on the project it's about:
   [io](https://github.com/stenhoor/smaltdb-io/issues), [external](https://github.com/stenhoor/smaltdb-external/issues),
   [parquet](https://github.com/stenhoor/smaltdb-parquet/issues)
 - [smaltql](https://github.com/stenhoor/smaltql/issues) · [smaltdf](https://github.com/stenhoor/smaltdf/issues) · [smaltui](https://github.com/stenhoor/smaltui/issues) ·
-  [smaltbi](https://github.com/stenhoor/smaltbi/issues) · [smaltnb](https://github.com/stenhoor/smaltnb/issues) · [smaltfl](https://github.com/stenhoor/smaltfl/issues) ·
+  [smaltbi](https://github.com/stenhoor/smaltbi/issues) · [smaltnb](https://github.com/stenhoor/smaltnb/issues) · [smaltfl](https://github.com/stenhoor/smaltfl/issues) · [smaltcy](https://github.com/stenhoor/smaltcy/issues) ·
   [smaltty](https://github.com/stenhoor/smaltty/issues) · [smaltkit](https://github.com/stenhoor/smaltkit/issues)
 
 ## Contribute

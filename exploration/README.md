@@ -115,6 +115,15 @@ The later positioning lines (P4–P11 and the final "Dataframes for smaltdb. Sma
 | --- | --- |
 | [TY-Marks](family/png/TY-Marks.png) | Three readings of the owner's "an orange chip at the bottom left of a blue base block", in kiln: A, the Grain turned (chip set apart); B, chip on the corner; C, wide base. Picked: A, the Grain turned. Its source, `TY-Marks.html`, is a plain HTML page, not a canvas board, rendered the same way. |
 
+## smaltcy
+
+| Board | Contents |
+| --- | --- |
+| [CY-Words](family/png/CY-Words.png) | Taglines T1–T4, positioning lines P1–P3, saying it S1–S2, and what the words cover. Picked: T1 "Connected" (2026-11-11), the owner's own line "A graph database for the browser that speaks Cypher.", and S1 "smalt-sigh". |
+| [CY-Marks](family/png/CY-Marks.png) | Marks C1–C4 (Pattern, Graph, Walk, Relationship), in magenta. Picked: C2 Graph. |
+
+The smaltcy boards' sources are plain HTML pages (`CY-Words.html`, `CY-Marks.html`), not canvas boards, rendered the same way.
+
 ## Colour by layer, smaltai and smaltml
 
 | Board | Contents |
