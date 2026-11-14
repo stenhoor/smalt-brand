@@ -10,12 +10,16 @@ thing.
 - **One look.** Kits draw their colours and type from the smalt brand tokens, so smaltui, smaltbi and smaltnb look
   like one family.
 
+## smaltkit
+
 Today the kits live in **smaltkit**: the engine loader, URL rewriting, number and date formatting, SVG chart helpers and
 charts, tables, a virtualized grid, SQL text tools, a code editor, a DOM toolkit, the environment manifest's data steps,
-value-picking controls, a reader for a local git repository's files, and TypeScript (smaltty, below), used by smaltui, smaltbi and smaltnb. smaltkit is 0.12.0 and isn't on npm
-yet.
+value-picking controls, a reader for a local git repository's files, and `smaltkit/typescript`, which runs TypeScript
+with smaltty. smaltui, smaltbi and smaltnb use it. smaltkit is 0.12.0 and isn't on npm yet.
 
 [Read the docs →](https://stenhoor.github.io/smaltkit/) · [Repository →](https://github.com/stenhoor/smaltkit)
+
+## smaltty, which smaltkit wraps
 
 **[smaltty](/products/smaltty)**, smalt's TypeScript implementation, is not a kit but a product of its own, at the base of the family: TypeScript for the
 apps' tabs and notebook cells, in our own code. smaltkit wraps it as `smaltkit/typescript`, which is how the apps use
