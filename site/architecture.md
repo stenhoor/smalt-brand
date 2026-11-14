@@ -57,7 +57,7 @@ You don't need one engine for SQL tables and another for dataframes. There is on
 
 ## Kits
 
-Small, focused libraries that the apps are built from: charts, tables, number formatting, the engine loader. Each kit
+Reusable components for the smaltworks applications, which the apps are built from: charts, tables, number formatting, the engine loader. Each kit
 does one thing with few options, which keeps the apps consistent and makes them easier and more repeatable to build with
 AI agents, including smaller ones. [Kits →](/products/kits)
 
