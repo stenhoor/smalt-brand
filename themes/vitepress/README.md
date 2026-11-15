@@ -226,7 +226,7 @@ It shows its own errors. `app(lang, code, attrs)` gets the attributes too.
 At the end of the build, `agentDocs()` writes Markdown for AI agents beside the pages:
 
 - **A twin of every page** (`guide/queries.md` beside `guide/queries.html`): the page's source, with what only a browser
-  shows made plain. Playground fences lose `play`; a `railroad` fence becomes the EBNF of its rules; the examples test's
+  shows made plain. Playground fences lose `play` and `noplay`; a `railroad` fence becomes the EBNF of its rules; the examples test's
   markers become sentences (`docs:error CODE` is "This example fails with `CODE`:", `docs:setup` a "Run first:" block);
   VitePress containers become quotes; components, scripts and other comments go. Links to other pages point at their
   twins, absolute; headings keep their `{#id}`. A line under the title names the version and the page for people.
