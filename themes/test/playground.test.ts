@@ -223,4 +223,10 @@ test('rewriteImports resolves bare imports, leaves relative and URL imports, and
   )
   assert.throws(() => rewriteImports("import _ from 'lodash';", resolve), /lodash can't be imported here/)
   assert.equal(rewriteImports("const s = 'from here';", resolve), "const s = 'from here';", 'text that only looks like an import')
+  assert.equal(
+    rewriteImports(`stripTypes("import type { F } from 'df';");\n// import 'x'\nconst t = \`from 'y'\`;`, resolve),
+    `stripTypes("import type { F } from 'df';");\n// import 'x'\nconst t = \`from 'y'\`;`,
+    'an import inside a string, a comment or a template literal is text',
+  )
+  assert.equal(rewriteImports("import { q } from 'smaltkit/sql'; const s = 'it\\'s';", resolve), "import { q } from '/kit/sql.js'; const s = 'it\\'s';")
 })

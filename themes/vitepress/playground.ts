@@ -320,15 +320,43 @@ export function sqlRunner(open: () => Promise<SqlDatabase>): () => Promise<Runne
 /**
  * The code with its bare imports (`'smaltkit/format'`, not `'./x.js'` or a URL) replaced by what `resolve` gives for
  * them: static and dynamic imports and `export … from`. A specifier `resolve` doesn't know is an error: a playground can
- * import only what the site serves.
+ * import only what the site serves. Strings, template literals and comments are read past, so text in them that looks
+ * like an import is left as it is.
  */
 export function rewriteImports(code: string, resolve: (specifier: string) => string | undefined): string {
-  return code.replace(/(\bfrom\s*|\bimport\s*\(?\s*)(['"])([^'"\n]+)\2/g, (all, lead: string, q: string, spec: string) => {
-    if (/^(\.|\/|[a-z][a-z0-9+.-]*:)/i.test(spec)) return all
-    const url = resolve(spec)
-    if (!url) throw new Error(`${spec} can't be imported here: a playground runs only what this site serves`)
-    return `${lead}${q}${url}${q}`
-  })
+  let out = ''
+  let i = 0
+  // The words before a string that make it a module specifier: `from '…'`, `import '…'`, `import('…'`.
+  const specifierBefore = () => /(?:\bfrom|\bimport\s*\(?)\s*$/.test(code.slice(Math.max(0, i - 40), i))
+  while (i < code.length) {
+    const c = code[i]
+    if (c === '/' && code[i + 1] === '/') {
+      const end = code.indexOf('\n', i)
+      const stop = end < 0 ? code.length : end
+      out += code.slice(i, stop)
+      i = stop
+    } else if (c === '/' && code[i + 1] === '*') {
+      const end = code.indexOf('*/', i + 2)
+      const stop = end < 0 ? code.length : end + 2
+      out += code.slice(i, stop)
+      i = stop
+    } else if (c === "'" || c === '"' || c === '`') {
+      let j = i + 1
+      while (j < code.length && code[j] !== c && !(c !== '`' && code[j] === '\n')) j += code[j] === '\\' ? 2 : 1
+      const literal = code.slice(i, j + 1)
+      const spec = literal.slice(1, -1)
+      if (c !== '`' && specifierBefore() && !/^(\.|\/|[a-z][a-z0-9+.-]*:)/i.test(spec)) {
+        const url = resolve(spec)
+        if (!url) throw new Error(`${spec} can't be imported here: a playground runs only what this site serves`)
+        out += c + url + c
+      } else out += literal
+      i = j + 1
+    } else {
+      out += c
+      i++
+    }
+  }
+  return out
 }
 
 export interface ScriptRunnerOptions {
