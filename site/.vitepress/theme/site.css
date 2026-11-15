@@ -40,7 +40,7 @@ img.sw-light { display: inline-block; }
 .sw-kits { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 8px; border-style: dashed; background: var(--sw-tint); padding: 10px 14px; }
 .sw-kits b { color: var(--sw-ink); } .sw-kits span { color: var(--sw-muted); font-size: 14px; }
 .sw-kits .sw-name, .sw-kits .sw-word { color: var(--sw-ink); font-size: 17px; } .sw-kits .sw-alt { color: var(--vp-c-brand-1); font-size: inherit; } .sw-kits .sw-sfx-kit { color: var(--sw-kit); font-size: inherit; }
-.sw-kitrow { grid-template-columns: repeat(4, minmax(0, 1fr)); } .sw-kitrow .sw-kits { grid-column: span 3; }
+.sw-kitrow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .sw-what { font-size: 13px; color: var(--sw-muted); }
 .sw-sql { font-family: var(--smalt-brand-font); font-weight: 600; color: var(--sw-ink); }
 a.sw-box:hover, a.sw-kits:hover, a.sw-card:hover { border-color: var(--vp-c-brand-1); }
@@ -65,7 +65,6 @@ a.sw-box:hover, a.sw-kits:hover, a.sw-card:hover { border-color: var(--vp-c-bran
 .sw-src::before { content: ''; position: absolute; left: 50%; top: -11px; width: 2px; height: 10px; background: #9DB4F5; }
 @media (max-width: 640px) {
   .sw-apps, .sw-langs, .sw-sources, .sw-kitrow { grid-template-columns: 1fr; }
-  .sw-kitrow .sw-kits { grid-column: auto; }
   .sw-src::before { display: none; }
 }
 
