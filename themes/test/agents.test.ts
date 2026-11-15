@@ -13,7 +13,7 @@ test('a twin keeps the page, and its anchors, and drops what only a browser show
     '---', 'title: Lists', 'outline: deep', '---', '', '<script setup>', "import X from './x.vue'", '</script>', '',
     '## ARRAY {#array}', '', 'See [list_extract](./list#list_extract), [the guide](../../guide/), [here](#array), [outside](../../../bench/x.md) and [web](https://a.b/).',
     '', '<ProductCard name="x" />', '', '<!-- docs:error SMALT_MISMATCH -->', '```sql play', "SELECT list_min(ARRAY['b']);", '```', '',
-    '<!-- docs:setup CREATE TABLE t(x); -->', '<!-- a note for people -->', '```railroad', 'expr', '```', '',
+    '<!-- docs:setup CREATE TABLE t(x); -->', '<!-- a note for people -->', '```railroad', 'expr', '```', '', '```ts noplay', 'f(): void', '```', '',
     '::: warning Differs from SQLite', 'It does.', ':::', '', '```md', '## not a heading {#x}', '<!-- docs:skip -->', '```',
   ].join('\n')
   const twin = toTwin(src, 'reference/functions/list.md', opts)
@@ -23,7 +23,7 @@ test('a twin keeps the page, and its anchors, and drops what only a browser show
     '## ARRAY {#array}', '',
     'See [list_extract](https://example.dev/smaltql/reference/functions/list.md#list_extract), [the guide](https://example.dev/smaltql/guide/index.md), [here](#array), [outside](../../../bench/x.md) and [web](https://a.b/).',
     '', 'This example fails with `SMALT_MISMATCH`:', '', '```sql', "SELECT list_min(ARRAY['b']);", '```', '',
-    'Run first:', '', '```sql', 'CREATE TABLE t(x);', '```', '', '```ebnf', "expr ::= literal | expr '+' expr", '```', '',
+    'Run first:', '', '```sql', 'CREATE TABLE t(x);', '```', '', '```ebnf', "expr ::= literal | expr '+' expr", '```', '', '```ts', 'f(): void', '```', '',
     '> **Differs from SQLite:**', '> It does.', '', '```md', '## not a heading {#x}', '<!-- docs:skip -->', '```', '',
   ].join('\n'))
 })
