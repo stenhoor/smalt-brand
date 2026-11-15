@@ -160,8 +160,46 @@ export default {
 } satisfies Theme
 ```
 
-A runner for another language implements `run(code, setup, attrs)` and returns `{ columns, rows }`, or `{ columns: [],
-rows: [], note }`; an Error it throws is shown with its `code`.
+A runner for another language implements `run(code, setup, attrs)` and returns `{ columns, rows }`, `{ columns: [],
+rows: [], note }`, or `{ columns: [], rows: [], text }` for what the code printed; an Error it throws is shown with its
+`code`.
+
+### TypeScript examples
+
+A kit's examples are TypeScript that prints its result: the `text` fence under an example is what it prints, and is
+its tested result, as a table is for SQL. `scriptRunner()` runs them: each Run strips the types (smaltkit's
+`stripTypes`), points the code's bare imports at the site's own copies (`resolve`; anything else is refused), and runs
+it as a module in a worker of its own. What console.log is given prints through smaltkit's `formatLog`, the same
+printer the examples test uses, so a Run reads like the tested result. With `onlyWithResult`, a TypeScript example
+without a result under it (code for a page, such as one that draws into an element) is shown, not run.
+
+````md
+```ts
+import { formatter } from 'smaltkit/format';
+
+console.log(formatter('currency0')(1234.5));
+```
+
+```text
+$1,235
+```
+````
+
+In `.vitepress/config.ts`:
+
+```ts
+markdown: { config: (md) => { md.use(playgroundPlugin, { languages: ['ts'], onlyWithResult: ['ts'] }) } },
+```
+
+In `.vitepress/theme/index.ts`, for a site that serves smaltkit's `dist/` at `kit/` (copied there by its build):
+
+```ts
+import { enablePlaygrounds, scriptRunner } from './playground'
+
+enablePlaygrounds({
+  runners: { ts: scriptRunner({ resolve: (s) => (s.startsWith('smaltkit') ? `${base}kit/${s.slice(9) || 'index'}.js` : undefined) }) },
+})
+```
 
 Some languages' examples need more than their code: smaltcy's Cypher examples each read a sample graph. A fence's
 `key=value` flags are the example's **attributes**, over the page's front matter `play:` map, and leave the info

@@ -95,6 +95,7 @@ Decided 2026-11-10. Sizes are estimates, as above.
 | M6 smaltdb prints whole plans (the tree view) | smaltdb | S | | Not started |
 | M7 smaltdb's Plan language section and "One query, every language" | smaltdb | L | M1–M3, M5, M6 | Not started |
 | M8 The other sites to the standard: smaltdf, then smaltts, the apps, the plugins and the kits | each | L each | M4 | Not started |
+| M8b smaltkit's site to the standard: a Quick start and a reference page per module and per function, then TypeScript playgrounds (the kit's text results and `scriptRunner`) | smalt-brand (site kit), smaltkit | L | M1–M3 | Pages done (stenhoor/smaltkit#36, #38, #41); playgrounds: smaltkit's `formatLog`, the kit's text results and `scriptRunner` (this branch), then smaltkit's site turns them on |
 | M8a smaltcy's site to the standard: the playground's attributes and `render` in the kit, then the four sections, the grammar and diagrams, a page per clause and per function | smalt-brand (site kit), smaltcy | L | M1–M3 | Done: the kit's attributes and `render` (stenhoor/smalt-brand#97); the four sections, playgrounds and agent docs (stenhoor/smaltcy#3); the grammar, diagrams and a page per clause and per function (stenhoor/smaltcy#6) |
 
 ## Processing lists and structs (smaltdb ADR 0031)
