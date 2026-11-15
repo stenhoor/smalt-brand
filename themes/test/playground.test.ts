@@ -1,7 +1,7 @@
 // node --test themes/test/*.test.ts (Node 22 runs the TypeScript as it is; no packages needed).
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { playgroundPlugin, splitSql, sqlRunner, encodeCode, decodeCode, type SqlDatabase } from '../vitepress/playground.ts'
+import { playgroundPlugin, splitSql, sqlRunner, encodeCode, decodeCode, rewriteImports, type SqlDatabase } from '../vitepress/playground.ts'
 
 class Token {
   type: string
@@ -191,4 +191,36 @@ test('the SQL runner runs a setup step with attributes but no fails as an ordina
   }))()
   await assert.rejects(runner.run('SELECT 1', [{ sql: 'BAD', attrs: { a: 'b' } }], {}), /bad/)
   assert.deepEqual(log, ['exec BAD'])
+})
+
+test('onlyWithResult: a ts example runs only with a result under it, and a text fence under it is its tested result', () => {
+  const tokens = run(
+    [fence('ts', "console.log(1)\n"), fence('text', '1\n'), para(), fence('ts', "document.title = 'x'\n"), para(), fence('ts', 'x\n'), ...table()],
+    { languages: ['sql', 'ts'], onlyWithResult: ['ts'] },
+  )
+  const plays = tokens.filter((t) => t.type === 'html_block' && t.content.includes('class="sw-play"'))
+  assert.equal(plays.length, 2, 'the example without a result stays plain')
+  // The text fence sits inside the first playground's result, before its closing tags.
+  const open = tokens.findIndex((t) => t.type === 'html_block' && t.content.includes('sw-play-result'))
+  assert.equal(tokens[open + 1].type, 'fence')
+  assert.equal(tokens[open + 1].info, 'text')
+  assert.match(tokens[open + 2].content, /^<\/div>/)
+  assert.equal(tokens.filter((t) => t.type === 'fence' && t.info === 'text').length, 1)
+})
+
+test('without onlyWithResult, a text fence after an example is still its result', () => {
+  const tokens = run([fence('ts', 'x\n'), fence('text', 'y\n')], { languages: ['ts'] })
+  const open = tokens.findIndex((t) => t.type === 'html_block' && t.content.includes('sw-play-result'))
+  assert.equal(tokens[open + 1].info, 'text')
+})
+
+test('rewriteImports resolves bare imports, leaves relative and URL imports, and refuses what the site does not serve', () => {
+  const resolve = (s: string) => (s.startsWith('smaltkit') ? `/kit/${s.slice(9) || 'index'}.js` : undefined)
+  const code = "import { a } from 'smaltkit/format';\nimport \"smaltkit\";\nexport { b } from './b.js';\nconst m = await import('smaltkit/sql');\nimport x from 'https://e.x/x.js';"
+  assert.equal(
+    rewriteImports(code, resolve),
+    "import { a } from '/kit/format.js';\nimport \"/kit/index.js\";\nexport { b } from './b.js';\nconst m = await import('/kit/sql.js');\nimport x from 'https://e.x/x.js';",
+  )
+  assert.throws(() => rewriteImports("import _ from 'lodash';", resolve), /lodash can't be imported here/)
+  assert.equal(rewriteImports("const s = 'from here';", resolve), "const s = 'from here';", 'text that only looks like an import')
 })

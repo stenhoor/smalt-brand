@@ -11,7 +11,9 @@
 // A fence's `key=value` flags (```cypher dataset=metro), over the page's front matter `play:` map, are the example's
 // attributes: they reach the runner with the code and with each setup step, for a language whose examples need more
 // than their code, such as the sample data they read. A runner's result can draw more under its table (`render`).
-// sqlRunner() makes a runner from a smaltdb `open()` that reads SQL, such as smaltql's.
+// sqlRunner() makes a runner from a smaltdb `open()` that reads SQL, such as smaltql's. scriptRunner() runs TypeScript
+// and JavaScript examples in a worker of their own and shows what they print: a `text` fence under such an example is
+// its tested result.
 
 // ---------------------------------------------------------------------------------------------------------------------
 // The markdown-it plugin
@@ -24,6 +26,11 @@ export interface PlaygroundPluginOptions {
    * a fence marked `noplay`, and examples marked `docs:skip` or `docs:plugin`, don't.
    */
   run?: 'every' | 'marked'
+  /**
+   * Languages whose examples run only when a tested result follows them (a table or a `text` fence), such as `ts`: an
+   * example without one is code for a page, shown as it is.
+   */
+  onlyWithResult?: string[]
 }
 
 interface Token {
@@ -71,6 +78,7 @@ function attributesOf(flags: string[], frontmatter: unknown): Attributes {
 export function playgroundPlugin(md: MarkdownIt, options: PlaygroundPluginOptions = {}): void {
   const languages = new Set(options.languages ?? ['sql'])
   const every = (options.run ?? 'every') === 'every'
+  const needResult = new Set(options.onlyWithResult ?? [])
   md.core.ruler.push('sw_playground', (state) => {
     const out: Token[] = []
     const setup = new Map<string, SetupStep[]>()
@@ -124,7 +132,10 @@ export function playgroundPlugin(md: MarkdownIt, options: PlaygroundPluginOption
         const sql = t.content.trim()
         list(setup, lang).push(failing ? (has ? { sql, fails: true, attrs } : { sql, fails: true }) : has ? { sql, attrs } : sql)
       }
-      if (!runnable || flags.includes('noplay') || !(every || flags.includes('play'))) {
+      const next = tokens[i + 1]
+      const textResult = next?.type === 'fence' && next.info.trim() === 'text'
+      const hasResult = textResult || next?.type === 'table_open'
+      if (!runnable || flags.includes('noplay') || !(every || flags.includes('play')) || (needResult.has(lang) && !hasResult)) {
         t.info = [lang, ...flags.filter((f) => f !== 'play' && f !== 'noplay')].join(' ')
         out.push(t)
         continue
@@ -155,8 +166,11 @@ export function playgroundPlugin(md: MarkdownIt, options: PlaygroundPluginOption
             (fails !== undefined ? `<p class="sw-play-fails">Fails with <code>${esc(fails)}</code></p>\n` : ''),
         ),
       )
-      // The result table the examples test checks, if one follows directly.
-      if (tokens[i + 1]?.type === 'table_open') {
+      // The result the examples test checks, if one follows directly: a table, or what the example prints.
+      if (textResult) {
+        out.push(next)
+        i++
+      } else if (next?.type === 'table_open') {
         let j = i + 1
         while (j < tokens.length && tokens[j].type !== 'table_close') out.push(tokens[j++])
         if (j < tokens.length) out.push(tokens[j])
@@ -183,6 +197,8 @@ export interface PlayResult {
   rows: unknown[][]
   /** Shown instead of a table when there are no columns, such as "3 rows changed". */
   note?: string
+  /** What the code printed, shown as it is, instead of a table or note when there are no columns. */
+  text?: string
   /**
    * Draws more under the table or note, such as a graph of the rows, into `host` (the result's box). Called once the
    * table is in place; the next Run, Reset or page clears `host`, and `signal` aborts then, for anything to free.
@@ -296,6 +312,115 @@ export function sqlRunner(open: () => Promise<SqlDatabase>): () => Promise<Runne
         const result = queue.then(() => run(code, setup))
         queue = result.catch(() => undefined)
         return result
+      },
+    }
+  }
+}
+
+/**
+ * The code with its bare imports (`'smaltkit/format'`, not `'./x.js'` or a URL) replaced by what `resolve` gives for
+ * them: static and dynamic imports and `export … from`. A specifier `resolve` doesn't know is an error: a playground can
+ * import only what the site serves.
+ */
+export function rewriteImports(code: string, resolve: (specifier: string) => string | undefined): string {
+  return code.replace(/(\bfrom\s*|\bimport\s*\(?\s*)(['"])([^'"\n]+)\2/g, (all, lead: string, q: string, spec: string) => {
+    if (/^(\.|\/|[a-z][a-z0-9+.-]*:)/i.test(spec)) return all
+    const url = resolve(spec)
+    if (!url) throw new Error(`${spec} can't be imported here: a playground runs only what this site serves`)
+    return `${lead}${q}${url}${q}`
+  })
+}
+
+export interface ScriptRunnerOptions {
+  /** The URL of a bare import (`'smaltkit/format'`), or undefined for one the site doesn't serve. */
+  resolve(specifier: string): string | undefined
+  /** JavaScript for the code: removes TypeScript's types (smaltkit's stripTypes, by default). */
+  strip?: (code: string) => string | Promise<string>
+  /** The module whose `formatLog(values)` prints what console.log is given (default `resolve('smaltkit/pretty')`). */
+  printer?: string
+  /** How long after the code finishes its last line may still arrive, from a timer (ms, default 300). */
+  quiet?: number
+  /** How long a Run may take before it is stopped (ms, default 10000). */
+  timeout?: number
+}
+
+/** The worker a Run starts: it prints through formatLog, then imports the code and says when it has finished. */
+const SCRIPT_WORKER = (printer: string | undefined) => `
+let format = (values) => values.map((v) => (typeof v === 'string' ? v : JSON.stringify(v))).join(' ');
+${printer ? `try { const m = await import(${JSON.stringify(printer)}); format = (values) => m.formatLog(values); } catch {}` : ''}
+for (const k of ['log', 'info', 'warn', 'error', 'debug']) console[k] = (...values) => postMessage({ line: format(values) });
+const fail = (e) => postMessage({ error: { name: e?.name ?? 'Error', message: e?.message ?? String(e) } });
+self.addEventListener('error', (e) => fail(e.error ?? e));
+self.addEventListener('unhandledrejection', (e) => fail(e.reason));
+self.onmessage = async (e) => {
+  try {
+    await import(e.data);
+    postMessage({ done: true });
+  } catch (err) {
+    fail(err);
+  }
+};
+postMessage({ ready: true });
+`
+
+/**
+ * A runner for TypeScript and JavaScript examples: each Run strips the code's types, resolves its imports to the site's
+ * own copies, and runs it as a module in a worker of its own, so nothing one Run leaves behind reaches the next. It
+ * shows what the code prints (console.log through smaltkit's formatLog, as the examples test prints it), or a note when
+ * nothing is printed; an error shows its name. The setup is not used: every example stands alone. In
+ * .vitepress/theme/index.ts, for a site that serves smaltkit's dist/ at `kit/`:
+ *
+ *     ts: scriptRunner({ resolve: (s) => (s.startsWith('smaltkit') ? `${base}kit/${s.slice(9) || 'index'}.js` : undefined) })
+ */
+export function scriptRunner(options: ScriptRunnerOptions): () => Promise<Runner> {
+  return async () => {
+    const strip = options.strip ?? (async (code: string) => (await import('smaltkit/typescript')).stripTypes(code))
+    const printer = options.printer ?? options.resolve('smaltkit/pretty')
+    const absolute = (u: string) => new URL(u, document.baseURI).href
+    const workerUrl = URL.createObjectURL(new Blob([SCRIPT_WORKER(printer && absolute(printer))], { type: 'text/javascript' }))
+    return {
+      run: async (code) => {
+        const js = rewriteImports(await strip(code), (s) => {
+          const u = options.resolve(s)
+          return u && absolute(u)
+        })
+        const moduleUrl = URL.createObjectURL(new Blob([js], { type: 'text/javascript' }))
+        const worker = new Worker(workerUrl, { type: 'module' })
+        const lines: string[] = []
+        try {
+          await new Promise<void>((resolve, reject) => {
+            let quiet: ReturnType<typeof setTimeout> | undefined
+            let finished = false
+            const stop = setTimeout(() => reject(Object.assign(new Error(`stopped after ${options.timeout ?? 10000} ms`), { code: 'Timeout' })), options.timeout ?? 10000)
+            const settle = () => {
+              clearTimeout(quiet)
+              quiet = setTimeout(() => (clearTimeout(stop), resolve()), options.quiet ?? 300)
+            }
+            worker.onmessage = (e: MessageEvent) => {
+              const m = e.data as { ready?: true; line?: string; done?: true; error?: { name: string; message: string } }
+              if (m.ready) worker.postMessage(moduleUrl)
+              else if (m.line !== undefined) {
+                lines.push(m.line)
+                if (finished) settle()
+              } else if (m.done) {
+                finished = true
+                settle()
+              } else if (m.error) {
+                clearTimeout(stop)
+                clearTimeout(quiet)
+                reject(Object.assign(new Error(m.error.message), { code: m.error.name }))
+              }
+            }
+            worker.onerror = (e) => {
+              clearTimeout(stop)
+              reject(Object.assign(new Error(e.message || 'the worker could not start'), { code: 'Error' }))
+            }
+          })
+        } finally {
+          worker.terminate()
+          URL.revokeObjectURL(moduleUrl)
+        }
+        return lines.length ? { columns: [], rows: [], text: lines.join('\n') } : { columns: [], rows: [], note: 'Done: nothing printed' }
       },
     }
   }
@@ -457,6 +582,12 @@ export function enablePlaygrounds(options: PlaygroundOptions, doc: Document = do
         new k.Grid(box, { emptyText: 'No rows' }).setData(r.columns, r.rows)
         fit(box, visible)
         say(play, `${r.rows.length} ${r.rows.length === 1 ? 'row' : 'rows'} · ${ms} ms`)
+      } else if (r.text !== undefined) {
+        const pre = doc.createElement('pre')
+        pre.className = 'sw-play-text'
+        pre.textContent = r.text
+        result.replaceChildren(pre)
+        say(play, `${ms} ms`)
       } else {
         const note = doc.createElement('p')
         note.className = 'sw-play-note'
