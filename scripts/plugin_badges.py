@@ -10,9 +10,9 @@ Writes, under badges/plugins/, a light and a dark (-on-dark) SVG of:
 
 They share the "Powered by" pill's geometry (scripts/badges.py): 28 px tall, 10 px
 padding, 6 px gaps, 16 px mark, Geist 400 11 px labels, Martian Mono 600 12.5 px
-wordmark. Text is converted to paths. smaltdb and smaltml have plugin APIs (smaltml:
-its kernel contract, smaltml ADR 0035), so theirs are generated; add a product to PRODUCTS
-when it gets one.
+wordmark. Text is converted to paths. smaltdb gets all three tiers; smaltml, whose plugin API
+is its kernel contract (smaltml ADR 0035), gets the Official badge only (the owner,
+2026-11-17). Add a product to PRODUCTS, and its tiers to TIERS, when it gets a plugin API.
 Requires fonttools.
 """
 import sys
@@ -25,7 +25,8 @@ from badges import Face, THEMES, H, PAD, GAP, MARK, BORDER, db_mark  # noqa: E40
 ROOT = Path(__file__).resolve().parent.parent
 
 PRODUCTS = ["db", "ml"]          # products with a plugin API
-API_VERSIONS = {"db": [1], "ml": [1]}  # plugin API versions with a Verified badge (smaltml: its kernel contract)
+TIERS = {"db": ["official", "verified", "works-with"], "ml": ["official"]}  # the badges each product gets
+API_VERSIONS = {"db": [1]}       # plugin API versions with a Verified badge
 
 # The check: two 45-degree bars of the Chevron's thickness, drawn on the 64 grid.
 CHECK = "M6 33L13 26L25 38L51 12L58 19L25 52Z"
@@ -111,10 +112,15 @@ if __name__ == "__main__":
     out.mkdir(parents=True, exist_ok=True)
     for product in PRODUCTS:
         for theme, suffix in (("light", ""), ("dark", "-on-dark")):
-            files = {f"official-smalt{product}{suffix}.svg": official(geist, mono, product, theme),
-                     f"works-with-smalt{product}{suffix}.svg": works_with(geist, mono, product, theme)}
-            for api in API_VERSIONS[product]:
-                files[f"verified-smalt{product}-api-v{api}{suffix}.svg"] = verified(geist, mono, tagface, product, theme, api)
+            tiers = TIERS[product]
+            files = {}
+            if "official" in tiers:
+                files[f"official-smalt{product}{suffix}.svg"] = official(geist, mono, product, theme)
+            if "works-with" in tiers:
+                files[f"works-with-smalt{product}{suffix}.svg"] = works_with(geist, mono, product, theme)
+            if "verified" in tiers:
+                for api in API_VERSIONS[product]:
+                    files[f"verified-smalt{product}-api-v{api}{suffix}.svg"] = verified(geist, mono, tagface, product, theme, api)
             for name, text in files.items():
                 (out / name).write_text(text)
                 print((out / name).relative_to(ROOT))

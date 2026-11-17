@@ -743,9 +743,10 @@ Decided by the owner on 2026-11-15 (smaltml ADR 0035, item 10), and its badge on
 
 - **smaltml-simd is an infrastructure plugin,** shown as smaltdb's are: smaltml's brand and a plain name, "smaltml
   SIMD", with no mark or colour of its own. Its README carries the Official plugin badge with smaltml's mark.
-- **smaltml's plugin badges** come from `scripts/plugin_badges.py`, as smaltdb's do: smaltml joins `PRODUCTS`, with
-  its kernel contract (`useKernels`, version 1) as its plugin API. The Official badge is for smaltworks' own plugins.
-  Verified is generated with it, but is granted only once compatibility tests exist, as for smaltdb.
+- **smaltml has the Official plugin badge only** (the owner, 2026-11-17), from `scripts/plugin_badges.py`, as
+  smaltdb's come: it is for smaltworks' own plugins, such as smaltml SIMD. The Verified and Works with badges first
+  generated with it (stenhoor/smalt-brand#115) were taken out the same day: smaltml's kernel contract is open to
+  plugins, but smaltworks doesn't offer it third-party tiers.
 - **Where they link:** smaltml's site lists its plugins on a plugins page, as smaltdb.dev lists smaltdb's (ADR 0035,
   item 10). The Official and Verified badges link to the plugin's entry there.
 
