@@ -263,20 +263,20 @@ Each layer of the stack has one colour, and every product in it takes that colou
 | --- | --- | --- | --- | --- |
 | Engine | smaltdb and its plugins | smalt: the pale chip (`smalt-300`), suffix in ink | ink | `smalt-100` chip |
 | Languages | smaltql, smaltdf, smaltts, smaltcy | `layer-language`: cobalt magenta `#B0249F` | `#981C89` | `#F57FE6` |
-| Kits | smaltkit, smaltml | `layer-kit`: jade `#0A7C76` | `#086A65` | `#10C2B9` |
+| Kits | smaltkit, smaltml, smaltlp | `layer-kit`: jade `#0A7C76` | `#086A65` | `#10C2B9` |
 | User tools | smaltui, smaltbi, smaltnb, smaltfl | `layer-tool`: deep cerulean `#0E7FAE` | `#0B6A91` | `#5CBDE8` |
 | Alongside | smaltai, which runs alongside the languages, kits and user tools | `layer-ai`: blue-leaning violet `#6E4BC2` | `#6141AE` | `#B8A1F2` |
 
 smaltworks keeps kiln orange: it is the family, not a layer. smaltty takes kiln too, and sits in no layer: TypeScript is the language of everything smalt (DECISIONS.md, "smaltty: a product"). The `product-*` tokens remain as aliases of their layer's token, so existing uses keep working.
 
-| | smaltdb | smaltql | smaltdf | smaltts | smaltcy | smaltkit | smaltml | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Layer | Engine | Languages | Languages | Languages | Languages | Kits | Kits | None: kiln, the family's | User tools | User tools | User tools | User tools |
-| What it is | The engine | The SQL | The dataframes | The typed API | The Cypher | The reusable components | The machine learning | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines |
-| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Connected. | Small. Alternative. Reusable. | Small. Alternative. Predict. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A graph database for the browser that speaks Cypher. | Components for the smaltworks applications, built to be reused. | Machine learning for smaltdb, on the hardware you have. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
-| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Graph | Case | Hardware | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
-| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltcy/` | `logos/smaltkit/` | `logos/smaltml/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
+| | smaltdb | smaltql | smaltdf | smaltts | smaltcy | smaltkit | smaltml | smaltlp | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Layer | Engine | Languages | Languages | Languages | Languages | Kits | Kits | Kits | None: kiln, the family's | User tools | User tools | User tools | User tools |
+| What it is | The engine | The SQL | The dataframes | The typed API | The Cypher | The reusable components | The machine learning | The linear programming | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines |
+| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Connected. | Small. Alternative. Reusable. | Small. Alternative. Predict. | Small. Alternative. Optimal. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A graph database for the browser that speaks Cypher. | Components for the smaltworks applications, built to be reused. | Machine learning for smaltdb, on the hardware you have. | Linear and integer programming for smaltdb, in the browser. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
+| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Graph | Case | Hardware | Aim | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
+| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltcy/` | `logos/smaltkit/` | `logos/smaltml/` | `logos/smaltlp/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
 
 smaltai is in progress: its layer and colour are set, its marks and words are not.
 
@@ -315,6 +315,15 @@ TypeScript, on the CPU everywhere and WebGPU where it helps. It is the one kit w
 layer's jade (owner, 2026-11-14). Notebooks and pipelines train models with it; apps call `predict()` from TypeScript.
 Its Hardware mark is a processor with its pins, the chip at its core; the frame's hole is part of the drawing. Its
 scope and architecture are its [ADR 0024](docs/adr/0024-smaltml-scope-and-architecture.md).
+
+### smaltlp
+
+smaltlp, said smalt-L-P, is linear and mixed-integer programming for the smalt family, in TypeScript: models of costs,
+limits and choices, solved to their best answer in the browser. It is a kit with a brand of its own, like smaltml, in
+the Kits layer's jade (owner, 2026-11-17). Its Aim mark is one solid arrow at 45°, pointing at the chip: heading
+straight for the best answer. Keep it apart from smaltui's Chevron, the other 45° shape: the Aim always points up and
+to the right, at its chip. Its scope and architecture are smaltworks
+[ADR 0039](https://github.com/stenhoor/smaltworks/blob/main/adr/0039-smaltlp-scope-and-architecture.md).
 
 ### smaltty
 

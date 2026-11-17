@@ -324,6 +324,34 @@ it stays the same drawing.
 Its docs follow the documentation standard as a product, not as a plain kit: all four sections, with tasks as its
 user guide and one estimator or function per reference page (the owner asked for docs "similar to other smalt pages").
 
+## smaltlp
+
+smaltlp (`stenhoor/smaltlp`, said "smalt-L-P") is linear and mixed-integer programming for the smalt family, in
+TypeScript (smaltworks [ADR 0039](https://github.com/stenhoor/smaltworks/blob/main/adr/0039-smaltlp-scope-and-architecture.md):
+a kit with a brand of its own, like smaltml).
+
+Four rounds (exploration boards LP-Words and LP-Marks to LP-Marks4), all in the kit layer's jade:
+
+- **Round 1:** four taglines, three positioning lines and four marks (Vertex, Pivot, Bounds, Lattice). The words were
+  picked. No mark was: they read as smaltdb's and smaltty's Grain (a square body with a corner chip) or as smaltts's
+  Generic (brackets).
+- **Round 2:** four more marks (Simplex, Levels, Balance, Knapsack). None was picked.
+- **Round 3:** the owner asked for abstract and geometric marks, after the first two rounds were too literal (pictures
+  of the method) and too busy or thin (small pieces instead of one strong shape). Four marks (Peak, Aim, Narrow, Gem):
+  Aim was the closest.
+- **Round 4:** Aim three ways (one piece, the chip as its tip, stout).
+
+| | **Picked** |
+| --- | --- |
+| Tagline | **"Small. Alternative. Optimal."** (T2): the best answer, not merely a good one |
+| Positioning | **"Linear and integer programming for smaltdb, in the browser."** (P1) |
+| Saying it | **smalt-L-P** (S1), letter by letter, like smalt-M-L |
+| Mark | **Aim** (L10a): one solid arrow at 45°, pointing at the chip: heading straight for the best answer |
+| Layer | **Kits**, jade, as set by the colour by layer |
+
+Picked by the owner, 2026-11-17. The kit layer's third mark, after smaltkit's Case and smaltml's Hardware: a case, a
+processor and an arrow keep the three apart.
+
 ## smaltkit: a brand
 
 smaltkit (`stenhoor/smaltkit`) is the reusable components the smalt apps are built from: the editor, the grid, the charts
