@@ -142,6 +142,18 @@ The smaltcy boards' sources are plain HTML pages (`CY-Words.html`, `CY-Marks.htm
 | [ML-Words](family/png/ML-Words.png) | smaltml taglines, positioning lines and where it sits. Picked T2, P1 and S1 (2026-11-14). |
 | [ML-Marks](family/png/ML-Marks.png) | smaltml marks M1–M4 (Fit, Tree, Hardware, Learn). Picked M3, Hardware (2026-11-14). |
 
+## smaltlp
+
+| Board | Contents |
+| --- | --- |
+| [LP-Words](family/png/LP-Words.png) | smaltlp taglines T1–T4, positioning lines P1–P3 and where it sits. Picked T2, P1 and S1 (2026-11-17). |
+| [LP-Marks](family/png/LP-Marks.png) | Round 1 marks L1–L4 (Vertex, Pivot, Bounds, Lattice). Not chosen: they read as the Grain or as smaltts's Generic. |
+| [LP-Marks2](family/png/LP-Marks2.png) | Round 2 marks L5–L8 (Simplex, Levels, Balance, Knapsack). Not chosen. |
+| [LP-Marks3](family/png/LP-Marks3.png) | Round 3, abstract marks L9–L12 (Peak, Aim, Narrow, Gem). Aim the closest. |
+| [LP-Marks4](family/png/LP-Marks4.png) | Round 4, Aim refined (one piece, chip as tip, stout). Picked L10a, Aim in one piece (2026-11-17). |
+
+The boards' sources (`LP-*.html`) are plain HTML pages, rendered the same way as `KIT-Marks.html`.
+
 ## Before 1.0: work in progress
 
 | Board | Contents |
