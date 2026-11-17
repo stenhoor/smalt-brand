@@ -10,8 +10,9 @@ Writes, under badges/plugins/, a light and a dark (-on-dark) SVG of:
 
 They share the "Powered by" pill's geometry (scripts/badges.py): 28 px tall, 10 px
 padding, 6 px gaps, 16 px mark, Geist 400 11 px labels, Martian Mono 600 12.5 px
-wordmark. Text is converted to paths. Only smaltdb has a plugin API today, so
-only smaltdb's badges are generated; add a product to PRODUCTS when it gets one.
+wordmark. Text is converted to paths. smaltdb and smaltml have plugin APIs (smaltml:
+its kernel contract, smaltml ADR 0035), so theirs are generated; add a product to PRODUCTS
+when it gets one.
 Requires fonttools.
 """
 import sys
@@ -23,8 +24,8 @@ from badges import Face, THEMES, H, PAD, GAP, MARK, BORDER, db_mark  # noqa: E40
 
 ROOT = Path(__file__).resolve().parent.parent
 
-PRODUCTS = ["db"]                # products with a plugin API
-API_VERSIONS = {"db": [1]}       # plugin API versions with a Verified badge
+PRODUCTS = ["db", "ml"]          # products with a plugin API
+API_VERSIONS = {"db": [1], "ml": [1]}  # plugin API versions with a Verified badge (smaltml: its kernel contract)
 
 # The check: two 45-degree bars of the Chevron's thickness, drawn on the 64 grid.
 CHECK = "M6 33L13 26L25 38L51 12L58 19L25 52Z"

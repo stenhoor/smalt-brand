@@ -737,6 +737,18 @@ comparisons, but that is the extent to what we do. Those are listed under benchm
 - **Facts stay:** naming another tool as a test input, a dependency we replaced, or the reference we follow (TypeScript
   for smaltty, SQLite for smaltql) is not a comparison.
 
+## smaltml's plugins: smaltml SIMD
+
+Decided by the owner on 2026-11-15 (smaltml ADR 0035, item 10), and its badge on 2026-11-17.
+
+- **smaltml-simd is an infrastructure plugin,** shown as smaltdb's are: smaltml's brand and a plain name, "smaltml
+  SIMD", with no mark or colour of its own. Its README carries the Official plugin badge with smaltml's mark.
+- **smaltml's plugin badges** come from `scripts/plugin_badges.py`, as smaltdb's do: smaltml joins `PRODUCTS`, with
+  its kernel contract (`useKernels`, version 1) as its plugin API. The Official badge is for smaltworks' own plugins.
+  Verified is generated with it, but is granted only once compatibility tests exist, as for smaltdb.
+- **Where they link:** smaltml's site lists its plugins on a plugins page, as smaltdb.dev lists smaltdb's (ADR 0035,
+  item 10). The Official and Verified badges link to the plugin's entry there.
+
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
