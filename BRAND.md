@@ -371,7 +371,7 @@ When a product reaches 1.0, its badge becomes **Release 1.x** above **Come build
 
 A plugin gets a product brand of its own only when people choose it and use it directly, as with smaltdf (`@smaltworks/smaltdf`). Infrastructure plugins (`@smaltworks/smaltdb-parquet`, `@smaltworks/smaltdb-io`, `@smaltworks/smaltdb-external`) use smaltdb's brand and a plain name, such as "smaltdb Parquet", with no mark or colour of their own.
 
-Three badges, in `badges/plugins/`, say how a plugin relates to its product: smaltdb, or smaltml (whose plugin API is its kernel contract, smaltml ADR 0035; smaltml-simd, "smaltml SIMD", is its first official plugin):
+Three badges, in `badges/plugins/`, say how a plugin relates to smaltdb. smaltml, whose plugin API is its kernel contract (smaltml ADR 0035), has the Official badge only, for smaltworks' own plugins such as smaltml-simd ("smaltml SIMD"):
 
 | Tier | Meaning | Badge |
 | --- | --- | --- |
@@ -380,7 +380,7 @@ Three badges, in `badges/plugins/`, say how a plugin relates to its product: sma
 | **Works with** | The author says it works; smaltworks hasn't checked | "Works with" and the wordmark in grey, with a dashed border and no mark |
 
 - Product marks appear only on what smaltworks makes. Brand colours appear only on what smaltworks makes or has tested.
-- Official and Verified badges link to the plugin's entry on the product's plugin list, which smaltworks controls: smaltdb.dev/plugins for smaltdb, smaltml's site's plugins page for smaltml. A badge image alone proves nothing, since anyone can copy it.
+- Official and Verified badges link to the plugin's entry on the product's plugin list, which smaltworks controls: smaltdb.dev/plugins for smaltdb, smaltml's site's Plugins page for smaltml. A badge image alone proves nothing, since anyone can copy it.
 - Verified means the compatibility tests pass for that API version. It is not a security review, and the list page says so.
 - The `@smaltworks` npm scope and names that start with `smalt` are reserved for smaltworks. Third-party plugins are named `<product>-plugin-<name>`, for example `smaltdb-plugin-geo`.
 
