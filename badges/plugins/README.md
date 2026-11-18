@@ -1,13 +1,13 @@
 # Plugin badges
 
-Three badges say how a plugin relates to smaltdb. smaltml, whose plugin API is its kernel contract (smaltml ADR 0035), has the Official badge only, for smaltworks' own plugins such as smaltml SIMD. They share the "Powered by" pill's size and type, and each tier drops one brand element.
+Three badges say how a plugin relates to smaltdb. smaltml, whose plugin API is its kernel contract (smaltml ADR 0035), has the Official badge only, for smaltworks' own plugins (none now: smaltml SIMD moved into smaltml, smaltml ADR 0040). They share the "Powered by" pill's size and type, and each tier drops one brand element.
 
 | Light | Dark | Tier | Who grants it |
 | --- | --- | --- | --- |
 | ![smaltdb official plugin](official-smaltdb.svg) | ![smaltdb official plugin](official-smaltdb-on-dark.svg) | **Official:** made and maintained by smaltworks | smaltworks |
 | ![Verified for smaltdb, API v1](verified-smaltdb-api-v1.svg) | ![Verified for smaltdb, API v1](verified-smaltdb-api-v1-on-dark.svg) | **Verified:** passes the smaltworks compatibility tests for plugin API version 1 | smaltworks, after the tests pass |
 | ![Works with smaltdb](works-with-smaltdb.svg) | ![Works with smaltdb](works-with-smaltdb-on-dark.svg) | **Works with:** the author says it works; smaltworks hasn't checked | The plugin's author |
-| ![smaltml official plugin](official-smaltml.svg) | ![smaltml official plugin](official-smaltml-on-dark.svg) | **Official,** for smaltml (smaltml-simd) | smaltworks |
+| ![smaltml official plugin](official-smaltml.svg) | ![smaltml official plugin](official-smaltml-on-dark.svg) | **Official,** for smaltml's plugins (none now) | smaltworks |
 
 ## Which badge you may use
 

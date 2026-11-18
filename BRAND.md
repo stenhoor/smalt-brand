@@ -380,7 +380,7 @@ When a product reaches 1.0, its badge becomes **Release 1.x** above **Come build
 
 A plugin gets a product brand of its own only when people choose it and use it directly, as with smaltdf (`@smaltworks/smaltdf`). Infrastructure plugins (`@smaltworks/smaltdb-parquet`, `@smaltworks/smaltdb-io`, `@smaltworks/smaltdb-external`) use smaltdb's brand and a plain name, such as "smaltdb Parquet", with no mark or colour of their own.
 
-Three badges, in `badges/plugins/`, say how a plugin relates to smaltdb. smaltml, whose plugin API is its kernel contract (smaltml ADR 0035), has the Official badge only, for smaltworks' own plugins such as smaltml-simd ("smaltml SIMD"):
+Three badges, in `badges/plugins/`, say how a plugin relates to smaltdb. smaltml, whose plugin API is its kernel contract (smaltml ADR 0035), has the Official badge only, for smaltworks' own plugins (it has none now: smaltml SIMD, its first, moved into smaltml on 2026-11-18, smaltml ADR 0040):
 
 | Tier | Meaning | Badge |
 | --- | --- | --- |
