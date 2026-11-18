@@ -777,6 +777,10 @@ Decided by the owner on 2026-11-15 (smaltml ADR 0035, item 10), and its badge on
   plugins, but smaltworks doesn't offer it third-party tiers.
 - **Where they link:** smaltml's site lists its plugins on a plugins page, as smaltdb.dev lists smaltdb's (ADR 0035,
   item 10). The Official and Verified badges link to the plugin's entry there.
+- **smaltml SIMD retired** (the owner, 2026-11-18; smaltml ADR 0040): its kernels moved into smaltml, as the entry
+  point `@smaltworks/smaltml/simd`, which smaltml turns on by itself; their WebAssembly writer is smaltkit's
+  (`smaltkit/simd`). smaltml has no plugins now. Its Official badge stays, for a plugin smaltworks may make later; its
+  plugins page says where the SIMD kernels went.
 
 ## Still open
 
