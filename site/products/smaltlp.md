@@ -16,7 +16,7 @@ browser. It is a [kit](/products/kits), like [smaltml](/products/smaltml).
 - **Checked against references.** Results are compared with scipy's linprog (HiGHS), PuLP and HiGHS's MPS reader, and
   kept as tests.
 
-**Status:** in early development. Phase 1's first slice is under way: linear programs, and integer variables by
-branch-and-bound.
+**Status:** in early development. Linear programs and the modelling layer are done; integer programs solve by
+branch-and-bound with warm starts. Cuts, LP files and WebGPU come later.
 
 [Read the docs →](https://stenhoor.github.io/smaltlp/) · [Playground →](https://stenhoor.github.io/smaltlp/playground) · [Repository →](https://github.com/stenhoor/smaltlp)
