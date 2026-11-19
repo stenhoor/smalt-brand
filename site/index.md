@@ -42,6 +42,7 @@ There is no second engine for dataframes and no server to set up.
 <ProductCard product="ts" tagline="Small. Alternative. Typed." line="smaltdb, straight from TypeScript." status="Planned" href="/products/smaltts" />
 <ProductCard product="cy" tagline="Small. Alternative. Connected." line="A graph database for the browser that speaks Cypher." status="0.1.0 · In development" href="/products/smaltcy" />
 <ProductCard product="ml" tagline="Small. Alternative. Predict." line="Machine learning for smaltdb, on the hardware you have." status="In early development" href="/products/smaltml" />
+<ProductCard product="lp" tagline="Small. Alternative. Optimal." line="Linear and integer programming for smaltdb, in the browser." status="0.14.0 · In development" href="/products/smaltlp" />
 <ProductCard product="ty" tagline="Small. Alternative. Code." line="TypeScript for the smalt apps." status="0.9.0 · In development" href="/products/smaltty" />
 <ProductCard product="ui" tagline="Small. Alternative. Query." line="A query workbench for smaltdb that runs entirely in the browser." status="0.1.0 · In development" href="/products/smaltui" />
 <ProductCard product="bi" tagline="Small. Alternative. Insight." line="Business intelligence in the browser, powered by smaltdb." status="0.1.0 · In development" href="/products/smaltbi" />

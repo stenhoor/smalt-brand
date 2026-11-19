@@ -16,6 +16,7 @@ the full [brand book](https://github.com/stenhoor/smalt-brand/blob/main/BRAND.md
 | smaltcy | <Mark product="cy" :size="28" /> Graph | languages: cobalt magenta `#B0249F` |
 | smaltkit | <Mark product="kit" :size="28" /> Case | kits: jade `#0A7C76` |
 | smaltml | <Mark product="ml" :size="28" /> Hardware | kits: jade `#0A7C76` |
+| smaltlp | <Mark product="lp" :size="28" /> Aim | kits: jade `#0A7C76` |
 | smaltty | <Mark product="ty" :size="28" /> Grain, turned | the family: kiln `#E5622F` |
 | smaltui | <Mark product="ui" :size="28" /> Chevron | user tools: deep cerulean `#0E7FAE` |
 | smaltbi | <Mark product="bi" :size="28" /> Scatter | user tools: deep cerulean `#0E7FAE` |

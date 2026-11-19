@@ -23,6 +23,7 @@ const apps = [
     <div class="sw-row sw-kitrow">
       <a href="/products/kits" class="sw-kits"><span class="sw-name"><Mark product="kit" :size="22" /><Word product="kit" /></span> <b>Kits</b> <span>small, focused libraries: fewer choices for AI agents, one consistent interface</span></a>
       <a href="/products/smaltml" class="sw-box"><span class="sw-name"><Mark product="ml" :size="22" /><Word product="ml" /></span><span class="sw-what">machine learning</span></a>
+      <a href="/products/smaltlp" class="sw-box"><span class="sw-name"><Mark product="lp" :size="22" /><Word product="lp" /></span><span class="sw-what">optimization</span></a>
     </div>
     <div class="sw-row sw-langs">
       <a href="/products/smaltql" class="sw-box"><span class="sw-name"><Mark product="ql" :size="22" /><Word product="ql" /></span><span class="sw-what">SQL</span></a>
