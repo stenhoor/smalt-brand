@@ -31,8 +31,8 @@ TypeScript.
 
 ## smaltlp
 
-**[smaltlp](/products/smaltlp)** is linear and mixed-integer programming for the smalt family, with a brand of its own
-like smaltml: the Aim mark, in the kit layer's jade. Notebooks and apps call it from TypeScript to find the best plan
-within their costs and limits.
+**[smaltlp](/products/smaltlp)** is linear and integer programming for the smalt family, with a brand of its own like
+smaltml: the Aim mark, in the kit layer's jade. It solves models of costs, limits and choices to their best answer, in
+the browser.
 
 [Read the docs →](https://stenhoor.github.io/smaltlp/) · [Repository →](https://github.com/stenhoor/smaltlp)

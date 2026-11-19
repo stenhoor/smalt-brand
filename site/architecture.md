@@ -64,8 +64,8 @@ AI agents, including smaller ones. [Kits →](/products/kits)
 **smaltml**, machine learning on tables, is a kit with a brand of its own, like smaltkit: notebooks and pipelines train models
 with it, and apps call `predict()` from TypeScript. [smaltml →](/products/smaltml)
 
-**smaltlp**, linear and mixed-integer programming, is a kit with a brand of its own too: notebooks and apps call it
-from TypeScript to find the best plan within their costs and limits. [smaltlp →](/products/smaltlp)
+**smaltlp**, linear and integer programming, is a kit with a brand of its own too: it solves models of costs, limits and
+choices to their best answer, in the browser. [smaltlp →](/products/smaltlp)
 
 ## Apps
 

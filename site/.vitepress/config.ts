@@ -39,7 +39,7 @@ export default defineConfig({
           { text: 'smaltts · typed API', link: '/products/smaltts' },
           { text: 'smaltcy · Cypher', link: '/products/smaltcy' },
           { text: 'smaltml · machine learning', link: '/products/smaltml' },
-          { text: 'smaltlp · optimization', link: '/products/smaltlp' },
+          { text: 'smaltlp · linear programming', link: '/products/smaltlp' },
           { text: 'smaltty · TypeScript implementation', link: '/products/smaltty' },
           { text: 'smaltui · query workbench', link: '/products/smaltui' },
           { text: 'smaltbi · reports', link: '/products/smaltbi' },

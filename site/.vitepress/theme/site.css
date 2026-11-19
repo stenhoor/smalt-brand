@@ -64,7 +64,8 @@ a.sw-box:hover, a.sw-kits:hover, a.sw-card:hover { border-color: var(--vp-c-bran
 }
 .sw-src::before { content: ''; position: absolute; left: 50%; top: -11px; width: 2px; height: 10px; background: #9DB4F5; }
 @media (max-width: 640px) {
-  .sw-apps, .sw-langs, .sw-sources, .sw-kitrow { grid-template-columns: 1fr; } .sw-kitrow .sw-kits { grid-column: auto; }
+  .sw-apps, .sw-langs, .sw-sources, .sw-kitrow { grid-template-columns: 1fr; }
+  .sw-kitrow .sw-kits { grid-column: auto; }
   .sw-src::before { display: none; }
 }
 
