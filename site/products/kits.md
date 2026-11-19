@@ -28,3 +28,11 @@ Hardware mark, in the kit layer's jade. Notebooks and pipelines train models wit
 TypeScript.
 
 [Read the docs →](https://stenhoor.github.io/smaltml/) · [Repository →](https://github.com/stenhoor/smaltml)
+
+## smaltlp
+
+**[smaltlp](/products/smaltlp)** is linear and integer programming for the smalt family, with a brand of its own like
+smaltml: the Aim mark, in the kit layer's jade. It solves models of costs, limits and choices to their best answer, in
+the browser.
+
+[Read the docs →](https://stenhoor.github.io/smaltlp/) · [Repository →](https://github.com/stenhoor/smaltlp)
