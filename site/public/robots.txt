@@ -1,0 +1,5 @@
+# smaltworks.dev: every page may be crawled.
+User-agent: *
+Allow: /
+
+Sitemap: https://smaltworks.dev/sitemap.xml
