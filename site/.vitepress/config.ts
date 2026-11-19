@@ -12,6 +12,8 @@ export default defineConfig({
   // public/media holds copies of the brand files (with their READMEs); they are assets, not pages.
   srcExclude: ['public/**', 'node_modules/**', 'scripts/**'],
   lastUpdated: false,
+  // sitemap.xml for search engines (VitePress's own), listed in public/robots.txt.
+  sitemap: { hostname: 'https://smaltworks.dev' },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/media/logos/smaltworks/favicon-32.svg' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
@@ -56,6 +58,7 @@ export default defineConfig({
           { text: 'Get involved', link: '/community/get-involved' },
           { text: 'Core team', link: '/community/team' },
           { text: 'Code of conduct', link: '/community/code-of-conduct' },
+          { text: 'Contact', link: '/contact' },
         ],
       },
     ],
@@ -89,14 +92,19 @@ export default defineConfig({
         { text: 'Get involved', link: '/community/get-involved' },
         { text: 'Core team', link: '/community/team' },
         { text: 'Code of conduct', link: '/community/code-of-conduct' },
+        { text: 'Contact', link: '/contact' },
       ] },
       { text: 'Resources', items: [
         { text: 'Open source', link: '/open-source' },
         { text: 'Brand kit', link: '/brand' },
+        { text: 'Privacy', link: '/privacy' },
       ] },
     ],
     socialLinks: [{ icon: 'github', link: GH }],
     search: { provider: 'local' },
-    footer: { message: 'Small. Alternative. Together. · Stay smalty.', copyright: 'MIT License' },
+    footer: {
+      message: 'Small. Alternative. Together. · Stay smalty. · <a href="/privacy">Privacy</a> · <a href="/contact">Contact</a>',
+      copyright: 'MIT License',
+    },
   },
 })

@@ -1,0 +1,7 @@
+# smaltworks.dev security contact (RFC 9116).
+# Report a vulnerability privately through GitHub's private vulnerability reporting.
+Contact: https://github.com/stenhoor/smalt-brand/security/advisories/new
+Expires: 2027-11-19T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://smaltworks.dev/.well-known/security.txt
+Policy: https://smaltworks.dev/contact#security
