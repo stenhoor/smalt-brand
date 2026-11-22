@@ -3,9 +3,9 @@
 
 Usage: python3 scripts/brand_assets.py <MartianMono[wdth,wght].ttf>
 
-For every product (smaltdb, smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltml, smaltlp, smaltty, and the parent, smaltworks) writes, under logos/<product>/:
+For every product (smaltdb, smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltml, smaltlp, smaltai, smaltty, and the parent, smaltworks) writes, under logos/<product>/:
   wordmark.svg, wordmark-on-dark.svg, lockup.svg, lockup-on-dark.svg
-For smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltml, smaltlp, smaltty and smaltworks it also writes the mark, app icon and favicons:
+For smaltui, smaltbi, smaltdf, smaltnb, smaltfl, smaltql, smaltts, smaltcy, smaltml, smaltlp, smaltai, smaltty and smaltworks it also writes the mark, app icon and favicons:
   <mark>-mark.svg, <mark>-mark-on-dark.svg, app-icon.svg, favicon-32.svg, favicon-16.svg
 (smaltdb's mark, app icon and favicons were drawn by hand and are left untouched.)
 
@@ -124,6 +124,10 @@ MARKS = {
     # smaltlp's Aim: one solid arrow at 45 degrees, pointing at the chip: heading straight for the best answer (owner,
     # 2026-11-17, from smaltlp's round 4: L10a). The head is right-angled; the shaft is square-cut.
     "lp": [("M17 19H45V47L35.24 37.24L14.03 58.46L5.54 49.97L26.76 28.76Z", "body"), (rr(48, 4, 12, 12, 3), "accent")],
+    # smaltai's Agent plug: your agent as the plug, its face with two prongs on top; one eye smalt, the other the violet
+    # chip (owner, 2026-11-22, from smaltai's round 3: AP1). The face's window is wound the other way, so it is a hole.
+    "ai": [("M10 22h44v36h-44Z M18 30v20h28v-20Z", "body"), ("M20 8h6v14h-6Z", "body"), ("M38 8h6v14h-6Z", "body"),
+           ("M22 36h8v8h-8Z", "body"), (rr(34, 36, 8, 8, 3), "accent")],
     "ty": [("M50 46h-18v-10h-14v-24a6 6 0 0 1 6-6h26a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6z", "body"), (rr(10, 40, 16, 16, 3), "accent")],
     # smaltworks' Together: two L-shaped pieces that lock into one frame.
     "works": [("M8 8H44V18H18V44H8Z", "body"), ("M56 56H20V46H46V20H56Z", "accent")],
@@ -131,8 +135,8 @@ MARKS = {
 # smaltbi's 16 px mark: three larger grains, because the full scatter breaks into specks.
 MARK_16 = {"bi": [(rr(6, 40, 16, 16, 4), "chip"), (rr(22, 22, 20, 20, 5), "body"), (rr(44, 4, 16, 16, 4), "accent")]}
 # Horizontal extent of each mark's artwork on the 64 grid, used to space the lockup.
-ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "fl": (5.7, 56), "ql": (6.37, 57.63), "ts": (4, 60), "cy": (6, 58), "kit": (6, 58), "ml": (8, 56), "lp": (5.54, 60), "ty": (10, 56), "works": (8, 56)}
-MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl": "twin", "ql": "star", "ts": "generic", "cy": "graph", "kit": "case", "ml": "hardware", "lp": "aim", "ty": "grain", "works": "together"}
+ART_X = {"db": (8, 54), "ui": (8, 58), "bi": (8, 58), "df": (8, 56), "nb": (10, 54), "fl": (5.7, 56), "ql": (6.37, 57.63), "ts": (4, 60), "cy": (6, 58), "kit": (6, 58), "ml": (8, 56), "lp": (5.54, 60), "ai": (10, 54), "ty": (10, 56), "works": (8, 56)}
+MARK_NAME = {"ui": "chevron", "bi": "scatter", "df": "axes", "nb": "pencil", "fl": "twin", "ql": "star", "ts": "generic", "cy": "graph", "kit": "case", "ml": "hardware", "lp": "aim", "ai": "plug", "ty": "grain", "works": "together"}
 
 # Colour by layer: each layer of the stack has one colour, and a product takes its layer's colour.
 # (fill, text, dark) per layer. The engine layer (smaltdb) uses smalt itself: the pale chip and an ink suffix.
@@ -145,7 +149,7 @@ LAYER_COLOURS = {
     "tool": ("#0E7FAE", "#0B6A91", "#5CBDE8"),       # cerulean: smaltui, smaltbi, smaltnb, smaltfl
     "ai": ("#6E4BC2", "#6141AE", "#B8A1F2"),         # violet: smaltai, alongside the layers
 }
-LAYER = {"ql": "language", "df": "language", "ts": "language", "cy": "language", "kit": "kit", "ml": "kit", "lp": "kit", "ty": "family", "ui": "tool", "bi": "tool", "nb": "tool", "fl": "tool"}
+LAYER = {"ql": "language", "df": "language", "ts": "language", "cy": "language", "kit": "kit", "ml": "kit", "lp": "kit", "ai": "ai", "ty": "family", "ui": "tool", "bi": "tool", "nb": "tool", "fl": "tool"}
 # smaltworks is not a layer: it keeps kiln orange.
 WORKS = ("#E5622F", "#151922", "#FF8A5C")
 
@@ -260,7 +264,7 @@ def build_wordmarks(font_path, product):
 
 if __name__ == "__main__":
     font = sys.argv[1]
-    for p in ("ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "kit", "ml", "lp", "ty", "works"):
+    for p in ("ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "kit", "ml", "lp", "ai", "ty", "works"):
         build_marks(p)
-    for p in ("db", "ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "kit", "ml", "lp", "ty", "works"):
+    for p in ("db", "ui", "bi", "df", "nb", "fl", "ql", "ts", "cy", "kit", "ml", "lp", "ai", "ty", "works"):
         build_wordmarks(font, p)

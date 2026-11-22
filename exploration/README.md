@@ -136,9 +136,10 @@ The smaltcy boards' sources are plain HTML pages (`CY-Words.html`, `CY-Marks.htm
 | --- | --- |
 | [FAM-Layers](family/png/FAM-Layers.png) | One colour per layer instead of per product, shown light and dark beside today's colours. Picked. |
 | [AI-Outline](family/png/AI-Outline.png) | smaltai in outline instead of a colour (O1–O3). Not chosen. |
-| [AI-Words](family/png/AI-Words.png) | smaltai taglines and positioning lines, centred on your agents using the smalt tools. Open. |
+| [AI-Words](family/png/AI-Words.png) | smaltai taglines and positioning lines, centred on your agents using the smalt tools. Picked: T1 "Agents" (2026-11-22), with the owner's own line, "AI for the smalt apps, with a model you bring." |
 | [AI-Marks](family/png/AI-Marks.png) | smaltai round 1 marks A1–A4 (Build, Pointer, Agent, Toolbox). Not chosen. |
-| [AI-Marks2](family/png/AI-Marks2.png) | smaltai round 2: plugging in, P1–P4. Open. |
+| [AI-Marks2](family/png/AI-Marks2.png) | smaltai round 2: plugging in, P1–P4. None picked; the plug went into round 3. |
+| [AI-Marks3](family/png/AI-Marks3.png) | smaltai round 3: the Agent and the plug, AP1–AP4 (Agent plug, Plugged in, Socket face, Plugged into the tools), in violet. Picked: AP1, Agent plug (2026-11-22). Its source, `AI-Marks3.html`, is a plain HTML page. |
 | [ML-Words](family/png/ML-Words.png) | smaltml taglines, positioning lines and where it sits. Picked T2, P1 and S1 (2026-11-14). |
 | [ML-Marks](family/png/ML-Marks.png) | smaltml marks M1–M4 (Fit, Tree, Hardware, Learn). Picked M3, Hardware (2026-11-14). |
 

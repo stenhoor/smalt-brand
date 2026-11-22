@@ -148,7 +148,7 @@ Icons are drawn the way the smaltui Chevron mark is drawn (`logos/smaltui/chevro
 
 ## Social preview cards
 
-`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltfl.png`, `smaltql.png`, `smaltts.png`, `smaltcy.png`, `smaltkit.png` and `smaltty.png`, each 1280 × 640, with SVG sources beside them.
+`social/` has a card for each product: `smaltdb.png`, `smaltui.png`, `smaltbi.png`, `smaltdf.png`, `smaltnb.png`, `smaltfl.png`, `smaltql.png`, `smaltts.png`, `smaltcy.png`, `smaltkit.png`, `smaltai.png` and `smaltty.png`, each 1280 × 640, with SVG sources beside them.
 
 - **GitHub:** in the repository, open Settings, then under "Social preview" click Edit and upload the PNG (PNG, JPG or GIF under 1 MB; 1280 × 640 displays best).
 - **Websites:** reference the PNG from `og:image` and `twitter:image`, with `twitter:card` set to `summary_large_image`.
@@ -269,16 +269,16 @@ Each layer of the stack has one colour, and every product in it takes that colou
 
 smaltworks keeps kiln orange: it is the family, not a layer. smaltty takes kiln too, and sits in no layer: TypeScript is the language of everything smalt (DECISIONS.md, "smaltty: a product"). The `product-*` tokens remain as aliases of their layer's token, so existing uses keep working.
 
-| | smaltdb | smaltql | smaltdf | smaltts | smaltcy | smaltkit | smaltml | smaltlp | smaltty | smaltui | smaltbi | smaltnb | smaltfl |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Layer | Engine | Languages | Languages | Languages | Languages | Kits | Kits | Kits | None: kiln, the family's | User tools | User tools | User tools | User tools |
-| What it is | The engine | The SQL | The dataframes | The typed API | The Cypher | The reusable components | The machine learning | The linear programming | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines |
-| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Connected. | Small. Alternative. Reusable. | Small. Alternative. Predict. | Small. Alternative. Optimal. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. |
-| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A graph database for the browser that speaks Cypher. | Components for the smaltworks applications, built to be reused. | Machine learning for smaltdb, on the hardware you have. | Linear and integer programming for smaltdb, in the browser. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. |
-| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Graph | Case | Hardware | Aim | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin |
-| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltcy/` | `logos/smaltkit/` | `logos/smaltml/` | `logos/smaltlp/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` |
+| | smaltdb | smaltql | smaltdf | smaltts | smaltcy | smaltkit | smaltml | smaltlp | smaltty | smaltui | smaltbi | smaltnb | smaltfl | smaltai |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Layer | Engine | Languages | Languages | Languages | Languages | Kits | Kits | Kits | None: kiln, the family's | User tools | User tools | User tools | User tools | Alongside |
+| What it is | The engine | The SQL | The dataframes | The typed API | The Cypher | The reusable components | The machine learning | The linear programming | The TypeScript implementation | The query workbench | The reports | The notebooks | The pipelines | The AI for the apps |
+| Tagline | Small. Alternative. Fast. | Small. Alternative. Familiar. | Small. Alternative. Frames. | Small. Alternative. Typed. | Small. Alternative. Connected. | Small. Alternative. Reusable. | Small. Alternative. Predict. | Small. Alternative. Optimal. | Small. Alternative. Code. | Small. Alternative. Query. | Small. Alternative. Insight. | Small. Alternative. Notebooks. | Small. Alternative. Flow. | Small. Alternative. Agents. |
+| Positioning | A fast alternative database for the browser, written in TypeScript. | The SQL you know, for smaltdb. | Dataframes for smaltdb. Small and fast. | smaltdb, straight from TypeScript. | A graph database for the browser that speaks Cypher. | Components for the smaltworks applications, built to be reused. | Machine learning for smaltdb, on the hardware you have. | Linear and integer programming for smaltdb, in the browser. | TypeScript for the smalt apps. | A query workbench for smaltdb that runs entirely in the browser. | Business intelligence in the browser, powered by smaltdb. | Reactive notebooks for smaltdb. | Data pipelines for smaltdb. | AI for the smalt apps, with a model you bring. |
+| Mark | Grain | Star (`*`) | Axes | Generic (`<T>`) | Graph | Case | Hardware | Aim | Grain, turned | Chevron (`>` and `_`) | Scatter | Pencil | Twin | Agent plug |
+| Logos | `logos/smaltdb/` | `logos/smaltql/` | `logos/smaltdf/` | `logos/smaltts/` | `logos/smaltcy/` | `logos/smaltkit/` | `logos/smaltml/` | `logos/smaltlp/` | `logos/smaltty/` | `logos/smaltui/` | `logos/smaltbi/` | `logos/smaltnb/` | `logos/smaltfl/` | `logos/smaltai/` |
 
-smaltai is in progress: its layer and colour are set, its marks and words are not.
+smaltai, alongside the layers in violet, has its mark and words from 2026-11-22; how to say it is still open.
 
 Rules:
 
@@ -324,6 +324,14 @@ the Kits layer's jade (owner, 2026-11-17). Its Aim mark is one solid arrow at 45
 straight for the best answer. Keep it apart from smaltui's Chevron, the other 45° shape: the Aim always points up and
 to the right, at its chip. Its scope and architecture are smaltworks
 [ADR 0039](https://github.com/stenhoor/smaltworks/blob/main/adr/0039-smaltlp-scope-and-architecture.md).
+
+### smaltai
+
+smaltai is the AI for the smalt apps: the harness that connects a model the user brings (a local gateway the user runs,
+or the in-browser model) to smaltui, smaltbi, smaltnb and smaltfl, where it works through each app's actions. It is not
+a model and not an agent of its own, and it never holds a key ([ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md)).
+It runs alongside the layers in blue-leaning violet (owner, 2026-11-22: its mark and words). Its Agent plug mark is your
+agent as the plug: a face with two prongs on top, one eye smalt and the other the violet chip.
 
 ### smaltty
 
