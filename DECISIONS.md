@@ -324,6 +324,33 @@ it stays the same drawing.
 Its docs follow the documentation standard as a product, not as a plain kit: all four sections, with tasks as its
 user guide and one estimator or function per reference page (the owner asked for docs "similar to other smalt pages").
 
+## smaltai
+
+smaltai (`stenhoor/smaltai`) is the AI for the smalt apps: the harness that connects a model the user brings to the apps,
+which it drives through their actions. It is not a model and not an agent of its own, and it never holds a key
+([ADR 0025](docs/adr/0025-smaltai-agent-gateways-and-actions.md)). Its colour was set with the colour by layer:
+blue-leaning violet, alongside the layers.
+
+Three rounds of marks and one of words (exploration boards AI-Outline, AI-Words and AI-Marks to AI-Marks3):
+
+- **Outline (O1–O3):** smaltai set apart by drawing in outline instead of a colour. Not chosen: the owner didn't like it.
+- **Round 1 marks (A1–A4):** Build, Pointer, Agent, Toolbox. None was picked; the Agent's face was taken forward.
+- **Round 2 marks (P1–P4):** plugging in: Plug, Socket and plug, Port, Plugged in. None was picked; the plug was taken
+  forward.
+- **Round 3 marks (AP1–AP4):** the owner asked for the Agent combined with the plug, "plugging in your agents": Agent
+  plug, Plugged in, Socket face, Plugged into the tools.
+
+| | **Picked** |
+| --- | --- |
+| Tagline | **"Small. Alternative. Agents."** (T1) |
+| Positioning | **"AI for the smalt apps, with a model you bring."** (the owner's own line, not one of the board's P1–P3, which said "your agents"; ADR 0025 has the user bring the model, and smaltai is not an agent of its own) |
+| Mark | **Agent plug** (AP1): your agent as the plug, a face with two prongs on top; one eye smalt, the other the violet chip |
+| Layer | **Alongside**, blue-leaning violet, as set by the colour by layer |
+| Saying it | Open: smalt-A-I (S1) was proposed |
+
+Picked by the owner, 2026-11-22. The in-browser model of ADR 0026 comes with smaltai rather than from the user; ADR 0025
+counts it among the models the user brings, so the line covers it.
+
 ## smaltlp
 
 smaltlp (`stenhoor/smaltlp`, said "smalt-L-P") is linear and mixed-integer programming for the smalt family, in
@@ -409,7 +436,7 @@ The board (FAM-Layers) showed the whole family both ways, light and dark. Picked
 - **This replaces the product colours picked earlier:** smaltbi violet → cerulean; smaltdf ochre, smaltql leaf green and smaltts graphite → magenta; smaltnb magenta → cerulean. Their marks, words and the rounds that chose them stand; only the colour follows the layer now.
 - **Jade's reservation for smaltfl lapses:** smaltfl is a user tool, so it takes cerulean, and jade becomes the kit layer's colour.
 - **`product-*` tokens stay,** as aliases of their layer's token, so existing uses keep working. New tokens: `layer-language`, `layer-kit`, `layer-tool`, `layer-ai`, each with a `-text` variant.
-- **smaltai** went through an outline treatment (not chosen: the owner didn't like it), a first round of marks, and a round about plugging in; its marks are still open. **smaltml** has a first round of words and marks, also open.
+- **smaltai** went through an outline treatment (not chosen: the owner didn't like it), a first round of marks, and a round about plugging in; its mark and words were settled on 2026-11-22 ("smaltai", above). **smaltml** has a first round of words and marks, also open.
 
 ## The family voice: smalty
 
@@ -785,7 +812,7 @@ Decided by the owner on 2026-11-15 (smaltml ADR 0035, item 10), and its badge on
 ## Still open
 
 - **Saying smaltql:** smalt-Q-L (letter by letter, like smalt-D-B) or smalt-quel.
-- **smaltai:** marks and words are open; its colour is set by layer. smaltml's were settled on 2026-11-14 (above). smaltfl's were settled on 2026-11-11 (above).
+- **smaltai:** how to say it (smalt-A-I was proposed) is open; its mark, words and colour are set. smaltml's were settled on 2026-11-14 (above). smaltfl's were settled on 2026-11-11 (above).
 - **smaltql distributions:** the engine alone, the engine with smaltdf, and the engine with both languages. The idea is agreed; names and packaging are not.
 
 - **Research pages on smaltdb.dev** include benchmark comparisons with other engines. Settled by "No shade" (2026-11-12): apples-for-apples timings may stay public, listed as benchmarks; anything else on them that compares goes.
