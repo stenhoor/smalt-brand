@@ -12,6 +12,6 @@ directly, without a query language or dataframes in between.
 - **Thin.** smaltts maps its calls onto the engine's own plans and schema operations. It has no engine of its own,
   so it gets smaltdb's optimizer and storage, like [smaltql](/products/smaltql) and [smaltdf](/products/smaltdf).
 
-**Status:** planned.
+**Status:** in early development. Not on npm yet, and its API may change.
 
-[Repository →](https://github.com/stenhoor/smaltts)
+[Read the docs →](https://stenhoor.github.io/smaltts/) · [Repository →](https://github.com/stenhoor/smaltts)
