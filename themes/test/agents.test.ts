@@ -86,3 +86,20 @@ test('agentDocs writes twins, llms.txt in sidebar order, and agents.md', () => {
   // The section's index first, then its pages; their headings one level down.
   assert.match(guide, /## SQL\n\nFrom https:\/\/example\.dev\/smaltql\/reference\/sql\/index\.md\n\nThe statements\.\n\n### SELECT\n\nReads rows\.\n\n## INSERT\n[\s\S]*\n## CREATE INDEX\n/)
 })
+
+test('a site without a grammar, or with untested examples, says neither', () => {
+  const src = mkdtempSync(path.join(tmpdir(), 'agents-src-'))
+  const out = mkdtempSync(path.join(tmpdir(), 'agents-out-'))
+  mkdirSync(path.join(src, 'guide'), { recursive: true })
+  writeFileSync(path.join(src, 'guide/start.md'), '# Start\n\nOpen the app.\n')
+  const config = { srcDir: src, outDir: out, pages: ['guide/start.md'], site: { title: 'smaltbi', description: 'Reports.', themeConfig: { sidebar: [] } } }
+  agentDocs(config, { product: 'smaltbi', version: '0.2.0', url: 'https://example.dev/smaltbi/', tested: false })
+  const llms = readFileSync(path.join(out, 'llms.txt'), 'utf8')
+  assert.match(llms, /The agent guide is all of it in one file: \[agents\.md\]/)
+  const guide = readFileSync(path.join(out, 'agents.md'), 'utf8')
+  assert.match(guide, /^# smaltbi: the guide for agents\n\n> smaltbi 0\.2\.0\. Generated from the documentation at https:\/\/example\.dev\/smaltbi\/\.\n/)
+  assert.doesNotMatch(guide, /tested/)
+  // Left out, as before, every example is said to be tested.
+  agentDocs(config, { product: 'smaltbi', version: '0.2.0', url: 'https://example.dev/smaltbi/' })
+  assert.match(readFileSync(path.join(out, 'agents.md'), 'utf8'), /; every example in it is tested\.\n/)
+})

@@ -233,7 +233,9 @@ At the end of the build, `agentDocs()` writes Markdown for AI agents beside the 
 - **`/llms.txt`:** the twins, grouped as the sidebar is, each with a one-line description (its front matter's
   `description`, or its first sentence), then the pages the sidebar leaves out under "Optional".
 - **`/agents.md`, the agent guide:** the site's introduction for agents (`intro`: how to use the product and its rules,
-  written for agents), the grammar as EBNF, then the pages `guide` names, each a section in the sidebar's order.
+  written for agents), the grammar as EBNF, then the pages `guide` names, each a section in the sidebar's order. Its
+  first line says every example in it is tested (BRAND.md, Documentation, rule 5); a site whose examples aren't tested
+  yet passes `tested: false`, and it doesn't. `llms.txt` mentions the grammar only for a site that has one.
 
 In `.vitepress/config.ts`:
 

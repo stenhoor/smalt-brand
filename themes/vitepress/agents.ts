@@ -30,6 +30,11 @@ export interface AgentDocsOptions {
   grammar?: string
   /** Pages for the guide after the introduction, in order: source paths or prefixes ('reference/sql/'). */
   guide?: string[]
+  /**
+   * Whether every example in the docs runs in CI against its printed result (BRAND.md, Documentation, rule 5). Default
+   * true; a site whose examples aren't tested yet sets it false, and the agent guide doesn't say they are.
+   */
+  tested?: boolean
 }
 
 interface SiteConfig {
@@ -288,7 +293,7 @@ export function agentDocs(config: SiteConfig, options: AgentDocsOptions): { file
   }
   const listed = new Set<string>()
   let llms = `# ${options.product}\n\n> ${options.summary ?? config.site.description}\n\n`
-  llms += `Version: ${versions}. Every page is Markdown at the address below. The agent guide is all of it in one file, with the grammar: [agents.md](${base}agents.md).\n`
+  llms += `Version: ${versions}. Every page is Markdown at the address below. The agent guide is all of it in one file${options.grammar ? ', with the grammar' : ''}: [agents.md](${base}agents.md).\n`
   for (const g of sidebarGroups(config.site.themeConfig.sidebar)) {
     const rows: string[] = []
     for (const { text, link } of g.links) {
@@ -307,7 +312,7 @@ export function agentDocs(config: SiteConfig, options: AgentDocsOptions): { file
   write('llms.txt', llms)
 
   // agents.md: the introduction, the grammar, then the pages it names, each a section.
-  let guide = `# ${options.product}: the guide for agents\n\n> ${versions}. Generated from the documentation at ${base}; every example in it is tested.\n\n`
+  let guide = `# ${options.product}: the guide for agents\n\n> ${versions}. Generated from the documentation at ${base}${options.tested === false ? '' : '; every example in it is tested'}.\n\n`
   if (options.intro) {
     const intro = toTwin(read(options.intro), options.intro, options).split('\n')
     guide += `${intro.slice(3).join('\n').trim()}\n\n` // without its title and version line
