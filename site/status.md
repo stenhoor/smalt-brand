@@ -7,7 +7,7 @@ As of November 2026. Each project's repository has its own roadmap.
 | [smaltdb](/products/smaltdb) | 0.9.0 | **Preview.** On npm: 0.8.3. 0.9.0, with the plugin system, is next. [Docs](https://smaltdb.dev) |
 | [smaltdb plugins](/products/plugins) | 0.9.0 | **Preview.** To be published with smaltdb 0.9.0. Plugin API version 1 is stable. [Docs](https://smaltdb.dev/reference/api/plugins) |
 | [smaltql](/products/smaltql) | 0.9.0 | **In development.** SQL has moved out of smaltdb into smaltql; to be published with smaltdb 0.9.0. [Docs](https://stenhoor.github.io/smaltql/) |
-| [smaltts](/products/smaltts) | — | **Planned.** |
+| [smaltts](/products/smaltts) | — | **In early development.** A typed TypeScript API over smaltdb's plans: schemas as values, change sets reviewed before they run, typed plans, views and loads; not on npm yet. [Repository](https://github.com/stenhoor/smaltts) · [Docs](https://stenhoor.github.io/smaltts/) |
 | [smaltcy](/products/smaltcy) | 0.1.0 | **In development.** Cypher on graph plans, two stores, history and a WebGPU graph view; graphs live in memory for now. [Playground](https://stenhoor.github.io/smaltcy/playground) · [Docs](https://stenhoor.github.io/smaltcy/) |
 | [smaltdf](/products/smaltdf) | 0.1.0 | **In development,** coming soon. [Docs](https://stenhoor.github.io/smaltdf/) |
 | [smaltui](/products/smaltui) | 0.1.0 | **In development.** SQL, smaltdf dataframes and smaltcy's Cypher, in editor tabs. [Demo](https://stenhoor.github.io/smaltui/workbench/?env=envs/demo/env.json) · [Docs](https://stenhoor.github.io/smaltui/) |
